@@ -180,7 +180,7 @@
 
 class: center, middle, inverse
 
-# [NeuroData](http://neurodata.io): 
+# [Open Connectome Project](http://openconnecto.me) & [NeuroData](http://neurodata.io): 
 ## Enabling Petascale Neuroscience
 
 <!-- ### Joshua T. Vogelstein -->
@@ -202,7 +202,7 @@ class: center, middle, inverse
 0. Store: Can store on local hard drive 
 1. Look: Open in ImageJ on local computer
 2. Pre-process: Manually align images & adjust contrast
-3. Annotate: Manually label each synapse
+3. Parse: Manually label each synapse
 4. Analyze: Plot them all in a 3D scatter plot
 
 .center[
@@ -217,7 +217,7 @@ class: center, middle, inverse
 0. Store: Data too large to store on local hard drive 
 1. Look: Data too large to load into ImageJ on local computer
 2. Pre-process: Takes too long to manually pre-process
-3. Annotate: Takes even longer find  all synapses
+3. Parse: Takes even longer find  all synapses
 4. Analyze: Can't really see what is going on when plotting 10M synapses
 
 .center[
@@ -246,7 +246,7 @@ Note: the above video is from Kasthuri et al. (Cell, 2015)
 
 ### Challenge:  Can't perform any of the 5 steps to discovery
 
-<img src="https://www.lucidchart.com/publicSegments/view/66139744-74a7-46ed-bc12-dc3b00ffcfee/image.png" alt="Drawing" style="width: 700px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/2adae4b6-6cc4-4b6f-9ee7-ff6fc4794470/image.png" alt="Drawing" style="width: 700px;"/>
 
 
 ---
@@ -254,7 +254,7 @@ Note: the above video is from Kasthuri et al. (Cell, 2015)
 ### Challenge:  Can't perform any of the 5 steps to discovery
 
 
-<img src="http://www.lucidchart.com/publicSegments/view/8ad4c441-67e3-42e5-98ab-2cf9edfa0af5/image.png" alt="Drawing" style="width: 750px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/5df22a12-6d41-4342-9bee-b58329daeb2b/image.png" alt="Drawing" style="width: 750px;"/>
 
 
 ### Action: Meet computational needs to achieve each step
@@ -284,38 +284,28 @@ Note: the above video is from Kasthuri et al. (Cell, 2015)
   - Other data sets
 - What next?
 
+
+
 ---
 
+## Case Study #1: Synapse Distribution
 
-# 2 Case Studies
 
-.pull-left[
-
-<iframe width="336" height="189" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-
+.center[
+<iframe width="403" height="227" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
+]
 - Bock et al. (Science, 2011)
 - TEM Camera Array
 - 4 x 4 x 40 nm^3
 - 450 x 350 x 50 micron^3
 - Size: ~10 TB
 - Question: Are synapses distributed uniformly in space?
-]
-
-.pull-right[
-<iframe width="258" height="189" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-
-- Kasthuri et al. (Cell, 2015)
-- Serial EM
-- 3 x 3 x 30 nm^3
-- 40 x 40 x 50 micron^3
-- Size: ~1 TB
-- Question: It Peter's rule a good model?
-]
 
 
 ---
 
 ## Case Study #1: Synapse Distribution
+
 
 - ~8 million cubic microns
 --
@@ -336,12 +326,27 @@ Note: the above video is from Kasthuri et al. (Cell, 2015)
 --
 
 - But we're impatient, we want to do it .yellow[this week]
---
 
-___
 
-### What would it take to find all synapses in a few days?
 
+
+
+
+---
+
+# Case Study #2: Peter's Rule
+
+
+.center[
+<iframe width="310" height="227" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
+]
+
+- Kasthuri et al. (Cell, 2015)
+- Serial EM
+- 3 x 3 x 30 nm^3
+- 40 x 40 x 50 micron^3
+- Size: ~1 TB
+- Question: It Peter's rule a good model?
 
 
 
@@ -374,7 +379,7 @@ ___
 # 5 Steps to Discovery
 
 
-<img src="https://www.lucidchart.com/publicSegments/view/8ad4c441-67e3-42e5-98ab-2cf9edfa0af5/image.png" alt="Drawing" style="width: 800px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/5df22a12-6d41-4342-9bee-b58329daeb2b/image.png" alt="Drawing" style="width: 800px;"/>
 
 
 
@@ -404,7 +409,7 @@ ___
 # Steps 1 & 2
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/fba203d1-b641-41fb-9b7a-4465a885a7ec/image.png" style="width: 700px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/ca288553-aa5a-4b69-b3c9-16e098b45a6d/image.png" style="width: 700px;"/>
 ]
 
 
@@ -420,11 +425,11 @@ ___
 - Head node serves as Web proxy and load balance
 - Application Server nodes can perform cutout, propagate, and other Web-services
 - Databases store Image DB and Tile Cache on SSD array
-- All store & look functions run on this cluster
+
 
 ---
 
-# S.1: Image Data Model
+# S.1A: Image Data Model
 
 
 .pull-left[
@@ -434,7 +439,7 @@ ___
 ]]
 
 .pull-right[
-## ND: [Django Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
+## ND: [Image Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
 <img src="http://docs.neurodata.io/open-connectome/_images/datamodel_simple.png" alt="Drawing" style="height: 150px;"/>
 ]
 
@@ -447,7 +452,7 @@ ___
 
 ---
 
-# S.2: Image DB
+# S.2A: Image Database
 
 .pull-left[
 ## Pre: Images on a disk
@@ -461,37 +466,45 @@ ___
 ]
 
 ### How does ND work?
-- Dense multi-dimensional spatial array partitioned into cuboids
-- Space filling curve minimizes the number of accesses
-- Multi-resolution pyramid for fast access at any zoom level
+  - Ingest
+  - Cutout (volume, XY, YZ, XZ, nifti)
+  - Overlay
+  - Propagate
+  - Histogram Window
+  - 3rd Party Support (CATMAID, Viking, KNOSSOS, etc.)
+
 
 
 ---
 
-# S.3: LIM System
+# S.3A: Image Data Management
 
 .pull-left[
 ## Pre: Excel file
 .center[
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" alt="Drawing" style="height: 125px;"/>
-]]
+]
+<br />
+]
 
 .pull-right[
-## ND: [LIMS](https://github.com/openconnectome/ocpmeta)
+## ND: [Data Mgmt](https://github.com/openconnectome/ocpmeta)
 <img src="images/LIMS.png" alt="Drawing" style="width: 300px;"/>
 ]
 
 
 ### How does ND work?
-- Stores metadata associated with projects/channels
-- Can get & push data
-- Will integrate with Nature's [Scientific Data](http://www.nature.com/sdata/) and [HBP](https://www.humanbrainproject.eu/) 
+  - Create/Edit/Delete Dataset
+  - Create/Edit/Delete Project
+  - Create/Delete Channel
+  - Browse Public Tokens
+  - Get Project Info
 
 
 
 ---
 
-# S.4: Anno. Object Data Model
+# S.1B: Anno. Object Data Model
 
 .pull-left[
 ### Pre: RedCyl...-FINAL...*_?*
@@ -501,7 +514,7 @@ ___
 
 .pull-right[
 ### ND: [RAMON](http://docs.neurodata.io/nddocs/ramon.html)
-<img src="http://www.frontiersin.org/files/Articles/149964/fninf-09-00020-HTML/image_m/fninf-09-00020-t001.jpg" alt="Drawing" style="height: 150px;"/>
+<img src="https://github.com/openconnectome/nddocs/raw/gh-pages/images/ramon_overview.jpg" alt="Drawing" style="height: 150px;"/>
 ] <br />
 
 
@@ -517,7 +530,7 @@ ___
 
 ---
 
-# S.5: Anno. Object DB
+# S.2B: Anno. Object DB
 
 .pull-left[
 ### Pre: Segmented Images
@@ -531,13 +544,36 @@ ___
 ]
 
 ### How does ND work?
-- Set and get any field on any object
-- Query for any object type/field
-- Get & post whole annotation objects
-- Merge multiple annotations
-- Undo 
+  - Stores annotation objects & metadata
+  - Merge
+  - Graph Generate
+  - Get Skeleton  
 
 
+
+---
+
+# S.3B: Anno. Object Management
+
+.pull-left[
+### Pre: Segmented Images
+.center[
+<img src="images/bobby.png" alt="Drawing" style="height: 150px;"/>
+]]
+
+.pull-right[
+### ND: [Anno Object Mgmt](http://docs.neurodata.io/open-connectome/api/ramon_api.html)
+<img src="http://www.frontiersin.org/files/Articles/149964/fninf-09-00020-HTML/image_m/fninf-09-00020-t001.jpg" alt="Drawing" style="height: 150px;"/>
+]
+
+### How does ND work?
+
+  - Set Field
+  - Get Field
+  - Query
+  - Get Annotation
+  - Post Annotation
+  - Undo
 
 ---
 ## L.1: Content Distribution Network
@@ -578,63 +614,43 @@ ___
 - [Volumetric annotation overlays](http://brainviz1.cs.jhu.edu/ndv/kharris15apical/em,ramon_test/3/507/469/90/)
 - [Multispectral blending](http://brainviz1.cs.jhu.edu/ndv/project/Aratome15c_S17_W10/1/5818/527/0/)
 - [Time-series](http://openconnecto.me/ocp/viz/freeman14/)
+- Image & Anno. Metadata
 
 
----
-# L.3: Extract Geometries
-
-
-
-.pull-left[
-## Pre: [Blender](https://www.blender.org/)
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Blender_2.76.png" alt="Drawing" style="height: 150px;"/>
-]
-
-.pull-right[
-## ND: NeuroDataSurf
-
-<img src="images/surf.png" alt="Drawing" style="height: 150px;"/>
-
-]
-
-### How will ND work?
-- Extracts aribtrarily large surfaces/skeletons 
-- Dynamically downsamples appropriate for screen resolution
 
 
 
 
 ---
-# L.4: Extract Graphs
+## L.3: Query Objects
 
 
 .pull-left[
-## Pre: ?
-<br /><br /><br /><br /><br />
+## Pre: Excel + MATLAB?
+.center[
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" alt="Drawing" style="height: 125px;"/>
 ]
+]
+
 
 .pull-right[
-## ND: [Extract Graphs](https://github.com/openconnectome/open-connectome/tree/master/django/ocpgraph)
-
-<img src="http://www.nature.com/polopoly_fs/7.28472.1438282442!/image/1.18105_Kasthurietal.Cell2015_web.jpg_gen/derivatives/landscape_300/1.18105_Kasthurietal.Cell2015_web.jpg" alt="Drawing" style="height: 150px;"/>
-
+## ND: [CAJAL](docs.neurodata.io/CAJAL)/[ndio](http://docs.neurodata.io/ndio/)
+<img src="http://docs.neurodata.io/CAJAL/_images/cajal_pipeline.jpg" alt="Drawing" style="width: 300px;"/>
+<br /><br /><br />
 ]
+
 
 ### How does ND work?
-- Find all syanpses
-- For each, find its partners
-- Traverse down each axon and dendrite
-- Spit out graphml file
-
-
-
+1. CAJAL MATLAB Toolbox
+1. ndio Python Library
+1. Wraps all Web-services 
 
 ---
 
 # Steps 3 & 4
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/7f4db298-f954-487c-b57d-3e0594dba1aa/image.png" style="width: 700px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/41779086-5238-4317-a1d5-acd22e9dab06/image.png" style="width: 700px;"/>
 ]
 
 ---
@@ -645,28 +661,14 @@ ___
 ### schematic of braincloud1 + brainstore + brainviz + intel phi + awesomer + awesome
 ]
 
-- details for braincloud 1
-- X cores, Y nodes
-- 40 TB storage?
-- Intel Phi?
-- K80?
-
-- We have an Amazon Machine Instance on the Marketplace as well.
-
+- Brainapps
+- Brain Cloud
+- Awesome
+- Awesomer
+- Intel Phi
+- K80
 
 
----
-# Data Input/Output
-
-
-<img src="http://docs.neurodata.io/CAJAL/_images/cajal_pipeline.jpg" alt="Drawing" style="height: 150px;"/>
-
-
-<br />
-
-- [CAJAL](docs.neurodata.io/CAJAL) MATLAB Toolbox
-- [ndio](http://docs.neurodata.io/ndio/) Python Library
-- Used to transfer data from Data-Intensive to High Performance Computing and back
 
 
 
@@ -683,7 +685,7 @@ ___
 ]
 
 1. Volume Reconstruct
-2. Histogram Normalize
+2.  Histogram Normalize
 3. Register to Atlas
 
 
@@ -698,15 +700,14 @@ ___
 ]
 
 .pull-right[
-## ND: [Terastitcher](http://abria.github.io/TeraStitcher/)
+## ND: 3rd Party Apps
 <img src="https://raw.githubusercontent.com/abria/TeraStitcher/gh-pages/images/overview.png"   alt="Drawing" style="height: 150px;"/>
 ]
 
 ### How does ND work?
-- Terastitcher is a 3rd party tool
-- Designed for very large images (TeraByte-sized or more)
-- Parallel implementations available
-- Web-service coming soon
+- [Terastitcher](http://abria.github.io/TeraStitcher/)
+- [Reconstruct](http://synapses.clm.utexas.edu/tools/reconstruct/reconstruct.stm)
+- [Fiji Elastic Aligment & Montage](http://fiji.sc/Elastic_Alignment_and_Montage)
 
 
 ---
@@ -729,9 +730,10 @@ ___
 
 
 ### How does ND work?
-- Matches histograms across tiles in plane
-- Removes high frequency flickering
-- Keeps low frequency content
+- 2D via dmg
+  - Stitching
+  - Smoothing/Sharpening/High-Low Composting 
+- 3D via gdf (Gradient Domain Fusion)
 - Web-service coming soon
 
 
@@ -752,11 +754,9 @@ ___
 
 
 ### How does ND work?
-- Resample CLARITY brain to atlas resolution
-- Semi-automatically learn brain mask
-- Automatically extract altas mask
-- Uses [LDDMM](http://www.cis.jhu.edu/software/lddmm-volume/) to align masks
-
+- Rigid, Affine, and Nonlinear ([LDDMM](http://www.cis.jhu.edu/software/lddmm-volume/))
+- Can apply to landmarks, masks, or images
+- Includes automatic masking
 
 ---
 # Scene Parse
@@ -894,29 +894,6 @@ ___
 
 
 
-
-
----
-## A.1: Query Objects
-
-
-.pull-left[
-## Pre: Excel + MATLAB?
-<br /><br /><br /><br /><br /><br /><br />
-]
-
-
-.pull-right[
-## ND: CAJAL/ndio
-<img src="images/vesicle_count.png"    alt="Drawing" style="height: 200px;"/>
-]
-
-
-### How does ND work?
-1. Use CAJAL/ndio to download & count all synapses
-1. [live ndio binder](http://app.mybinder.org/2805214324/notebooks/kasthuri-statistics/Count%20Vesicles.ipynb)
-
-
 ---
 ## A.2: Geometric Statistics
 
@@ -1045,20 +1022,24 @@ ___
 
 ---
 
-# Other EM Datasets
+#  EM Datasets
 
-- [C elegans, herma](http://openconnecto.me/herm-c-elegans) 
-- [C elegans, male](http://openconnecto.me/male-c-elegans) 
-- [C elegans, Pharynx](http://openconnecto.me/bhatla15) (Bhatla et al. Current Biology, 2015)
-- [P pacificus](http://openconnecto.me/bumbarger13) (Bumbarger et al. Cell, 2013)
-- [Drosophila Optic Medulla](http://openconnecto.me/takemura13) (Takemura et al. Nature, 2013)
-- [Drosophila larva](http://openconnecto.me/behaviotypes) (Vogelstein et al., Science, 2014)
-- [Hippocampus Neuropil](http://openconnecto.me/synapseweb) (Harris et al., Scientific Data, 2015)
+| Species | Ref. |
+| :---    | :---  |
+| [C elegans, herma](http://openconnecto.me/herm-c-elegans) 
+| [C elegans, male](http://openconnecto.me/male-c-elegans) 
+| [C elegans, Pharynx](http://openconnecto.me/bhatla15) | Bhatla et al. Current Biology, 2015
+| [P pacificus](http://openconnecto.me/bumbarger13) | Bumbarger et al. Cell, 2013
+| [Drosophila Optic Medulla](http://openconnecto.me/takemura13) | Takemura et al. Nature, 2013
+| [Drosophila larva](http://openconnecto.me/behaviotypes) | Vogelstein et al., Science, 2014
+| [Hippocampus Neuropil](http://openconnecto.me/synapseweb) | Harris et al., Scientific Data, 2015
+| [Mouse, V1](http://openconnecto.me/bock11/) | Bock et al., Nature, 2011
+| [Mouse, S1](http://openconnecto.me/Kasthurietal2014) | Kasthuri et al., Cell, 2015
 
 
---
+---
 
-## With Volumetric Annotations
+# Volumetric Annotation Datasets
 
 - AC3
 - AC4
