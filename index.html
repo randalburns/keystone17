@@ -206,7 +206,8 @@ class: center, middle
 template: default
 layout: true
 
-.navbar[ [_Intro_](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [#1](#1) | [#2](#2) || [Discussion](#disc) ]
+
+.navbar[ [_Intro_](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 
 ---
@@ -214,16 +215,20 @@ name: intro
 
 ###   _Gedankenexperiment_   Experiment 1
 
-0. Data: collect 10 images in a stack (~ 10 MB) &rarr; find all ~100 synapses
-0. Store: Can store on local hard drive 
-1. Look: Open in ImageJ on local computer
-2. Pre-process: Manually align images & adjust contrast
-3. Parse: Manually label each synapse
-4. Analyze: Plot them all in a 3D scatter plot
+<br />
 
-.center[
-<img src="images/Denk04_fig.png" alt="Drawing" style="height: 200px;"/>
+.pull-left[
+0. Data: collect 10 images in a stack
+0. Store: Can store on local hard drive 
+1. Look: Open in ImageJ 
+2. Pre-process: Manually 
+3. Parse: Manually label each synapse
+4. Analyze: Plot  all 100 in  scatter plot
 ]
+
+.pull-right[.center[
+<img src="images/Denk04_fig.png" alt="Drawing" style="height: 200px;"/>
+]]
 
 
 
@@ -231,16 +236,20 @@ name: intro
 
 ###  _Gedankenexperiment_  Experiment 2
 
-0. Data: collect 10 K images in a stack (~10 TB) &rarr; find all 10 M synapses
-0. Store: Data too large to store on local hard drive 
-1. Look: Data too large to load into ImageJ on local computer
-2. Pre-process: Takes too long to manually pre-process
-3. Parse: Takes even longer find  all synapses
-4. Analyze: Can't really see what is going on when plotting 10M synapses
+<br />
 
-.center[
-<img src="images/corrected2.png" alt="Drawing" style="height: 200px;"/>
+.pull-left[
+0. Data: collect 10,000 images
+0. Store: 10 TB where?
+1. Look: Can't load into ImageJ
+2. Pre-process:  Too time consuming
+3. Parse: Takes ~10 years
+4. Analyze: Can't look at 10<sup>6</sup> synapses
 ]
+
+.pull-right[.center[
+<img src="images/corrected2.png" alt="Drawing" style="height: 200px;"/>
+]]
 
 
 ---
@@ -280,24 +289,17 @@ name: intro
 ## Challenge #1: Synapse Distribution
 
 
+
+.center[
+<iframe width="403" height="227" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
+]
+
 - ~8 million cubic microns
---
-
 - => ~8 million synapses
---
-
 - Manual labeling requires ~10 sec / synapse
---
-
 - 60 sec x 60 min x 8 hrs x 250 days = 8 million seconds
---
-
 - A person can find 8 million synapses working for 10 years
---
-
 - Is the distribution of synapses uniform in space? 
---
-
 - But we're impatient, we want to do it .y[this week]
 
 
@@ -328,18 +330,15 @@ name: intro
 ## Challenge #2: Peter's Rule
 
 
+.center[
+<iframe width="310" height="227" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
+]
+
+
 - 916 excitatory axons
---
-
 - 1,036 dendritic spines
---
-
 - 7,505 spine touches
---
-
 - 1,037 synapses
---
-
 - Is the probability of a synapse between an axon and dendrite dictated solely by  proximity?
 
 
@@ -348,20 +347,14 @@ name: intro
 
 ---
 
-### Challenge:  Can't perform any of the 5 steps to discovery
+## Challenge:  Can't perform any of the 5 steps to discovery
 
 <img src="https://www.lucidchart.com/publicSegments/view/2adae4b6-6cc4-4b6f-9ee7-ff6fc4794470/image.png" alt="Drawing" style="width: 700px;"/>
 
 
 ---
 
-### Challenge:  Can't perform any of the 5 steps to discovery
 
-
-<img src="https://www.lucidchart.com/publicSegments/view/5df22a12-6d41-4342-9bee-b58329daeb2b/image.png" alt="Drawing" style="width: 750px;"/>
-
-
----
 
 ## [NeuroData](http://neurodata.io) meets needs to achieve each step
 
@@ -394,10 +387,10 @@ name: intro
 
 ---
 
-### Resolution: 
 
 
-We can now answer the questions we posed, as well as many others
+<iframe src="http://neurodata.io/" allowtransparency="true" width="100%" height="600" style="border:none" background="white"></iframe>
+
 
 
 
@@ -432,12 +425,7 @@ We can now answer the questions we posed, as well as many others
 - Head node serves as Web proxy and load balance
 - Application Server nodes can perform cutout, propagate, and other Web-services
 - Databases store Image DB and Tile Cache on SSD array
-- Brainapps
-- Brain Cloud
-- Awesome
-- Awesomer
-- Intel Phi
-- K80
+- Brainapps,  Brain Cloud, Awesome, Awesomer, Intel Phi, BrainViz (K80)
 
 
 
@@ -446,54 +434,7 @@ We can now answer the questions we posed, as well as many others
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) | [_Data_](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) | [Results](#results) | [Discussion](#disc) ]
-
-
----
-name: data
-
-# Data
-
-- Images
-- Annotations
-- Graphs
-
-
----
-
-## Images
-
-TODO(@jovo)
-
-
----
-
-## Annotations
-
-TODO(@jovo)
-
-- Nodes
-- Skeletons
-- Volumes
-
----
-
-## Graphs
-
-TODO(@jovo)
-
-- Directed/Undirected
-- Vertex Attributed
-- Edge Attributed
-- Graph Attributed
-
-
----
-template: default
-layout: true
-
-.navbar[ [Intro](#intro) | [Data](#data) | [_Store_](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) | [Results](#results) | [Discussion](#disc) ]
-
+.navbar[ [Intro](#intro) || [_Store_](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 ---
 name: store
 
@@ -673,8 +614,7 @@ ___
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) | [Data](#data) | [Store](#store) | [_Look_](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) | [Results](#results) | [Discussion](#disc) ]
-
+.navbar[ [Intro](#intro) || [Store](#store) | [_Look_](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 ---
 name: look
 
@@ -686,6 +626,7 @@ name: look
 
 
 ---
+
 ## [Content Distribution Network](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
 
 <br />
@@ -712,6 +653,7 @@ name: look
 
 
 ---
+
 ## Query Objects
 
 <br />
@@ -738,9 +680,9 @@ name: look
 
 
 
-
-
 ---
+
+
 ## Web-Viz: [NeuroDataViz](https://github.com/openconnectome/neurodataviz)
 
 
@@ -762,8 +704,7 @@ name: look
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) | [Data](#data) | [Store](#store) | [Look](#look) | [_Pre-Process_](#pre) | [Parse](#parse) | [Analyze](#anal) | [Results](#results) | [Discussion](#disc) ]
-
+.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [_Pre-Process_](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: pre
@@ -844,8 +785,7 @@ name: pre
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) | [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [_Parse_](#parse) | [Analyze](#anal) | [Results](#results) | [Discussion](#disc) ]
-
+.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [_Parse_](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: parse
@@ -937,8 +877,7 @@ name: parse
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) | [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [_Analyze_](#anal) | [Results](#results) | [Discussion](#disc) ]
-
+.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [_Analyze_](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: anal
@@ -1025,12 +964,6 @@ name: anal
 
 
 
----
-template: default
-layout: true
-
-.navbar[ [Intro](#intro) | [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) | [_Results_](#results) | [Discussion](#disc) ]
-
 
 ---
 name: results
@@ -1040,13 +973,20 @@ name: results
 - EM datasets
 - Volumetric Annotation Datasets
 - Other Modalities
+- Previously Published Inferences
 - Case Study 1
 - Case Study 2
 
 
+---
+template: default
+layout: true
+
+.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [_Datasets_](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 
 ---
+name: datasets
 
 ##  EM Datasets
 
@@ -1089,8 +1029,14 @@ name: results
 - Histology
 
 
+---
+template: default
+layout: true
+
+.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [_Inferences_](#inferences) || [Discussion](#disc) ]
 
 ---
+name: inferences
 
 ## Previously Published Inferences
 
@@ -1149,7 +1095,7 @@ name: results
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) | [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) | [Results](#results) | [_Discussion_](#disc) ]
+.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [_Discussion_](#disc) ]
 
 
 ---
@@ -1185,9 +1131,11 @@ name: disc
 
 # Related Work
 
-- CATMAID
-- NWB
-- Keller File Format
+<br />
+
+- [CATMAID](http://catmaid.readthedocs.org/en/stable/)
+- [Neurodata Without Borders](http://nwb.org/)
+- [Keller Lab Block File Format](http://www.nature.com/nprot/journal/v10/n11/abs/nprot.2015.111.html)
 
 ---
 
@@ -1279,11 +1227,12 @@ DARPA: {XDATA,GRAPHS,SIMPLEX}
 ____
 
 
-e: [support@neurodata.io](mailto:support@neurodata.io) 
-
 w: [neurodata.io](http://neurodata.io)
 
-f: [docs](http://docs.neurodata.io)
+d: [docs.neurodata.io](http://docs.neurodata.io)
+
+e: [support@neurodata.io](mailto:support@neurodata.io) 
+
 
 
 
