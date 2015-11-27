@@ -49,6 +49,7 @@
       .blue { color: #75E9FF;}
       .purple { color: #A149A9;}
       .large { font-size: 2em; }
+      .black { color: black; background-color: white;}
       a, a > code {
         color: rgb(249, 38, 114);
         text-decoration: none;
@@ -372,7 +373,7 @@ name: intro
 
 ---
 
-## For each step, we have trade-offs to make
+## Trade-offs at Each Step
 
 <br />
 
@@ -386,7 +387,9 @@ name: intro
 
 --
 
-### Note: The ideal system will include both classical and novel NeuroData methods, as they complement one another.
+<br />
+
+.white[The ideal system will include both classical and novel NeuroData methods, as they complement one another.]
 
 
 ---
@@ -419,9 +422,6 @@ We can now answer the questions we posed, as well as many others
 
 ---
 
-# Hardware
-
----
 
 ## Data Intensive Cluster
 
@@ -432,21 +432,13 @@ We can now answer the questions we posed, as well as many others
 - Head node serves as Web proxy and load balance
 - Application Server nodes can perform cutout, propagate, and other Web-services
 - Databases store Image DB and Tile Cache on SSD array
-
----
-
-## High Performance Computing
-
-.center[
-### schematic of braincloud1 + brainstore + brainviz + intel phi + awesomer + awesome
-]
-
 - Brainapps
 - Brain Cloud
 - Awesome
 - Awesomer
 - Intel Phi
 - K80
+
 
 
 
@@ -473,9 +465,6 @@ name: data
 
 TODO(@jovo)
 
-- 3D (an)isotropic
-- 3D + color
-- 3D + time
 
 ---
 
@@ -510,6 +499,21 @@ name: store
 
 # Store
 
+### 3 Different Data Types
+
+<p style="margin-bottom: 1cm"></p>
+
+
+| Images            | Annotations &nbsp;| Graphs
+| :---             | :---      | :---
+| 3D (an)isotropic &nbsp; | points      | directed/undirected
+| 3D + color        | skeletons   | weighted/unweighted
+| 3D + time         | volumes     | attributed/unattributed
+
+___ 
+
+### For each we have:
+
 - Data Model
 - Database
 - Data Management
@@ -518,7 +522,6 @@ name: store
 
 ## [Image Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
 
-- Instead of no data model
 - .y[Dataset]: contains all metadata required to efficiently store, visualize, and analyze data
 - .y[Project]: database storing a collection of channels
 - .y[Token]:  name for a project with associated permissions
@@ -574,6 +577,8 @@ name: store
 <!-- <img src="images/LIMS.png" alt="Drawing" style="width: 300px;"/> -->
 ]]
 
+.bottom[http://openconnecto.me/ocp/ca/kharris15apical/info/]
+
 ---
 
 ## [Anno. Data Model](http://docs.neurodata.io/nddocs/ramon.html)
@@ -606,14 +611,14 @@ name: store
 .pull-left[
 - Efficiently query & update
 - Functions supported:
-Post Annotation,
-Merge,
-Get Annotation,
-Get Graph,
-Get Skeleton,  
-Set Field,
-Get Field,
-Undo
+  - Post Annotation
+  - Merge
+  - Get Annotation
+  - Get Graph
+  - Get Skeleton  
+  - Set Field
+  - Get Field
+  - Undo
 <!-- ### Pre: Segmented Images -->
 <!-- .center[
 <img src="images/bobby.png" alt="Drawing" style="height: 150px;"/>
@@ -649,11 +654,12 @@ Undo
 
 ---
 
-## [Graph  DB & Mgmt](http://openconnecto.me/graphs)
+## [Graph  DB & Management](http://openconnecto.me/graphs)
 
 <br />
 
 .pull-left[
+- Store zipped GraphML files
 - Upload
 - Downsample
 - Download
@@ -688,18 +694,19 @@ name: look
 - Pre-fetches data
 - Can cache locally as large as possible
 - Deploy anywhere in the world to achieve 60 Hz rates
-- Get: Simple Tile,  Multichannel False Color Tile,  Viking Tile
-<!-- ## Pre: Image DB -->
-<!-- <img src="images/NCDN.png" alt="Drawing" style="height: 150px;"/> -->
+- Functions 
+  -  Simple Tile  
+  -  Multichannel False Color Tile
+  -  Viking Tile
 ]
 
 .pull-right[
 <!-- ## ND: [Tile Cache](http://docs.neurodata.io/open-connectome/) -->
-.center[<img src="images/CDN.png" alt="Drawing" style="height: 250px;"/>
+.center[<img src="http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png" alt="Drawing" style="height: 250px;"/>
 ]]
 
-<!-- ### How does ND work? -->
 
+.bottom[http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png]
 
 
 
@@ -1242,7 +1249,8 @@ class:  center
 | Look | | .pink[Misha Kazhdan, Alex Baden, Jordan Matelsky]
 | Pre-Process | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
 | Parse | | .green[Will Gray Roncal, Mark Chevillet,  R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman, Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang, Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
+| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
+| Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 ]]
 
 
