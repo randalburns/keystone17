@@ -28,7 +28,7 @@
       }
       .navbar {
         position: absolute;
-        right: 150px;
+        float: center;
         top: 0em;
         font-family: 'Yanone Kaffeesatz';
         color: #A7A7A7;
@@ -207,11 +207,12 @@ template: default
 layout: true
 
 
-.navbar[ [_Intro_](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [_Intro_](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 
 ---
 name: intro
+
 
 ###   _Gedankenexperiment_   Experiment 1
 
@@ -299,9 +300,7 @@ name: intro
 - Manual labeling requires ~10 sec / synapse
 - 60 sec x 60 min x 8 hrs x 250 days = 8 million seconds
 - A person can find 8 million synapses working for 10 years
-- Is the distribution of synapses uniform in space? 
-- But we're impatient, we want to do it .y[this week]
-
+- H0: approximate synapse centroids are sampled from a 3D Poisson point process
 
 
 
@@ -313,7 +312,7 @@ name: intro
 
 
 .center[
-<iframe width="310" height="227" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="372" height="272" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
 ]
 
 - Kasthuri et al. (Cell, 2015)
@@ -331,7 +330,7 @@ name: intro
 
 
 .center[
-<iframe width="310" height="227" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="372" height="272" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
 ]
 
 
@@ -339,7 +338,7 @@ name: intro
 - 1,036 dendritic spines
 - 7,505 spine touches
 - 1,037 synapses
-- Is the probability of a synapse between an axon and dendrite dictated solely by  proximity?
+- H0: the probability of a synapse between an axon and dendrite dictated solely by  proximity
 
 
 
@@ -349,8 +348,9 @@ name: intro
 
 ## Challenge:  Can't perform any of the 5 steps to discovery
 
-<img src="https://www.lucidchart.com/publicSegments/view/2adae4b6-6cc4-4b6f-9ee7-ff6fc4794470/image.png" alt="Drawing" style="width: 700px;"/>
-
+.center[
+<img src="images/Circle1.png" alt="Drawing" style="height: 250px;"/>
+]
 
 ---
 
@@ -358,9 +358,9 @@ name: intro
 
 ## [NeuroData](http://neurodata.io) meets needs to achieve each step
 
-
-<img src="https://www.lucidchart.com/publicSegments/view/5df22a12-6d41-4342-9bee-b58329daeb2b/image.png" alt="Drawing" style="width: 800px;"/>
-
+.center[
+<img src="images/Circle2.png" alt="Drawing" style="height: 250px;"/>
+]
 
 
 
@@ -434,11 +434,11 @@ name: intro
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [_Store_](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Intro](#intro) || [_Data_](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 ---
 name: store
 
-# Store
+# Data
 
 ### 3 Different Data Types
 
@@ -451,15 +451,33 @@ name: store
 | 3D + color        | skeletons   | weighted/unweighted
 | 3D + time         | volumes     | attributed/unattributed
 
-___ 
+--
 
-### For each we have:
+
+
+
+
+
+---
+template: default
+layout: true
+
+.navbar[ [Intro](#intro) || [Data](#data) | [_Store_](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+---
+name: store
+
+# Store
+
 
 - Data Model
 - Database
 - Data Management
 
+
+
+
 ---
+
 
 ## [Image Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
 
@@ -493,6 +511,29 @@ ___
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Lebesgue-3d-step3.png" alt="Drawing" style="height: 250px;"/>
 ]]
 
+---
+
+
+## [Image Database](http://docs.neurodata.io/open-connectome/)
+
+<br />
+
+.pull-left[
+<!-- - Instead of just files in a folder -->
+- Partition data into small compressed cuboids
+- Space filling curve 
+- Multi-resolution pyramid
+- Functions supported:  Ingest, Cutout (XY, XY, YZ, XZ, nifti), Overlay, Downsample,  Histogram Window
+- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
+]
+.pull-right[
+.center[
+<img src="http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/" alt="Drawing" style="height: 250px;"/>
+]]
+
+
+
+.bottom[http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/]
 <!-- .bottom[ [Docs](http://docs.neurodata.io/open-connectome/api/data_api.html) ] -->
 
 ---
@@ -509,12 +550,15 @@ ___
   - Browse Public Tokens
   - Get Project Info
   - Both [Web-console](http://openconnecto.me/ocp/accounts/login/) & [API](https://github.com/openconnectome/ndlims)
-]
+
+.center[
+<img src="images/projinfo.png" alt="Drawing" style="height: 150px;"/>
+]]
 
 .pull-right[
 .center[
 <iframe src="http://openconnecto.me/ocp/ca/kharris15apical/info/
-" allowtransparency="true" width="450" height="400" style="border:none" background="white"></iframe>
+"width="450" height="400" "background:white" "background-color:white" "font-color:white" "border:4px" "font:white" "color:white"></iframe>
 <!-- <img src="images/LIMS.png" alt="Drawing" style="width: 300px;"/> -->
 ]]
 
@@ -522,7 +566,7 @@ ___
 
 ---
 
-## [Anno. Data Model](http://docs.neurodata.io/nddocs/ramon.html)
+## [Anno Object Data Model](http://docs.neurodata.io/nddocs/ramon.html)
 
 <br />
 
@@ -546,10 +590,14 @@ ___
 
 ---
 
-## [Anno DB & Mgmt](http://docs.neurodata.io/open-connectome/api/ramon_api.html)
+## [Anno Object DB & Mgmt](http://docs.neurodata.io/open-connectome/api/ramon_api.html)
 
 <br />
 .pull-left[
+- Annotations stored as: 
+  - voxel lists, 
+  - skeletons, or
+  - points
 - Efficiently query & update
 - Functions supported:
   - Post Annotation
@@ -557,8 +605,7 @@ ___
   - Get Annotation
   - Get Graph
   - Get Skeleton  
-  - Set Field
-  - Get Field
+  - Set/Get Field
   - Undo
 <!-- ### Pre: Segmented Images -->
 <!-- .center[
@@ -610,11 +657,13 @@ ___
 <iframe src="http://openconnecto.me/graphs/" zoom="0.5" width="450" height="400" style="border:none"></iframe>
 ]
 
+.bottom[http://openconnecto.me/graphs/]
+
 ---
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Store](#store) | [_Look_](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [_Look_](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 ---
 name: look
 
@@ -654,7 +703,7 @@ name: look
 
 ---
 
-## Query Objects
+## Query: [CAJAL](http://docs.neurodata.io/CAJAL/) & [ndio](http://docs.neurodata.io/ndio/)
 
 <br />
 
@@ -704,7 +753,7 @@ name: look
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [_Pre-Process_](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [_Pre-Process_](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: pre
@@ -725,10 +774,10 @@ name: pre
 
 
 ---
-## Volume Reconstruct
+## Volume Reconstruct:  3rd Party 
 
+<br />
 
-## 3rd Party Apps
 - [Terastitcher](http://abria.github.io/TeraStitcher/)
 - [Reconstruct](http://synapses.clm.utexas.edu/tools/reconstruct/reconstruct.stm)
 - [Fiji Elastic Aligment & Montage](http://fiji.sc/Elastic_Alignment_and_Montage)
@@ -745,13 +794,13 @@ name: pre
 
 
 ---
-## Histogram Normalize
+## Histogram Normalize: [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/), [gdf](http://arxiv.org/pdf/1506.02079v1.pdf) 
 
 
-- 2D via [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/)
+- 2D via [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) (Distributed MultiGrid Poisson solver)
   - Stitching
   - Smoothing/Sharpening/High-Low Composting 
-- 3D via  [Gradient Domain Fusion](http://arxiv.org/pdf/1506.02079v1.pdf)
+- 3D via [gdf](http://arxiv.org/pdf/1506.02079v1.pdf) (Gradient Domain Fusion)
 - Web-service coming soon
 
 
@@ -785,7 +834,7 @@ name: pre
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [_Parse_](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [_Parse_](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: parse
@@ -877,7 +926,7 @@ name: parse
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [_Analyze_](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [_Analyze_](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: anal
@@ -901,23 +950,26 @@ name: anal
 ---
 ## Annotation Object Statistics
 
-<br />
 
-.pull-left[
+
 - Histogram Statistics
 - Texture Statistics
 - Shape Statistics
-- [Vector Explorer](https://github.com/ikuznet1/data-analytics-website/): EDA Web-service
 - [Live demo's](http://app.mybinder.org/2473862297/tree) using [mybinder](http://mybinder.org/), [jupyter](http://jupyter.org/), & [github](https://github.com/)
-]
 
 
-.pull-right[
-.center[
+
+<iframe src="https://github.com/openconnectome/ndio-demos/blob/master/Kasthuri%20CELL/Count%20Mitochondria.ipynb" frameborder="0" height="300" width="100%">
+</iframe>
+
+
+
+
+<!-- .center[
 <img src="http://www.programmableweb.com/sites/default/files/github-jupyter.jpg"    alt="Drawing" style="height: 100px;"/>
 <img src="images/mybinder.png"    alt="Drawing" style="height: 100px;"/>
-]]
-
+]
+ -->
 
 
 
@@ -954,8 +1006,10 @@ name: anal
 
 - [LOL](http://jovo.me/LOL/)
 - [Randomer Forest](http://ttomita.github.io/RandomerForest/)
+- [Vector Explorer](https://github.com/ikuznet1/data-analytics-website/): EDA Web-service
 - Optimal Discovery Science via Maximizing  Reliability
 - Independence Tests for Multi Manifold Data
+
 
 <iframe src="https://drive.google.com/file/d/0B7nlh5n4ioGtOW1RLWdvUkN5SWs/preview" width="700px" height="200px"></iframe>
 
@@ -970,19 +1024,21 @@ name: results
 
 # Results
 
-- EM datasets
-- Volumetric Annotation Datasets
-- Other Modalities
-- Previously Published Inferences
-- Case Study 1
-- Case Study 2
+- Datasets
+  - EM datasets
+  - Volumetric Annotation Datasets
+  - Other Modalities
+- Inferences
+  - Previously Published Inferences
+  - Case Study 1
+  - Case Study 2
 
 
 ---
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [_Datasets_](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [_Datasets_](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 
 ---
@@ -1033,7 +1089,7 @@ name: datasets
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [_Inferences_](#inferences) || [Discussion](#disc) ]
+.navbar[ [Intro](#intro) || [Data](#data) |  [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [_Inferences_](#inferences) || [Discussion](#disc) ]
 
 ---
 name: inferences
@@ -1095,7 +1151,7 @@ name: inferences
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [_Discussion_](#disc) ]
+.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [_Discussion_](#disc) ]
 
 
 ---
@@ -1121,7 +1177,7 @@ name: disc
 
 --
 
-#### Implications: it is now easier to:
+#### Implications: it is now easier to
 - Answer questions the require scale
 - Engage complementary expertise
 - Bridge across scales and modalities 
@@ -1161,7 +1217,7 @@ name: disc
 1. Look: using NeuroDataViz
 2. Pre-process: ?
 3. Parse: ?
-4. Analyze: [Hierarchical Attributed Stochastic Block Model](http://arxiv.org/abs/1503.02115)
+4. Analyze: Hierarchical Attributed Stochastic Block Model
 
 
 
@@ -1201,6 +1257,14 @@ class:  center
 | Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 ]]
 
+
+---
+
+# References
+
+1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
+
+1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
 
 
 ---
