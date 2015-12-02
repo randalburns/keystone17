@@ -204,10 +204,10 @@ class: center, middle
 
 ---
 template: default
-layout: true
+layout: false
 
 
-.navbar[ [_Intro_](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+<!-- .navbar[ [_Intro_](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ] -->
 
 
 ---
@@ -477,6 +477,8 @@ name: store
 
 
 ---
+template: default
+layout: false
 
 
 ## [Image Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
@@ -673,6 +675,9 @@ name: look
 
 
 ---
+template: default
+layout: false
+
 
 ## [Content Distribution Network](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
 
@@ -772,6 +777,9 @@ name: pre
 
 
 ---
+template: default
+layout: false
+
 ## Volume Reconstruct:  3rd Party 
 
 <br />
@@ -846,7 +854,7 @@ name: parse
 ]
 
 1. Label
-1. Train
+1. Build
 1. Deploy
 
 ---
@@ -873,7 +881,7 @@ name: parse
 
 
 ---
-## Train: [macho](http://docs.neurodata.io/macho/) 
+## Build: [macho](http://docs.neurodata.io/macho/) 
 
 <br />
 
@@ -943,8 +951,10 @@ name: anal
 - Machine Learning
 
 
-
 ---
+template: default
+layout: false
+
 ## Annotation Object Statistics
 
 
@@ -1012,6 +1022,9 @@ name: anal
 
 
 
+---
+template: default
+layout: false
 
 
 
@@ -1032,13 +1045,21 @@ name: results
 
 ---
 template: default
-layout: true
+layout: false
 
 .navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [_Datasets_](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 
+## Datasets
+
+  - EM datasets
+  - Volumetric Annotation Datasets
+  - Other Modalities
+
+
 ---
 name: datasets
+layout: false
 
 ##  EM Datasets
 
@@ -1088,7 +1109,17 @@ layout: true
 .navbar[ [Intro](#intro) || [Data](#data) |  [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [_Inferences_](#inferences) || [Discussion](#disc) ]
 
 ---
+## Inferences
+
+  - Previously Published Inferences
+  - Case Study 1
+  - Case Study 2
+
+
+
+---
 name: inferences
+layout: false
 
 ## Previously Published Inferences
 
@@ -1160,11 +1191,12 @@ name: disc
 
 
 ---
+layout: false
 
 ## Open Science Contributions
 
-- reference datasets in a variety of modalities
-- reference pipelines for operating on such data
+- Reference datasets in a variety of modalities
+- Reference pipelines for operating on such data
 - Web-services for data access
 - Computing configuration
 - A cloud computing stack to facilitate analysis
