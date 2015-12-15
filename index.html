@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- bower:css -->
+    <!-- <link rel="stylesheet" href="/content/themes/jhu_id/bower_components/normalize-css/normalize.css"> -->
+    <link rel="stylesheet" href="fonts/gentona/gentona.css">
+    <link rel="stylesheet" href="fonts/titling-gothic/titling-gothic.css">
+    <link rel="stylesheet" href="fonts/quadon/quadon.css">
+    <link rel="stylesheet" href="fonts/arnhem/arnhem.css">
+    <!-- endbower -->
+
     <title>NeuroData Intro</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
@@ -11,13 +22,17 @@
       @import url(http://fonts.googleapis.com/css?family=Raleway:regular,italic,bold,bolditalic);
 
       body {
-        font-family: 'Varela Round';
+        font-family: 'gentona'; /* Varela Round */
       }
+/*      h1, h2, h3, h4, h5, h6 {
+        font-family: 'quadon';
+      }      */      
       h1, h2, h3, h4, h5, h6 {
-        font-family: 'Raleway';
+        font-family: 'quadon';
         font-weight: 400;
         margin-bottom: 0;
       }
+
       .remark-slide-content h1 { font-size: 3em; }
       .remark-slide-content h2 { font-size: 2em; }
       .remark-slide-content h3 { font-size: 1.6em; }
@@ -30,7 +45,8 @@
         position: absolute;
         float: center;
         top: 0em;
-        font-family: 'Yanone Kaffeesatz';
+        font-family: 'titling-gothic';  /* Yanone Kaffeesatz */
+        font-weight: 200;
         color: #A7A7A7;
       }
       .navbar a {
@@ -42,10 +58,10 @@
         color: white;
       }
       li p { line-height: 1.25em; }
-      .red { color: #fa0000; }
+      .r { color: #fa0000; }
       .y { color: #FFFF00; }
       .pink { color: #FF87F3;}
-      .green { color: #00CC00; }
+      .g { color: #00CC00; }
       .blue { color: #75E9FF;}
       .purple { color: #A149A9;}
       .large { font-size: 2em; }
@@ -214,7 +230,7 @@ name: intro
 .pull-left[
 0. Data: collect 10 images in a stack
 0. Store: Can store on local hard drive 
-1. Look: Open in ImageJ 
+1. Explore: Open in ImageJ 
 2. Pre-process: Manually 
 3. Parse: Manually label each synapse
 4. Analyze: Plot  all 100 in  scatter plot
@@ -235,7 +251,7 @@ name: intro
 .pull-left[
 0. Data: collect 10,000 images
 0. Store: 10 TB where?
-1. Look: Can't load into ImageJ
+1. Explore: Can't load into ImageJ
 2. Pre-process:  Too time consuming
 3. Parse: Takes ~10 years
 4. Analyze: Can't look at 10<sup>6</sup> synapses
@@ -264,11 +280,11 @@ name: intro
 
 ---
 
-## Challenge #1: Synapse Distribution
+## Challenge #1: Synapse Dist'n
 
 
 .center[
-<iframe width="403" height="227" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="484" height="272" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
 ]
 - Bock et al. (Science, 2011)
 - TEM Camera Array
@@ -280,12 +296,12 @@ name: intro
 
 ---
 
-## Challenge #1: Synapse Distribution
+## Challenge #1: Synapse Dist'n
 
 
 
 .center[
-<iframe width="403" height="227" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="484" height="272" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
 ]
 
 - ~8 million cubic microns
@@ -342,7 +358,7 @@ name: intro
 ## Challenge:  Can't perform any of the 5 steps to discovery
 
 .center[
-<img src="images/Circle1.png" alt="Drawing" style="height: 250px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/e2cec781-e0e9-4c0f-8e68-b2fb1401bdfa/image.png" alt="Drawing" style="height: 250px;"/>
 ]
 
 ---
@@ -352,7 +368,7 @@ name: intro
 ## [NeuroData](http://neurodata.io) meets needs to achieve each step
 
 .center[
-<img src="images/Circle2.png" alt="Drawing" style="height: 250px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/9a8fd21d-1398-4ac9-9d52-7ede9e774c7c/image.png" alt="Drawing" style="height: 250px;"/>
 ]
 
 
@@ -365,10 +381,10 @@ name: intro
 
 | _Property_    | _Classical_ &nbsp;| _NeuroData_ &nbsp; | _Both_ |
 | :---          | :----:      | :---:       | :---: |
-| Quality     | .green[&check;] | .red[&cross;]   | .green[&check;] |
-| Scalability | .red[&cross;]   | .green[&check;] | .green[&check;] |
-| Capabilities    | .green[&check;]   | .red[&cross;]   | .green[&check;] |
-| 1-clickiness  | .red[&cross;]   | .green[&check;]   | .green[&check;] |
+| Quality     | .g[&check;]   | .r[&cross;] | .g[&check;] |
+| Scalability | .r[&cross;]   | .g[&check;] | .g[&check;] |
+| Capabilities| .g[&check;]   | .r[&cross;] | .g[&check;] |
+| 1-clickiness| .r[&cross;]   | .g[&check;] | .g[&check;] |
 
 
 --
@@ -380,9 +396,9 @@ name: intro
 
 ---
 
+# Resolution
 
-
-<iframe src="http://neurodata.io/" allowtransparency="true" width="100%" height="600" style="border:none" background="white"></iframe>
+<iframe src="http://neurodata.io/" allowtransparency="true" width="100%" height="500" style="border:none" background="white"></iframe>
 
 
 
@@ -391,12 +407,11 @@ name: intro
 
 # Outline
 
-
+- Motivation
 - For each step:
   - Overview of the goals
-  - Limitations of classical data analysis paradigm
   - Capabilities of NeuroData analysis paradigm
-- Outcomes
+- Outcomes:
   - EM Image data sets
   - Volumetric annotation data sets 
   - Other data sets
@@ -405,11 +420,72 @@ name: intro
 
 
 
+---
+layout: false
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a class="navbar-brand" href="#">Brand</a> -->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
+        <li><a href="#intro">Intro</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Methods<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#infra">Infrastructure</a></li>
+            <li><a href="#data">Data</a></li>
+            <li><a href="#store">Store</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#pre">Pre-Proc</a></li>
+            <li><a href="#parse">Parse</a></li>
+            <li><a href="#anal">Analyze</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Results<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#r:infra">Infrastructure</a></li>
+            <li><a href="#r:data">Data</a></li>
+            <li><a href="#r:store">Store</a></li>
+            <li><a href="#r:explore">Explore</a></li>
+            <li><a href="#r:pre">Pre-Proc</a></li>
+            <li><a href="#r:parse">Parse</a></li>
+            <li><a href="#r:anal">Analyze</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#disc">Discussion</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<br />
+
+# Infrastructure
+
+- Data Cluster
+- Data Management 
+- Data Analytics 
 
 ---
 
-
-## Data Intensive Cluster
+## Data  Cluster
 
 .center[
 <img src="http://docs.neurodata.io/open-connectome/_images/ocp_cluster.png" style="width: 700px;"/>
@@ -422,14 +498,42 @@ name: intro
 
 
 
+---
+
+## Data Management
+
+
+
+- ND Backend:   <!-- 
+  --><a href="https://github.com/openconnectome/open-connectome"><i class="socicon-github"></i></a> | 
+  <a href="http://blog.neurodata.io"><i class="glyphicon glyphicon-bullhorn"></i></a>  |
+[Docs](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543)
+  - ND Spatial Database to store images and volumetric annotations 
+  - ND Annotation Database to manage annotation metadata
+  - ND Web-console to manage image database 
+- ND LIMS for managing additional metadata: [Code](https://github.com/openconnectome/ndlims) | [Docs](https://render.githubusercontent.com/view/ipynb?commit=28b30f511f1a12117e804b5e2cb1893d19b160e5&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6f70656e636f6e6e6563746f6d652f6e64696f2d64656d6f732f323862333066353131663161313231313765383034623565326362313839336431396231363065352f47657474696e67253230537461727465642f446f776e6c6f6164696e6725323061253230566f6c756d652e6970796e62&nwo=openconnectome%2Fndio-demos&path=Getting+Started%2FDownloading+a+Volume.ipynb#Download-Functions) | [Examples](https://github.com/openconnectome/LIMS-Scripts)
+- ND Tile Cache enables content distribution network: [Code](https://github.com/openconnectome/ocptilecache) | [Docs](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
+
+
+
+
+---
+
+## Data Analytics 
+
+- .y[ndio] is a Python library that enables data input & output: [Code](https://github.com/openconnectome/ndio) | [Docs](http://docs.neurodata.io/ndio/) | [Tutorials](http://docs.neurodata.io/nddocs/ndio/)
+- .y[CAJAL] MATLAB Toolbox serves a similar function: [Code](github.com/openconnectome/cajal) | [Docs](http://docs.neurodata.io/CAJAL/) 
+- .y[AWS Cluster] to build high-performance cluster to run analyses: [Use] | [Code]
+
+
 
 ---
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [_Data_](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [_Data_](#data) | [Store](#store) | [Explore](#explore) | [Pre-Proc](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 ---
-name: store
+name: data
 
 # Data
 
@@ -444,7 +548,6 @@ name: store
 | 3D + color        | skeletons   | weighted/unweighted
 | 3D + time         | volumes     | attributed/unattributed
 
---
 
 
 
@@ -455,280 +558,73 @@ name: store
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Data](#data) | [_Store_](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) | [_Store_](#store) | [Explore](#explore) | [Pre-Proc](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 ---
 name: store
 
 # Store
 
 
-- Data Model
-- Database
-- Data Management
+- Create
+- Read
+- Update
+- Delete
 
+
+---
+layout:false
+
+## Create
+
+- Upload arbitrarily large image volumes for efficient access
+- Overlapping semantics for images & annotations, different for graphs
+- Many different formats supported, including pngs, tiffs, & NIFTI
+
+Console: Tutorials, Web-service
+API: Docs
+ndio: Tutorials, Docs, Code
+CAJAL: Tutorials, Docs, Code
+
+---
+## Read
+
+- Download images, volumes, overlays, skeletons, graphs
+
+API: Docs
+ndio: Tutorials, Docs, Code
+CAJAL: Tutorials, Docs, Code
+
+
+---
+## Update
 
 
 
 ---
-template: default
-layout: false
+## Delete
 
 
-## [Image Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
-
-- .y[Dataset]: contains all metadata required to efficiently store, visualize, and analyze data
-- .y[Project]: database storing a collection of channels
-- .y[Token]:  name for a project with associated permissions
-- .y[Channel]: collection of tables, including  images & metadata 
-
-.center[
-<img src="http://docs.neurodata.io/open-connectome/_images/datamodel_simple.png" alt="Drawing" style="height: 250px;"/>
-]
-
-<!-- .bottom[ [Docs](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) ] -->
-
----
-
-## [Image Database](http://docs.neurodata.io/open-connectome/)
-
-<br />
-
-.pull-left[
-<!-- - Instead of just files in a folder -->
-- Partition data into small compressed cuboids
-- Space filling curve 
-- Multi-resolution pyramid
-- Functions supported:  Ingest, Cutout (XY, XY, YZ, XZ, nifti), Overlay, Downsample,  Histogram Window
-- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
-]
-.pull-right[
-.center[
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Lebesgue-3d-step3.png" alt="Drawing" style="height: 250px;"/>
-]]
-
----
-
-
-## [Image Database](http://docs.neurodata.io/open-connectome/)
-
-<br />
-
-.pull-left[
-<!-- - Instead of just files in a folder -->
-- Partition data into small compressed cuboids
-- Space filling curve 
-- Multi-resolution pyramid
-- Functions supported:  Ingest, Cutout (XY, XY, YZ, XZ, nifti), Overlay, Downsample,  Histogram Window
-- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
-]
-.pull-right[
-.center[
-<img src="http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/" alt="Drawing" style="height: 250px;"/>
-]]
-
-
-
-.bottom[http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/]
-<!-- .bottom[ [Docs](http://docs.neurodata.io/open-connectome/api/data_api.html) ] -->
-
----
-
-## [Image Data Mgmt](https://github.com/openconnectome/ocpmeta)
-
-<br />
-
-.pull-left[
-<!-- ## Pre: Excel file -->
-  - Create/Edit/Delete Dataset
-  - Create/Edit/Delete Project
-  - Create/Delete Channel
-  - Browse Public Tokens
-  - Get Project Info
-  - Both [Web-console](http://openconnecto.me/ocp/accounts/login/) & [API](https://github.com/openconnectome/ndlims)
-]
-
-.pull-right[
-.center[
-<iframe src="http://openconnecto.me/ocp/ca/kharris15apical/info/
-"width="450" height="400" style="background-color:white"></iframe>
-]]
-
-
-
-.bottom[http://openconnecto.me/ocp/ca/kharris15apical/info/]
-
----
-
-## [Anno Object Data Model](http://docs.neurodata.io/nddocs/ramon.html)
-
-<br />
-
-.pull-left[
-<!-- ### Pre: RedCyl...-FINAL...*_?* -->
-- Specifies the dictionary of semantic labels:
-  - base, neuron, volume, generic, synapse, segment, organelle, ROI, node, skeleton
-- Each type has a number of features (eg, confidence) 
-- Types have sub-types and can be hierarchically composed
-]
-
-.pull-right[
-.center[
-<img src="https://github.com/openconnectome/nddocs/raw/gh-pages/images/ramon_overview.jpg" alt="Drawing" style="width: 250px;"/>
-]] <br />
-
-
-
-
-
-
----
-
-## [Anno Object DB & Mgmt](http://docs.neurodata.io/open-connectome/api/ramon_api.html)
-
-<br />
-.pull-left[
-- Annotations stored as: 
-  - voxel lists, 
-  - skeletons, or
-  - points
-- Efficiently query & update
-- Functions supported:
-  - Post Annotation
-  - Merge
-  - Get Annotation
-  - Get Graph
-  - Get Skeleton  
-  - Set/Get Field
-  - Undo
-<!-- ### Pre: Segmented Images -->
-<!-- .center[
-<img src="images/bobby.png" alt="Drawing" style="height: 150px;"/>
-]
- -->]
-
-.pull-right[
-.center[
-<img src="images/annotated.2.png" alt="Drawing" style="height: 250px;"/>
-]
-]
-
-
----
-
-## Graph Data Model: [GraphML](http://graphml.graphdrawing.org/)
-
-<br />
-
-.pull-left[
-- directed, undirected, and mixed
-- hypergraphs
-- hierarchical graphs
-- application-specific attributes 
-- light-weight parsers
-]
-
-.pull-right[
-.center[
-<img src="http://graphml.graphdrawing.org/primer/hyper.png" alt="Drawing" style="height: 200px;"/>
-]
-]
-
----
-
-## [Graph  DB & Management](http://openconnecto.me/graphs)
-
-<br />
-
-.pull-left[
-- Store zipped GraphML files
-- Upload
-- Downsample
-- Download
-]
-
-.pull-right[
-<iframe src="http://openconnecto.me/graphs/" zoom="0.5" width="450" height="400" style="border:none"></iframe>
-]
-
-.bottom[http://openconnecto.me/graphs/]
 
 ---
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [_Look_](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) | [Store](#store) | [_Explore_](#explore) | [Pre-Proc](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 ---
-name: look
+name: explore
 
-# Look
+# Explore
 
-- Content Distribution Network
-- Query
-- Web-Viz
-
-
----
-template: default
-layout: false
-
-
-## [Content Distribution Network](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
-
-<br />
-.pull-left[
-- Tile cache loads images on SSDs
-- Pre-fetches data
-- Can cache locally as large as possible
-- Deploy anywhere in the world to achieve 60 Hz rates
-- Functions 
-  -  Simple Tile  
-  -  Multichannel False Color Tile
-  -  Viking Tile
-]
-
-.pull-right[
-<!-- ## ND: [Tile Cache](http://docs.neurodata.io/open-connectome/) -->
-.center[<img src="http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png" alt="Drawing" style="height: 250px;"/>
-]]
-
-
-.bottom[http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png]
-
-
-
-
----
-
-## Query: [CAJAL](http://docs.neurodata.io/CAJAL/) & [ndio](http://docs.neurodata.io/ndio/)
-
-<br />
-
-- [CAJAL](http://docs.neurodata.io/CAJAL/) MATLAB Toolbox
-- [ndio](http://docs.neurodata.io/ndio/) Python Library
-- Wraps all Web-services 
-
-<br />
-
-<!-- .pull-left[
-## Pre: Excel + MATLAB?
-.center[
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" alt="Drawing" style="height: 125px;"/>
-]
-]
- -->
-
-<!-- .pull-right[
-## ND: [CAJAL](docs.neurodata.io/CAJAL)/[ndio](http://docs.neurodata.io/ndio/)
-] -->
-.center[ <img src="http://docs.neurodata.io/CAJAL/_images/cajal_pipeline.jpg" alt="Drawing" style="width: 700px;"/>
-]
+- Images
+- Graphs
+- Vectors
 
 
 
 ---
 
 
-## Web-Viz: [NeuroDataViz](https://github.com/openconnectome/neurodataviz)
+## Images: [NeuroDataViz](https://github.com/openconnectome/neurodataviz)
 
 
 - Uses [Leaflet.js](http://leafletjs.com/) (so works on mobile)
@@ -743,18 +639,27 @@ layout: false
 ]
 
 
+---
+
+## Graphs: [Graph Explorer](http://gex.neurodata.io)
+
+
+---
+
+## Vectors: [Vector Explorer](http://vex.neurodata.io)
+
 
 
 ---
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [_Pre-Process_](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) | [Store](#store) | [Explore](#explore) | [_Pre-Proc_](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: pre
 
-# Pre-Process
+# Pre-Proc
 
 .center[
 <img src="images/Denk04_fig.png" alt="Drawing" style="height: 200px;"/>
@@ -764,16 +669,16 @@ name: pre
 <img src="images/corrected2.png"   alt="Drawing" style="height: 200px;"/>
 ]
 
-1. Volume Reconstruct
-2.  Histogram Normalize
-3. Register to Atlas
+1. Geometric
+2. Chromatic
+3. Register
 
 
 ---
 template: default
 layout: false
 
-## Volume Reconstruct:  3rd Party 
+## Geometric:  3rd Party 
 
 <br />
 
@@ -793,7 +698,7 @@ layout: false
 
 
 ---
-## Histogram Normalize: [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/), [gdf](http://arxiv.org/pdf/1506.02079v1.pdf) 
+## Chromatic: [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) + [gdf](http://arxiv.org/pdf/1506.02079v1.pdf) 
 
 
 - 2D via [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) (Distributed MultiGrid Poisson solver)
@@ -833,7 +738,7 @@ layout: false
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [_Parse_](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) | [Store](#store) | [Explore](#explore) | [Pre-Proc](#pre) | [_Parse_](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: parse
@@ -841,7 +746,7 @@ name: parse
 # Parse
 
 .center[
-<img src="images/raw.2.png"    alt="Drawing" style="height: 200px;"/>
+<img src="images/corrected2.png"    alt="Drawing" style="height: 200px;"/>
 <img src="http://etc.usf.edu/clipart/70300/70317/70317_258_c-2b_s_lg.gif"    alt="Drawing" style="height: 200px; width: 50px" top="100px;"/>
 <img src="images/annotated.2.png"    alt="Drawing" style="height: 200px;"/>
 ]
@@ -900,11 +805,12 @@ name: parse
 
 
 ---
-## Deploy: [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
+## Deploy: [maxxo]()
 
 <br />
 
 .pull-left[
+- Use [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
 - GUI to generate workflow connecting modules
 - Each module calls a single executable
 - Get Cubes for each worker node
@@ -925,7 +831,7 @@ name: parse
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [_Analyze_](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) | [Store](#store) | [Explore](#explore) | [Pre-Proc](#pre) | [Parse](#parse) | [_Analyze_](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 ---
 name: anal
@@ -939,28 +845,41 @@ name: anal
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Answer_to_Life.png"    alt="Drawing" style="height: 200px;"/>
 ]
 
-- Annotation Object Statistics
-- Graph Statistics
-- Machine Learning
+- Images
+- Shapes
+- Graphs
+- Vectors
 
 
 ---
 template: default
 layout: false
 
-## Annotation Object Statistics
+## Image Statistics
 
 
 
 - Texture & Histogram Statistics
-- Shape Statistics
-- [Live demo's](http://app.mybinder.org/2473862297/tree) using [mybinder](http://mybinder.org/), [jupyter](http://jupyter.org/), & [github](https://github.com/)
+  - 3D rotationally invariant  co-occurence features
+  - percentiles, means, histograms
+
+---
+
+## Shape Statistics
+
+- length
+- eccentricity
+- LDDMM
+
+[Jupyter](http://jupyter.org/) notebooks performing some of these (and related) functions can be found in [this repo](https://github.com/openconnectome/ndio-demos)
+
+<!-- - [Use cases](http://app.mybinder.org/2473862297/tree) using [mybinder](http://mybinder.org/), [jupyter](http://jupyter.org/), & [github](https://github.com/)
 
 
 
-<iframe src="https://github.com/openconnectome/ndio-demos/blob/master/Kasthuri%20CELL/Count%20Mitochondria.ipynb" frameborder="0" height="300" width="100%">
+<iframe allowtransparency="true" style="background-color:white;" src="https://github.com/openconnectome/ndio-demos/blob/master/Kasthuri%20CELL/Count%20Mitochondria.ipynb" frameborder="0" height="300" width="100%">
 </iframe>
-
+ -->
 
 
 
@@ -985,7 +904,7 @@ layout: false
 
 
 
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://128.220.176.8/Graph-Explorer/shiny/" frameborder="0" height="300" width="100%">
+<iframe allowtransparency="true" style="background-color:white;" src="http://128.220.176.8/Graph-Explorer/shiny/" frameborder="0" height="300" width="100%">
 </iframe>
 
 
@@ -1000,24 +919,18 @@ layout: false
 
 
 ---
-## Machine Learning
+## Vector Statistics
 
 
 - [LOL](http://jovo.me/LOL/)
 - [Randomer Forest](http://ttomita.github.io/RandomerForest/)
-- [Vector Explorer](https://github.com/ikuznet1/data-analytics-website/): EDA Web-service
-- Optimal Discovery Science via Maximizing  Reliability
-- Independence Tests for Multi Manifold Data
+- [Vector Explorer](http://128.220.176.8/data-analytics-website/Code/): EDA Web-service ([code](https://github.com/ikuznet1/data-analytics-website/))
+- Optimal Discovery Science via Maximizing Reliability
+- Dependence Discovery for Multi Manifold Data
 
 
 <iframe src="https://drive.google.com/file/d/0B7nlh5n4ioGtOW1RLWdvUkN5SWs/preview" width="700px" height="200px"></iframe>
 
-
-
-
----
-template: default
-layout: false
 
 
 
@@ -1040,7 +953,7 @@ name: results
 template: default
 layout: false
 
-.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [_Datasets_](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) | [Store](#store) | [Explore](#explore) | [Pre-Proc](#pre) | [Parse](#parse) | [Analyze](#anal) || [_Datasets_](#datasets) | [Inferences](#inferences) || [Discussion](#disc) ]
 
 
 ## Datasets
@@ -1099,7 +1012,7 @@ layout: false
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Data](#data) |  [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [_Inferences_](#inferences) || [Discussion](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) |  [Store](#store) | [Explore](#explore) | [Pre-Proc](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [_Inferences_](#inferences) || [Discussion](#disc) ]
 
 ---
 ## Inferences
@@ -1171,7 +1084,7 @@ layout: false
 template: default
 layout: true
 
-.navbar[ [Intro](#intro) || [Data](#data) | [Store](#store) | [Look](#look) | [Pre-Process](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [_Discussion_](#disc) ]
+.navbar[ [Infra](#infra) || [Data](#data) | [Store](#store) | [Explore](#explore) | [Pre-Proc](#pre) | [Parse](#parse) | [Analyze](#anal) || [Datasets](#datasets) | [Inferences](#inferences) || [_Discussion_](#disc) ]
 
 
 ---
@@ -1235,7 +1148,7 @@ layout: false
 
 0. Data: collect 1 mm<sup>3</sup> of cortical data at nm resolution
 0. Store: 1 petabyte in the cloud
-1. Look: using NeuroDataViz
+1. Explore: using NeuroDataViz
 2. Pre-process: ?
 3. Parse: ?
 4. Analyze: Hierarchical Attributed Stochastic Block Model
@@ -1271,9 +1184,9 @@ class:  center
 | :--- | :--- | :--- |
 | Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla] 
 | Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman 
-| Look | | .pink[Misha Kazhdan, Alex Baden, Jordan Matelsky]
-| Pre-Process | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
-| Parse | | .green[Will Gray Roncal, Mark Chevillet,  R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| Explore | | .pink[Misha Kazhdan, Alex Baden, Jordan Matelsky]
+| Pre-Proc | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
+| Parse | | .g[Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
 | Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 ]]
@@ -1319,6 +1232,318 @@ d: [docs.neurodata.io](http://docs.neurodata.io)
 e: [support@neurodata.io](mailto:support@neurodata.io) 
 
 
+---
+
+--
+
+To implement the above, for each data type, we need the following:
+
+1. Data Model
+2. Database
+3. Data Management
+
+Below, we characeterize these three aspects for each data modality.
+
+
+
+---
+template: default
+layout: false
+
+
+
+
+
+## [Image Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
+
+- .y[Dataset]: contains all metadata required to efficiently store, visualize, and analyze data
+- .y[Project]: database storing a collection of channels
+- .y[Token]:  name for a project with associated permissions
+- .y[Channel]: collection of tables, including  images & metadata 
+
+.center[
+<img src="http://docs.neurodata.io/open-connectome/_images/datamodel_simple.png" alt="Drawing" style="height: 250px;"/>
+]
+
+<!-- .bottom[ [Docs](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) ] -->
+
+---
+
+# Store Background
+
+
+## [Image Database](http://docs.neurodata.io/open-connectome/)
+
+<br />
+
+.pull-left[
+<!-- - Instead of just files in a folder -->
+- Partition data into small compressed cuboids
+- Space filling curve 
+- Multi-resolution pyramid
+- 3rd party support
+  - CATMAID
+  - Viking
+  - KNOSSOS
+  - VAST
+  - BigDataViewer
+]
+.pull-right[
+.center[
+<img src="http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9600/12000,12600/50/" alt="Drawing" style="height: 350px;"/>
+]]
+
+
+
+.bottom[http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/]
+<!-- .bottom[ [Docs](http://docs.neurodata.io/open-connectome/api/data_api.html) ] -->
+
+---
+
+## [Image Data Mgmt](https://github.com/openconnectome/ocpmeta)
+
+ Both [Web-console](http://openconnecto.me/ocp/accounts/login/) & [API](https://github.com/openconnectome/ndlims) provide the following functionality
+
+.pull-left[
+
+<!-- ## Pre: Excel file -->
+- Create: Metadata, Images
+  - [Auto-ingest](http://docs.neurodata.io/open-connectome/sphinx/ingesting.html)
+- Read: Metadata, Images
+  - Browse [Public Tokens](http://docs.neurodata.io/open-connectome/api/public_api.html)
+  - Get [Project Info](http://docs.neurodata.io/open-connectome/api/info_api.html)
+  - [Cutout](http://docs.neurodata.io/open-connectome/api/data_api.html#blosc-get) Images
+  - [Overlay](http://docs.neurodata.io/open-connectome/api/overlay_api.html)
+  - Histogram Window
+- Update: Metadata, Images
+  - [Downsample](http://docs.neurodata.io/open-connectome/api/propagate_api.html)
+- Delete: Metadata
+ 
+
+
+]
+
+.pull-right[
+.center[
+<iframe src="http://openconnecto.me/ocp/ca/kharris15apical/info/
+"width="350" height="400" style="background-color:white"></iframe>
+]]
+
+
+
+.bottom[http://openconnecto.me/ocp/ca/kharris15apical/info/]
+
+---
+
+## [Anno Object Data Model](http://docs.neurodata.io/nddocs/ramon.html)
+
+<br />
+
+<!-- ### Pre: RedCyl...-FINAL...*_?* -->
+- Specifies the dictionary of semantic labels:
+  - base
+  - neuron
+  - volume
+  - generic
+  - synapse
+  - segment
+  - organelle
+  - ROI
+  - node
+  - skeleton
+- Each type has a number of features (eg, confidence) 
+- Types have sub-types and can be hierarchically composed
+
+
+
+
+
+
+
+---
+
+## [Anno Object DB & Mgmt](http://docs.neurodata.io/open-connectome/api/ramon_api.html)
+
+<br />
+
+- Annotation Types:
+  - Point 
+  - Skeleton (stored as swc)
+  - Volume (stored as images)
+  - Volume "Tree"
+  - Graph (stored as graphml)
+
+
+- Functions supported via RESTful, MATLAB, or Python
+  - Create: [setField](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#setfield), [Post](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#post)
+  - Read: [getField](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#getfield), [get](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#id1)
+  - Update: [Merge](http://docs.neurodata.io/open-connectome/api/ramon_api.html?highlight=merge#merge-service), Undo, [GraphGen](http://docs.neurodata.io/open-connectome/api/graphgen_api.html)
+  - Delete
+
+
+
+
+.pull-right[
+.center[
+<img src="images/annotated.2.png" alt="Drawing" style="height: 250px;"/>
+]
+]
+
+
+---
+
+## Graph Data Model: [GraphML](http://graphml.graphdrawing.org/)
+
+<br />
+
+.pull-left[
+- directed, undirected, and mixed
+- hypergraphs
+- hierarchical graphs
+- application-specific attributes 
+- light-weight parsers
+]
+
+.pull-right[
+.center[
+<img src="http://graphml.graphdrawing.org/primer/hyper.png" alt="Drawing" style="height: 200px;"/>
+]
+]
+
+---
+
+## [Graph  DB & Management](http://openconnecto.me/graphs)
+
+<br />
+
+.pull-left[
+- Store zipped GraphML files
+- All functions supported by Web-forms &/or Python:
+  - Create
+  - Read
+  - Update: Downsample
+  - Delete
+]
+
+.pull-right[
+.center[
+<iframe src="http://openconnecto.me/graphs/" zoom="0.5" width="450" height="400" style="border:none"></iframe>
+]]
+
+.bottom[http://openconnecto.me/graphs/]
+
+---
+
+
+
+.pull-left[
+### .y[Create]
+|         | Image&nbsp;| Anno &nbsp; | Graph |
+| :---    | :----:      | :---:           | :---: |
+| Website | .r[&cross;] | .r[&cross;] | .r[&cross;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| RESTful | .g[&check;] | .g[&check;] | .r[&cross;] |
+
+### .y[Update]
+|         | Image &nbsp;| Anno &nbsp; | Graph |
+| :---    | :----:      | :---:       | :---: |
+| Website | .r[&cross;] | .r[&cross;] | .r[&cross;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .g[&check;] |
+| RESTful | .g[&check;] | .g[&check;] | .g[&check;] |
+]
+
+
+.pull-right[
+### .y[Read]
+|         | Image &nbsp;| Anno &nbsp; | Graph |
+| :---    | :----:      | :---:           | :---: |
+| Website | .g[&check;] | .g[&check;] | .g[&check;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .g[&check;] |
+| RESTful | .g[&check;] | .g[&check;] | .g[&check;] |
+
+### .y[Delete]
+|         | Image &nbsp;   | Anno &nbsp; | Graph |
+| :---    | :----:        | :---:           | :---: |
+| Website | .g[&check;]   | .g[&check;]   | .r[&cross;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| RESTful | .g[&check;] | .g[&check;] | .r[&cross;] |
+
+]
+
+
+---
+
+# Explore Background
+
+- Content Distribution Network
+- Query
+- Web-Viz
+
+
+---
+template: default
+layout: false
+
+
+## [Content Distribution Network](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
+
+<br />
+.pull-left[
+- Tile cache loads images on SSDs
+- Pre-fetches data
+- Can cache locally as large as possible
+- Deploy anywhere in the world to achieve 60 Hz rates
+- Functions 
+  -  Simple Tile  
+  -  Multichannel False Color Tile
+  -  Viking Tile
+]
+
+.pull-right[
+<!-- ## ND: [Tile Cache](http://docs.neurodata.io/open-connectome/) -->
+.center[<img src="http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png" alt="Drawing" style="height: 250px;"/>
+]]
+
+
+.bottom[http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png]
+
+
+
+
+---
+
+## Query: [CAJAL](http://docs.neurodata.io/CAJAL/) & [ndio](http://docs.neurodata.io/ndio/)
+
+<br />
+
+- [CAJAL](http://docs.neurodata.io/CAJAL/) MATLAB Toolbox
+- [ndio](http://docs.neurodata.io/ndio/) Python Library
+- Wraps all Web-services 
+
+<br />
+
+<!-- .pull-left[
+## Pre: Excel + MATLAB?
+.center[
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" alt="Drawing" style="height: 125px;"/>
+]
+]
+ -->
+
+<!-- .pull-right[
+## ND: [CAJAL](docs.neurodata.io/CAJAL)/[ndio](http://docs.neurodata.io/ndio/)
+] -->
+.center[ <img src="http://docs.neurodata.io/CAJAL/_images/cajal_pipeline.jpg" alt="Drawing" style="width: 700px;"/>
+]
+
+
+
+
+
 
 
 
@@ -1343,7 +1568,46 @@ e: [support@neurodata.io](mailto:support@neurodata.io)
       });
 
       MathJax.Hub.Configured();
+
+      var slideshow = remark.create({
+  // Set the slideshow display ratio
+  // Default: '4:3'
+  // Alternatives: '16:9', ...
+  ratio: '4:3',
+
+  // Navigation options
+  navigation: {
+    // Enable or disable navigating using scroll
+    // Default: true
+    // Alternatives: false
+    scroll: true,
+
+    // Enable or disable navigation using touch
+    // Default: true
+    // Alternatives: false
+    touch: true,
+
+    // Enable or disable navigation using click
+    // Default: false
+    // Alternatives: true
+    click: false
+  },
+
+  // Customize slide number label, either using a format string..
+  // slideNumberFormat: 'Slide %current% of %total%',
+  // .. or by using a format function
+  slideNumberFormat: function (current, total) {
+    return  current + ' / ' + total;
+  },
+
+  // Enable or disable counting of incremental slides in the slide counting
+  countIncrementalSlides: false
+}); 
     </script>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
