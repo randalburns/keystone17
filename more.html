@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -211,1212 +212,319 @@
 
 
 
-class: center, middle
 
-# [Open Connectome Project](http://openconnecto.me) & [NeuroData](http://neurodata.io): 
-## Enabling Petascale Neuroscience
 
-<!-- ### Joshua T. Vogelstein -->
-<!-- ### {[BME](http://bme.jhu.edu),[ICM](http://icm.jhu.edu),[CIS](http://cis.jhu.edu),[Kavli](http://kndi.jhu.edu)}@[jhu](http://jhu.edu) -->
 
-<!-- #### e: [jovo@jhu.edu](mailto:jovo@jhu.edu) | w:  -->
-<!-- ### [NeuroData.io](http://neurodata.io) -->
 
 
-
-#### these slides: <http://docs.neurodata.io/intro>
-
----
-template: default
-layout: true
-
-.bbar[ _[Intro](#intro): Opportunity_ | [Methods](#methods) | [Results](#results) | [Discussion](#disc)]
-
-
----
-name: intro
-
-
-
-### Opportunity: Big Neuro Data
-
-.center[
-<iframe width="420" height="315" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- Modality: Serial Electron Microscopy (Kasthuri et al. 2015)
-- Resolution: 3 x 3 x 30 nm<sup>3</sup>
-- Volume: 40 x 40 x 50 &mu;m<sup>3</sup>
-- Size: ~1 TB
-
-
----
-template: default
-layout: true
-
-.bbar[ _[Intro](#intro): Challenge_ | [Methods](#methods) | [Results](#results) | [Discussion](#disc)]
-
----
-
-## Challenge #1: Synapse Dist'n
-
-
-.center[
-<iframe width="484" height="272" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-- Bock et al. (Science, 2011)
-- TEM Camera Array
-- 4 x 4 x 40 nm^3
-- 450 x 350 x 50 micron^3
-- Size: ~10 TB
-- Question: Are synapses distributed uniformly in space?
-
-
----
-
-## Challenge #1: Synapse Dist'n
-
-
-
-.center[
-<iframe width="484" height="272" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- 8 million mm<sup>3</sup> &#10141; 8 million synapses
-- Manual labeling requires ~10 sec / synapse
-- 60 sec x 60 min x 8 hrs x 250 days = 8 million seconds
-- A person can find 8 million synapses working for 10 years
-- H0: approximate synapse centroids are sampled from a 3D Poisson point process
-
-
-
-
-
----
-
-## Challenge #2: Peter's Rule
-
-
-.center[
-<iframe width="372" height="272" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- Kasthuri et al. (Cell, 2015)
-- Serial EM
-- 3 x 3 x 30 nm^3
-- 40 x 40 x 50 micron^3
-- Size: ~1 TB
-- Question: It Peter's rule a good model?
-
-
-
----
-
-## Challenge #2: Peter's Rule
-
-
-.center[
-<iframe width="372" height="272" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-
-- 916 excitatory axons
-- 1,036 dendritic spines
-- 7,505 spine touches
-- 1,037 synapses
-- H0: the probability of a synapse between an axon and dendrite dictated solely by  proximity
-
-
----
-
-## Challenge:  5 steps to discovery
-
-
-.center[
-<img src="https://www.lucidchart.com/publicSegments/view/e2cec781-e0e9-4c0f-8e68-b2fb1401bdfa/image.png" alt="Drawing" style="height: 250px;"/>
-]
-
-Existing solutions are unable to elegantly handle petascale data
-
-
----
-template: default
-layout: true
-
-.bbar[ _[Intro](#intro): Action_ | [Methods](#methods) | [Results](#results) | [Discussion](#disc)]
-
-
----
-
-## [NeuroData](http://neurodata.io) meets needs to achieve 
-
-.center[
-<img src="https://www.lucidchart.com/publicSegments/view/9a8fd21d-1398-4ac9-9d52-7ede9e774c7c/image.png" alt="Drawing" style="height: 250px;"/>
-]
-
-
----
-
-## Trade-offs at Each Step
-
-<br />
-
-| _Property_    | _Classical_ &nbsp;| _NeuroData_ &nbsp; | _Both_ |
-| :---          | :----:      | :---:       | :---: |
-| Quality     | .g[&check;]   | .r[&cross;] | .g[&check;] |
-| Scalability | .r[&cross;]   | .g[&check;] | .g[&check;] |
-| Capabilities| .g[&check;]   | .r[&cross;] | .g[&check;] |
-| 1-clickiness| .r[&cross;]   | .g[&check;] | .g[&check;] |
 
 
 --
 
-<br />
+To implement the above, for each data type, we need the following:
 
-.white[The ideal system will include both classical and novel NeuroData methods, as they complement one another.]
+1. Data Model
+2. Database
+3. Data Management
+
+Below, we characeterize these three aspects for each data modality.
+
 
 
 ---
 template: default
-layout: true
-
-.bbar[ _[Intro](#intro): Resolution_ | [Methods](#methods) | [Results](#results) | [Discussion](#disc)]
-
----
-
-# Resolution
-
-<iframe src="http://neurodata.io/" allowtransparency="true" width="100%" height="500" style="border:none" background="white"></iframe>
-
-
-
----
 layout: false
 
-# Outline
-
-<br />
-
-- Motivation
-- Methods: for each step
-  - Overview of the goals
-  - Capabilities of NeuroData analysis paradigm
-- Results: for each step
-  - Capabilities currenly provided
-- Discussion
 
 
 
----
-name: methods
 
-.bbar[ [Intro](#intro)  | _[Methods](#methods)_ | [Results](#results) | [Discussion](#disc)]
+## [Image Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html)
 
-
-# Methods
-
-<br />
-
-
-1. Infrastructure
-2. Data
-3. Store
-4. Explore
-5. Pre-Proc
-6. Parse
-7. Analyze
-
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | _[Methods](#methods): Infrastructure_ | [Results](#results) | [Discussion](#disc)]
-
----
-
-## Data  Cluster
+- .y[Dataset]: contains all metadata required to efficiently store, visualize, and analyze data
+- .y[Project]: database storing a collection of channels
+- .y[Token]:  name for a project with associated permissions
+- .y[Channel]: collection of tables, including  images & metadata 
 
 .center[
-<img src="http://docs.neurodata.io/open-connectome/_images/ocp_cluster.png" style="width: 700px;"/>
+<img src="http://docs.neurodata.io/open-connectome/_images/datamodel_simple.png" alt="Drawing" style="height: 250px;"/>
 ]
 
-- Head node serves as Web proxy and load balance
-- Application Server nodes can perform cutout, propagate, and other Web-services
-- Databases store Image DB and Tile Cache on SSD array
-- Brainapps,  Brain Cloud, Awesome, Awesomer, Intel Phi, BrainViz (K80)
-
-
-
+<!-- .bottom[ [Docs](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) ] -->
 
 ---
 
-## Data Management
+# Store Background
+
+
+## [Image Database](http://docs.neurodata.io/open-connectome/)
 
 <br />
 
-- ND Backend:   [Code](https://github.com/openconnectome/open-connectome) | 
-[Docs](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543)
-  - ND Spatial Database to store images and volumetric annotations 
-  - ND Annotation Database to manage annotation metadata
-  - ND Web-console to manage image database 
-- ND LIMS for managing additional metadata: [Code](https://github.com/openconnectome/ndlims) | [Demos](https://github.com/openconnectome/LIMS-Scripts)
-- ND Tile Cache enables content distribution network: [Code](https://github.com/openconnectome/ocptilecache) | [API](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
-
-
-
-
----
-
-## Data Analytics 
-
-<br />
-
-- .y[ndio] Python library for i/o: [Code](https://github.com/openconnectome/ndio) | [API](http://docs.neurodata.io/ndio/) | [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
-- .y[CAJAL] MATLAB Toolbox serves a similar function: [Code](github.com/openconnectome/cajal) | [Docs](http://docs.neurodata.io/CAJAL/) 
-- .y[AMI]: Amazon Machine Instance to run terascale scale analyses: [Setup](http://docs.neurodata.io/nddocs/ami.html)
-- .y[AWS Cluster] to build high-performance cluster to run petascale analyses (coming soon)
-
-
-
----
-template: default
-layout: true
-name: data
-
-.bbar[ [Intro](#intro)  | _[Methods](#methods): Data_ | [Results](#results) | [Discussion](#disc)]
-
----
-
-## Images 
-
-[Code] | [API] | [Web] | [Tutorials] 
-
-
-
 .pull-left[
-###  Storage Model
-- Image Data Model to store images & associated metadata
-- Dense multi-dimensional spatial array partitioned into cuboids
-- Space filling curve minimizes the # of accesses
-- Multi-resolution zoom pyramid
-- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
-- Both [Web-console](http://openconnecto.me/ocp/accounts/login/) & [LIMS](https://github.com/openconnectome/ndlims)
+<!-- - Instead of just files in a folder -->
+- Partition data into small compressed cuboids
+- Space filling curve 
+- Multi-resolution pyramid
+- 3rd party support
+  - CATMAID
+  - Viking
+  - KNOSSOS
+  - VAST
+  - BigDataViewer
 ]
-
-.pull-right[
-### Functions 
-- Post
-- Get Cube
-- XY, YZ, XZ
-- NifTI
-- Overlay
-- Downsample
-- Histogram Window
-- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
-]
-
-
-
----
-
-## Annotations
-
-<br />
-
-[Code] | [API] | [Web] | [Tutorials] 
-
-.pull-left[
-####  Data Model 
-  - Base
-  - Neuron
-  - Volume
-  - Generic
-  - Synapse
-  - Segment
-  - Organelle
-  - ROI
-  - Node
-  - Skeleton
-]
-
-.pull-right[
-#### Functions
-  - Post Annotation
-  - Merge
-  - Get Annotation
-  - Get Graph
-  - Get Skeleton  
-  - Set/Get Field
-  - Undo
-]
-
-
-
----
-
-## Graphs
-
-<br />
-
-[Code] | [API] | [Web] | [Tutorials] 
-
-.pull-left[
-####  Data Model 
-  - Store graphs as FlashGraph 
-  - Metadata  in django data model
-  - Supports the following types
-   - Directed, undirected
-   - Hypergraphs
-   - Hierarchical graphs
-   - Richly attributed graphs
-]
-
-.pull-right[
-#### Functions 
-  - Convert format
-  - Download
-  - Build from fibers
-  - Build from DTI 
-  - Compute Invariants  
-  - Downsample
-]
-
-
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | _[Methods](#methods): Store_ | [Results](#results) | [Discussion](#disc)]
-
----
-name: store
-
-
-## Create
-
-- Console: Tutorials, Web-service
-- API: Docs
-- ndio: Tutorials, Docs, Code
-- CAJAL: Tutorials, Docs, Code
-
-.pull-left[
-- Upload arbitrarily large image volumes for efficient access
-- Overlapping semantics for images & annotations, different for graphs
-- Many different formats supported, including pngs, tiffs, & NIFTI
-]
-
-
-
----
-
-## Read
-
-- Images & Annotations
-  - API: Docs
-  - ndio: Tutorials, Docs, Code
-  - CAJAL: Tutorials, Docs, Code
-- Graphs: Web, Python
-
-
-.pull-left[
-- Download images, volumes, overlays, skeletons, graphs
-]
-
-
 .pull-right[
 .center[
-<img src="http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/" alt="Drawing" style="height: 250px;"/>
+<img src="http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9600/12000,12600/50/" alt="Drawing" style="height: 350px;"/>
 ]]
 
 
 
 .bottom[http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/]
-
+<!-- .bottom[ [Docs](http://docs.neurodata.io/open-connectome/api/data_api.html) ] -->
 
 ---
-## Update & Delete
 
-.pull-right[
-#### Highlights
+## [Image Data Mgmt](https://github.com/openconnectome/ocpmeta)
 
-- 
-]
+ Both [Web-console](http://openconnecto.me/ocp/accounts/login/) & [API](https://github.com/openconnectome/ndlims) provide the following functionality
 
 .pull-left[
-### Functions
 
--
-]
+<!-- ## Pre: Excel file -->
+- Create: Metadata, Images
+  - [Auto-ingest](http://docs.neurodata.io/open-connectome/sphinx/ingesting.html)
+- Read: Metadata, Images
+  - Browse [Public Tokens](http://docs.neurodata.io/open-connectome/api/public_api.html)
+  - Get [Project Info](http://docs.neurodata.io/open-connectome/api/info_api.html)
+  - [Cutout](http://docs.neurodata.io/open-connectome/api/data_api.html#blosc-get) Images
+  - [Overlay](http://docs.neurodata.io/open-connectome/api/overlay_api.html)
+  - Histogram Window
+- Update: Metadata, Images
+  - [Downsample](http://docs.neurodata.io/open-connectome/api/propagate_api.html)
+- Delete: Metadata
+ 
 
 
-
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | _[Methods](#methods): Explore_ | [Results](#results) | [Discussion](#disc)]
-
----
-name: explore
-
-## Images: [Image Explorer (ix)](https://github.com/openconnectome/neurodataviz)
-
-[Web] | [Code] 
-
-.pull-left[
-#### Highlights
-- Uses [Leaflet.js](http://leafletjs.com/) (so works on mobile)
-- Image & Anno. Metadata
 ]
 
 .pull-right[
-### Functions
-- [Volumetric annotation overlays](http://brainviz1.cs.jhu.edu/ndv/kharris15apical/em,ramon_test/3/507/469/90/)
-- [Multispectral blending](http://brainviz1.cs.jhu.edu/ndv/project/Aratome15c_S17_W10/1/5818/527/0/)
-- [Time-series](http://openconnecto.me/ocp/viz/freeman14/)
-
-]
-
-
-
-
----
-
-## Graphs: [Graph Explorer (gx)](http://gx.neurodata.io)
-
-[Web] | [Code] 
-
-.pull-left[
-#### Highlights
-
-- Shiny app 
-]
-
-.pull-right[
-#### Functions
-
-- Load or randomly sample graph
-- Sample graph from many different random graph models
-- Compute attributes of graph
-- Plot graph
-- Compute & plot graph statistics
-- Find communities
-- Save state
-]
-
----
-
-## Vectors: [Vector Explorer (vx)](http://vx.neurodata.io)
-
-[Web] | [Code] 
-
-.pull-left[
-#### Highlights
-
-- Shiny app
-- Load csv file
-]
-.pull-right[
-#### Functions
-
-- Raw, z-scores, perfectiles, or ranks
-- Heatmap of bi-clustered data with dendrograms
-- Distributions of each feature
-- Multivariate outlier detection
-- Correlation & distance matrices
-- Population statistics
-- Dimensionality reduction
-- Clustering
-]
-
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | _[Methods](#methods): Pre-Proc_ | [Results](#results) | [Discussion](#disc)]
-
----
-
-## Geometric:  3rd Party 
-
-<br />
-
-- [Terastitcher](http://abria.github.io/TeraStitcher/)
-- [Reconstruct](http://synapses.clm.utexas.edu/tools/reconstruct/reconstruct.stm)
-- [Fiji Elastic Aligment & Montage](http://fiji.sc/Elastic_Alignment_and_Montage)
-<!-- ## Pre: Fiji = ImageJ
-<img src="http://fiji.sc/_images/b/ba/Aligned-series-crop-512.gif"   alt="Drawing" style="position: fixed; right: 600px; height: 150px;"/>
-<br /><br /><br /><br /><br />
- -->
-
-<br />
 .center[
-<img src="https://raw.githubusercontent.com/abria/TeraStitcher/gh-pages/images/overview.png"   alt="Drawing" style="height: 150px;"/>
-]
-
-
-
----
-
-
-## Chromatic: [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) + [gdf](http://arxiv.org/pdf/1506.02079v1.pdf) 
-
-<br />
-
-.pull-left[
-#### 2D via [dmg](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) (Distributed MultiGrid Poisson solver)
-  - Stitching
-  - Smoothing/Sharpening/High-Low Composting 
-]
-
-.pull-right[
-#### 3D via [gdf](http://arxiv.org/pdf/1506.02079v1.pdf) (Gradient Domain Fusion)
-- Web-service coming soon
-]
-
-
-
-
-
-
----
-## Register Volume: [ndreg](https://github.com/openconnectome/ndreg)
-
-<br />
-
-[Web] | [Code] 
-
-.pull-left[
-#### Highlights
-
-- Python
-
-<br />
-]
-.pull-right[
-#### Functions
-
-- Rigid, Affine, and Nonlinear ([LDDMM](http://www.cis.jhu.edu/software/lddmm-volume/))
-- Can apply to landmarks, masks, or images
-- Includes automatic masking
-]
-
-
-
-
-.center[
-<img src="images/ndreg.png"   alt="Drawing" style="height: 200px;"/>
-]
-
-
-
----
-template: default
-layout: true
-name: parse
-
-.bbar[ [Intro](#intro)  | _[Methods](#methods): Parse_ | [Results](#results) | [Discussion](#disc)]
-
-
----
-## Label: [manno](docs.neurodata.io/manno)
-
-<br />
-
-.pull-left[
-<!-- ## Pre: [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php) -->
-1. Identify ROI
-2. Use CAJAL/ndio to download data
-3. run `manno_getImage.m` to get image
-4. Annotate using [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
-5. Save annotations
-5. run `manno_putAnno.m` to put annotation database
-]
-
-.pull-right[
-<!-- ## ND: ITK-SNAP + [manno](docs.neurodata.io/manno) -->
-.center[
-<img src="http://docs.neurodata.io/manno/_images/manno_itk_example.jpg"   alt="Drawing" style="height: 250px;"/>
+<iframe src="http://openconnecto.me/ocp/ca/kharris15apical/info/
+"width="350" height="400" style="background-color:white"></iframe>
 ]]
 
 
 
+.bottom[http://openconnecto.me/ocp/ca/kharris15apical/info/]
+
 ---
-## Build: [macho](http://docs.neurodata.io/macho/) 
+
+## [Anno Object Data Model](http://docs.neurodata.io/nddocs/ramon.html)
+
+<br />
+
+<!-- ### Pre: RedCyl...-FINAL...*_?* -->
+- Specifies the dictionary of semantic labels:
+  - base
+  - neuron
+  - volume
+  - generic
+  - synapse
+  - segment
+  - organelle
+  - ROI
+  - node
+  - skeleton
+- Each type has a number of features (eg, confidence) 
+- Types have sub-types and can be hierarchically composed
+
+
+
+
+
+
+
+---
+
+## [Anno Object DB & Mgmt](http://docs.neurodata.io/open-connectome/api/ramon_api.html)
+
+<br />
+
+- Annotation Types:
+  - Point 
+  - Skeleton (stored as swc)
+  - Volume (stored as images)
+  - Volume "Tree"
+  - Graph (stored as graphml)
+
+
+- Functions supported via RESTful, MATLAB, or Python
+  - Create: [setField](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#setfield), [Post](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#post)
+  - Read: [getField](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#getfield), [get](http://docs.neurodata.io/open-connectome/api/ramon_api.html?#id1)
+  - Update: [Merge](http://docs.neurodata.io/open-connectome/api/ramon_api.html?highlight=merge#merge-service), Undo, [GraphGen](http://docs.neurodata.io/open-connectome/api/graphgen_api.html)
+  - Delete
+
+
+
+
+.pull-right[
+.center[
+<img src="images/annotated.2.png" alt="Drawing" style="height: 250px;"/>
+]
+]
+
+
+---
+
+## Graph Data Model: [GraphML](http://graphml.graphdrawing.org/)
 
 <br />
 
 .pull-left[
-<!-- ## Pre: [ilastik](http://ilastik.org/) -->
-- Get Data
-- [ilastik](http://ilastik.org/) integration
-- Visualize results
-- ROC Curves
-- Sweep over hyper-parameters
-- Cross-validate
-- Put Data
-
+- directed, undirected, and mixed
+- hypergraphs
+- hierarchical graphs
+- application-specific attributes 
+- light-weight parsers
 ]
 
 .pull-right[
-<!-- ## ND: ilastic+CAJAL/ndio -->
 .center[
-<img src="http://ilastik.org/gallery/Figure2a.png"   alt="Drawing" style="height: 250px;"/>
+<img src="http://graphml.graphdrawing.org/primer/hyper.png" alt="Drawing" style="height: 200px;"/>
+]
+]
+
+---
+
+## [Graph  DB & Management](http://openconnecto.me/graphs)
+
+<br />
+
+.pull-left[
+- Store zipped GraphML files
+- All functions supported by Web-forms &/or Python:
+  - Create
+  - Read
+  - Update: Downsample
+  - Delete
+]
+
+.pull-right[
+.center[
+<iframe src="http://openconnecto.me/graphs/" zoom="0.5" width="450" height="400" style="border:none"></iframe>
 ]]
 
-
-
+.bottom[http://openconnecto.me/graphs/]
 
 ---
-## Deploy: [maxxo]()
 
-<br />
+
 
 .pull-left[
-- Use [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
-- GUI to generate workflow connecting modules
-- Each module calls a single executable
-- Get Cubes for each worker node
-- Each node processes data and spits out its answer
-- CAJAL then merges them back together
-- And sends back to database
+### .y[Create]
+|         | Image&nbsp;| Anno &nbsp; | Graph |
+| :---    | :----:      | :---:           | :---: |
+| Website | .r[&cross;] | .r[&cross;] | .r[&cross;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| RESTful | .g[&check;] | .g[&check;] | .r[&cross;] |
+
+### .y[Update]
+|         | Image &nbsp;| Anno &nbsp; | Graph |
+| :---    | :----:      | :---:       | :---: |
+| Website | .r[&cross;] | .r[&cross;] | .r[&cross;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .g[&check;] |
+| RESTful | .g[&check;] | .g[&check;] | .g[&check;] |
 ]
 
 
 .pull-right[
-.center[
-<img src="http://www.frontiersin.org/files/Articles/609/fninf-03-022/image_m/fninf-03-022-g002.jpg"    alt="Drawing" style="height: 250px;"/>
-]]
+### .y[Read]
+|         | Image &nbsp;| Anno &nbsp; | Graph |
+| :---    | :----:      | :---:           | :---: |
+| Website | .g[&check;] | .g[&check;] | .g[&check;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .g[&check;] |
+| RESTful | .g[&check;] | .g[&check;] | .g[&check;] |
 
+### .y[Delete]
+|         | Image &nbsp;   | Anno &nbsp; | Graph |
+| :---    | :----:        | :---:           | :---: |
+| Website | .g[&check;]   | .g[&check;]   | .r[&cross;] |
+| MATLAB  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| Python  | .g[&check;] | .g[&check;] | .r[&cross;] |
+| RESTful | .g[&check;] | .g[&check;] | .r[&cross;] |
 
-
----
-template: default
-layout: true
-name: anal
-
-.bbar[ [Intro](#intro)  | _[Methods](#methods): Analyze_ | [Results](#results) | [Discussion](#disc)]
-
----
-
-## Image Statistics
-
-.pull-left[
-#### Highlights
-
-- Texture & Histogram Statistics
-- 3D rotationally invariant  co-occurence features
-- percentiles, means, histograms
-]
-
-
-.pull-right[
-#### Functions
-
-- ?
 ]
 
 
 ---
 
-## Shape Statistics
-
-
-.pull-left[
-#### Highlights
-
-- Texture & Histogram Statistics
-- 3D rotationally invariant  co-occurence features
-- percentiles, means, histograms
-]
-
-
-.pull-right[
-#### Functions
-
-- length
-- eccentricity
-- LDDMM
-]
-
-
-
-
-
----
-## Graph Statistics: [FlashX](http://www.flashgraph.net/)
-
-
-Webpage | Code | Tutorials | API | AMI | Docker | Install 
-
-.pull-left[
-#### Highlights
-- Store vertex state in memory, edge list on array of SSDs 
-- Support for 1B vertex & 100B edge graphs
-- R bindings for all functions
-]
-
-.pull-right[
-#### Functions
-- PageRank
-- Eigendecomposition
-- Singular Value Decomposition
-- K-means
-- Scan statistic
-- Community detection
-- Non-negative matrix factorization (NMF)
-]
-
-
-
----
-## Vector Statistics
-
-
-- [LOL](http://jovo.me/LOL/)
-- [Randomer Forest](http://ttomita.github.io/RandomerForest/)
-- Optimal Discovery Science via Maximizing Reliability
-- Dependence Discovery for Multi Manifold Data
-
-
-<iframe src="https://drive.google.com/file/d/0B7nlh5n4ioGtOW1RLWdvUkN5SWs/preview" width="700px" height="200px"></iframe>
-
-
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | _[Results](#results)_ | [Discussion](#disc)]
-
----
-name: results
-
-# Results
-
-
-<br />
-
-
-1. Infrastructure
-2. Data
-3. Store
-4. Explore
-5. Pre-Proc
-6. Parse
-7. Analyze
-
-
-
-
----
-template: default
-layout: true
-name: r_data
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | _[Results](#results): Data_ | [Discussion](#disc)]
-
----
-
-##  EM Datasets
-
-<br />
-
-| Species | Ref. |
-| :---    | :---  |
-| [C elegans, herm](http://openconnecto.me/herm-c-elegans) | Emmons Lab
-| [C elegans, male](http://openconnecto.me/male-c-elegans) | Emmons Lab
-| [C elegans, Pharynx](http://openconnecto.me/bhatla15) | Bhatla et al. Current Biology, 2015
-| [P pacificus](http://openconnecto.me/bumbarger13) | Bumbarger et al. Cell, 2013
-| [Drosophila Optic Medulla](http://openconnecto.me/takemura13) | Takemura et al. Nature, 2013
-| [Drosophila larva](http://openconnecto.me/behaviotypes) | Ohyama et al., Nature, 2015
-| [Hippocampus Neuropil](http://openconnecto.me/synapseweb) | Harris et al., Scientific Data, 2015
-| [Mouse, V1](http://openconnecto.me/bock11/) | Bock et al., Nature, 2011
-| [Mouse, S1](http://openconnecto.me/Kasthurietal2014) | Kasthuri et al., Cell, 2015
-
-
----
-
-## Annotation  Datasets
-
-<br />
-
-- AC3
-- AC4
-- Kasthuri et al. (Cell, 2015)
-- Harris et al. (Scientific Data, 2015)
-
-
-
----
-
-## Graph Datasets
-
-- Bock et al.
-- Kasthuri et al.
-
-
-
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | _[Results](#results): Store_ | [Discussion](#disc)]
-
----
-name: r_store
-
-## Image Read
-
-
-
----
-## Image Write
-
----
-## Annotation Read
-
----
-## Graph Read
-
-
-
----
-template: default
-layout: true
-name: r_explore
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | _[Results](#results): Explore_ | [Discussion](#disc)]
----
-
-
-## Images: [Image Explorer (ix)](https://github.com/openconnectome/neurodataviz)
-
-
-- Uses [Leaflet.js](http://leafletjs.com/) (so works on mobile)
-- [Volumetric annotation overlays](http://brainviz1.cs.jhu.edu/ndv/kharris15apical/em,ramon_test/3/507/469/90/)
-- [Multispectral blending](http://brainviz1.cs.jhu.edu/ndv/project/Aratome15c_S17_W10/1/5818/527/0/)
-- [Time-series](http://openconnecto.me/ocp/viz/freeman14/)
-- Image & Anno. Metadata
-
-.pull-left[
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://brainviz1.cs.jhu.edu/ocp/viz/kharris15apical/em,annos/2/1126/998/88/" frameborder="0" height="300" width="45%">
-</iframe>
-]
-
-.pull-right[
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://brainviz1.cs.jhu.edu/ocp/viz/kharris15apical/em,annos/2/1126/998/88/" frameborder="0" height="300" width="45%">
-</iframe>
-]
-
-
----
-
-## Graphs: [Graph Explorer (gx)](http://gx.neurodata.io)
-
-<br />
-
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://gx.neurodata.io" frameborder="0" height="500" width="100%">
-</iframe>
-
-
----
-
-## Vectors: [Vector Explorer (vx)](http://vx.neurodata.io)
-
-<br />
-
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://vx.neurodata.io" frameborder="0" height="400" width="100%">
-</iframe>
-
-
-
----
-template: default
-layout: true
-name: r_pre
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | _[Results](#results): Pre-Proc_ | [Discussion](#disc)]
-
----
-
-## 2D Color Correction
-
-
-.center[
-<img src="images/original_zy.jpg" alt="Drawing" style="height: 250px;"/>
-<img src="images/screened_zy.jpg" alt="Drawing" style="height: 250px;"/>
-]
-
-
----
-
-## 3D Color Correction
-
-
----
-
-## CLARITY Registration
-
-
-
-
----
-template: default
-layout: true
-name: r_parse
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | _[Results](#results): Parse_ | [Discussion](#disc)]
-
----
-
-
-
-## Previously Published
-
-- Vesicle: EM Synapse Detection 
-  - [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html)
-  - [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html)
-- [i2g](http://i2g.io/): EM Images to Graphs 
-
-.center[
-<img src="http://docs.neurodata.io/i2g/_images/i2g_overview.jpg"    alt="Drawing" style="height: 250px; "/>
-]
-
----
-
-## Synapse Detection
-
-- bock11 synapse locations (timing & scatter plot)
-
----
-template: default
-layout: true
-name: r_pre
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | _[Results](#results): Analyze_ | [Discussion](#disc)]
-
----
-
-
-### Case Study #1: Is synapse distribution uniform in space?
-
-.pull-right[
-.center[
-<img src="images/rob2.png"    alt="Drawing" style="width: 250px; "/>
-<img src="images/3D.png"    alt="Drawing" style="width: 250px; "/>
-<img src="images/2Dproj.png"    alt="Drawing" style="width: 250px; "/>
-]]
-
-.pull-left[
-1. find all synapses
-2. plot 1% of them in 3D scatter plot
-1. Mask out regions that cannot have synapses
-1. Partition volume into cuboids
-2. Count # of elements / cuboid
-3. Normalize by volume of cuboid not masked
-4. Plot normalized volume in 3D scatter plot
-5. Plot marginals
-6. Report p-value
-1. live python notebook coming soon...
-]
-
-
-
----
-
-### Case Study #2: Does Peter's rule hold in a cortical graph?
-
-1. extract attributed graph
-2. define null distribution
-4. determine test statistic
-3. sample from null using igraph
-4. compute test statistic on observed & sampled data
-5. evaluate p-value
-6. visualize samples from null for model checking purposes
-1. live python notebook coming soon...
-
-
-
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | [Methods](#methods) | [Results](#results) | _[Discussion](#disc)_]
-
----
-name: disc
-
-# Discussion
-
-<br />
-
-
-- Contributions & Implications
-- Other inference tasks to be integrated
-- Other modalities
-- Related Work
-- Next steps
-
-
----
-
-## Open Science Contributions
-
-- Reference datasets in a variety of modalities
-- Reference pipelines for operating on such data
-- Web-services for data access
-- Computing configuration
-- A cloud computing stack to facilitate analysis
-- Detailed specs for plugging in different routines
-- Data derivatives at all stages of analysis
-
---
-
-#### Implications: it is now easier to
-- Answer questions the require scale
-- Engage complementary expertise
-- Bridge across scales and modalities 
-- Reproduce results
-
-
----
-
-## Other Inference Tasks to be Integrated
-
-- [Ophys Spike detection](https://github.com/jovo/oopsi)
-- Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
-- [m2g](http://m2g.io/): MRI to Graphs
-- IF Synapse Detection
-- Ophys Cell Detection
-- Cell detection for micron resolution data
-
-
----
-
-## Other Modalities
-
-- [Array Tomography](http://neurodata.io/modalities/at)
-- [CLARITY](http://neurodata.io/modalities/clarity) 
-- [Multi-modal MRI](http://neurodata.io/modalities/mri)
-- [Optophysiology](http://neurodata.io/modalities/ophys)
-- X-Ray Tomography
-- Expansion Microscopy
-- Histology
-
----
-
-
-# Related Work
-
-<br />
-
-- [CATMAID](http://catmaid.readthedocs.org/en/stable/)
-- [Neurodata Without Borders](http://nwb.org/)
-- [Keller Lab Block File Format](http://www.nature.com/nprot/journal/v10/n11/abs/nprot.2015.111.html)
-
-
-
----
-
-
-## Challenge #3: Cortical Column Conjecture?
-
-
-
-0. Data: collect 1 mm<sup>3</sup> of cortical data at nm resolution
-0. Store: 1 petabyte in the cloud
-1. Explore: using NeuroDataViz
-2. Pre-process: ?
-3. Parse: ?
-4. Analyze: Hierarchical Attributed Stochastic Block Model
-
-
-
----
-
-
-## Further Lowering the Barrier to Entry
-
-<br />
-
-- Put it all together
-- Apply to other domains & questions
-- Deploy backend and analytics stack in commercial cloud
-- We work together!
-
+# Explore Background
+
+- Content Distribution Network
+- Query
+- Web-Viz
 
 
 ---
 template: default
 layout: false
-class:  center
 
-# NeuroData Family
+
+## [Content Distribution Network](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
 
 <br />
+.pull-left[
+- Tile cache loads images on SSDs
+- Pre-fetches data
+- Can cache locally as large as possible
+- Deploy anywhere in the world to achieve 60 Hz rates
+- Functions 
+  -  Simple Tile  
+  -  Multichannel False Color Tile
+  -  Viking Tile
+]
 
-.center[
-.small[
-|   |   | |
-| :--- | :--- | :--- |
-| Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla] 
-| Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman 
-| Explore | | .pink[Misha Kazhdan, Alex Baden, Jordan Matelsky]
-| Pre-Proc | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
-| Parse | | .g[Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
-| Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
+.pull-right[
+<!-- ## ND: [Tile Cache](http://docs.neurodata.io/open-connectome/) -->
+.center[<img src="http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png" alt="Drawing" style="height: 250px;"/>
 ]]
 
 
----
-
-# References
-
-<br />
+.bottom[http://openconnecto.me/ocptilecache/tilecache/mcfc/Thy1eYFPBrain10/Grayscale/xy/500/0_0_3.png]
 
 
-1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
-
-1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
 
 
 ---
-class:   center
 
-
-# Questions?
-
-<!-- ### Funding &nbsp;&nbsp;&nbsp;&nbsp;   -->
+## Query: [CAJAL](http://docs.neurodata.io/CAJAL/) & [ndio](http://docs.neurodata.io/ndio/)
 
 <br />
 
-_____
+- [CAJAL](http://docs.neurodata.io/CAJAL/) MATLAB Toolbox
+- [ndio](http://docs.neurodata.io/ndio/) Python Library
+- Wraps all Web-services 
 
-Funding
+<br />
 
+<!-- .pull-left[
+## Pre: Excel + MATLAB?
+.center[
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" alt="Drawing" style="height: 125px;"/>
+]
+]
+ -->
 
-NIH: TRA
+<!-- .pull-right[
+## ND: [CAJAL](docs.neurodata.io/CAJAL)/[ndio](http://docs.neurodata.io/ndio/)
+] -->
+.center[ <img src="http://docs.neurodata.io/CAJAL/_images/cajal_pipeline.jpg" alt="Drawing" style="width: 700px;"/>
+]
 
-NIH/NSF:  {BIGDATA, CRCNS} 
-
-DARPA: {XDATA,GRAPHS,SIMPLEX} 
-
-
-____
-
-
-w: [neurodata.io](http://neurodata.io)
-
-d: [docs.neurodata.io](http://docs.neurodata.io)
-
-e: [support@neurodata.io](mailto:support@neurodata.io) 
-
-
-____
-
-
-[more slides](http://docs.neurodata.io/intro/more.html)
 
 
 
