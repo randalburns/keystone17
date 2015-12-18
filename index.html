@@ -63,6 +63,10 @@
       .bbar a {
         color: #A7A7A7;
       }
+      .btn {
+        background: #424242;
+        height: 2em;
+      }
       .remark-slide-content {
         font-size: 1.5em;
         background: #272822;
@@ -333,8 +337,10 @@ layout: true
 
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/e2cec781-e0e9-4c0f-8e68-b2fb1401bdfa/image.png" alt="Drawing" style="height: 250px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/d98e2b94-c8fd-42ba-95c7-3e72d44a2686/image.png" alt="Drawing" style="height: 250px;"/>
 ]
+
+<br />
 
 Existing solutions are unable to elegantly handle petascale data
 
@@ -351,7 +357,7 @@ layout: true
 ## [NeuroData](http://neurodata.io) meets needs to achieve 
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/9a8fd21d-1398-4ac9-9d52-7ede9e774c7c/image.png" alt="Drawing" style="height: 250px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/34ca1aee-8985-4758-8448-0e88acde786c/image.png" alt="Drawing" style="height: 250px;"/>
 ]
 
 
@@ -454,14 +460,15 @@ layout: true
 
 <br />
 
-- ND Backend:   [Code](https://github.com/openconnectome/open-connectome) | 
-[Docs](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543)
+- .y[ND Backend]:   [Code](https://github.com/openconnectome/open-connectome) | 
+[API](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543) | [Docker](https://github.com/openconnectome/open-connectome//setup/Dockerfile) | [Setup](https://github.com/openconnectome/open-connectome/setup)
+ 
   - ND Spatial Database to store images and volumetric annotations 
   - ND Annotation Database to manage annotation metadata
   - ND Web-console to manage image database 
-- ND LIMS for managing additional metadata: [Code](https://github.com/openconnectome/ndlims) | [Demos](https://github.com/openconnectome/LIMS-Scripts)
-- ND Tile Cache enables content distribution network: [Code](https://github.com/openconnectome/ocptilecache) | [API](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
-
+- .y[ND LIMS] for managing additional metadata: [Code](https://github.com/openconnectome/ndlims) | [Demos](https://github.com/openconnectome/LIMS-Scripts)
+- .y[ND Tile Cache] enables content distribution network: [Code](https://github.com/openconnectome/ocptilecache) | [API](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
+- .y[ND RAGDB] Database of Richly Attributed Graphs: [Web](http://openconnecto.me/graph-services/) | [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
 
 
 
@@ -471,9 +478,9 @@ layout: true
 
 <br />
 
-- .y[ndio] Python library for i/o: [Code](https://github.com/openconnectome/ndio) | [API](http://docs.neurodata.io/ndio/) | [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
-- .y[CAJAL] MATLAB Toolbox serves a similar function: [Code](github.com/openconnectome/cajal) | [Docs](http://docs.neurodata.io/CAJAL/) 
-- .y[AMI]: Amazon Machine Instance to run terascale scale analyses: [Setup](http://docs.neurodata.io/nddocs/ami.html)
+- .y[ndio] Python library for I/O: [Code](https://github.com/openconnectome/ndio) | [API](http://docs.neurodata.io/ndio/) | [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
+- .y[CAJAL] MATLAB Toolbox for I/O & more: [Code](http://github.com/openconnectome/cajal) | [Docs](http://docs.neurodata.io/CAJAL/) 
+- .y[AMI] Amazon Machine Instance to run terascale scale analyses: [Setup](http://docs.neurodata.io/nddocs/ami.html)
 - .y[AWS Cluster] to build high-performance cluster to run petascale analyses (coming soon)
 
 
@@ -489,27 +496,32 @@ name: data
 
 ## Images 
 
-[Code] | [API] | [Web] | [Tutorials] 
-
+[Code](https://github.com/openconnectome/open-connectome) | 
+[Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) | 
+[Ingesting](http://docs.neurodata.io/open-connectome/sphinx/ingesting.html) |
+[Image Types](http://docs.neurodata.io/open-connectome/api/ocp_types.html) |
+[API](http://docs.neurodata.io/open-connectome/) | [Manuscript](http://arxiv.org/abs/1306.3543) | [LIMS](https://github.com/openconnectome/ndlims)
 
 
 .pull-left[
 ###  Storage Model
 - Image Data Model to store images & associated metadata
 - Dense multi-dimensional spatial array partitioned into cuboids
-- Space filling curve minimizes the # of accesses
+- Space filling curve minimizes the number of accesses
 - Multi-resolution zoom pyramid
 - 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
-- Both [Web-console](http://openconnecto.me/ocp/accounts/login/) & [LIMS](https://github.com/openconnectome/ndlims)
 ]
 
 .pull-right[
 ### Functions 
-- Post
-- Get Cube
-- XY, YZ, XZ
-- NifTI
-- Overlay
+- Project Info
+- Public Tokens
+- Get/Post {HDF5, Blosc, Numpy} cube
+- Get {XY, YZ, XZ}
+- Get Tile
+- Get/Post NifTI
+- Get/Post SWC
+- Overlay {XY, XZ, YZ}
 - Downsample
 - Histogram Window
 - 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
@@ -521,9 +533,9 @@ name: data
 
 ## Annotations
 
-<br />
 
-[Code] | [API] | [Web] | [Tutorials] 
+[Data Model](http://docs.neurodata.io/nddocs/ramon.html) | 
+[Code](https://github.com/openconnectome/open-connectome) | [API](http://docs.neurodata.io/open-connectome/api/ramon_api.html) |  [Tutorials](http://docs.neurodata.io/nddocs/ramonnd.html)
 
 .pull-left[
 ####  Data Model 
@@ -541,12 +553,11 @@ name: data
 
 .pull-right[
 #### Functions
-  - Post Annotation
+  - Post/Get Annotation
+  - Set/Get Field
   - Merge
-  - Get Annotation
   - Get Graph
   - Get Skeleton  
-  - Set/Get Field
   - Undo
 ]
 
@@ -556,9 +567,8 @@ name: data
 
 ## Graphs
 
-<br />
-
-[Code] | [API] | [Web] | [Tutorials] 
+[Web](http://openconnecto.me/graphs) |
+[Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
 
 .pull-left[
 ####  Data Model 
@@ -594,17 +604,34 @@ name: store
 
 ## Create
 
-- Console: Tutorials, Web-service
-- API: Docs
-- ndio: Tutorials, Docs, Code
-- CAJAL: Tutorials, Docs, Code
-
 .pull-left[
+### Images & Anno's
+
+
+[Web-Console](http://console.neurodata.io) |
+[Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) |
+[Python](https://gist.github.com/kunallillaney/19b78e5a83611edf7808#file-post_data-py) |
+[API](http://docs.neurodata.io/open-connectome/api/data_api.html) 
+[ndio](http://docs.neurodata.io/ndio/ndio.remote.html#ndio.remote.OCP.OCP.post_cutout) |
+[CAJAL](https://github.com/openconnectome/CAJAL/blob/master/examples/exampleImageUpload.m) 
+
+
+
 - Upload arbitrarily large image volumes for efficient access
 - Overlapping semantics for images & annotations, different for graphs
 - Many different formats supported, including pngs, tiffs, & NIFTI
 ]
 
+
+.pull-right[
+### Graphs
+
+<br /><br />
+
+- Requires user account
+- cp properly formated file to correct folder
+- cron job automatically updates every hour
+]
 
 
 ---
