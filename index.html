@@ -337,7 +337,7 @@ layout: true
 
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/d98e2b94-c8fd-42ba-95c7-3e72d44a2686/image.png" alt="Drawing" style="height: 250px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/9cc4763f-5a2a-44df-bc0c-540316d6d62d/image.png" alt="Drawing" style="height: 250px;"/>
 ]
 
 <br />
@@ -424,13 +424,13 @@ name: methods
 <br />
 
 
-1. Infrastructure
-2. Data
-3. Store
-4. Explore
-5. Pre-Proc
-6. Parse
-7. Analyze
+1. [Infrastructure](#infra)
+2. [Data](#data)
+3. [Store](#store)
+4. [Explore](#explore)
+5. [Pre-Proc](#pre)
+6. [Parse](#parse)
+7. [Analyze](#anal)
 
 ---
 template: default
@@ -488,13 +488,13 @@ layout: true
 ---
 template: default
 layout: true
-name: data
+name: store
 
-.bbar[ [Intro](#intro)  | _[Tools](#methods): Data_ | [Applications](#applications) | [Discussion](#disc)]
+.bbar[ [Intro](#intro)  | _[Tools](#methods): Store_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
 
-## Images 
+## Images: .y[SpDb] 
 
 [Code](https://github.com/openconnectome/open-connectome) | 
 [Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) | 
@@ -524,14 +524,13 @@ name: data
 - Overlay {XY, XZ, YZ}
 - Downsample
 - Histogram Window
-- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
 ]
 
 
 
 ---
 
-## Annotations
+## Annotations: .y[RAMON]
 
 
 [Data Model](http://docs.neurodata.io/nddocs/ramon.html) | 
@@ -565,7 +564,7 @@ name: data
 
 ---
 
-## Graphs
+## Graphs: .y[RagDB]
 
 [Web](http://openconnecto.me/graphs) |
 [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
@@ -598,102 +597,8 @@ layout: true
 
 .bbar[ [Intro](#intro)  | _[Tools](#methods): Store_ | [Applications](#applications) | [Discussion](#disc)]
 
----
-name: store
 
 
-## Create
-
-.pull-left[
-### Images & Anno's
-
-
-[Web-Console](http://console.neurodata.io) |
-[Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) |
-[Python](https://gist.github.com/kunallillaney/19b78e5a83611edf7808#file-post_data-py) |
-[API](http://docs.neurodata.io/open-connectome/api/data_api.html) 
-[ndio](http://docs.neurodata.io/ndio/ndio.remote.html#ndio.remote.OCP.OCP.post_cutout) |
-[CAJAL](https://github.com/openconnectome/CAJAL/blob/master/examples/exampleImageUpload.m) 
-
-
-- Upload arbitrarily large image volumes for efficient access
-- Many different formats supported: 
-  - png
-  - tiff
-  - NifTI
-]
-
-
-.pull-right[
-### Graphs
-
-<br /><br />
-
-- Requires user account
-- <kbd>cp</kbd> properly formated file to correct folder
-- cron job automatically updates every hour
-]
-
-
----
-
-## Read
-
-
-.pull-left[
-### Images & Anno's
-
-
-[API](http://docs.neurodata.io/open-connectome/api/data_api.html) |
-[ndio: 2D](https://github.com/openconnectome/ndio-demos/blob/master/Getting%20Started/Downloading%20an%20Image.ipynb) |
-[ndio: 3D](https://github.com/openconnectome/ndio-demos/blob/master/Getting%20Started/Downloading%20a%20Volume.ipynb) |
-[CAJAL](http://docs.neurodata.io/CAJAL/tutorials/query.html) 
-
-- Arbitrary sized cubes & images
-- Overlays with image & annotation
-- Need to specify {x,y,z,t,res} 
-- Includes metadata such location, token, channel, etc.
-
-.center[
-<img src="http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/" alt="Drawing" style="height: 250px;"/>
-]
-
-]
-
-.pull-right[
-### Graphs
-
-[Web-form](http://openconnecto.me/graph-services/download/) | [http](http://openconnecto.me/mrdata/static/graphs/)
-
-
-- Select graphs, format,  atlas/scale, and email address
-- Email comes with link to download all graphs
-
-
-]
-
-
-.bottom[http://openconnecto.me/ocp/ca/kasthuri11/image/xy/0/9000,9500/12000,12500/50/]
-
-
----
-## Update & Delete
-
-
-
-.pull-left[
-#### Highlights
-
-- 
-
-]
-
-.pull-right[
-### Functions
-
-- Merge
-- Delete
-]
 
 
 
@@ -712,8 +617,10 @@ name: explore
 
 .pull-left[
 #### Highlights
-- Uses [Leaflet.js](http://leafletjs.com/) (so works on mobile)
+- Uses [Leaflet.js](http://leafletjs.com/)
+- Works on mobile & Web
 - Image & Anno. Metadata
+- Collaboration tools
 ]
 
 .pull-right[
@@ -764,11 +671,12 @@ name: explore
 
 - Shiny app
 - Load csv file
+- Interactive analysis with no coding req.
 ]
 .pull-right[
 #### Functions
 
-- Raw, z-scores, perfectiles, or ranks
+- Raw, z-scores, percentiles, or ranks
 - Heatmap of bi-clustered data with dendrograms
 - Distributions of each feature
 - Multivariate outlier detection
@@ -810,7 +718,7 @@ layout: true
 ---
 
 
-## Chromatic
+## Chromatic: .y[dmg] & .y[gdf]
 
 
 <br />
@@ -965,46 +873,25 @@ name: anal
 
 ---
 
-## Image Statistics
+## Image & Shape Statistics
 
 .pull-left[
 #### Highlights
 
-- Texture & Histogram Statistics
-- 3D rotationally invariant  co-occurence features
-- percentiles, means, histograms
+- Histogram Statistics
 ]
 
 
 .pull-right[
 #### Functions
 
-- ?
-]
-
-
----
-
-## Shape Statistics
-
-
-.pull-left[
-#### Highlights
-
-- Texture & Histogram Statistics
-- 3D rotationally invariant  co-occurence features
-- percentiles, means, histograms
-]
-
-
-.pull-right[
-#### Functions
-
-- length
-- eccentricity
+- Length
+- Eccentricity
 - LDDMM
+- 3D rotationally invariant  co-occurence features
+- Percentiles, means, histograms
+- Eigenfunctions of deformations
 ]
-
 
 
 
@@ -1013,7 +900,7 @@ name: anal
 ## Graph Statistics: [FlashX](http://www.flashgraph.net/)
 
 
-[Webpage](http://flashgraph.net) | [Code](https://github.com/icoming/FlashGraph) | [Tutorials](http://www.flashgraph.net/documents/tutorials) | [API](http://braingraph1.cs.jhu.edu/FlashGraph-dev/docs/html/index.html) |  | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box] | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf) 
+[Webpage](http://flashgraph.net) | [Code](https://github.com/icoming/FlashGraph) | [Tutorials](http://www.flashgraph.net/documents/tutorials) | [API](http://braingraph1.cs.jhu.edu/FlashGraph-dev/docs/html/index.html)  | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box](http://openconnecto.me/data/public/FlashGraph-VMs/) | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf) 
 
 .pull-left[
 #### Highlights
@@ -1132,6 +1019,7 @@ name: r_data
 | [Mouse, V1](http://openconnecto.me/bock11/) | Bock et al., Nature, 2011
 | [Mouse, S1](http://openconnecto.me/Kasthurietal2014) | Kasthuri et al., Cell, 2015
 
+<br />
 
 Total Size: ~ 100 TB
 
@@ -1145,8 +1033,11 @@ Total Size: ~ 100 TB
 - AC4
 - Kasthuri et al. (Cell, 2015)
 - Harris et al. (Scientific Data, 2015)
+- Allen Reference Atlas
 
-Total Volume Densely Annotated: ~ 1000 &micro;<sup>3</sup>
+<br />
+
+Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
 
 ---
 
@@ -1157,7 +1048,10 @@ Total Volume Densely Annotated: ~ 1000 &micro;<sup>3</sup>
 - [Bock et al.](http://openconnecto.me/mrdata/static/graphs/mouse/mouse_visual.cortex_1.graphml)
 - Kasthuri et al.
 
-But we have Diffusion MRI derived graphs from ~10,000 subjects for ~30 atlases each, yielding > 250,000 total derived graphs.
+
+<br />
+
+We have Diffusion MRI derived graphs from ~10,000 subjects for ~30 atlases each, yielding > 250,000 total derived graphs.
 
 
 
@@ -1172,13 +1066,33 @@ name: r_store
 
 ## Image Read
 
+<br />
+<br />
+
+.pull-left[
+<img src="images/cutout_timing.png" alt="Drawing" style="width: 100%;" />
+]
+
+.pull-right[
+<img src="images/tilecache.png" alt="Drawing" style="width: 100%; background: white;"/>
+]
 
 
 ---
 ## Image Write
 
+<br />
+
+.center[
+<img src="images/blaze.png" alt="Drawing" style="width: 100%; background: white;"/>
+]
+
+
+
 ---
 ## Annotation Read
+
+
 
 ---
 ## Graph Read
@@ -1234,33 +1148,32 @@ name: r_pre
 
 ---
 
-## 2D Color Correction
+## Chromatic
+
+### 2D Color Correction
 
 
 .center[
-<img src="images/original_zy.jpg" alt="Drawing" style="height: 250px;"/>
-<img src="images/screened_zy.jpg" alt="Drawing" style="height: 250px;"/>
+<img src="images/original_zy.jpg" alt="Drawing" style="height: 200px;"/>
+<img src="images/screened_zy.jpg" alt="Drawing" style="height: 200px;"/>
 ]
 
+### 3D Color Correction
+
+
 
 ---
 
-## 3D Color Correction
-
-
----
-
-## CLARITY Registration
+## Volume Registration
 
 <br />
 
-.pull-left[
 
-]
+<img src="images/ndreg2.png" alt="Drawing" style="width: 75%;"/>
 
-.pull-right[
-![](images/ndreg2.png)
-]
+.bottom[https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb]
+
+
 
 ---
 template: default
@@ -1290,7 +1203,15 @@ name: r_parse
 
 <br />
 
-- bock11 synapse locations (timing & scatter plot)
+.center[
+<img src="images/rob2.png"    alt="Drawing" style="width: 75%; "/>
+]
+
+Detecting ~8 million synapses from the [bock11](http://openconnecto.me/bock11) dataset
+
+???
+
+timings
 
 ---
 template: default
@@ -1320,10 +1241,10 @@ name: r_pre
 
 
 .pull-right[
+<br />
 .center[
-<img src="images/rob2.png"    alt="Drawing" style="width: 250px; "/>
-<img src="images/3D.png"    alt="Drawing" style="width: 250px; "/>
-<img src="images/2Dproj.png"    alt="Drawing" style="width: 250px; "/>
+<img src="images/3D.png"    alt="Drawing" style="width: 350px; "/>
+<img src="images/2Dproj.png"    alt="Drawing" style="width: 350px; "/>
 ]]
 
 
@@ -1383,6 +1304,8 @@ name: disc
 
 --
 
+<br />
+
 #### Implications: it is now easier to
 
 <br />
@@ -1395,7 +1318,9 @@ name: disc
 
 ---
 
-## Other Inference Tasks to be Integrated
+## Coming soon...
+
+<br />
 
 - [Ophys Spike detection](https://github.com/jovo/oopsi)
 - Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
@@ -1407,7 +1332,8 @@ name: disc
 
 ---
 
-## Other Modalities
+## Other Image Datasets
+
 
 - [Array Tomography](http://neurodata.io/modalities/at)
 - [CLARITY](http://neurodata.io/modalities/clarity) 
@@ -1416,6 +1342,17 @@ name: disc
 - X-Ray Tomography
 - Expansion Microscopy
 - Histology
+
+## Other Annotation Datasets
+
+- Allen Reference Atlas
+- ~30 different Human MRI Atlases (spanning pediatrics thru geriatrics)
+
+## Other Graph Datasets
+
+- ~10,000  Diffusion MRI derived neurographs
+- ~2,0000 function MRI derived neurographs
+
 
 ---
 
@@ -1427,6 +1364,7 @@ name: disc
 - [CATMAID](http://catmaid.readthedocs.org/en/stable/)
 - [Neurodata Without Borders](http://nwb.org/)
 - [Keller Lab Block File Format](http://www.nature.com/nprot/journal/v10/n11/abs/nprot.2015.111.html)
+- [Thunder](http://thunder-project.org/)
 
 
 
@@ -1435,7 +1373,7 @@ name: disc
 
 ## Challenge #3: Cortical Column Conjecture?
 
-
+<br />
 
 0. Data: collect 1 mm<sup>3</sup> of cortical data at nm resolution
 0. Store: 1 petabyte in the cloud
@@ -1530,7 +1468,7 @@ e: [support@neurodata.io](mailto:support@neurodata.io)
 ____
 
 
-[more slides](http://docs.neurodata.io/intro/more.html)
+[more slides](http://docs.neurodata.io/ndintro/more.html)
 
 
 
