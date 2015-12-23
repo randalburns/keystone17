@@ -425,7 +425,6 @@ name: methods
 
 
 1. [Infrastructure](#infra)
-2. [Data](#data)
 3. [Store](#store)
 4. [Explore](#explore)
 5. [Pre-Proc](#pre)
@@ -439,6 +438,7 @@ layout: true
 .bbar[ [Intro](#intro)  | _[Tools](#methods): Infrastructure_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
+name: data
 
 ## Data  Cluster
 
@@ -461,7 +461,7 @@ layout: true
 <br />
 
 - .y[ND Backend]:   [Code](https://github.com/openconnectome/open-connectome) | 
-[API](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543) | [Docker](https://github.com/openconnectome/open-connectome//setup/Dockerfile) | [Setup](https://github.com/openconnectome/open-connectome/setup)
+[API](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543) | [Docker](https://github.com/openconnectome/open-connectome//setup/Dockerfile) | [Setup](https://github.com/openconnectome/open-connectome/setup) 
  
   - ND Spatial Database to store images and volumetric annotations 
   - ND Annotation Database to manage annotation metadata
@@ -488,19 +488,20 @@ layout: true
 ---
 template: default
 layout: true
-name: store
 
 .bbar[ [Intro](#intro)  | _[Tools](#methods): Store_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
+name: store
+
 
 ## Images: .y[SpDb] 
 
 [Code](https://github.com/openconnectome/open-connectome) | 
 [Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) | 
-[Ingesting](http://docs.neurodata.io/open-connectome/sphinx/ingesting.html) |
-[Image Types](http://docs.neurodata.io/open-connectome/api/ocp_types.html) |
-[API](http://docs.neurodata.io/open-connectome/) | [Manuscript](http://arxiv.org/abs/1306.3543) | [LIMS](https://github.com/openconnectome/ndlims)
+[Ingest](http://docs.neurodata.io/open-connectome/sphinx/ingesting.html) |
+[Types](http://docs.neurodata.io/open-connectome/api/ocp_types.html) |
+[API](http://docs.neurodata.io/open-connectome/) | [Manuscript](http://arxiv.org/abs/1306.3543) | [LIMS](https://github.com/openconnectome/ndlims) | [App](#r_em)
 
 
 .pull-left[
@@ -535,6 +536,7 @@ name: store
 
 [Data Model](http://docs.neurodata.io/nddocs/ramon.html) | 
 [Code](https://github.com/openconnectome/open-connectome) | [API](http://docs.neurodata.io/open-connectome/api/ramon_api.html) |  [Tutorials](http://docs.neurodata.io/nddocs/ramonnd.html)
+| [App](#r_anno)
 
 .pull-left[
 ####  Data Model 
@@ -568,6 +570,7 @@ name: store
 
 [Web](http://openconnecto.me/graphs) |
 [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
+| [App](#r_graphs)
 
 .pull-left[
 ####  Data Model 
@@ -591,16 +594,6 @@ name: store
 ]
 
 
----
-template: default
-layout: true
-
-.bbar[ [Intro](#intro)  | _[Tools](#methods): Store_ | [Applications](#applications) | [Discussion](#disc)]
-
-
-
-
-
 
 ---
 template: default
@@ -613,7 +606,7 @@ name: explore
 
 ## Images: .y[Image Explorer (ix)]
 
-[Web](ix.neurodata.io) | [Code](https://github.com/openconnectome/NeuroDataViz)
+[Web](ix.neurodata.io) | [Code](https://github.com/openconnectome/NeuroDataViz) | [App](#r_ix)
 
 .pull-left[
 #### Highlights
@@ -638,7 +631,7 @@ name: explore
 
 ## Graphs: .y[Graph Explorer (gx)]
 
-[Web](http://gx.neurodata.io) | [Code](https://github.com/openconnectome/Graph-Explorer)
+[Web](http://gx.neurodata.io) | [Code](https://github.com/openconnectome/Graph-Explorer) | [App](#r_gx)
 
 .pull-left[
 #### Highlights
@@ -664,7 +657,7 @@ name: explore
 
 ## Vectors: .y[Vector Explorer (vx)]
 
-[Web]((http://vx.neurodata.io) | [Code](https://github.com/ikuznet1/data-analytics-website/)
+[Web]((http://vx.neurodata.io) | [Code](https://github.com/ikuznet1/data-analytics-website/) |  [App](#r_vx)
 
 .pull-left[
 #### Highlights
@@ -693,6 +686,7 @@ layout: true
 .bbar[ [Intro](#intro)  | _[Tools](#methods): Pre-Proc_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
+# pre
 
 ## Geometric
 
@@ -726,7 +720,7 @@ layout: true
 .pull-left[
 #### .y[dmg]
 
-[Web](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) | [Code](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/DMG.zip) | [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf)
+[Web](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) | [Code](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/DMG.zip) | [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) | [App](#r_2d)
 
 - dmg = Distributed MultiGrid Poisson solver
 - 2D image stitching chromatic corrections
@@ -736,7 +730,7 @@ layout: true
 .pull-right[
 #### .y[gdf]
 
-[Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) 
+[Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) | [App](#r_3d)
 
 - gdf = Gradient Domain Fusion
 - 3D image chromatic corrections
@@ -753,7 +747,7 @@ layout: true
 
 <br />
 
-[Code](https://github.com/openconnectome/ndreg) | [Demo](https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb) | [Setup](https://github.com/openconnectome/ndreg/blob/master/README.md)
+[Code](https://github.com/openconnectome/ndreg) | [Demo](https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb) | [Setup](https://github.com/openconnectome/ndreg/blob/master/README.md) | [App](#r_ndreg)
 
 .pull-left[
 #### Highlights
@@ -785,12 +779,13 @@ layout: true
 ---
 template: default
 layout: true
-name: parse
 
 .bbar[ [Intro](#intro)  | _[Tools](#methods): Parse_ | [Applications](#applications) | [Discussion](#disc)]
 
 
 ---
+name: parse
+
 ## Label: .y[manno]
 
 [Docs](http://docs.neurodata.io/manno) | [Code](https://github.com/openconnectome/manno)
@@ -817,7 +812,7 @@ name: parse
 ---
 ## Build: .y[macho]
 
-[Docs](http://docs.neurodata.io/macho/) | [Code](https://github.com/openconnectome/macho)
+[Docs](http://docs.neurodata.io/macho/) | [Code](https://github.com/openconnectome/macho) 
 
 
 .pull-left[
@@ -844,6 +839,7 @@ name: parse
 ---
 ## Deploy: .y[maxxo]
 
+[App](#r_syn)
 <br />
 
 .pull-left[
@@ -867,11 +863,11 @@ name: parse
 ---
 template: default
 layout: true
-name: anal
 
 .bbar[ [Intro](#intro)  | _[Tools](#methods): Analyze_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
+name: anal
 
 ## Image & Shape Statistics
 
@@ -984,7 +980,6 @@ name: applications
 
 
 1. [Infrastructure](#r_infra)
-2. [Data](#_data)
 3. [Store](#r_store)
 4. [Explore](#r_explore)
 5. [Pre-Proc](#r_pre)
@@ -997,11 +992,11 @@ name: applications
 ---
 template: default
 layout: true
-name: r_data
 
 .bbar[ [Intro](#intro)  | [Tools](#methods) | _[Applications](#applications): Data_ | [Discussion](#disc)]
 
 ---
+name: r_em
 
 ##  EM Datasets
 
@@ -1024,6 +1019,7 @@ name: r_data
 Total Size: ~ 100 TB
 
 ---
+name: r_anno
 
 ## Annotation  Datasets
 
@@ -1040,6 +1036,7 @@ Total Size: ~ 100 TB
 Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
 
 ---
+name: r_graphs
 
 ## Graph Datasets
 
@@ -1102,10 +1099,10 @@ name: r_store
 ---
 template: default
 layout: true
-name: r_explore
 
 .bbar[ [Intro](#intro)  | [Tools](#methods) | _[Applications](#applications): Explore_ | [Discussion](#disc)]
 ---
+name: r_ix
 
 
 ## Images: [Image Explorer (ix)](https://github.com/openconnectome/neurodataviz)
@@ -1119,6 +1116,8 @@ name: r_explore
 
 
 ---
+name: r_gx
+
 
 ## Graphs: [Graph Explorer (gx)](http://gx.neurodata.io)
 
@@ -1129,6 +1128,8 @@ name: r_explore
 
 
 ---
+name: r_vx
+
 
 ## Vectors: [Vector Explorer (vx)](http://vx.neurodata.io)
 
@@ -1142,11 +1143,11 @@ name: r_explore
 ---
 template: default
 layout: true
-name: r_pre
 
 .bbar[ [Intro](#intro)  | [Tools](#methods) | _[Applications](#applications): Pre-Proc_ | [Discussion](#disc)]
 
 ---
+name: r_2d
 
 ## Chromatic
 
@@ -1158,18 +1159,25 @@ name: r_pre
 <img src="images/screened_zy.jpg" alt="Drawing" style="height: 200px;"/>
 ]
 
+---
+name: r_3d
+
+## Chromatic
+
 ### 3D Color Correction
 
 
 
 ---
+name: r_ndreg
 
 ## Volume Registration
 
 <br />
 
-
+.center[
 <img src="images/ndreg2.png" alt="Drawing" style="width: 75%;"/>
+]
 
 .bottom[https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb]
 
@@ -1178,11 +1186,10 @@ name: r_pre
 ---
 template: default
 layout: true
-name: r_parse
-
 .bbar[ [Intro](#intro)  | [Tools](#methods) | _[Applications](#applications): Parse_ | [Discussion](#disc)]
 
 ---
+name: r_parse
 
 
 
@@ -1198,6 +1205,7 @@ name: r_parse
 ]
 
 ---
+name: r_syn
 
 ## Synapse Detection
 
@@ -1216,11 +1224,11 @@ timings
 ---
 template: default
 layout: true
-name: r_pre
 
 .bbar[ [Intro](#intro)  | [Tools](#methods) | _[Applications](#applications): Analyze_ | [Discussion](#disc)]
 
 ---
+name: r_anal
 
 
 ### Case Study #1: Is synapse distribution uniform in space?
@@ -1375,7 +1383,7 @@ name: disc
 
 <br />
 
-0. Data: collect 1 mm<sup>3</sup> of cortical data at nm resolution
+0. Infrastructure: manage  1 mm<sup>3</sup> of cortical data and derivatives at nm resolution
 0. Store: 1 petabyte in the cloud
 1. Explore: using NeuroDataViz
 2. Pre-process: ?
