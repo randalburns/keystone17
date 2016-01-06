@@ -76,6 +76,7 @@
       .r { color: #fa0000; }
       .y { color: #FFFF00; }
       .pink { color: #FF87F3;}
+      .orange { color: #FFA500;}
       .g { color: #00CC00; }
       .blue { color: #75E9FF;}
       .purple { color: #A149A9;}
@@ -455,6 +456,33 @@ name: infra
 - .y[ND RAGDB] Database of Richly Attributed Graphs: [Web](http://openconnecto.me/graph-services/) | [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
 
 
+---
+name: r_store
+
+## Image Read
+
+<br />
+<br />
+
+.pull-left[
+<img src="images/cutout_timing.png" alt="Drawing" style="width: 100%;" />
+]
+
+.pull-right[
+<img src="images/tilecache.png" alt="Drawing" style="width: 100%; background: white;"/>
+]
+
+
+---
+## Image Write
+
+<br />
+
+.center[
+<img src="images/blaze.png" alt="Drawing" style="width: 100%; background: white;"/>
+]
+
+
 
 ---
 
@@ -512,6 +540,30 @@ name: store
 ]
 
 
+---
+name: r_infra
+
+##  EM Datasets
+
+<br />
+
+| Species | Ref. |
+| :---    | :---  |
+| [C elegans, herm](http://openconnecto.me/herm-c-elegans) | Emmons Lab
+| [C elegans, male](http://openconnecto.me/male-c-elegans) | Emmons Lab
+| [C elegans, Pharynx](http://openconnecto.me/bhatla15) | Bhatla et al. Current Biology, 2015
+| [P pacificus](http://openconnecto.me/bumbarger13) | Bumbarger et al. Cell, 2013
+| [Drosophila Optic Medulla](http://openconnecto.me/takemura13) | Takemura et al. Nature, 2013
+| [Drosophila larva](http://openconnecto.me/behaviotypes) | Ohyama et al., Nature, 2015
+| [Hippocampus Neuropil](http://openconnecto.me/synapseweb) | Harris et al., Scientific Data, 2015
+| [Mouse, V1](http://openconnecto.me/bock11/) | Bock et al., Nature, 2011
+| [Mouse, S1](http://openconnecto.me/Kasthurietal2014) | Kasthuri et al., Cell, 2015
+
+<br />
+
+Total Size: ~ 80 TV
+
+
 
 ---
 
@@ -547,10 +599,28 @@ name: store
 ]
 
 
+---
+name: r_anno
+
+## Annotation  Datasets
+
+<br />
+
+- AC3
+- AC4
+- Kasthuri et al. (Cell, 2015)
+- Harris et al. (Scientific Data, 2015)
+- Allen Reference Atlas
+
+<br />
+
+Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
+
+
 
 ---
 
-## Graphs: .y[RagDB]
+## Graphs: .y[GruteDB]
 
 [Web](http://openconnecto.me/graphs) |
 [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
@@ -578,8 +648,26 @@ name: store
 ]
 
 
+---
+name: r_graphs
+
+## Graph Datasets
+
+<br />
+
+- [Bock et al.](http://openconnecto.me/mrdata/static/graphs/mouse/mouse_visual.cortex_1.graphml)
+- Kasthuri et al.
+
+
+<br />
+
+We have Diffusion MRI derived graphs from ~10,000 subjects for ~30 atlases each, yielding > 250,000 total derived graphs.
+
+
 
 ---
+
+
 
 layout: true
 
@@ -612,6 +700,19 @@ name: explore
 ]
 
 
+---
+name: r_explore
+
+
+## Images: [Image Explorer (ix)](https://github.com/openconnectome/neurodataviz)
+
+<br />
+
+
+<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://brainviz1.cs.jhu.edu/ndv/kharris15apical/em,annos/2/1126/998/88/" frameborder="0" height="500" width="100%">
+</iframe>
+
+
 
 
 ---
@@ -640,6 +741,21 @@ name: explore
 - Save state
 ]
 
+
+
+---
+name: r_gx
+
+
+## Graphs: [Graph Explorer (gx)](http://gx.neurodata.io)
+
+<br />
+
+<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://gx.neurodata.io" frameborder="0" height="500" width="100%">
+</iframe>
+
+
+
 ---
 
 ## Vectors: .y[Vector Explorer (vx)]
@@ -665,6 +781,20 @@ name: explore
 - Dimensionality reduction
 - Clustering
 ]
+
+---
+name: r_vx
+
+
+## Vectors: [Vector Explorer (vx)](http://shiny.neurodata.io/Vector-Explorer/)
+
+<br />
+
+<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://shiny.neurodata.io/Vector-Explorer/" frameborder="0" height="500" width="100%">
+</iframe>
+
+
+
 
 ---
 
@@ -708,7 +838,7 @@ name: pre
 .pull-left[
 #### .y[dmg]
 
-[Web](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/) | [Code](http://www.cs.jhu.edu/~misha/Code/DMG/Version4.5/DMG.zip) | [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) | [App](#r_pre)
+[Web](https://github.com/mkazhdan/DMG) | [Code](https://github.com/mkazhdan/DMG) | [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) | [App](#r_pre)
 
 - dmg = Distributed MultiGrid Poisson solver
 - 2D image stitching chromatic corrections
@@ -724,6 +854,29 @@ name: pre
 - 3D image chromatic corrections
 - Web-service coming soon
 ]
+
+
+---
+name: r_pre
+
+## Chromatic
+
+### 2D Color Correction
+
+
+.center[
+<img src="images/original_zy.jpg" alt="Drawing" style="height: 200px;"/>
+<img src="images/screened_zy.jpg" alt="Drawing" style="height: 200px;"/>
+]
+
+
+### 3D Color Correction
+
+
+.center[
+<img src="images/GDF2.png" alt="Drawing" style="width: 80%;"/>
+]
+
 
 
 
@@ -758,9 +911,15 @@ name: pre
 
 
 
-.center[
-<img src="images/ndreg.png"   alt="Drawing" style="height: 200px;"/>
-]
+<img src="images/ndreg2.png" alt="Drawing" style="height: 225;"/>
+<img src="images/ndreg.png"   alt="Drawing" style="height: 225px;"/>
+
+
+
+.bottom[https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb]
+
+
+
 
 
 
@@ -847,6 +1006,22 @@ name: parse
 ]]
 
 
+---
+name: r_parse
+
+
+
+## Previously Published
+
+- Vesicle: EM Synapse Detection 
+  - [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html)
+  - [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html)
+- [i2g](http://i2g.io/): EM Images to Graphs 
+
+.center[
+<img src="http://docs.neurodata.io/i2g/_images/i2g_overview.jpg"    alt="Drawing" style="height: 250px; "/>
+]
+
 
 ---
 
@@ -863,6 +1038,10 @@ name: anal
 #### Highlights
 
 - Histogram Statistics
+- [Shape Spherical Harmonics](https://github.com/mkazhdan/ShapeSPH)
+  - Descriptions
+  - Alignment
+  - Symmetry
 ]
 
 
@@ -953,7 +1132,6 @@ name: anal
 ]
 
 ---
-
 layout: true
 
 .bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#applications)_ | [Discussion](#disc)]
@@ -961,230 +1139,30 @@ layout: true
 ---
 name: applications
 
-# Applications
 
+### Case Study #1: Reproducing Results from Kasthuri et al. (Cell) 2011
 
-<br />
-
-
-1. [Infrastructure](#r_infra)
-3. [Store](#r_store)
-4. [Explore](#r_explore)
-5. [Pre-Proc](#r_pre)
-6. [Parse](#r_parse)
-7. [Analyze](#r_anal)
-
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#r_infra): Data_ | [Discussion](#disc)]
-
----
-name: r_infra
-
-##  EM Datasets
-
-<br />
-
-| Species | Ref. |
-| :---    | :---  |
-| [C elegans, herm](http://openconnecto.me/herm-c-elegans) | Emmons Lab
-| [C elegans, male](http://openconnecto.me/male-c-elegans) | Emmons Lab
-| [C elegans, Pharynx](http://openconnecto.me/bhatla15) | Bhatla et al. Current Biology, 2015
-| [P pacificus](http://openconnecto.me/bumbarger13) | Bumbarger et al. Cell, 2013
-| [Drosophila Optic Medulla](http://openconnecto.me/takemura13) | Takemura et al. Nature, 2013
-| [Drosophila larva](http://openconnecto.me/behaviotypes) | Ohyama et al., Nature, 2015
-| [Hippocampus Neuropil](http://openconnecto.me/synapseweb) | Harris et al., Scientific Data, 2015
-| [Mouse, V1](http://openconnecto.me/bock11/) | Bock et al., Nature, 2011
-| [Mouse, S1](http://openconnecto.me/Kasthurietal2014) | Kasthuri et al., Cell, 2015
-
-<br />
-
-Total Size: ~ 100 TB
-
----
-name: r_anno
-
-## Annotation  Datasets
-
-<br />
-
-- AC3
-- AC4
-- Kasthuri et al. (Cell, 2015)
-- Harris et al. (Scientific Data, 2015)
-- Allen Reference Atlas
-
-<br />
-
-Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
-
----
-name: r_graphs
-
-## Graph Datasets
-
-<br />
-
-- [Bock et al.](http://openconnecto.me/mrdata/static/graphs/mouse/mouse_visual.cortex_1.graphml)
-- Kasthuri et al.
-
-
-<br />
-
-We have Diffusion MRI derived graphs from ~10,000 subjects for ~30 atlases each, yielding > 250,000 total derived graphs.
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#r_store): Store_ | [Discussion](#disc)]
-
----
-name: r_store
-
-## Image Read
-
-<br />
-<br />
+#### Is probability of synapse proportional to relative proximity?
 
 .pull-left[
-<img src="images/cutout_timing.png" alt="Drawing" style="width: 100%;" />
-]
-
-.pull-right[
-<img src="images/tilecache.png" alt="Drawing" style="width: 100%; background: white;"/>
-]
-
-
----
-## Image Write
-
-<br />
-
-.center[
-<img src="images/blaze.png" alt="Drawing" style="width: 100%; background: white;"/>
+1. extract attributed graph
+2. define null distribution
+4. determine test statistic
+3. sample from null using igraph
+4. compute test statistic on observed & sampled data
+5. evaluate p-value
+6. visualize samples from null for model checking purposes
+1. live python notebook coming soon...
 ]
 
 
----
 
-layout: true
-
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#r_explore): Explore_ | [Discussion](#disc)]
----
-name: r_explore
-
-
-## Images: [Image Explorer (ix)](https://github.com/openconnectome/neurodataviz)
-
-<br />
-
-
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://brainviz1.cs.jhu.edu/ndv/kharris15apical/em,annos/2/1126/998/88/" frameborder="0" height="500" width="100%">
-</iframe>
-
-
-
----
-name: r_gx
-
-
-## Graphs: [Graph Explorer (gx)](http://gx.neurodata.io)
-
-<br />
-
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://gx.neurodata.io" frameborder="0" height="500" width="100%">
-</iframe>
-
-
----
-name: r_vx
-
-
-## Vectors: [Vector Explorer (vx)](http://shiny.neurodata.io/Vector-Explorer/)
-
-<br />
-
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://shiny.neurodata.io/Vector-Explorer/" frameborder="0" height="500" width="100%">
-</iframe>
-
-
-
----
-
-layout: true
-
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#r_pre): Pre-Proc_ | [Discussion](#disc)]
-
----
-name: r_pre
-
-## Chromatic
-
-### 2D Color Correction
-
-
-.center[
-<img src="images/original_zy.jpg" alt="Drawing" style="height: 200px;"/>
-<img src="images/screened_zy.jpg" alt="Drawing" style="height: 200px;"/>
-]
-
----
-name: r_3d
-
-## Chromatic
-
-### 3D Color Correction
-
-
-.center[
-<img src="images/GDF2.png" alt="Drawing" style="width: 100%;"/>
-]
-
-
----
-name: r_ndreg
-
-## Volume Registration
-
-<br />
-
-.center[
-<img src="images/ndreg2.png" alt="Drawing" style="width: 75%;"/>
-]
-
-.bottom[https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb]
-
-
-
----
-
-layout: true
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#r_parse): Parse_ | [Discussion](#disc)]
-
----
-name: r_parse
-
-
-
-## Previously Published
-
-- Vesicle: EM Synapse Detection 
-  - [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html)
-  - [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html)
-- [i2g](http://i2g.io/): EM Images to Graphs 
-
-.center[
-<img src="http://docs.neurodata.io/i2g/_images/i2g_overview.jpg"    alt="Drawing" style="height: 250px; "/>
-]
 
 ---
 name: r_syn
 
-## Synapse Detection
+### Case Study #2: Is synapse distribution uniform in space?
+
 
 <br />
 
@@ -1192,23 +1170,17 @@ name: r_syn
 <img src="images/rob2.png"    alt="Drawing" style="width: 75%; "/>
 ]
 
-Detecting ~8 million synapses from the [bock11](http://openconnecto.me/bock11) dataset
+Detecting ~11.6 million synapses from the [bock11](http://openconnecto.me/bock11) dataset
 
 ???
 
 timings
 
 ---
-
-layout: true
-
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#r_anal): Analyze_ | [Discussion](#disc)]
-
----
 name: r_anal
 
+### Case Study #2: Is synapse distribution uniform in space?
 
-### Case Study #1: Is synapse distribution uniform in space?
 
 .pull-left[
 <br />
@@ -1234,22 +1206,6 @@ name: r_anal
 
 
 
----
-
-### Case Study #2: Does Peter's rule hold in a cortical graph?
-
-<br />
-
-.pull-left[
-1. extract attributed graph
-2. define null distribution
-4. determine test statistic
-3. sample from null using igraph
-4. compute test statistic on observed & sampled data
-5. evaluate p-value
-6. visualize samples from null for model checking purposes
-1. live python notebook coming soon...
-]
 
 
 ---
@@ -1398,11 +1354,12 @@ class:  center
 | :--- | :--- | :--- |
 | Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla] 
 | Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman 
-| Explore | | .pink[Misha Kazhdan, Alex Baden, Jordan Matelsky]
+| Explore | | .orange[Misha Kazhdan, Alex Baden, Jordan Matelsky]
 | Pre-Proc | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
 | Parse | | .g[Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
 | Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
+| Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
 ]]
 
 
