@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+    <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- bower:css -->
@@ -26,7 +26,7 @@
       }
       /*      h1, h2, h3, h4, h5, h6 {
         font-family: 'quadon';
-      }      */      
+      }      */
       h1, h2, h3, h4, h5, h6 {
         font-family: 'quadon';
         font-weight: 400;
@@ -110,12 +110,12 @@
         padding: 10px;
       }
       .small {
-        font-size: 0.8em;        
+        font-size: 0.8em;
       }
 /*      .pull-right {
         float: right;
         width: 47%;
-      }*/      
+      }*/
       .pull-bottom {
         position: absolute;
         bottom: 0;
@@ -218,7 +218,7 @@
 
 class: center, middle
 
-# [Open Connectome Project](http://openconnecto.me) & [NeuroData](http://neurodata.io): 
+# [NeuroData](http://neurodata.io):
 ## Enabling Petascale Neuroscience
 
 <!-- ### Joshua T. Vogelstein -->
@@ -231,6 +231,17 @@ class: center, middle
 
 #### these slides: <http://docs.neurodata.io/ndintro>
 
+<br>
+[prof joshua t. vogelstein](http://jovo.me)
+
+{[bme](http://www.bme.jhu.edu/),[icm](http://icm.jhu.edu/),[cis](http://cis.jhu.edu/),[idies](http://idies.jhu.edu/),kavli}@[jhu](https://www.jhu.edu/)
+
+<br>
+
+.center[please ask questions: [jovo@jhu.edu](mailto:jovo at jhu dot edu)!]
+
+
+
 ---
 
 layout: true
@@ -241,6 +252,46 @@ layout: true
 ---
 name: intro
 
+# Big Scientific Data
+
+
+### molecular genomics (1D)
+
+.center[
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_genome_alignment_of_eight_Yersinia_isolates.png/380px-A_genome_alignment_of_eight_Yersinia_isolates.png" alt="Drawing" style="width: 600px;"/>]
+
+
+---
+
+
+# Big Scientific Data
+
+
+### molecular genomics (1D)
+### cosmology (2D)
+
+.center[
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Ilc_9yr_moll4096.png" alt="Drawing" style="width: 600px;"/>]
+
+
+---
+
+
+# Big Scientific Data
+
+
+### molecular genomics (1D)
+### cosmology (2D)
+### Neuroscience! (3D+)
+
+.center[
+<img src="http://www.nature.com/neuro/journal/v17/n11/images/nn.3839-F1.jpg
+" alt="Drawing" style="width: 600px;"/>]
+
+
+---
+
+<!-- https://openwiki.janelia.org/wiki/download/attachments/34505478/Image%201%20-%20Medulla%20EM%20Stack%20-%20Final.jpg?version=1&modificationDate=1375908720000&api=v2 -->
 
 
 ### Opportunity: Big Neuro Data
@@ -337,7 +388,7 @@ layout: true
 
 ---
 
-## [NeuroData](http://neurodata.io) meets needs to achieve 
+## [NeuroData](http://neurodata.io) meets needs to achieve
 
 <br/>
 
@@ -392,8 +443,9 @@ layout: false
 - Tools: for each step
   - Overview of the goals
   - Capabilities of NeuroData analysis paradigm
-- Applications: for each step
-  - Capabilities currenly provided
+- Applications
+  - Synapse distribution
+  - Peter's Rule
 - Discussion
 
 
@@ -445,15 +497,15 @@ name: infra
 
 <br />
 
-- .y[ND Backend]:   [Code](https://github.com/openconnectome/open-connectome) | 
-[API](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543) | [Docker](https://github.com/openconnectome/open-connectome//setup/Dockerfile) | [Setup](https://github.com/openconnectome/open-connectome/setup) 
- 
-  - ND Spatial Database to store images and volumetric annotations 
+- .y[ND Backend]:   [Code](https://github.com/openconnectome/open-connectome) |
+[API](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543) | [Docker](https://github.com/openconnectome/open-connectome//setup/Dockerfile) | [Setup](https://github.com/openconnectome/open-connectome/setup)
+
+  - ND Spatial Database to store images and volumetric annotations
   - ND Annotation Database to manage annotation metadata
-  - ND Web-console to manage image database 
+  - ND Web-console to manage image database
 - .y[ND LIMS] for managing additional metadata: [Code](https://github.com/openconnectome/ndlims) | [Demos](https://github.com/openconnectome/LIMS-Scripts)
 - .y[ND Tile Cache] enables content distribution network: [Code](https://github.com/openconnectome/ocptilecache) | [API](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
-- .y[ND RAGDB] Database of Richly Attributed Graphs: [Web](http://openconnecto.me/graph-services/) | [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
+- .y[ND GruteDB] Graph with Rich attriBUTEs Database: [Web](http://openconnecto.me/graph-services/) | [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
 
 
 ---
@@ -486,12 +538,12 @@ name: r_store
 
 ---
 
-## Data Analytics 
+## Data Analytics
 
 <br />
 
 - .y[ndio] Python library for I/O: [Code](https://github.com/openconnectome/ndio) | [API](http://docs.neurodata.io/ndio/) | [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
-- .y[CAJAL] MATLAB Toolbox for I/O & more: [Code](http://github.com/openconnectome/cajal) | [Docs](http://docs.neurodata.io/CAJAL/) 
+- .y[CAJAL] MATLAB Toolbox for I/O & more: [Code](http://github.com/openconnectome/cajal) | [Docs](http://docs.neurodata.io/CAJAL/)
 - .y[AMI] Amazon Machine Instance to run terascale scale analyses: [Setup](http://docs.neurodata.io/nddocs/ami.html)
 - .y[AWS Cluster] to build high-performance cluster to run petascale analyses (coming soon)
 
@@ -507,10 +559,10 @@ layout: true
 name: store
 
 
-## Images: .y[SpDB] 
+## Images: .y[SpDB]
 
-[Code](https://github.com/openconnectome/open-connectome) | 
-[Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) | 
+[Code](https://github.com/openconnectome/open-connectome) |
+[Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) |
 [Ingest](http://docs.neurodata.io/open-connectome/sphinx/ingesting.html) |
 [Types](http://docs.neurodata.io/open-connectome/api/ocp_types.html) |
 [API](http://docs.neurodata.io/open-connectome/) | [Manuscript](http://arxiv.org/abs/1306.3543) | [LIMS](https://github.com/openconnectome/ndlims) | [App](#r_infra)
@@ -526,7 +578,7 @@ name: store
 ]
 
 .pull-right[
-### Functions 
+### Functions
 - Project Info
 - Public Tokens
 - Get/Post {HDF5, Blosc, Numpy} cube
@@ -570,12 +622,12 @@ Total Size: ~ 80 TV
 ## Annotations: .y[RamonDB]
 
 
-[Data Model](http://docs.neurodata.io/nddocs/ramon.html) | 
+[Data Model](http://docs.neurodata.io/nddocs/ramon.html) |
 [Code](https://github.com/openconnectome/open-connectome) | [API](http://docs.neurodata.io/open-connectome/api/ramon_api.html) |  [Tutorials](http://docs.neurodata.io/nddocs/ramonnd.html)
 | [App](#r_anno)
 
 .pull-left[
-####  Data Model 
+####  Data Model
   - Base
   - Neuron
   - Volume
@@ -594,7 +646,7 @@ Total Size: ~ 80 TV
   - Set/Get Field
   - Merge
   - Get Graph
-  - Get Skeleton  
+  - Get Skeleton
   - Undo
 ]
 
@@ -627,8 +679,8 @@ Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
 | [App](#r_graphs)
 
 .pull-left[
-####  Data Model 
-  - Store graphs as FlashGraph 
+####  Data Model
+  - Store graphs as FlashGraph
   - Metadata  in django data model
   - Supports the following types
    - Directed, undirected
@@ -638,12 +690,12 @@ Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
 ]
 
 .pull-right[
-#### Functions 
+#### Functions
   - Convert format
   - Download
   - Build from fibers
-  - Build from DTI 
-  - Compute Invariants  
+  - Build from DTI
+  - Compute Invariants
   - Downsample
 ]
 
@@ -726,7 +778,7 @@ name: r_explore
 
 - Shiny app
 - Can load any graphml file, including attributes
-- Calls [igraph](http://igraph.org/) in background 
+- Calls [igraph](http://igraph.org/) in background
 ]
 
 .pull-right[
@@ -842,13 +894,13 @@ name: pre
 
 - dmg = Distributed MultiGrid Poisson solver
 - 2D image stitching chromatic corrections
-- Smoothing/Sharpening/High-Low Composting 
+- Smoothing/Sharpening/High-Low Composting
 ]
 
 .pull-right[
 #### .y[gdf]
 
-[Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) | [App](#r_3d)
+[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) |  [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) | [App](#r_3d)
 
 - gdf = Gradient Domain Fusion
 - 3D image chromatic corrections
@@ -959,7 +1011,7 @@ name: parse
 ---
 ## Build: .y[macho]
 
-[Docs](http://docs.neurodata.io/macho/) | [Code](https://github.com/openconnectome/macho) 
+[Docs](http://docs.neurodata.io/macho/) | [Code](https://github.com/openconnectome/macho)
 
 
 .pull-left[
@@ -1013,10 +1065,10 @@ name: r_parse
 
 ## Previously Published
 
-- Vesicle: EM Synapse Detection 
+- Vesicle: EM Synapse Detection
   - [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html)
   - [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html)
-- [i2g](http://i2g.io/): EM Images to Graphs 
+- [i2g](http://i2g.io/): EM Images to Graphs
 
 .center[
 <img src="http://docs.neurodata.io/i2g/_images/i2g_overview.jpg"    alt="Drawing" style="height: 250px; "/>
@@ -1063,11 +1115,11 @@ name: anal
 ## Graph Statistics: [FlashX](http://flashx.io)
 
 
-[Webpage](http://flashx.io) | [Code](https://github.com/icoming/FlashX)   | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box](http://openconnecto.me/data/public/FlashGraph-VMs/) | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf) 
+[Webpage](http://flashx.io) | [Code](https://github.com/icoming/FlashX)   | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box](http://openconnecto.me/data/public/FlashGraph-VMs/) | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf)
 
 .pull-left[
 #### Highlights
-- Store vertex state in memory, edge list on array of SSDs 
+- Store vertex state in memory, edge list on array of SSDs
 - 1B vertex & 100B edge graphs
 - R bindings for all functions
 - Coming soon
@@ -1253,7 +1305,7 @@ name: disc
 
 - Answer questions the require scale
 - Engage complementary expertise
-- Bridge across scales and modalities 
+- Bridge across scales and modalities
 - Reproduce results
 
 
@@ -1277,7 +1329,7 @@ name: disc
 
 
 - [Array Tomography](http://neurodata.io/modalities/at)
-- [CLARITY](http://neurodata.io/modalities/clarity) 
+- [CLARITY](http://neurodata.io/modalities/clarity)
 - [Multi-modal MRI](http://neurodata.io/modalities/mri)
 - [Optophysiology](http://neurodata.io/modalities/ophys)
 - X-Ray Tomography
@@ -1339,6 +1391,19 @@ name: disc
 
 
 
+
+
+---
+
+# References
+
+<br />
+
+
+1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
+
+1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
+
 ---
 
 layout: false
@@ -1352,8 +1417,8 @@ class:  center
 .small[
 |   |   | |
 | :--- | :--- | :--- |
-| Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla] 
-| Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman 
+| Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla]
+| Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
 | Explore | | .orange[Misha Kazhdan, Alex Baden, Jordan Matelsky]
 | Pre-Proc | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
 | Parse | | .g[Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
@@ -1361,18 +1426,6 @@ class:  center
 | Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 | Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
 ]]
-
-
----
-
-# References
-
-<br />
-
-
-1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
-
-1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
 
 
 ---
@@ -1392,9 +1445,9 @@ Funding
 
 NIH: TRA
 
-NIH/NSF:  {BIGDATA, CRCNS} 
+NIH/NSF:  {BIGDATA, CRCNS}
 
-DARPA: {XDATA,GRAPHS,SIMPLEX} 
+DARPA: {XDATA,GRAPHS,SIMPLEX}
 
 
 ____
@@ -1404,7 +1457,7 @@ w: [neurodata.io](http://neurodata.io)
 
 d: [docs.neurodata.io](http://docs.neurodata.io)
 
-e: [support@neurodata.io](mailto:support@neurodata.io) 
+e: [support@neurodata.io](mailto:support@neurodata.io)
 
 
 ____
@@ -1470,7 +1523,7 @@ ____
 
   // Enable or disable counting of incremental slides in the slide counting
   countIncrementalSlides: false
-}); 
+});
     </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
