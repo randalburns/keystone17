@@ -376,7 +376,7 @@ layout: true
 
 <br />
 
-Existing solutions are unable to elegantly handle petascale data
+.center[Existing solutions are unable to elegantly handle 3D+ petascale data]
 
 
 ---
@@ -395,6 +395,7 @@ layout: true
 .center[
 <img src="https://www.lucidchart.com/publicSegments/view/34ca1aee-8985-4758-8448-0e88acde786c/image.png" alt="Drawing" style="height: 250px;"/>
 ]
+
 
 
 ---
@@ -483,11 +484,16 @@ name: infra
 <img src="http://docs.neurodata.io/open-connectome/_images/ocp_cluster.png" style="width: 700px;"/>
 ]
 
-- Head node serves as Web proxy and load balance
+- .y[Datascope] manages and stores spatial databases
+- .y[CDN] provides "local" copies to individual regions
+- .y[Local] user machines/clusters for  visualization & analysis
+- .y[AWS] clusters to "bring computation to the data"
+
+<!-- Head node serves as Web proxy and load balance
 - Application Server nodes can perform cutout, propagate, and other Web-services
 - Databases store Image DB and Tile Cache on SSD array
 - Brainapps,  Brain Cloud, Awesome, Awesomer, Intel Phi, BrainViz (K80)
-
+ -->
 
 
 
@@ -500,12 +506,11 @@ name: infra
 - .y[ND Backend]:   [Code](https://github.com/openconnectome/open-connectome) |
 [API](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543) | [Docker](https://github.com/openconnectome/open-connectome//setup/Dockerfile) | [Setup](https://github.com/openconnectome/open-connectome/setup)
 
-  - ND Spatial Database to store images and volumetric annotations
-  - ND Annotation Database to manage annotation metadata
-  - ND Web-console to manage image database
+  - .y[SpDB] to store images and volumetric annotations
+  - .y[RamonDB] to manage annotation metadata
+  - .y[ND GruteDB] Graph with Rich attriBUTEs Database: [Web](http://openconnecto.me/graph-services/) | [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
 - .y[ND LIMS] for managing additional metadata: [Code](https://github.com/openconnectome/ndlims) | [Demos](https://github.com/openconnectome/LIMS-Scripts)
 - .y[ND Tile Cache] enables content distribution network: [Code](https://github.com/openconnectome/ocptilecache) | [API](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
-- .y[ND GruteDB] Graph with Rich attriBUTEs Database: [Web](http://openconnecto.me/graph-services/) | [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
 
 
 ---
