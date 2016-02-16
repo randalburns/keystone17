@@ -221,6 +221,8 @@ class: center, middle
 # [NeuroData](http://neurodata.io):
 ## Enabling Petascale Neuroscience
 
+### Computer Science 
+
 <!-- ### Joshua T. Vogelstein -->
 <!-- ### {[BME](http://bme.jhu.edu),[ICM](http://icm.jhu.edu),[CIS](http://cis.jhu.edu),[Kavli](http://kndi.jhu.edu)}@[jhu](http://jhu.edu) -->
 
@@ -229,7 +231,7 @@ class: center, middle
 
 
 
-#### these slides: <http://docs.neurodata.io/ndintro>
+#### these slides: <http://docs.neurodata.io/cs_slides.html>
 
 <br>
 <!-- [prof joshua t. vogelstein](http://jovo.me) -->
@@ -243,130 +245,14 @@ class: center, middle
 
 
 ---
-
 layout: true
-
-.bbar[ _[Intro](#intro): Opportunity_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
-
-
----
-name: intro
-
-# Big Scientific Data
-
-
-### molecular genomics (1D)
-
-.center[
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_genome_alignment_of_eight_Yersinia_isolates.png/380px-A_genome_alignment_of_eight_Yersinia_isolates.png" alt="Drawing" style="width: 600px;"/>]
-
-
+.bbar[ _[Intro](#intro)_  | [Tools](#store): Store | [Applications](#applications) | [Discussion](#disc)]
 ---
 
 
-# Big Scientific Data
 
 
-### molecular genomics (1D)
-### cosmology (2D)
-
-.center[
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Ilc_9yr_moll4096.png" alt="Drawing" style="width: 600px;"/>]
-
-
----
-
-
-# Big Scientific Data
-
-
-### molecular genomics (1D)
-### cosmology (2D)
-### Neuroscience! (3D+)
-
-.center[
-<img src="http://www.nature.com/neuro/journal/v17/n11/images/nn.3839-F1.jpg
-" alt="Drawing" style="width: 600px;"/>]
-
-
----
-
-<!-- https://openwiki.janelia.org/wiki/download/attachments/34505478/Image%201%20-%20Medulla%20EM%20Stack%20-%20Final.jpg?version=1&modificationDate=1375908720000&api=v2 -->
-
-
-### Opportunity: Big Neuro Data
-
-.pull-left[
-.center[
-<iframe width="380" height="300" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-- Modality: Transmission Electron Microscopy Camera Array
-- 4 x 4 x 40 nm^3
-- 450 x 350 x 50 micron^3
-- Size: ~10 TB
-- Cite: Bock et al. (Nature) 2011
-]
-
-
---
-
-.pull-right[
-.center[
-<iframe width="380" height="300" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- Modality: Serial Electron Microscopy w/ATUM
-- Resolution: 3 x 3 x 30 nm<sup>3</sup>
-- Volume: 40 x 40 x 50 &mu;m<sup>3</sup>
-- Size: ~1 TB
-- Cite: Kasthuri et al. (Cell) 2015
-]
-
-
----
-
-layout: true
-
-.bbar[ _[Intro](#intro): Challenge_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
-
----
-
-## Challenge #1: Synapse Dist'n
-
-
-
-
-.center[
-<iframe width="484" height="272" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- 8 million mm<sup>3</sup> &#10141; 8 million synapses
-- Manual labeling requires ~10 sec / synapse
-- 60 sec x 60 min x 8 hrs x 250 days = 8 million seconds
-- A person can find 8 million synapses working for 10 years
-- Question: Are synapses distributed uniformly in space?
-
-
----
-
-## Challenge #2: Peter's Rule
-
-
-.center[
-<iframe width="372" height="272" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-
-- 916 excitatory axons
-- 1,036 dendritic spines
-- 7,505 spine touches
-- 1,037 synapses
-- Question: It Peter's rule a good model?
-
-
----
-
-## Challenge:  4 steps to discovery
+## 4 steps to discovery
 
 <br/>
 
@@ -379,11 +265,6 @@ layout: true
 .center[Existing solutions are unable to elegantly handle 3D+ petascale data]
 
 
----
-
-layout: true
-
-.bbar[ _[Intro](#intro): Action_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
 
 
 ---
@@ -419,45 +300,14 @@ layout: true
 .white[The ideal system will include both classical and novel NeuroData methods, as they complement one another.]
 
 
----
 
-layout: true
 
-.bbar[ _[Intro](#intro): Resolution_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
-
----
-
-# Resolution
-
-<iframe src="http://neurodata.io/" allowtransparency="true" width="100%" height="500" style="border:none" background="white"></iframe>
 
 
 
 ---
-layout: false
 
 # Outline
-
-<br />
-
-- Motivation
-- Tools: for each step
-  - Overview of the goals
-  - Capabilities of NeuroData analysis paradigm
-- Applications
-  - Synapse distribution
-  - Peter's Rule
-- Discussion
-
-
-
----
-name: tools
-
-.bbar[ [Intro](#intro)  | _[Tools](#tools)_ | [Applications](#applications) | [Discussion](#disc)]
-
-
-# Tools
 
 <br />
 
@@ -465,18 +315,17 @@ name: tools
 <!-- 1. [Infrastructure](#infra) -->
 3. [Store](#store)
 4. [Explore](#explore)
-5. [Vison](#pre)
-<!-- 6. [Parse](#train) -->
+5. [Wrangle](#wrangle)
 7. [Analyze](#anal)
 
----
 
+---
 layout: true
+.bbar[ [Intro](#intro)  | _[Store](#store)_ | [Explore](#explore) | [Wrangle](#wrangle) | [Analyze](#anal)]
 
-.bbar[ [Intro](#intro)  | _[Tools](#infra): Infrastructure_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
-name: infra
+name: store
 
 
 ## Store
@@ -502,15 +351,6 @@ name: infra
 
 
 ---
-
-layout: true
-
-.bbar[ [Intro](#intro)  | _[Tools](#store): Store_ | [Applications](#applications) | [Discussion](#disc)]
-
----
-name: store
-
-
 ## Images: .y[ndspdb]
 
 [Code](https://github.com/openconnectome/open-connectome) |
@@ -651,12 +491,9 @@ name: hardware
 
 
 ---
-
-
-
 layout: true
+.bbar[ [Intro](#intro)  | [Store](#store) | _[Explore](#explore)_ | [Wrangle](#wrangle) | [Analyze](#anal)]
 
-.bbar[ [Intro](#intro)  | _[Tools](#explore): Explore_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
 name: explore
@@ -772,18 +609,18 @@ name: gx
 ---
 
 layout: true
+.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | _[Wrangle](#wrangle)_ | [Analyze](#anal)]
 
-.bbar[ [Intro](#intro)  | _[Tools](#pre): Wrangle_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
-name: pre
+name: wrangle
 
 # Wrangle
 
 <br />
 
 - streaming image processing
-  - [2D stitching artifact removal](#2d)
+  - [2D stitching artifact](#2d)
   - [3D histogram normalization](#3d)
   - [volume registration](#ndreg)
 - graph inference
@@ -798,7 +635,7 @@ name: pre
 ---
 name: 2d
 
-## 2D Stitching Artifact Removal: .y[dmg]
+## 2D Stitching Artifact: .y[dmg]
 
 
 
@@ -887,12 +724,6 @@ name: ndreg
 
 
 
----
-
-layout: true
-
-.bbar[ [Intro](#intro)  | _[Tools](#train): Wrangle_ | [Applications](#applications) | [Discussion](#disc)]
-
 
 ---
 name: mana
@@ -980,11 +811,23 @@ name: maxa
 ---
 
 layout: true
+.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | [Wrangle](#wrangle) | _[Analyze](#anal)_]
 
-.bbar[ [Intro](#intro)  | _[Tools](#anal): Analyze_ | [Applications](#applications) | [Discussion](#disc)]
 
 ---
 name: anal
+
+
+# Analyze
+
+- [Images](#images)
+- [Shapes](#shapes)
+- [Graphs](#graphs)
+- [Matrices](#matrices)
+
+
+---
+name: images
 
 ## Image Analysis
 [Code](https://github.com/neurodata/ndstore/tree/master/stats) | [API](http://docs.neurodata.io/ndstore/api/stats_api.html)
@@ -1010,6 +853,7 @@ name: anal
 
 
 ---
+name: shapes
 
 ## Shape Analysis: .y[ShapeSPH]
 [Code](https://github.com/mkazhdan/ShapeSPH) 
@@ -1032,6 +876,8 @@ name: anal
 
 
 ---
+name: graphs
+
 ## Graph Analysis: .y[FlashGraph]
 
 
@@ -1067,6 +913,7 @@ name: anal
 
 
 ---
+name: matrices
 ## Matrix Analysis: .y[FlashMatrix]
 
 
@@ -1099,326 +946,11 @@ name: anal
 
 
 
----
-layout: true
-
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#applications)_ | [Discussion](#disc)]
-
----
-name: applications
-
-
-
-
-
-## Previously Published
-
-- Vesicle: EM Synapse Detection
-  - [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html)
-  - [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html)
-- [i2g](http://i2g.io/): EM Images to Graphs
-
-.center[
-<img src="http://docs.neurodata.io/i2g/_images/i2g_overview.jpg"    alt="Drawing" style="height: 250px; "/>
-]
 
 
 
 ---
-## Vector Statistics
-
-
-.pull-left[
-### Projects
-- [LOL](http://jovo.me/LOL/)
-- [Randomer Forest](http://ttomita.github.io/RandomerForest/)
-- [Multiscale Dictionary Learning](https://github.com/jovo/conditional-density-estimation)
-- Optimal Discovery Science via Maximizing Reliability
-- Dependence Discovery for Multi Manifold Data
-]
-
-
-.pull-right[
-### Inference Tasks
-
-- 2-class classification
-- Multiclass classification
-- Regression
-- Two-sample Testing
-- Dependence Testing
-- Density Estimation
-]
-
-
-.center[
-<iframe src="https://drive.google.com/file/d/0B7nlh5n4ioGtOW1RLWdvUkN5SWs/preview" width="700px" height="200px"></iframe>
-]
-
----
-
-### Case Study #1: Reproducing Results from Kasthuri et al. (Cell) 2011
-
-#### Is probability of synapse proportional to relative proximity?
-
-.pull-left[
-1. extract attributed graph
-2. define null distribution
-4. determine test statistic
-3. sample from null using igraph
-4. compute test statistic on observed & sampled data
-5. evaluate p-value
-6. visualize samples from null for model checking purposes
-1. live python notebook coming soon...
-]
-
-
-
-
----
-name: r_syn
-
-### Case Study #2: Is synapse distribution uniform in space?
-
-
-<br />
-
-.center[
-<img src="images/rob2.png"    alt="Drawing" style="width: 75%; "/>
-]
-
-Detecting ~11.6 million synapses from the [bock11](http://openconnecto.me/bock11) dataset
-
-???
-
-timings
-
----
-name: r_anal
-
-### Case Study #2: Is synapse distribution uniform in space?
-
-
-.pull-left[
-<br />
-1. find all synapses
-2. plot 1% of them in 3D scatter plot
-1. Mask out regions that cannot have synapses
-1. Partition volume into cuboids
-2. Count # of elements / cuboid
-3. Normalize by volume of cuboid not masked
-4. Plot normalized volume in 3D scatter plot
-5. Plot marginals
-6. Report p-value
-1. live python notebook coming soon...
-]
-
-
-.pull-right[
-<br />
-.center[
-<img src="images/3D.png"    alt="Drawing" style="width: 350px; "/>
-<img src="images/2Dproj.png"    alt="Drawing" style="width: 350px; "/>
-]]
-
-
-
-
----
-name: r_infra
-
-##  EM Datasets
-
-<br />
-
-| Species | Ref. |
-| :---    | :---  |
-| [C elegans, herm](http://openconnecto.me/herm-c-elegans) | Emmons Lab
-| [C elegans, male](http://openconnecto.me/male-c-elegans) | Emmons Lab
-| [C elegans, Pharynx](http://openconnecto.me/bhatla15) | Bhatla et al. Current Biology, 2015
-| [P pacificus](http://openconnecto.me/bumbarger13) | Bumbarger et al. Cell, 2013
-| [Drosophila Optic Medulla](http://openconnecto.me/takemura13) | Takemura et al. Nature, 2013
-| [Drosophila larva](http://openconnecto.me/behaviotypes) | Ohyama et al., Nature, 2015
-| [Hippocampus Neuropil](http://openconnecto.me/synapseweb) | Harris et al., Scientific Data, 2015
-| [Mouse, V1](http://openconnecto.me/bock11/) | Bock et al., Nature, 2011
-| [Mouse, S1](http://openconnecto.me/Kasthurietal2014) | Kasthuri et al., Cell, 2015
-
-<br />
-
-Total Size: ~ 80 TV
-
-
----
-name: r_anno
-
-## Annotation  Datasets
-
-<br />
-
-- AC3
-- AC4
-- Kasthuri et al. (Cell, 2015)
-- Harris et al. (Scientific Data, 2015)
-- Allen Reference Atlas
-
-<br />
-
-Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
-
-
-
----
-name: r_graphs
-
-## Graph Datasets
-
-<br />
-
-- [Bock et al.](http://openconnecto.me/mrdata/static/graphs/mouse/mouse_visual.cortex_1.graphml)
-- Kasthuri et al.
-
-
-<br />
-
-We have Diffusion MRI derived graphs from ~10,000 subjects for ~30 atlases each, yielding > 250,000 total derived graphs.
-
-
-
-
-
-
----
-
-layout: true
-
-.bbar[ [Intro](#intro)  | [Tools](#tools) | [Applications](#applications) | _[Discussion](#disc)_]
-
----
-name: disc
-
-# Discussion
-
-<br />
-
-
-- Contributions & Implications
-- Other inference tasks to be integrated
-- Other modalities
-- Related Work
-- Next steps
-
-
----
-
-## Open Science Contributions
-
-<br />
-
-- Reference datasets in a variety of modalities
-- Reference pipelines for operating on such data
-- Web-services for data access
-- Computing configuration
-- A cloud computing stack to facilitate analysis
-- Detailed specs for plugging in different routines
-- Data derivatives at all stages of analysis
-
---
-
-<br />
-
-#### Implications: it is now easier to
-
-<br />
-
-- Answer questions the require scale
-- Engage complementary expertise
-- Bridge across scales and modalities
-- Reproduce results
-
-
----
-
-## Coming soon...
-
-<br />
-
-- [Ophys Spike detection](https://github.com/jovo/oopsi)
-- Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
-- [m2g](http://m2g.io/): MRI to Graphs
-- IF Synapse Detection
-- Ophys Cell Detection
-- Cell detection for micron resolution data
-
-
----
-
-## Other Image Datasets
-
-
-- [Array Tomography](http://neurodata.io/modalities/at)
-- [CLARITY](http://neurodata.io/modalities/clarity)
-- [Multi-modal MRI](http://neurodata.io/modalities/mri)
-- [Optophysiology](http://neurodata.io/modalities/ophys)
-- X-Ray Tomography
-- Expansion Microscopy
-- Histology
-
-## Other Annotation Datasets
-
-- Allen Reference Atlas
-- ~30 different Human MRI Atlases (spanning pediatrics thru geriatrics)
-
-## Other Graph Datasets
-
-- ~10,000  Diffusion MRI derived neurographs
-- ~2,0000 function MRI derived neurographs
-
-
----
-
-
-# Related Work
-
-<br />
-
-- [CATMAID](http://catmaid.readthedocs.org/en/stable/)
-- [Neurodata Without Borders](http://nwb.org/)
-- [Keller Lab Block File Format](http://www.nature.com/nprot/journal/v10/n11/abs/nprot.2015.111.html)
-- [Thunder](http://thunder-project.org/)
-
-
-
----
-
-
-## Challenge #3: Cortical Column Conjecture?
-
-<br />
-
-0. Infrastructure: manage  1 mm<sup>3</sup> of cortical data and derivatives at nm resolution
-0. Store: 1 petabyte in the cloud
-1. Explore: using NeuroDataViz
-2. Wrangle: ?
-4. Analyze: Hierarchical Attributed Stochastic Block Model
-
-
-
----
-
-
-## Further Lowering the Barrier to Entry
-
-<br />
-
-- Put it all together
-- Apply to other domains & questions
-- Deploy backend and analytics stack in commercial cloud
-- We work together!
-
-
-
-
-
----
+layout: false
 
 # References
 
@@ -1431,7 +963,6 @@ name: disc
 
 ---
 
-layout: false
 class:  center
 
 # NeuroData Family
@@ -1442,13 +973,10 @@ class:  center
 .small[
 |   |   | |
 | :--- | :--- | :--- |
-| Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla]
 | Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
 | Explore | | .orange[Misha Kazhdan, Alex Baden, Jordan Matelsky]
-| Wrangle | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
-| Parse | | .g[Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
-| Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
+| Wrangle | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov,Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 | Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
 ]]
 
