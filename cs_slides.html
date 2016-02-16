@@ -469,9 +469,18 @@ name: ndlims
 name: ndio
 
 ## Python Wrapper: .y[ndio]
+<br>
 
+.pull-left[
+- Package to easily interface with neurodata
+- Open source toolbox provides image and metadata capabilities
+- Easy to use interface for standalone or distributed computing across languages
+- MATLAB CAJAL Toolbox also available 
+]
 
-
+.pull-right[
+<img src="images/ndio.jpg" alt="Drawing" style="width: 300px;"/>
+]
 
 ---
 name: hardware
@@ -689,11 +698,6 @@ name: 3d
 ]
 
 
-
-
-
-
-
 ---
 name: ndreg
 
@@ -737,11 +741,35 @@ name: i2g
 
 ## EM Graph Inference: .y[i2g]
 
+<br>
+
+.pull-left[
+- Provides automated end-to-end pipeline to reconstruct graphs from EM data
+- Leverages open source tools like .y[Gala] and .y[vesicle]
+- System-level graph quality assessment
+]
+
+.pull-right[
+<img src="images/i2g.jpg" alt="Drawing" style="width: 300px;"/>
+]
 
 ---
 name: d2g
 
 ## DTI Graph Inference: .y[ndmg]
+<br>
+
+.pull-left[
+- one-click python package to generate graphs from structural MRI data
+- web-service to process individual brains
+- deploy version to process many brains
+- approximately 50,000 graphs processed and available to date from 2000 scans
+- available on pip .y[pip install ndmg] 
+]
+
+.pull-right[
+<img src="images/m2g.jpg" alt="Drawing" style="width: 300px;"/>
+]
 
 ---
 name: f2g
@@ -762,11 +790,10 @@ name: mana
 .pull-left[
 <!-- ## Wrangle: [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php) -->
 1. Identify ROI
-2. Use CAJAL/ndio to download data
-3. run `mana_getImage.m` to get image
-4. Annotate using [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
-5. Save annotations
-5. run `mana_putAnno.m` to put annotation database
+2. run `mana_getImage to get image using .y[ndio] or .y[CAJAL]
+3. Annotate using [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
+4. Save annotations
+5. run `mana_putAnno` to put annotation and metadata in neurodata database
 ]
 
 .pull-right[
@@ -787,14 +814,13 @@ name: maca
 
 .pull-left[
 <!-- ## Wrangle: [ilastik](http://ilastik.org/) -->
-- Get Data
+- .y[Computer vision tools for big data neuroscience]
+- interfaces with ndio and CAJAL to get and put data
 - [ilastik](http://ilastik.org/) integration
-- Visualize results
-- ROC Curves
+- tools for result visualization
+- precision-recall and ROC curves
 - Sweep over hyper-parameters
 - Cross-validate
-- Put Data
-
 ]
 
 .pull-right[
@@ -802,9 +828,6 @@ name: maca
 .center[
 <img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/maca_example.png"   alt="Drawing" style="height: 200px;"/>
 ]]
-
-
-
 
 ---
 name: maxa
@@ -824,6 +847,7 @@ name: maxa
 - Each node processes data and spits out its answer
 - CAJAL then merges them back together
 - And sends back to database
+- Integrations planned for qsub, slurm and aws submission
 ]
 
 
