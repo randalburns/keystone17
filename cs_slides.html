@@ -306,6 +306,7 @@ layout: true
 
 
 ---
+name: outline
 
 # Outline
 
@@ -332,59 +333,90 @@ name: store
 
 <br />
 
-- Databases
-  - .y[ndstoredb]:   [Code](https://github.com/openconnectome/open-connectome) | [API](http://docs.neurodata.io/open-connectome/) | [Tutorials](http://docs.neurodata.io/open-connectome/sphinx/console.html) | [Manuscript](http://arxiv.org/abs/1306.3543) | [Docker](https://github.com/openconnectome/open-connectome//setup/Dockerfile) | [Setup](https://github.com/openconnectome/open-connectome/setup)  
-      - [ndspdb](#store) 3D+ images and volumetric annotations: [Benchmarks](http://docs.neurodata.io/nddocs/more.html#r_store)
-      - [ndramondb](#ndramondb) annotation metadata
-  - [ndgrutedb](#ndgrutedb) Graphs with Rich attriBUTEs: [Web](http://openconnecto.me/graph-services/) | [Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
-- Utilities
-  - [ndtilecache](#cdn) enables content distribution network: [Code](https://github.com/openconnectome/ocptilecache) | [API](http://docs.neurodata.io/ocptilecache/api/tilecache_api.html)
-  - .y[ndlims] for managing additional metadata: [Code](https://github.com/openconnectome/ndlims) | [Demos](https://github.com/openconnectome/LIMS-Scripts)
-  - .y[ndio] Python library for I/O: [Code](https://github.com/openconnectome/ndio) | [API](http://docs.neurodata.io/ndio/) | [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
-  - .y[CAJAL] MATLAB Toolbox for I/O & more: [Code](http://github.com/openconnectome/cajal) | [Docs](http://docs.neurodata.io/CAJAL/)
-- [Hardware](#hardware)          
+- [Databases](#db)
+  - [spdb](#spdb) 3D+ images and volumetric annotations  
+  - [ramondb](#ramondb) annotation metadata
+  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
+- [Utilies](#util)
+  - [ndtilecache](#cdn) enables content distribution network 
+  - [ndlims](#ndlims) for managing additional metadata:
+  - [ndio](#ndio) Python library for I/O
+  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
+- [Hardware](#hardware)
+
+---
+name: db
 
 
+## Databases
+
+<br>
+
+- .y[Databases]
+  - [spdb](#spdb) 3D+ images and volumetric annotations  
+  - [ramondb](#ramondb) annotation metadata
+  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
+- [Utilies](#util)
+  - [ndtilecache](#cdn) enables content distribution network 
+  - [ndlims](#ndlims) for managing additional metadata:
+  - [ndio](#ndio) Python library for I/O
+  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
+- [Hardware](#hardware)
 
 
 
 
 ---
-name: ndspdb
+name: spdb
 
-## Images: .y[ndspdb]
+## Images: .y[spdb]
 
-[Code](https://github.com/openconnectome/open-connectome) |
-[Data Model](http://docs.neurodata.io/open-connectome/sphinx/datamodel.html) |
-[Ingest](http://docs.neurodata.io/open-connectome/sphinx/ingesting.html) |
-[Types](http://docs.neurodata.io/open-connectome/api/ocp_types.html) |
-[API](http://docs.neurodata.io/open-connectome/) | [Manuscript](http://arxiv.org/abs/1306.3543) | [LIMS](https://github.com/openconnectome/ndlims) | [App](#r_infra)
-
+[Code](https://github.com/neurodata/ndstore) 
+| [Tutorials](http://docs.neurodata.io/ndstore/sphinx/console.html) 
+| [Data Model](http://docs.neurodata.io/ndstore/sphinx/datamodel.html) 
+| [API](http://docs.neurodata.io/ndstore/) 
+| [Manuscript](http://arxiv.org/abs/1306.3543) 
+| [Docker](https://github.com/neurodata/ndstore/blob/master/setup/Dockerfile) 
+| [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
+| [Benchmarks](http://docs.neurodata.io/nddocs/more.html#r_store)
+| [Examples](http://neurodata.io/projects)
 
 .pull-left[
 ###  Storage Model
 - Image Data Model to store images & associated metadata
-- Dense multi-dimensional spatial array partitioned into cuboids
 - Space filling curve minimizes the number of accesses
+- Dense multi-dimensional spatial array partitioned into cuboids
 - Multi-resolution zoom pyramid
 - 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
 ]
 
 .pull-right[
-![](https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png)
- ]
-
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="width: 250px;"/>
+<img src="images/reshier.png" style="width: 250px;"/>
+]
 
 
 ---
-name: ndramondb
 
-## Annotations: .y[ndramondb]
+## Image Benchmarks
+
+<br>
+
+.center[
+<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/ggplots/ReadThroughputPlot.png" style="width: 500px;"/>
+
+<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/ggplots/WriteThroughputPlot.png" style="width: 500px;"/>
+]
+
+
+---
+name: ramondb
+
+## Annotations: .y[ramondb]
 
 
 [Data Model](http://docs.neurodata.io/nddocs/ramon.html) |
-[Code](https://github.com/openconnectome/open-connectome) | [API](http://docs.neurodata.io/open-connectome/api/ramon_api.html) |  [Tutorials](http://docs.neurodata.io/nddocs/ramonnd.html)
+[Code](https://github.com/neurodata/ndstore) | [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) |  [Tutorials](http://docs.neurodata.io/nddocs/ramonnd.html)
 | [App](#r_anno)
 
 .pull-left[
@@ -399,21 +431,22 @@ name: ndramondb
 ]
 
 .pull-right[
-![](http://www.iva.dk/bh/Core%20Concepts%20in%20LIS/articles%20a-z/image008.jpg)
- ]
+<img src="http://cs.brown.edu/people/tld/note/blog/13/07/26/figures/sejnowski_neural_activity_scales.jpg" style="width: 300px;"/>
+]
 
 
 
 
 
 ---
-name: ndgrutedb
+name: grutedb
 
-## Graphs: .y[ndgrutedb]
+## Graphs: .y[grutedb]
 
 [Web](http://openconnecto.me/graphs) |
-[Code](https://github.com/openconnectome/m2g/tree/master/MR-OCP)
-| [App](#r_graphs)
+[Code](https://github.com/neurodata/m2g/tree/master/MR-OCP)
+
+
 
 .pull-left[
 ####  Data Model
@@ -436,6 +469,27 @@ name: ndgrutedb
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" style="width: 350px;"/>
 ]
 
+---
+name: util
+
+## Utilities
+
+<br>
+
+- [Databases](#db)
+  - [spdb](#spdb) 3D+ images and volumetric annotations  
+  - [ramondb](#ramondb) annotation metadata
+  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
+- .y[Utilies]
+  - [ndtilecache](#cdn) enables content distribution network 
+  - [ndlims](#ndlims) for managing additional metadata:
+  - [ndio](#ndio) Python library for I/O
+  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
+- [Hardware](#hardware)
+
+
+
+
 
 ---
 name: cdn
@@ -457,25 +511,43 @@ name: cdn
 
 
 .pull-right[
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Cdni_usage_example.png/600px-Cdni_usage_example.png" style="width: 350px;"/>
+<img src="https://raw.githubusercontent.com/neurodata/ndtilecache/master/docs/images/ndtilecache_cluster.png" style="width: 350px;"/>
 ]
+
+<br>
+
+.center[
+<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/tile_read_speed.png" style="width: 500px;"/>
+]
+
 
 ---
 name: ndlims
 
 ## LIMS: .y[ndlims]
+[Code](https://github.com/neurodata/ndlims)
+| [Issues](https://github.com/neurodata/ndlims/issues)
+
+<br>
+
+
+
 
 ---
 name: ndio
 
 ## Python Wrapper: .y[ndio]
+
+[Code](https://github.com/neurodata/ndio)
+| [Docs](http://docs.neurodata.io/nddocs/ndio/)
+| [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
+
 <br>
 
 .pull-left[
 - Package to easily interface with neurodata
 - Open source toolbox provides image and metadata capabilities
 - Easy to use interface for standalone or distributed computing across languages
-- MATLAB CAJAL Toolbox also available 
 ]
 
 .pull-right[
@@ -483,7 +555,49 @@ name: ndio
 ]
 
 ---
-name: hardware
+name: CAJAL
+
+
+## MATLAB SDK: .y[CAJAL]
+[Code](https://github.com/neurodata/CAJAL)
+| [Docs](http://docs.neurodata.io/CAJAL/)
+
+<br>
+
+- Server setup
+- Upload Image Data (if not using an existing data set)
+- Create and Upload Annotation Data
+- Update Annotations (if needed)
+- Delete Annotations (if needed)
+- Query (Read) Annotations
+
+.center[
+<img src="http://docs.neurodata.io/CAJAL/_images/cajal_pipeline.jpg" alt="Drawing" style="width: 700px;"/>
+]
+
+
+---
+
+
+
+## Hardware
+
+<br />
+
+- [Databases](#db)
+  - [spdb](#spdb) 3D+ images and volumetric annotations  
+  - [ramondb](#ramondb) annotation metadata
+  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
+- [Utilies](#util)
+  - [ndtilecache](#cdn) enables content distribution network 
+  - [ndlims](#ndlims) for managing additional metadata:
+  - [ndio](#ndio) Python library for I/O
+  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
+- .y[Hardware]
+
+
+---
+name: hard
 
 ## Data  Cluster
 
@@ -498,7 +612,7 @@ name: hardware
 ]
 
 .pull-right[
-- .y[AMI] Amazon Machine Instance to run terascale scale analyses: [Setup](http://docs.neurodata.io/nddocs/ami.html)
+- .y[AMI] Amazon Machine Instance to run terascale scale analyses
 - .y[AWS Cluster] to build high-performance cluster to run petascale analyses (coming soon)
 ]
 
@@ -533,7 +647,9 @@ name: ix
 
 ## Images: .y[Image Explorer (ix)]
 
-[Web App](http://ix.neurodata.io) | [Code](https://github.com/openconnectome/NeuroDataViz) | [App](#r_explore)
+[Web App](http://ix.neurodata.io) 
+| [Code](https://github.com/neurodata/NeuroDataViz) 
+| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
 
 .pull-left[
 #### Highlights
@@ -545,9 +661,9 @@ name: ix
 - Image & Anno. Metadata
 - Collaboration tools
 ### Examples
-- [Volumetric annotation overlays](http://brainviz1.cs.jhu.edu/ndv/kharris15apical/em,ramon_test/3/507/469/90/)
-- [Multispectral blending](http://brainviz1.cs.jhu.edu/ndv/project/Aratome15c_S17_W10/1/5818/527/0/)
-- [Time-series](http://openconnecto.me/ocp/viz/freeman14/)
+- [Volumetric annotation overlays](http://viz.neurodata.io/project/kharris15apical_subcell/xy/1/2064/2088/112/)
+- [Multispectral blending](http://viz.neurodata.io/project/Ex10R55_glutamatergic_prepost/2/378/421/0/#)
+- [Time-series](http://viz.neurodata.io/project/freeman14/xy/1/509/339/10/)
 ]
 
 .pull-right[
@@ -564,7 +680,9 @@ name: gx
 
 ## Graphs: .y[Graph Explorer (gx)]
 
-[Web App](http://gx.neurodata.io) | [Code](https://github.com/neurodata/Graph-Explorer) 
+[Web App](http://gx.neurodata.io) 
+| [Code](https://github.com/neurodata/Graph-Explorer) 
+| [Issues](https://github.com/neurodata/Graph-Explorer/issues)
 
 .pull-left[
 #### Highlights
@@ -577,9 +695,8 @@ name: gx
 
 - Load or randomly sample graph
 - Sample graph from many different random graph models
-- Compute attributes of graph
-- Plot graph
 - Compute & plot graph statistics
+- Plot graph layout & adjacency
 - Find communities
 - Save state
 
@@ -594,9 +711,11 @@ name: gx
 
 ---
 
-## Vectors: .y[Vector Explorer (vx)]
+## Matrices: .y[Matrix Explorer (vx)]
 
-[Web App]((http://vx.neurodata.io) | [Code](https://github.com/neurodata/Vector-Explorer) | [Issues](https://github.com/neurodata/Vector-Explorer/issues)
+[Web App](http://vx.neurodata.io) 
+| [Code](https://github.com/neurodata/Vector-Explorer) 
+| [Issues](https://github.com/neurodata/Vector-Explorer/issues)
 
 .pull-left[
 #### Highlights
@@ -704,7 +823,7 @@ name: ndreg
 ## Register Volume: .y[ndreg]
 
 
-[Code](https://github.com/openconnectome/ndreg) | [Demo](https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb) | [Setup](https://github.com/openconnectome/ndreg/blob/master/README.md) | [App](#r_ndreg)
+[Code](https://github.com/neurodata/ndreg) | [Demo](https://github.com/neurodata/ndreg/blob/master/maskPipelineExample.ipynb) | [Setup](https://github.com/neurodata/ndreg/blob/master/README.md) | [App](#r_ndreg)
 
 .pull-left[
 #### Highlights
@@ -732,7 +851,7 @@ name: ndreg
 
 
 
-.bottom[https://github.com/openconnectome/ndreg/blob/master/maskPipelineExample.ipynb]
+.bottom[https://github.com/neurodata/ndreg/blob/master/maskPipelineExample.ipynb]
 
 
 
@@ -784,7 +903,7 @@ name: mana
 
 ## Label: .y[mana]
 
-[Docs](http://docs.neurodata.io/nddocs/mana.html) | [Code](https://github.com/openconnectome/ndparse/tree/master/mana)
+[Docs](http://docs.neurodata.io/nddocs/mana.html) | [Code](https://github.com/neurodata/ndparse/tree/master/mana)
 
 
 .pull-left[
@@ -809,7 +928,7 @@ name: maca
 
 ## Learn: .y[maca]
 
-[Docs](http://docs.neurodata.io/nddocs/maca.html) | [Code](https://github.com/openconnectome/ndparse/tree/master/maca)
+[Docs](http://docs.neurodata.io/nddocs/maca.html) | [Code](https://github.com/neurodata/ndparse/tree/master/maca)
 
 
 .pull-left[
@@ -834,7 +953,7 @@ name: maxa
 
 ## Deploy: .y[maxa]
 
-[App](#r_syn) | [Code](https://github.com/openconnectome/ndparse/tree/master/maxo)
+[App](#r_syn) | [Code](https://github.com/neurodata/ndparse/tree/master/maxo)
 
 <br />
 
