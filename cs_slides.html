@@ -758,40 +758,64 @@ name: wrangle
 
 <br />
 
-- streaming image processing
+- [streaming image processing](#cv)
   - [2D stitching artifact](#2d)
   - [3D histogram normalization](#3d)
   - [volume registration](#ndreg)
-- graph inference
-  - [serial electron microscopy](#i2g)
-  - [diffusion mri](#d2g)
-  - [functional mri](#f2g)
-- object detection
+- [object detection](#parse)
   - [label](#mana)
   - [learn](#maca)
   - [deploy](#maxa)
+- [graph inference](#x2g)
+  - [serial electron microscopy](#i2g)
+  - [diffusion mri](#d2g)
+  - [functional mri](#f2g)
+
+
+
+---
+name: cv
+
+# Streaming Image Processing
+
+<br />
+
+- .y[streaming image processing]
+  - [2D stitching artifact](#2d)
+  - [3D histogram normalization](#3d)
+  - [volume registration](#ndreg)
+- [object detection](#parse)
+  - [label](#mana)
+  - [learn](#maca)
+  - [deploy](#maxa)
+- [graph inference](#x2g)
+  - [serial electron microscopy](#i2g)
+  - [diffusion mri](#d2g)
+  - [functional mri](#f2g)
+
 
 ---
 name: 2d
 
 ## 2D Stitching Artifact: .y[dmg]
 
+[Web](https://github.com/mkazhdan/DMG) 
+| [Code](https://github.com/mkazhdan/DMG) 
+| [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) 
+
+<br>
 
 
-.pull-left[
-
-[Web](https://github.com/mkazhdan/DMG) | [Code](https://github.com/mkazhdan/DMG) | [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) | [App](#r_pre)
 
 - dmg = Distributed MultiGrid Poisson solver
 - 2D image stitching histogram corrections
 - Smoothing/Sharpening/High-Low Composting
-]
 
 
 
 .center[
-<img src="images/original_zy.jpg" alt="Drawing" style="height: 200px;"/>
-<img src="images/screened_zy.jpg" alt="Drawing" style="height: 200px;"/>
+<img src="images/A_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
+<img src="images/D_dmg_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
 ]
 
 
@@ -801,14 +825,15 @@ name: 3d
 
 ## 3D Color Correction: .y[gdf]
 
-.pull-left[
 
-[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) |  [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) | [App](#r_3d)
+[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
+| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) 
+
+<br>
 
 - gdf = Gradient Domain Fusion
 - 3D image histogram corrections
 - Web-service coming soon
-]
 
 
 
@@ -854,46 +879,26 @@ name: ndreg
 .bottom[https://github.com/neurodata/ndreg/blob/master/maskPipelineExample.ipynb]
 
 
-
 ---
-name: i2g
+name: parse
 
-## EM Graph Inference: .y[i2g]
+# Parse
 
-<br>
+<br />
 
-.pull-left[
-- Provides automated end-to-end pipeline to reconstruct graphs from EM data
-- Leverages open source tools like .y[Gala] and .y[vesicle]
-- System-level graph quality assessment
-]
+- [streaming image processing](#cv)
+  - [2D stitching artifact](#2d)
+  - [3D histogram normalization](#3d)
+  - [volume registration](#ndreg)
+- .y[object detection]
+  - [label](#mana)
+  - [learn](#maca)
+  - [deploy](#maxa)
+- [graph inference](#x2g)
+  - [serial electron microscopy](#i2g)
+  - [diffusion mri](#d2g)
+  - [functional mri](#f2g)
 
-.pull-right[
-<img src="images/i2g.jpg" alt="Drawing" style="width: 300px;"/>
-]
-
----
-name: d2g
-
-## DTI Graph Inference: .y[ndmg]
-<br>
-
-.pull-left[
-- one-click python package to generate graphs from structural MRI data
-- web-service to process individual brains
-- deploy version to process many brains
-- approximately 50,000 graphs processed and available to date from 2000 scans
-- available on pip .y[pip install ndmg] 
-]
-
-.pull-right[
-<img src="images/m2g.jpg" alt="Drawing" style="width: 300px;"/>
-]
-
----
-name: f2g
-
-## fMRI Graph Inference: .y[cpac]
 
 
 
@@ -903,13 +908,14 @@ name: mana
 
 ## Label: .y[mana]
 
-[Docs](http://docs.neurodata.io/nddocs/mana.html) | [Code](https://github.com/neurodata/ndparse/tree/master/mana)
+[Docs](http://docs.neurodata.io/nddocs/ndparse/mana.html) 
+| [Code](https://github.com/neurodata/ndod/tree/master/mana/code)
 
 
 .pull-left[
 <!-- ## Wrangle: [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php) -->
 1. Identify ROI
-2. run `mana_getImage to get image using .y[ndio] or .y[CAJAL]
+2. run `mana_getImage` to get image using [ndio](#ndio) or [CAJAL](#cajal)
 3. Annotate using [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
 4. Save annotations
 5. run `mana_putAnno` to put annotation and metadata in neurodata database
@@ -919,6 +925,7 @@ name: mana
 <!-- ## ND: ITK-SNAP + [mana](docs.neurodata.io/mana) -->
 .center[
 <img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/mana_itk_example.jpg"   alt="Drawing" style="height: 250px;"/>
+<img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/mana_intro.png"   alt="Drawing" style="height: 250px;"/>
 ]]
 
 
@@ -928,12 +935,13 @@ name: maca
 
 ## Learn: .y[maca]
 
-[Docs](http://docs.neurodata.io/nddocs/maca.html) | [Code](https://github.com/neurodata/ndparse/tree/master/maca)
+[Docs](http://docs.neurodata.io/nddocs/ndparse/maca.html) 
+| [Code](https://github.com/neurodata/ndod/tree/master/maca)
 
 
 .pull-left[
 <!-- ## Wrangle: [ilastik](http://ilastik.org/) -->
-- .y[Computer vision tools for big data neuroscience]
+- Computer vision tools for big data neuroscience
 - interfaces with ndio and CAJAL to get and put data
 - [ilastik](http://ilastik.org/) integration
 - tools for result visualization
@@ -945,7 +953,10 @@ name: maca
 .pull-right[
 <!-- ## ND: ilastic+CAJAL/ndio -->
 .center[
-<img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/maca_example.png"   alt="Drawing" style="height: 200px;"/>
+<img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/maca_example.png"   alt="Drawing" style="width: 300px;"/>
+<img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/maca_ilastik_intro.png"   alt="Drawing" style="width: 300px;"/>
+
+
 ]]
 
 ---
@@ -953,7 +964,11 @@ name: maxa
 
 ## Deploy: .y[maxa]
 
-[App](#r_syn) | [Code](https://github.com/neurodata/ndparse/tree/master/maxo)
+[Code](https://github.com/neurodata/ndod/tree/master/docs/maxa)
+| [RF](http://docs.neurodata.io/nddocs/ndparse/mbcd.html)
+| [Deep Learning](http://docs.neurodata.io/nddocs/ndparse/nddl.html)
+
+
 
 <br />
 
@@ -972,19 +987,86 @@ name: maxa
 
 .pull-right[
 .center[
-<img src="http://www.frontiersin.org/files/Articles/609/fninf-03-022/image_m/fninf-03-022-g002.jpg"    alt="Drawing" style="height: 250px;"/>
+<img src="http://www.frontiersin.org/files/Articles/609/fninf-03-022/image_m/fninf-03-022-g002.jpg"    alt="Drawing" style="width: 300px;"/>
+
+<img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/Y_manual1.png?raw=true"    alt="Drawing" style="width: 300px;"/>
+
+
 ]]
 
 
 ---
-name: ndparse
+name: x2g
 
-### Cell Detection via Random Forest
+# x-to-graphs
+
+<br />
+
+- [streaming image processing](#cv)
+  - [2D stitching artifact](#2d)
+  - [3D histogram normalization](#3d)
+  - [volume registration](#ndreg)
+- [object detection](#parse)
+  - [label](#mana)
+  - [learn](#maca)
+  - [deploy](#maxa)
+- .y[graph inference]
+  - [serial electron microscopy](#i2g) (i2g)
+  - [diffusion mri](#d2g) (d2g)
+  - [functional mri](#f2g) (f2g)
+
+
+
 
 ---
-name: nddl
+name: i2g
 
-### Cell Detection via Deep Learning
+## EM Graph Inference: .y[i2g]
+
+[Web](http://docs.neurodata.io/i2g/)
+| [Manuscript](http://arxiv.org/abs/1411.6880)
+| [MATLAB Code](https://github.com/neurodata/i2g)
+| [Python Code](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim9_make_graph.ipynb)
+| [Graph](http://openconnecto.me/mrdata/static/graphs/mouse/kasthuri_graph_v4.graphml)
+
+<br>
+
+.pull-left[
+- Provides automated end-to-end pipeline to reconstruct graphs from EM data
+- Leverages open source tools like .y[Gala] and .y[vesicle]
+- System-level graph quality assessment
+]
+
+.pull-right[
+<img src="images/i2g.jpg" alt="Drawing" style="width: 300px;"/>
+]
+
+---
+name: d2g
+
+## DTI Graph Inference: .y[ndmg]
+
+[Web](http://docs.neurodata.io/nddocs/mrgraphs/)
+| [Code](https://github.com/neurodata/ndmg/)
+| [Graphs](http://docs.neurodata.io/nddocs/mrgraphs/processed_data.html)
+<br>
+
+.pull-left[
+- one-click python package to generate graphs from structural MRI data
+- web-service to process individual brains
+- approximately .y[100,000] graphs processed and available to date from 2000 scans
+- computes graphs with various attributes across many scales
+- available on pip .y[pip install ndmg] 
+]
+
+.pull-right[
+<img src="images/m2g.jpg" alt="Drawing" style="width: 300px;"/>
+]
+
+---
+name: f2g
+
+## fMRI Graph Inference: .y[cpac]
 
 
 
