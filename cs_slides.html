@@ -329,7 +329,7 @@ layout: true
 name: store
 
 
-## Store
+# Store
 
 <br />
 
@@ -369,7 +369,7 @@ name: db
 ---
 name: spdb
 
-## Images: .y[spdb]
+### Images: .y[spdb]
 
 [Code](https://github.com/neurodata/ndstore) 
 | [Tutorials](http://docs.neurodata.io/ndstore/sphinx/console.html) 
@@ -382,7 +382,7 @@ name: spdb
 | [Examples](http://neurodata.io/projects)
 
 .pull-left[
-###  Storage Model
+####  Storage Model
 - Image Data Model to store images & associated metadata
 - Space filling curve minimizes the number of accesses
 - Dense multi-dimensional spatial array partitioned into cuboids
@@ -398,26 +398,27 @@ name: spdb
 
 ---
 
-## Image Benchmarks
+#### Image Benchmarks
 
 <br>
 
 .center[
-<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/ggplots/ReadThroughputPlot.png" style="width: 500px;"/>
+<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/store/ReadThroughputPlot.png" style="width: 500px;"/>
 
-<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/ggplots/WriteThroughputPlot.png" style="width: 500px;"/>
+<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/store/WriteThroughputPlot.png" style="width: 500px;"/>
 ]
 
 
 ---
 name: ramondb
 
-## Annotations: .y[ramondb]
+### Annotations: .y[ramondb]
 
 
-[Data Model](http://docs.neurodata.io/nddocs/ramon.html) |
-[Code](https://github.com/neurodata/ndstore) | [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) |  [Tutorials](http://docs.neurodata.io/nddocs/ramonnd.html)
-| [App](#r_anno)
+[Code](https://github.com/neurodata/ndstore) 
+| [Data Model](http://docs.neurodata.io/nddocs/ndparse/ramon.html) 
+| [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
+| [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
 
 .pull-left[
 ####  Data Model
@@ -441,11 +442,11 @@ name: ramondb
 ---
 name: grutedb
 
-## Graphs: .y[grutedb]
+### Graphs: .y[grutedb]
 
-[Web](http://openconnecto.me/graphs) |
-[Code](https://github.com/neurodata/m2g/tree/master/MR-OCP)
-
+[Web](http://openconnecto.me/graphs) 
+| [Code](https://github.com/neurodata/m2g/tree/master/MR-OCP)
+| [Manuscript](http://arxiv.org/abs/1312.4318)
 
 
 .pull-left[
@@ -494,7 +495,7 @@ name: util
 ---
 name: cdn
 
-## CDN: .y[ndtilecache]
+### CDN: .y[ndtilecache]
 
 [Docs](http://docs.neurodata.io/ndtilecache/) |
 [Code](https://github.com/neurodata/ndtilecache) |
@@ -517,14 +518,14 @@ name: cdn
 <br>
 
 .center[
-<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/tile_read_speed.png" style="width: 500px;"/>
+<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/store/tile_read_speed.png" style="width: 500px;"/>
 ]
 
 
 ---
 name: ndlims
 
-## LIMS: .y[ndlims]
+### LIMS: .y[ndlims]
 [Code](https://github.com/neurodata/ndlims)
 | [Issues](https://github.com/neurodata/ndlims/issues)
 
@@ -536,7 +537,7 @@ name: ndlims
 ---
 name: ndio
 
-## Python Wrapper: .y[ndio]
+### Python Wrapper: .y[ndio]
 
 [Code](https://github.com/neurodata/ndio)
 | [Docs](http://docs.neurodata.io/nddocs/ndio/)
@@ -558,7 +559,7 @@ name: ndio
 name: CAJAL
 
 
-## MATLAB SDK: .y[CAJAL]
+### MATLAB SDK: .y[CAJAL]
 [Code](https://github.com/neurodata/CAJAL)
 | [Docs](http://docs.neurodata.io/CAJAL/)
 
@@ -599,7 +600,7 @@ name: CAJAL
 ---
 name: hard
 
-## Data  Cluster
+### Data  Cluster
 
 .center[
 <img src="http://docs.neurodata.io/ndstore/_images/ocp_cluster.png" style="width: 700px;"/>
@@ -776,7 +777,7 @@ name: wrangle
 ---
 name: cv
 
-# Streaming Image Processing
+## Streaming Image Processing
 
 <br />
 
@@ -797,7 +798,7 @@ name: cv
 ---
 name: 2d
 
-## 2D Stitching Artifact: .y[dmg]
+### 2D Stitching Artifact: .y[dmg]
 
 [Web](https://github.com/mkazhdan/DMG) 
 | [Code](https://github.com/mkazhdan/DMG) 
@@ -823,7 +824,7 @@ name: 2d
 ---
 name: 3d
 
-## 3D Color Correction: .y[gdf]
+### 3D Color Correction: .y[gdf]
 
 
 [Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
@@ -845,10 +846,13 @@ name: 3d
 ---
 name: ndreg
 
-## Register Volume: .y[ndreg]
+### Register Volume: .y[ndreg]
 
 
-[Code](https://github.com/neurodata/ndreg) | [Demo](https://github.com/neurodata/ndreg/blob/master/maskPipelineExample.ipynb) | [Setup](https://github.com/neurodata/ndreg/blob/master/README.md) | [App](#r_ndreg)
+[Code](https://github.com/neurodata/ndreg) 
+| [Demo](https://github.com/neurodata/ndreg/blob/master/maskPipelineExample.ipynb) 
+| [Setup](https://github.com/neurodata/ndreg/blob/master/README.md) 
+| [Manuscript](https://github.com/neurodata/spiePhotonics/raw/master/spiePhotonics.pdf)
 
 .pull-left[
 #### Highlights
@@ -965,6 +969,7 @@ name: maxa
 ## Deploy: .y[maxa]
 
 [Code](https://github.com/neurodata/ndod/tree/master/docs/maxa)
+| [Vesicle](https://github.com/neurodata/vesicle), [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf) 
 | [RF](http://docs.neurodata.io/nddocs/ndparse/mbcd.html)
 | [Deep Learning](http://docs.neurodata.io/nddocs/ndparse/nddl.html)
 
@@ -998,7 +1003,7 @@ name: maxa
 ---
 name: x2g
 
-# x-to-graphs
+## x-to-graphs
 
 <br />
 
@@ -1021,7 +1026,7 @@ name: x2g
 ---
 name: i2g
 
-## EM Graph Inference: .y[i2g]
+### EM Graph Inference: .y[i2g]
 
 [Web](http://docs.neurodata.io/i2g/)
 | [Manuscript](http://arxiv.org/abs/1411.6880)
@@ -1044,10 +1049,11 @@ name: i2g
 ---
 name: d2g
 
-## DTI Graph Inference: .y[ndmg]
+### DTI Graph Inference: .y[ndmg]
 
 [Web](http://docs.neurodata.io/nddocs/mrgraphs/)
 | [Code](https://github.com/neurodata/ndmg/)
+| Manuscripts: [mrcap](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6173097), [MIGRAINE](http://arxiv.org/abs/1312.4875)
 | [Graphs](http://docs.neurodata.io/nddocs/mrgraphs/processed_data.html)
 <br>
 
@@ -1066,7 +1072,7 @@ name: d2g
 ---
 name: f2g
 
-## fMRI Graph Inference: .y[cpac]
+### fMRI Graph Inference: .y[cpac]
 
 
 
@@ -1227,12 +1233,49 @@ layout: false
 
 # References
 
-<br />
 
-
+.small[
 1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
 
 1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
+
+
+1. Mhembere D, et al. [Computing Scalable Multivariate Glocal Invariants of Large (Brain-) Graphs](http://arxiv.org/abs/1312.4318). IEEE GlobalSIP, 2013.
+
+1. Kazhdan M, et al. [Distributed Gradient-Domain Processing
+of Planar and Spherical Images](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf).
+ACM Transactions on Graphic, 28(4) 2009.
+
+1. Kazhdan M, et al. [Gradient-Domain Fusion for Color Correction in Large EM Image Stacks](http://arxiv.org/abs/1506.02079). arXiv:1506.02079
+
+1. Kutten KS, et al. [Deformably Registering and Annotating Whole CLARITY Brains to an Atlas via Masked LDDMM](https://github.com/neurodata/spiePhotonics/raw/master/spiePhotonics.pdf). SPIE Photonics Europe, 2016.
+
+1. Gray Roncal, WR, et al. [VESICLE: Volumetric Evaluation of Synaptic Interfaces using Computer Vision at Large Scale](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf). BMVA 2015.
+
+1. Gray Roncal, WR, et al. [An automated images-to-graphs framework for high resolution connectomics](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full). Frontiers in Neuroinformatics, 13 August 2015.
+
+1. Gray Roncal, WR, et al. [Magnetic Resonance Connectome Automated Pipeline: An Overview](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6173097). IEEE Pulse 3(2) 42-48, 2012.
+
+1. Gray Roncal WR, et al. [MIGRAINE: MRI Graph Reliability Analysis and Inference for Connectomics](http://arxiv.org/abs/1312.4875). IEEE GlobalSIP, 2013.
+]
+
+---
+
+# References Continued
+
+.small[
+1. misha1
+
+1. misha2
+
+1. misha3
+
+1. flashgraph
+
+1. flasheigen
+
+1. flashmatrix
+]
 
 ---
 
