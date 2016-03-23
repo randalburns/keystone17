@@ -760,17 +760,17 @@ name: wrangle
 <br />
 
 - [streaming image processing](#cv)
-  - [2D stitching artifact](#2d)
-  - [3D histogram normalization](#3d)
-  - [volume registration](#ndreg)
+  - [2D stitching artifact](#2d) (dmg)
+  - [3D histogram normalization](#3d) (gdf)
+  - [volume registration](#ndreg) (lddmm)
 - [object detection](#parse)
-  - [label](#mana)
-  - [learn](#maca)
-  - [deploy](#maxa)
+  - [label](#mana) (mana)
+  - [learn](#maca) (maca)
+  - [deploy](#maxa) (maxa)
 - [graph inference](#x2g)
-  - [serial electron microscopy](#i2g)
-  - [diffusion mri](#d2g)
-  - [functional mri](#f2g)
+  - [serial electron microscopy](#i2g) (i2g)
+  - [diffusion mri](#d2g) (d2g)
+  - [functional mri](#f2g) (f2g)
 
 
 
@@ -782,18 +782,17 @@ name: cv
 <br />
 
 - .y[streaming image processing]
-  - [2D stitching artifact](#2d)
-  - [3D histogram normalization](#3d)
-  - [volume registration](#ndreg)
+  - [2D stitching artifact](#2d) (dmg)
+  - [3D histogram normalization](#3d) (gdf)
+  - [volume registration](#ndreg) (lddmm)
 - [object detection](#parse)
-  - [label](#mana)
-  - [learn](#maca)
-  - [deploy](#maxa)
+  - [label](#mana) (mana)
+  - [learn](#maca) (maca)
+  - [deploy](#maxa) (maxa)
 - [graph inference](#x2g)
-  - [serial electron microscopy](#i2g)
-  - [diffusion mri](#d2g)
-  - [functional mri](#f2g)
-
+  - [serial electron microscopy](#i2g) (i2g)
+  - [diffusion mri](#d2g) (d2g)
+  - [functional mri](#f2g) (f2g)
 
 ---
 name: 2d
@@ -880,29 +879,27 @@ name: ndreg
 
 
 
-.bottom[https://github.com/neurodata/ndreg/blob/master/maskPipelineExample.ipynb]
 
 
 ---
 name: parse
 
-# Parse
+## object detection
 
 <br />
 
 - [streaming image processing](#cv)
-  - [2D stitching artifact](#2d)
-  - [3D histogram normalization](#3d)
-  - [volume registration](#ndreg)
+  - [2D stitching artifact](#2d) (dmg)
+  - [3D histogram normalization](#3d) (gdf)
+  - [volume registration](#ndreg) (lddmm)
 - .y[object detection]
-  - [label](#mana)
-  - [learn](#maca)
-  - [deploy](#maxa)
+  - [label](#mana) (mana)
+  - [learn](#maca) (maca)
+  - [deploy](#maxa) (maxa)
 - [graph inference](#x2g)
-  - [serial electron microscopy](#i2g)
-  - [diffusion mri](#d2g)
-  - [functional mri](#f2g)
-
+  - [serial electron microscopy](#i2g) (i2g)
+  - [diffusion mri](#d2g) (d2g)
+  - [functional mri](#f2g) (f2g)
 
 
 
@@ -910,7 +907,7 @@ name: parse
 ---
 name: mana
 
-## Label: .y[mana]
+### Label: .y[mana]
 
 [Docs](http://docs.neurodata.io/nddocs/ndparse/mana.html) 
 | [Code](https://github.com/neurodata/ndod/tree/master/mana/code)
@@ -937,7 +934,7 @@ name: mana
 ---
 name: maca
 
-## Learn: .y[maca]
+### Learn: .y[maca]
 
 [Docs](http://docs.neurodata.io/nddocs/ndparse/maca.html) 
 | [Code](https://github.com/neurodata/ndod/tree/master/maca)
@@ -966,38 +963,27 @@ name: maca
 ---
 name: maxa
 
-## Deploy: .y[maxa]
+### Deploy: .y[maxa]
 
 [Code](https://github.com/neurodata/ndod/tree/master/docs/maxa)
-| [Vesicle](https://github.com/neurodata/vesicle), [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf) 
-| [RF](http://docs.neurodata.io/nddocs/ndparse/mbcd.html)
-| [Deep Learning](http://docs.neurodata.io/nddocs/ndparse/nddl.html)
 
 
 
 <br />
 
 
-.pull-left[
-- Use [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
-- GUI to generate workflow connecting modules
-- Each module calls a single executable
-- Get Cubes for each worker node
-- Each node processes data and spits out its answer
-- CAJAL then merges them back together
-- And sends back to database
+- Can make usse of [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
+- .y[Vesicle] Detect all synapses in electron microscopy data: [Code](https://github.com/neurodata/vesicle) | [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf) 
+- .y[mbcd] Detect all cell's in histology data using RF: [Code](https://github.com/neurodata/ndod/tree/master/maca/packages/mbcd) | [Tutorial](http://docs.neurodata.io/nddocs/ndparse/mbcd.html)
+- .y[nddl] Detect all cells in histology data using Deep Learning: [Tutorial](http://docs.neurodata.io/nddocs/ndparse/nddl.html)
 - Integrations planned for qsub, slurm and aws submission
-]
 
 
-.pull-right[
+
 .center[
 <img src="http://www.frontiersin.org/files/Articles/609/fninf-03-022/image_m/fninf-03-022-g002.jpg"    alt="Drawing" style="width: 300px;"/>
-
 <img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/Y_manual1.png?raw=true"    alt="Drawing" style="width: 300px;"/>
-
-
-]]
+]
 
 
 ---
@@ -1008,18 +994,17 @@ name: x2g
 <br />
 
 - [streaming image processing](#cv)
-  - [2D stitching artifact](#2d)
-  - [3D histogram normalization](#3d)
-  - [volume registration](#ndreg)
+  - [2D stitching artifact](#2d) (dmg)
+  - [3D histogram normalization](#3d) (gdf)
+  - [volume registration](#ndreg) (lddmm)
 - [object detection](#parse)
-  - [label](#mana)
-  - [learn](#maca)
-  - [deploy](#maxa)
+  - [label](#mana) (mana)
+  - [learn](#maca) (maca)
+  - [deploy](#maxa) (maxa)
 - .y[graph inference]
   - [serial electron microscopy](#i2g) (i2g)
   - [diffusion mri](#d2g) (d2g)
   - [functional mri](#f2g) (f2g)
-
 
 
 
@@ -1125,17 +1110,20 @@ name: images
 ---
 name: shapes
 
-## Shape Analysis: .y[ShapeSPH]
-[Code](https://github.com/mkazhdan/ShapeSPH) 
+## Shape Analysis: .y[LDDMM & ShapeSPH]
+[LDDMM](http://www.cis.jhu.edu/software/) | [LDDMM Python](https://github.com/neurodata/ndreg) |
+[SPH Code](https://github.com/mkazhdan/ShapeSPH) 
 
 
-.pull-left[
 
+- Large Deformation Diffeomorphic Metric Mapping
+  - Learns pairwise invertable correspondence between volumes, surfaces, masks
+  - Has been applied to MRI, histology, and CLARITY brains successfully
 - Shape Spherical Harmonics
-- [Shape Descriptions](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/descriptors.html)
-- [Shape Alignment](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/alignment.html)
-- [Shape Symmetry](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/symmetry.html)
-]
+  - [Shape Descriptions](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/descriptors.html)
+  - [Shape Alignment](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/alignment.html)
+  - [Shape Symmetry](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/symmetry.html)
+
 
 
 .center[
@@ -1158,15 +1146,6 @@ name: graphs
 - Store vertex state in memory, edge list on array of SSDs
 - 1B vertex & 100B edge graphs
 - R bindings for all functions
-- Coming soon
-  - [Joint  Embedding (w/missing values)](http://arxiv.org/abs/1502.03391)
-  - [Nonpar 2-Sample Testing](http://arxiv.org/abs/1409.2344)
-  - [Semipar 2-Sample  Testing](http://arxiv.org/abs/1403.7249)
-  - [Vertex Clustering](http://arxiv.org/abs/1310.0532)
-  - [Vertex Classification](http://arxiv.org/abs/1212.1182)
-  - [Graph Matching](http://arxiv.org/abs/1405.3133)
-  - [Hiearchical Modeling](http://arxiv.org/abs/1503.02115)
-  - [Errorful Modeling](http://arxiv.org/abs/1211.3601)
 ]
 
 .pull-right[
