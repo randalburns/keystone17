@@ -221,6 +221,8 @@ class: center, middle
 # [NeuroData](http://neurodata.io):
 ## Enabling Petascale Neuroscience
 
+### Statistical Science 
+
 <!-- ### Joshua T. Vogelstein -->
 <!-- ### {[BME](http://bme.jhu.edu),[ICM](http://icm.jhu.edu),[CIS](http://cis.jhu.edu),[Kavli](http://kndi.jhu.edu)}@[jhu](http://jhu.edu) -->
 
@@ -229,17 +231,19 @@ class: center, middle
 
 
 
-#### these slides: <http://docs.neurodata.io/ndintro>
+#### these slides: <http://docs.neurodata.io/stats.html>
 
 <br>
-<!-- [prof joshua t. vogelstein](http://jovo.me) -->
 
 {[bme](http://www.bme.jhu.edu/),[icm](http://icm.jhu.edu/),[cis](http://cis.jhu.edu/),[idies](http://idies.jhu.edu/),kavli,[cs](http://engineering.jhu.edu/computer-science/), [ams](http://engineering.jhu.edu/ams/), [neuro](http://neuroscience.jhu.edu/)}@[jhu](https://www.jhu.edu/)
 
 <br>
 
-.center[please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!]
+.center[please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!
 
+[source code](https://github.com/neurodata/ndintro/blob/gh-pages/stats.html)
+| [contributors](https://github.com/neurodata/ndintro/graphs/contributors)
+]
 
 
 ---
@@ -249,255 +253,37 @@ layout: true
 .bbar[ _[Intro](#intro): Opportunity_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
 
 
+
+
 ---
-name: intro
+## Vector Statistics
 
-# Big Scientific Data
-
-<br>
 
 .pull-left[
-- molecular genomics (1D)
+### Projects
+- [LOL](http://jovo.me/LOL/)
+- [Randomer Forest](http://ttomita.github.io/RandomerForest/)
+- [Multiscale Dictionary Learning](https://github.com/jovo/conditional-density-estimation)
+- Optimal Discovery Science via Maximizing Reliability
+- Dependence Discovery for Multi Manifold Data
 ]
-.pull-right[
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_genome_alignment_of_eight_Yersinia_isolates.png/380px-A_genome_alignment_of_eight_Yersinia_isolates.png" alt="Drawing" style="width: 400px;"/>]
 
-
----
-
-
-# Big Scientific Data
-
-<br>
-
-.pull-left[
-- molecular genomics (1D)
-- cosmology (2D)
-]
 
 .pull-right[
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Ilc_9yr_moll4096.png" alt="Drawing" style="width: 400px;"/>]
+### Inference Tasks
 
-
----
-
-
-# Big Scientific Data
-
-<br>
-
-.pull-left[
-- molecular genomics (1D)
-- cosmology (2D)
-- Neuroscience! (3D+)
+- 2-class classification
+- Multiclass classification
+- Regression
+- Two-sample Testing
+- Dependence Testing
+- Density Estimation
 ]
-
-.pull-right[
-<img src="http://www.nature.com/neuro/journal/v17/n11/images/nn.3839-F1.jpg
-" alt="Drawing" style="width: 400px;"/>]
-
-
----
-
-<!-- https://openwiki.janelia.org/wiki/download/attachments/34505478/Image%201%20-%20Medulla%20EM%20Stack%20-%20Final.jpg?version=1&modificationDate=1375908720000&api=v2 -->
-
-
-### Opportunity: Big Neuro Data
-
-.pull-left[
-.center[
-<iframe width="380" height="300" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-- Modality: Transmission Electron Microscopy Camera Array
-- 4 x 4 x 40 nm^3
-- 450 x 350 x 50 micron^3
-- Size: ~10 TB
-- Cite: Bock et al. (Nature) 2011
-]
-
-
---
-
-.pull-right[
-.center[
-<iframe width="380" height="300" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- Modality: Serial Electron Microscopy w/ATUM
-- Resolution: 3 x 3 x 30 nm<sup>3</sup>
-- Volume: 40 x 40 x 50 &mu;m<sup>3</sup>
-- Size: ~1 TB
-- Cite: Kasthuri et al. (Cell) 2015
-]
-
----
-
-### Opportunity: Big Neuro Data
-
 
 
 .center[
-<img src="http://www.nature.com/neuro/journal/v17/n11/images/nn.3839-F1.jpg"    alt="Drawing" style="width: 640px; "/>
+<iframe src="https://drive.google.com/file/d/0B7nlh5n4ioGtOW1RLWdvUkN5SWs/preview" width="700px" height="200px"></iframe>
 ]
-
-
----
-
-layout: true
-
-.bbar[ _[Intro](#intro): Challenge_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
-
-
----
-
-## Challenge #1: Reproducible and Extensible Science
-
-
-.center[
-<iframe width="372" height="272" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-
-- 916 excitatory axons
-- 1,036 dendritic spines
-- 7,505 spine touches
-- 1,037 synapses
-- Question: Many different anatomical questions that require a catalog of all spatial objects in ontology for efficient search, discovery, analysis.
-
-
-
-
----
-
-## Challenge #2: Synapse Spatial Point Process Pattern
-
-
-
-
-.center[
-<iframe width="484" height="272" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- 8 million mm<sup>3</sup> &#10141; 8 million synapses
-- Manual labeling requires ~10 sec / synapse
-- 60 sec x 60 min x 8 hrs x 250 days = 8 million seconds
-- A person can find 8 million synapses working for 10 years
-- Question: Are synapses distributed uniformly in space? If not, how are they distributed? Are there clusters?
-
-
----
-
-
-# Action
-
-
-<br />
-
-- [Computer Science](cs.html#2)
-- [Statistical Science](stats.html#2)
-- [Big Data Curation](data.html#2)
-- [Neuroscience](neuro.html#2)
-
-
-
-
----
-layout: true
-
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#applications)_ | [Discussion](#disc)]
-
-
----
-
-layout: true
-
-.bbar[ [Intro](#intro)  | [Tools](#tools) | [Applications](#applications) | _[Discussion](#disc)_]
-
----
-name: disc
-
-# Resolution
-
-<br />
-
-
-- Contributions & Implications
-- Other inference tasks to be integrated
-- Other modalities
-- Related Work
-- Next steps
-
-
----
-
-## Open Science Contributions
-
-<br />
-
-- Reference datasets in a variety of modalities
-- Reference pipelines for operating on such data
-- Web-services for data access
-- Computing configuration
-- A cloud computing stack to facilitate analysis
-- Detailed specs for plugging in different routines
-- Data derivatives at all stages of analysis
-
---
-
-<br />
-
-#### Implications: it is now easier to
-
-<br />
-
-- Answer questions the require scale
-- Engage complementary expertise
-- Bridge across scales and modalities
-- Reproduce results
-
-
----
-
-## Coming soon...
-
-<br />
-
-- [Ophys Spike detection](https://github.com/jovo/oopsi)
-- Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
-- [m2g](http://m2g.io/): MRI to Graphs
-- IF Synapse Detection
-- Ophys Cell Detection
-- Cell detection for micron resolution data
-
-
-
----
-
-
-# Related Work
-
-<br />
-
-- [CATMAID](http://catmaid.readthedocs.org/en/stable/)
-- [Neurodata Without Borders](http://nwb.org/)
-- [Keller Lab Block File Format](http://www.nature.com/nprot/journal/v10/n11/abs/nprot.2015.111.html)
-- [Thunder](http://thunder-project.org/)
-
-
----
-
-
-## Further Lowering the Barrier to Entry
-
-<br />
-
-- Put it all together
-- Apply to other domains & questions
-- Deploy backend and analytics stack in commercial cloud
-- We work together!
-
-
-
 
 
 ---
@@ -507,9 +293,6 @@ name: disc
 <br />
 
 
-1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
-
-1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
 
 ---
 
@@ -521,16 +304,18 @@ class:  center
 <br />
 
 .center[
+.small[
 |   |   | |
 | :--- | :--- | :--- |
 | Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla]
 | Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
 | Explore | | .orange[Misha Kazhdan, Alex Baden, Jordan Matelsky]
-| Parse | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| Wrangle | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
+| Parse | | .g[Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
 | Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 | Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
-]
+]]
 
 
 ---

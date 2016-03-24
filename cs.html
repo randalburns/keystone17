@@ -231,16 +231,19 @@ class: center, middle
 
 
 
-#### these slides: <http://docs.neurodata.io/cs_slides.html>
+#### these slides: <http://docs.neurodata.io/cs.html>
 
 <br>
-<!-- [prof joshua t. vogelstein](http://jovo.me) -->
 
 {[bme](http://www.bme.jhu.edu/),[icm](http://icm.jhu.edu/),[cis](http://cis.jhu.edu/),[idies](http://idies.jhu.edu/),kavli,[cs](http://engineering.jhu.edu/computer-science/), [ams](http://engineering.jhu.edu/ams/), [neuro](http://neuroscience.jhu.edu/)}@[jhu](https://www.jhu.edu/)
 
 <br>
 
-.center[please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!]
+.center[please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!
+
+[source code](https://github.com/neurodata/ndintro/blob/gh-pages/cs.html)
+| [contributors](https://github.com/neurodata/ndintro/graphs/contributors)
+]
 
 
 
@@ -257,7 +260,7 @@ layout: true
 <br/>
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/9cc4763f-5a2a-44df-bc0c-540316d6d62d/image.png" alt="Drawing" style="height: 250px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/9cc4763f-5a2a-44df-bc0c-540316d6d62d/image.png" alt="Drawing" style="width: 800px;"/>
 ]
 
 <br />
@@ -274,50 +277,11 @@ layout: true
 <br/>
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/4992c41b-3c24-48f1-8c7b-cd67641a2cdf/image.png" alt="Drawing" style="height: 250px;"/>
+<img src="https://www.lucidchart.com/publicSegments/view/4992c41b-3c24-48f1-8c7b-cd67641a2cdf/image.png" alt="Drawing" style="width: 800px;"/>
 ]
 
 
 
----
-
-## Trade-offs at Each Step
-
-<br />
-
-| _Property_    | _Classical_ &nbsp;| _NeuroData_ &nbsp; | _Both_ |
-| :---          | :----:      | :---:       | :---: |
-| Quality     | .g[&check;]   | .r[&cross;] | .g[&check;] |
-| Scalability | .r[&cross;]   | .g[&check;] | .g[&check;] |
-| Capabilities| .g[&check;]   | .r[&cross;] | .g[&check;] |
-| 1-clickiness| .r[&cross;]   | .g[&check;] | .g[&check;] |
-
-
---
-
-<br />
-
-.white[The ideal system will include both classical and novel NeuroData methods, as they complement one another.]
-
-
-
-
-
-
-
----
-name: outline
-
-# Outline
-
-<br />
-
-
-<!-- 1. [Infrastructure](#infra) -->
-3. [Store](#store)
-4. [Explore](#explore)
-5. [Wrangle](#wrangle)
-7. [Analyze](#anal)
 
 
 ---
@@ -973,7 +937,13 @@ name: maxa
 
 
 - Can make usse of [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
-- .y[Vesicle] Detect all synapses in electron microscopy data: [Code](https://github.com/neurodata/vesicle) | [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf) 
+- .y[Vesicle] Detect all synapses in electron microscopy data: [Code](https://github.com/neurodata/vesicle)  | [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html) | [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html) | [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf)
+
+.center[
+<img src="http://docs.neurodata.io/i2g/_images/i2g_overview.jpg"    alt="Drawing" style="height: 250px; "/>
+]
+
+
 - .y[mbcd] Detect all cell's in histology data using RF: [Code](https://github.com/neurodata/ndod/tree/master/maca/packages/mbcd) | [Tutorial](http://docs.neurodata.io/nddocs/ndparse/mbcd.html)
 - .y[nddl] Detect all cells in histology data using Deep Learning: [Tutorial](http://docs.neurodata.io/nddocs/ndparse/nddl.html)
 - Integrations planned for qsub, slurm and aws submission
@@ -1110,7 +1080,7 @@ name: images
 ---
 name: shapes
 
-## Shape Analysis: .y[LDDMM & ShapeSPH]
+### Shape Analysis: .y[LDDMM & ShapeSPH]
 [LDDMM](http://www.cis.jhu.edu/software/) | [LDDMM Python](https://github.com/neurodata/ndreg) |
 [SPH Code](https://github.com/mkazhdan/ShapeSPH) 
 
@@ -1146,18 +1116,22 @@ name: graphs
 - Store vertex state in memory, edge list on array of SSDs
 - 1B vertex & 100B edge graphs
 - R bindings for all functions
+<br><br>
 ]
 
 .pull-right[
-#### Graph Traversal Functions
--   Breadth-First Search
-  - Triangle Counting
-  - Connected Components
-  - Scan Statistic
-  - Page Rank
-  - Community detection
-
+#### Algorithms
+- Breadth-First Search
+- Triangle Counting
+- Connected Components
+- Scan Statistic
+- Page Rank
+- Community detection
 ]
+
+<img src="images/fg.png"    alt="Drawing" style="height: 275px;"/>
+<img src="images/fg-benchmarks.png"    alt="Drawing" style="height: 275px;"/>
+
 
 
 
@@ -1173,15 +1147,6 @@ name: matrices
 - Store vertex state in memory, edge list on array of SSDs
 - 1B vertex & 100B edge graphs
 - R bindings for all functions
-- Coming soon
-  - [Joint  Embedding (w/missing values)](http://arxiv.org/abs/1502.03391)
-  - [Nonpar 2-Sample Testing](http://arxiv.org/abs/1409.2344)
-  - [Semipar 2-Sample  Testing](http://arxiv.org/abs/1403.7249)
-  - [Vertex Clustering](http://arxiv.org/abs/1310.0532)
-  - [Vertex Classification](http://arxiv.org/abs/1212.1182)
-  - [Graph Matching](http://arxiv.org/abs/1405.3133)
-  - [Hiearchical Modeling](http://arxiv.org/abs/1503.02115)
-  - [Errorful Modeling](http://arxiv.org/abs/1211.3601)
 ]
 
 .pull-right[
@@ -1190,8 +1155,14 @@ name: matrices
   - Eigendecomposition
   - Singular Value Decomposition
   - K-means
-  - Non-negative matrix factorization (NMF)
+  - Non-negative Matrix Factorization 
+  - Gaussian Mixture Modeling
 ]
+
+
+<img src="images/NMF.png"    title="ass" style="width: 350px;"/>
+<img src="images/SpMM.png"    title="SpMM" style="width: 350px;"/>
+
 
 ---
 layout: false
@@ -1205,6 +1176,30 @@ layout: false
   - Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting) | [online](https://github.com/decarlson/opass)
 - IF Synapse Detection
 - Ophys Cell Detection
+
+---
+
+
+
+## Trade-offs at Each Step
+
+<br />
+
+| _Property_    | _Classical_ &nbsp;| _NeuroData_ &nbsp; | _Both_ |
+| :---          | :----:      | :---:       | :---: |
+| Quality     | .g[&check;]   | .r[&cross;] | .g[&check;] |
+| Scalability | .r[&cross;]   | .g[&check;] | .g[&check;] |
+| Capabilities| .g[&check;]   | .r[&cross;] | .g[&check;] |
+| 1-clickiness| .r[&cross;]   | .g[&check;] | .g[&check;] |
+
+
+--
+
+<br />
+
+.white[The ideal system will include both classical and novel NeuroData methods, as they complement one another.]
+
+
 
 
 
@@ -1243,17 +1238,20 @@ ACM Transactions on Graphic, 28(4) 2009.
 # References Continued
 
 .small[
-1. misha1
+1. misha1 (from here: http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/descriptors.html)
 
-1. misha2
+1. misha2 (http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/alignment.html)
 
-1. misha3
+1. misha3 (http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/symmetry.html)
 
-1. flashgraph
+1. flashgraph: http://arxiv.org/abs/1408.0500
 
-1. flasheigen
+1. flash community detection: http://arxiv.org/abs/1412.8576
 
-1. flashmatrix
+1. flasheigen: http://arxiv.org/abs/1602.01421
+
+1. flashmatrix: http://arxiv.org/abs/1602.02864
+
 ]
 
 ---
@@ -1265,7 +1263,7 @@ class:  center
 <br />
 
 .center[
-.small[
+
 |   |   | |
 | :--- | :--- | :--- |
 | Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
@@ -1273,7 +1271,7 @@ class:  center
 | Wrangle | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov,Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 | Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
-]]
+]
 
 
 ---
