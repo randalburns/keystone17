@@ -245,12 +245,27 @@ class: center, middle
 ]
 
 
+---
 
+# Outline
+
+- Images
+  - Nanoscale
+  - Microscale
+  - Milliscale
+- Annotations
+  - Nanoscale
+  - Microscale
+  - Milliscale
+- Graphs
+  - Nanoscale
+  - Microscale
+  - Milliscale
 
 ---
-name: r_infra
+name: i_nano
 
-##  EM Datasets
+##  Nanoscale NeuroImages
 
 <br />
 
@@ -266,15 +281,45 @@ name: r_infra
 | [Mouse, V1](http://openconnecto.me/bock11/) | Bock et al., Nature, 2011
 | [Mouse, S1](http://openconnecto.me/Kasthurietal2014) | Kasthuri et al., Cell, 2015
 
+wei?
+
+hildebrand?
+
 <br />
 
 Total Size: ~ 80 TV
 
+---
+name: i_micro
+
+
+## Microscale NeuroImages
+
+<br>
+
+- [Array Tomography](http://neurodata.io/modalities/at)
+  - Weiler?
+  - Bloss?
+- [CLARITY](http://neurodata.io/modalities/clarity)
+- [Optophysiology](http://neurodata.io/modalities/ophys)
+- X-Ray Tomography
+- Expansion Microscopy
+- Histology
+
+
 
 ---
-name: r_anno
+name: i_milli
 
-## Annotation  Datasets
+## Milliscale NeuroImages
+
+<br>
+
+
+---
+name: a_nano
+
+## Nanoscale NeuroAnnos
 
 <br />
 
@@ -282,18 +327,37 @@ name: r_anno
 - AC4
 - Kasthuri et al. (Cell, 2015)
 - Harris et al. (Scientific Data, 2015)
-- Allen Reference Atlas
 
 <br />
 
 Total Volume Densely Annotated: ~ 1000 &micro;m<sup>3</sup>
 
 
+---
+name: a_micro
+
+## Microscale NeuroAnnos
+
+<br>
+
+- Allen Reference Atlas
+- Array Tomography: kristina?
+- CLARITY cells?
 
 ---
-name: r_graphs
+name: a_milli
 
-## Graph Datasets
+## Milliscale NeuroAnnos
+
+<br>
+
+- 24 atlases?
+
+
+---
+name: g_nano
+
+## Nanoscale NeuroGraphs
 
 <br />
 
@@ -301,71 +365,44 @@ name: r_graphs
 - Kasthuri et al.
 
 
-<br />
-
-We have Diffusion MRI derived graphs from ~10,000 subjects for ~30 atlases each, yielding > 250,000 total derived graphs.
-
-
-
-
 ---
+name: g_micro
 
-## Other Image Datasets
-
-
-- [Array Tomography](http://neurodata.io/modalities/at)
-- [CLARITY](http://neurodata.io/modalities/clarity)
-- [Multi-modal MRI](http://neurodata.io/modalities/mri)
-- [Optophysiology](http://neurodata.io/modalities/ophys)
-- X-Ray Tomography
-- Expansion Microscopy
-- Histology
-
-## Other Annotation Datasets
-
-- Allen Reference Atlas
-- ~30 different Human MRI Atlases (spanning pediatrics thru geriatrics)
-
-## Other Graph Datasets
-
-- ~10,000  Diffusion MRI derived neurographs
-- ~2,0000 function MRI derived neurographs
-
-
-
----
-
-# References
+## Microscale NeuroGraphs
 
 <br />
 
+- various ones from disa's webpage
 
-1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
 
-1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
+---
+name: g_milli
+
+## Milliscale NeuroGraphs
+
+<br />
+
+.center[
+<iframe width="800" height="400" src="http://docs.neurodata.io/nddocs/mrgraphs/processed_data.html" frameborder="0" allowfullscreen></iframe>
+]
+
+
+<br />
+
+We have Diffusion MRI derived graphs from ~10,000 subjects for ~24 atlases each, yielding > 250,000 total derived graphs.
+
+
 
 ---
 
 layout: false
 class:  center
 
-# NeuroData Family
-
-<br />
 
 .center[
-.small[
-|   |   | |
-| :--- | :--- | :--- |
-| Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla]
-| Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
-| Explore | | .orange[Misha Kazhdan, Alex Baden, Jordan Matelsky]
-| Wrangle | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager]
-| Parse | | .g[Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
-| Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
-| Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
-]]
+<iframe width="880" height="750" src="index.html#fam" frameborder="0" allowfullscreen></iframe>
+]
+
 
 
 ---
