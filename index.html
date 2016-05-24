@@ -604,44 +604,130 @@ name: ndparse
 layout: true
 .bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | [Parse](#parse) | _[Analyze](#anal)_]
 
+---
+name: ndio
+
+### Python Wrapper: .y[ndio]
+
+[Code](https://github.com/neurodata/ndio)
+| [Docs](http://docs.neurodata.io/nddocs/ndio/)
+| [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
+
+<br>
+
+.pull-left[
+- Package to easily interface with neurodata
+- Open source toolbox provides image and metadata capabilities
+- Easy to use interface for standalone or distributed computing across languages
+]
+
+.pull-right[
+<img src="images/ndio.jpg" alt="Drawing" style="width: 300px;"/>
+]
+
+
+
+---
+layout: true
+.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#applications)_ | [Discussion](#disc)]
+
+
+---
+name: applications
+
+
+### Case Study #1: Reproducable and Extensible Big Data Neuroscience
+
+#### Results from Kasthuri et al. (Cell) 2015
+
+.pull-left[
+[Claim 2](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim2_axons_and_dendrites.ipynb)
+1. How many different neurons?
+1. How many dendrites?
+1. What fraction are spiny?
+1. How many unmyelinated axons?
+1. What fraction are excitatory?
+1. How many spines?
+1. How many axon branches?
+1. What fraction of cellular volume is neuron?
+1. What faction of volume is cells?
+1. Relative length of axon vs. dendrite?
+]
+
+
+.pull-right[
+1. Claim 4: [How many mitochondria?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim4_mitochondria.ipynb)
+1. Claim 5: [How many spines on red dendrite?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim5_spines.ipynb)
+1. Claim 9: [How many vesicles?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim6_vesicles.ipynb)
+1. [What is the graph?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim9_make_graph.ipynb)
+]
 
 
 
 
 ---
+name: r_syn
 
-layout: true
+### Case Study #2: Is synapse distribution uniform in space?
 
-.bbar[ [Intro](#intro)  | [Tools](#tools) | [Applications](#applications) | _[Discussion](#disc)_]
+
+<br />
+
+.center[
+<img src="images/rob2.png"    alt="Drawing" style="width: 75%; "/>
+]
+
+Detecting ~11.6 million synapses from the [bock11](http://openconnecto.me/bock11) dataset
+
+???
+
+timings
+
+---
+name: r_anal
+
+### Case Study #2: Is synapse distribution uniform in space?
+
+
+.pull-left[
+<br />
+1. find all synapses
+2. plot 1% of them in 3D scatter plot
+1. Mask out regions that cannot have synapses
+1. Partition volume into cuboids
+2. Count # of elements / cuboid
+3. Normalize by volume of cuboid not masked
+4. Plot normalized volume in 3D scatter plot
+5. Plot marginals
+6. Report p-value
+]
+
+
+.pull-right[
+<br />
+.center[
+<img src="images/3D.png"    alt="Drawing" style="width: 350px; "/>
+<img src="images/2Dproj.png"    alt="Drawing" style="width: 350px; "/>
+]]
+
+
+
+
+
 
 ---
 name: disc
 
-# Resolution
-
-<br />
-
-
-- Contributions & Implications
-- Other inference tasks to be integrated
-- Other modalities
-- Related Work
-- Next steps
-
-
----
 
 ## Open Science Contributions
 
 <br />
 
-- Reference datasets in a variety of modalities
+- Reference EM and other datasets
+- Reference annotations (crucial for training machine learning)
 - Reference pipelines for operating on such data
 - Web-services for data access
-- Computing configuration
-- A cloud computing stack to facilitate analysis
-- Detailed specs for plugging in different routines
-- Data derivatives at all stages of analysis
+- Comprehensive cloud computing platform
 
 --
 
@@ -653,8 +739,7 @@ name: disc
 
 - Answer questions the require scale
 - Engage complementary expertise
-- Bridge across scales and modalities
-- Reproduce results
+- Reproduce and extend results
 
 
 ---
@@ -694,7 +779,6 @@ name: disc
 
 - Put it all together
 - Apply to other domains & questions
-- Deploy backend and analytics stack in commercial cloud
 - We work together!
 
 
@@ -722,34 +806,6 @@ class:  center
 
 <br />
 
-.center[
-|   |   | |
-| :--- | :--- | :--- |
-| Store | | .red[Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman, Jordan Matelsky]
-| Explore | | .orange[Alex Baden,  Ivan Kuznetsov, David Marchette]
-| Parse | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Analyze | | .g[Da Zheng, Disa Mhembere,  Misha Kazhdan]
-<!--  -->
-| Computer Science |  | red[Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman, Jordan Matelsky, Alex Baden,  Ivan Kuznetsov, David Marchette, Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer, Da Zheng, Disa Mhembere,  Misha Kazhdan]
-
----
-
-# NeuroData Family
-
-<br />
-
-
-.center[
-|   |   | |
-| :--- | :--- | :--- |
-| Big Data | &nbsp;&nbsp;&nbsp;&nbsp; | .blue[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla, Nelson Spruston, Erik Bloss]
-<!--  -->
-| Statistics | | .purple[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen,  Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
-<!--  -->
-| Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla]
-
-
----
 
 
 .center[
@@ -779,12 +835,13 @@ _____
 Funding
 
 
-NIH: TRA
+NIH: {CRCNS, BRAINI, TRA}
 
-NIH/NSF:  {BIGDATA, CRCNS}
+NSF:  BIGDATA
 
 DARPA: {XDATA,GRAPHS,SIMPLEX}
 
+IARPA: MICrONS
 
 ____
 
