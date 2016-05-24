@@ -219,7 +219,7 @@
 class: center, middle
 
 # [NeuroData](http://neurodata.io):
-## Enabling Petascale Neuroscience
+## Enabling Petascale Neuroscience for Everyone
 
 <!-- ### Joshua T. Vogelstein -->
 <!-- ### {[BME](http://bme.jhu.edu),[ICM](http://icm.jhu.edu),[CIS](http://cis.jhu.edu),[Kavli](http://kndi.jhu.edu)}@[jhu](http://jhu.edu) -->
@@ -330,15 +330,6 @@ name: intro
 - Cite: Kasthuri et al. (Cell) 2015
 ]
 
----
-
-### Opportunity: Big Neuro Data
-
-
-
-.center[
-<img src="http://www.nature.com/neuro/journal/v17/n11/images/nn.3839-F1.jpg"    alt="Drawing" style="width: 640px; "/>
-]
 
 
 ---
@@ -385,26 +376,236 @@ layout: true
 - Question: Are synapses distributed uniformly in space? If not, how are they distributed? Are there clusters?
 
 
----
-
-
-# Action
-
-
-<br />
-
-- [Computer Science](cs.html#2)
-- [Statistical Science](stats.html#2)
-- [Big Data Curation](data.html#2)
-- [Neuroscience](neuro.html#2)
-
 
 
 
 ---
 layout: true
+.bbar[ _[Intro](#intro)_  | [Store](#store) | [Explore](#explore) | [Parse](#parse) | [Analyze](#anal)]
+---
 
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#applications)_ | [Discussion](#disc)]
+
+
+
+## [NeuroData](http://neurodata.io): 4 steps to discovery
+
+<br/>
+
+.center[
+<img src="https://www.lucidchart.com/publicSegments/view/9cc4763f-5a2a-44df-bc0c-540316d6d62d/image.png" alt="Drawing" style="width: 800px;"/>
+]
+
+<br />
+
+.center[Existing solutions are unable to elegantly handle 3D+ petascale data]
+
+
+
+
+---
+name: store
+
+### Store.Images: .y[spdb]
+
+[Code](https://github.com/neurodata/ndstore) 
+| [Tutorials](http://docs.neurodata.io/ndstore/sphinx/console.html) 
+| [Data Model](http://docs.neurodata.io/ndstore/sphinx/datamodel.html) 
+| [API](http://docs.neurodata.io/ndstore/) 
+| [Manuscript](http://arxiv.org/abs/1306.3543) 
+| [Docker](https://github.com/neurodata/ndstore/blob/master/setup/Dockerfile) 
+| [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
+| [Benchmarks](http://docs.neurodata.io/nddocs/more.html#r_store)
+| [Examples](http://neurodata.io/projects)
+
+.pull-left[
+####  Storage Model
+- Image Data Model to store images & associated metadata
+- Space filling curve minimizes the number of accesses
+- Dense multi-dimensional spatial array partitioned into cuboids
+- Multi-resolution zoom pyramid
+- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
+]
+
+.pull-right[
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="width: 250px;"/>
+<img src="images/reshier.png" style="width: 250px;"/>
+]
+
+
+
+
+---
+name: ramondb
+
+### Store.Shapes: .y[ramondb]
+
+
+[Code](https://github.com/neurodata/ndstore) 
+| [Data Model](http://docs.neurodata.io/nddocs/ndparse/ramon.html) 
+| [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
+| [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
+
+.pull-left[
+####  Data Model
+  - ROI
+  - Neuron
+  - Segment
+  - Skeleton
+  - Synapse
+  - Organelle
+  - Node
+]
+
+.pull-right[
+<img src="http://cs.brown.edu/people/tld/note/blog/13/07/26/figures/sejnowski_neural_activity_scales.jpg" style="width: 300px;"/>
+]
+
+
+
+---
+
+### Store.Benchmarks
+
+<br>
+
+.center[
+<img src="https://raw.githubusercontent.com/neurodata/ndpaper/master/analysis/figs/ndpaper-fig1.png" style="width: 700px;"/>
+]
+
+
+---
+layout: true
+.bbar[ [Intro](#intro)  | [Store](#store) | _[Explore](#explore)_ | [Parse](#parse) | [Analyze](#anal)]
+
+
+---
+name: explore
+
+## Explore.Images:  .y[ndviz]
+
+[Web App](http://ix.neurodata.io) 
+| [Code](https://github.com/neurodata/NeuroDataViz) 
+| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
+
+.pull-left[
+#### Highlights
+- Uses [Leaflet.js](http://leafletjs.com/)
+- Enables pan & zoom in 3D
+- Supports multispectral data (4D)
+- Supports time-series data (4D)
+- Works on mobile & Web
+- Image & Anno. Metadata
+- Collaboration tools
+]
+
+.pull-right[
+### Examples
+- [Volumetric annotation overlays](http://viz.neurodata.io/project/kharris15apical_subcell/xy/1/2064/2088/112/)
+- [Multispectral blending](http://viz.neurodata.io/project/Ex10R55_glutamatergic_prepost/2/378/421/0/#)
+- [Time-series](http://viz.neurodata.io/project/freeman14/xy/1/509/339/10/)
+]
+
+
+---
+
+
+## Explore.Examples
+
+<br>
+
+.center[
+<img src="images/nd_fig2_explore_gk.png" style="width: 600px;"/>
+]
+
+
+
+---
+layout: true
+.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | _[Parse](#parse)_ | [Analyze](#anal)]
+
+
+
+
+---
+name: 2d
+
+### Parse.2D Stitching Artifact: .y[dmg]
+
+[Web](https://github.com/mkazhdan/DMG) 
+| [Code](https://github.com/mkazhdan/DMG) 
+| [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) 
+
+<br>
+
+
+
+- dmg = Distributed MultiGrid Poisson solver
+- 2D image stitching histogram corrections
+- Smoothing/Sharpening/High-Low Composting
+
+
+
+.center[
+<img src="images/A_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
+<img src="images/D_dmg_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
+]
+
+
+
+---
+name: 3d
+
+### Parse.3D Color Correction: .y[gdf]
+
+
+[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
+| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) 
+
+<br>
+
+- gdf = Gradient Domain Fusion
+- 3D image histogram corrections
+- Web-service coming soon
+
+
+
+.center[
+<img src="images/GDF2.png" alt="Drawing" style="width: 80%;"/>
+]
+
+---
+name: ndparse
+
+### Parse.Object Detection: .y[ndparse]
+
+[Code](https://github.com/neurodata/ndparse)
+
+
+
+<br />
+
+
+- Can make usse of [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
+- .y[Vesicle] Detect all synapses in electron microscopy data: [Code](https://github.com/neurodata/vesicle)  | [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html) | [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html) | [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf)
+- .y[mbcd] Detect all cell's in histology data using RF: [Code](https://github.com/neurodata/ndod/tree/master/maca/packages/mbcd) | [Tutorial](http://docs.neurodata.io/nddocs/ndparse/mbcd.html)
+- .y[nddl] Detect all cells in histology data using Deep Learning: [Tutorial](http://docs.neurodata.io/nddocs/ndparse/nddl.html)
+- Integrations planned for qsub, slurm and aws submission
+
+
+
+.center[
+<img src="http://www.frontiersin.org/files/Articles/609/fninf-03-022/image_m/fninf-03-022-g002.jpg"    alt="Drawing" style="width: 300px;"/>
+<img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/Y_manual1.png?raw=true"    alt="Drawing" style="width: 300px;"/>
+]
+
+
+
+---
+layout: true
+.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | [Parse](#parse) | _[Analyze](#anal)_]
+
+
+
 
 
 ---
@@ -511,6 +712,7 @@ name: disc
 
 1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
 
+
 ---
 name: fam
 layout: false
@@ -527,8 +729,37 @@ class:  center
 | Explore | | .orange[Alex Baden,  Ivan Kuznetsov, David Marchette]
 | Parse | | .y[Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | Analyze | | .g[Da Zheng, Disa Mhembere,  Misha Kazhdan]
+<!--  -->
+| Computer Science |  | red[Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman, Jordan Matelsky, Alex Baden,  Ivan Kuznetsov, David Marchette, Mike Miller, Micholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer, Da Zheng, Disa Mhembere,  Misha Kazhdan]
+
+---
+
+# NeuroData Family
+
+<br />
+
+
+.center[
+|   |   | |
+| :--- | :--- | :--- |
 | Big Data | &nbsp;&nbsp;&nbsp;&nbsp; | .blue[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla, Nelson Spruston, Erik Bloss]
+<!--  -->
 | Statistics | | .purple[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen,  Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
+<!--  -->
+| Data | &nbsp;&nbsp;&nbsp;&nbsp; | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla]
+
+
+---
+
+
+.center[
+|   |   | |
+| :--- | :--- | :--- |
+| Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
+| Explore | | .orange[Misha Kazhdan, Alex Baden, Jordan Matelsky]
+| Parse | | .y[Mike Miller, Nicholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
+| Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 | Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
 ]
 
