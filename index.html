@@ -219,7 +219,7 @@
 class: center, middle
 
 # [NeuroData](http://neurodata.io):
-## Enabling Terascale Neuroscience for Everyone
+### Enabling Terascale Neuroscience for Everyone
 
 <!-- ### Joshua T. Vogelstein -->
 <!-- ### {[BME](http://bme.jhu.edu),[ICM](http://icm.jhu.edu),[CIS](http://cis.jhu.edu),[Kavli](http://kndi.jhu.edu)}@[jhu](http://jhu.edu) -->
@@ -229,22 +229,29 @@ class: center, middle
 
 
 
-#### these slides: <http://docs.neurodata.io/ndintro>
 
 <br>
 <!-- [prof joshua t. vogelstein](http://jovo.me) -->
 
-{[bme](http://www.bme.jhu.edu/),[icm](http://icm.jhu.edu/),[cis](http://cis.jhu.edu/),[idies](http://idies.jhu.edu/),kavli,[cs](http://engineering.jhu.edu/computer-science/), [ams](http://engineering.jhu.edu/ams/), [neuro](http://neuroscience.jhu.edu/)}@[jhu](https://www.jhu.edu/)
 
 <br>
 
-.center[please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!]
+.center[
+presented by, Joshua T. Vogelstein
+<br>
+{[bme](http://www.bme.jhu.edu/),[icm](http://icm.jhu.edu/),[cis](http://cis.jhu.edu/),[idies](http://idies.jhu.edu/),kavli,[cs](http://engineering.jhu.edu/computer-science/), [ams](http://engineering.jhu.edu/ams/), [neuro](http://neuroscience.jhu.edu/)}@[jhu](https://www.jhu.edu/)
+<br>
+please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!
+<br>
+these slides: <http://docs.neurodata.io/ndintro>
+
+]
 
 
 
 ---
 layout: true
-.bbar[ _[Intro](#intro)_| [Tools](#store) | [Applications](#applications)  | [Discussion](#disc)]
+.bbar[ _[Intro](#intro)_ | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
 
 ---
 name: intro
@@ -332,7 +339,7 @@ name: intro
 ---
 
 
-## Challenge #1: Reproducible and Extensible Science
+## Challenge #1: Reproducible and Extensible Big NeuroScience
 
 
 .center[
@@ -344,7 +351,7 @@ name: intro
 - 1,036 dendritic spines
 - 7,505 spine touches
 - 1,037 synapses
-- Question: Many different anatomical questions that require a catalog of all spatial objects in ontology for efficient search, discovery, analysis.
+- Goal: Enable generating and confirming anatomical hypothesis using simple tools, in a reproducible and extensible fashion.
 
 
 
@@ -364,7 +371,7 @@ name: intro
 - Manual labeling requires ~10 sec / synapse
 - 60 sec x 60 min x 8 hrs x 250 days / yr = 8 million seconds / yr
 - A person can find 8 million synapses working for 10 years
-- Question: Are synapses distributed uniformly in space? If not, how are they distributed? Are there clusters?
+- Goal: What is the spatial distribution of synapses? Is it uniform in 3D? If not, how are they not uniform? Are there clusters?
 
 
 
@@ -380,7 +387,7 @@ name: intro
 <br>
 
 .center[
-<img src="images/figure0.png" alt="Drawing" style="width: 800px;"/>
+<img src="https://github.com/neurodata/ndpaper/raw/master/figure0.png" alt="Drawing" style="width: 800px;"/>
 ]
 
 <br />
@@ -403,34 +410,65 @@ name: intro
 
 ---
 layout: true
-.bbar[ [Intro](#intro) | _[Tools](#store)_ | [Applications](#applications)  | [Discussion](#disc)]
+.bbar[ [Intro](#intro) | _[Methods](#methods)_ | [Results](#applications)  | [Discussion](#disc)]
+
+
+---
+name:methods
+
+# Methods
+
+- Store
+  - [Images](#store)
+  - Annotations(#ramondb)
+- Explore
+  - [Images](#ndviz)
+- Process
+  - [Histogram correction](#2d)
+  - [Object detection](#ndparse)
 
 
 ---
 name: store
 
-### Store.Images: .y[spdb]
+### Store.Images 
 
-  [Code](https://github.com/neurodata/ndstore) 
+.pull-left[
+####  Goal
+- Viz 1k x 1k @ video rate  anywhere
+- Download cubes  @ "CV rate"
+- Upload  faster than acquisition
+- Only store data once
+- Support  different "front-ends"
+<br>
+
+
+
+#### Challenge
+- Images are big
+- Each data access takes time
+- 2 different use cases
+
+<img src="images/reshier.png" style="width: 250px;"/>
+]
+
+.pull-right[
+####  Actions
+- .y[spdb]: [Code](https://github.com/neurodata/ndstore) 
 | [Tutorials](http://docs.neurodata.io/ndstore/sphinx/console.html) 
 | [API](http://docs.neurodata.io/ndstore/) 
 | [Manuscript](http://arxiv.org/abs/1306.3543) 
 | [Docker](https://github.com/neurodata/ndstore/blob/master/setup/Dockerfile) 
 | [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
-| [Examples](http://neurodata.io/projects)
-
-.pull-left[
-####  Storage Design
-- Image Data Model to store images & associated metadata
-- Space filling curve minimizes the number of accesses
-- Dense multi-dimensional spatial array partitioned into cuboids
-- Multi-resolution zoom pyramid
-- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
-]
-
-.pull-right[
+- [ndstore](https://github.com/neurodata/ndstore) for fast volume reads
+  - Space filling curve
+  - Dense cuboids
+  - Multi-resolution pyramid
+  - 3rd party support
+- [ndtilecache](https://github.com/neurodata/ndtilecache) for fast viz
+- [ndblaze](https://github.com/neurodata/ndblaze) for fast writes
+<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="width: 250px;"/>
-<img src="images/reshier.png" style="width: 250px;"/>
 ]
 
 
@@ -439,34 +477,51 @@ name: store
 ---
 name: ramondb
 
-### Store.Shapes: .y[ramondb]
+### Store.Shapes 
 
-
-[Code](https://github.com/neurodata/ndstore) 
-| [Data Model](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
-| [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
-| [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
 
 .pull-left[
-####  Data Model
-  - ROI
-  - Neuron
-  - Segment
-  - Skeleton
-  - Synapse
-  - Organelle
-  - Node
+#### Goal
+- Spatial-semantic queries are fast & easy
+- Rich enough ontology to facilitate questions at any scale
+- Simple enough that is easy to use, reproduce
+
+#### Challenge
+
+- Annotations are big
+- No standard ontology
+
 ]
+
+
 
 .pull-right[
-<img src="http://cs.brown.edu/people/tld/note/blog/13/07/26/figures/sejnowski_neural_activity_scales.jpg" style="width: 300px;"/>
+####  Action
+  - .y[ramondb]:
+[Code](https://github.com/neurodata/ndstore) 
+| [Tutorial](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
+| [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
+| [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
+  - Designed [RAMON](http://docs.neurodata.io/nddocs/ndparse/ramon.html) ontology standard
+  - Deployed [ramondb](http://docs.neurodata.io/ndstore/api/ramon_api.html)
+  - Each voxel gets a label in hierachical ontology
+  - Types include: ROI, Segment, Skeleton, Node, Synapse
+
+
+<img src="images/fig5_vesicles.png" style="width: 300px;"/>
 ]
 
+<!-- .pull-right[
+<img src="http://cs.brown.edu/people/tld/note/blog/13/07/26/figures/sejnowski_neural_activity_scales.jpg" style="width: 300px;"/>
+]
+ -->
 
 
 ---
 
-### Store.Benchmarks
+### Store
+
+#### Results
 
 <br>
 
@@ -475,55 +530,47 @@ name: ramondb
 ]
 
 
----
-
-### Python Wrapper: .y[ndio]
-
-[Code](https://github.com/neurodata/ndio)
-| [Docs](http://docs.neurodata.io/nddocs/ndio/)
-| [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
-
-<br>
-
-.pull-left[
-- Package to easily interface with neurodata
-- Open source toolbox provides image and metadata capabilities
-- Easy to use interface for standalone or distributed computing across languages
-]
-
-.pull-right[
-<img src="images/ndio.jpg" alt="Drawing" style="width: 300px;"/>
-]
 
 
 
 
 ---
 layout: true
-.bbar[ [Intro](#intro) | [Tools](#store) | [Applications](#applications)  | [Discussion](#disc)]
+.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
 
 ---
 name: explore
 
-## Explore.Images:  .y[ndviz]
+## Explore.Images  
 
-[Web App](http://ix.neurodata.io) 
-| [Code](https://github.com/neurodata/NeuroDataViz) 
-| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
+
 
 .pull-left[
-#### Highlights
-- Uses [Leaflet.js](http://leafletjs.com/)
+#### Goals
 - Enables pan & zoom in 3D
-- Supports multispectral data (4D)
-- Supports time-series data (4D)
-- Works on mobile & Web
+- Multispectral data (4D)
+- Time-series data (5D)
+- Mobile & Web
 - Image & Anno. Metadata
 - Collaboration tools
+
+
+#### Challenge
+- Maps are usually 2D
+- Maps infrequently require volumetric overlays
+- Incorporating volumetric metadata
 ]
 
 .pull-right[
-### Examples
+#### Action
+- .y[ndviz]: [Web App](http://ix.neurodata.io) 
+| [Code](https://github.com/neurodata/NeuroDataViz) 
+| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
+- [Leaflet.js](http://leafletjs.com/) for navigating & overlaying
+- [WebGL](https://www.khronos.org/webgl/) for dynamic color rendering
+- Interfaces with ndstore, ndtilecache, ramonbd, and ndblaze to go fast
+
+### Results
 - [Volumetric annotation overlays](http://viz.neurodata.io/project/kharris15apical_subcell/xy/1/2064/2088/112/)
 - [Multispectral blending](http://viz.neurodata.io/project/Ex10R55_glutamatergic_prepost/2/378/421/0/#)
 - [Time-series](http://viz.neurodata.io/project/freeman14/xy/1/509/339/10/)
@@ -533,9 +580,10 @@ name: explore
 ---
 
 
-## Explore.Examples
+## Explore.Images
 
-<br>
+#### Results
+
 
 .center[
 <img src="images/nd_fig2_explore_gk.png" style="width: 600px;"/>
@@ -545,93 +593,133 @@ name: explore
 
 ---
 layout: true
-.bbar[ [Intro](#intro) | [Tools](#store) | [Applications](#applications)  | [Discussion](#disc)]
+.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
 
 
 ---
 name: 2d
 
-### Process.2D Stitching Artifact: .y[dmg]
+### Process.Histogram Correction
 
-[Web](https://github.com/mkazhdan/DMG) 
+
+
+.pull-left[
+#### Goal
+- Remove sharp boundary exposure artifacts
+- Keep all other boundaries
+- Run on 100 TB dataset
+- Be "fast"
+- Be automatic
+
+#### Challenge
+- Frequencies of signal and noise are overlapping
+- Boundaries can span very large regions
+- Each dataset has different histogram statistics
+]
+
+.pull-right[
+#### Action
+- 2D .y[dmg]: [Web](https://github.com/mkazhdan/DMG) 
 | [Code](https://github.com/mkazhdan/DMG) 
 | [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) 
+- 3D .y[gdf]:  [Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
+| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) 
+- Distributed implementations
+- Web-service coming soon
+]
+
+
+---
+
+
+### Process.Histogram Correction
+
+
+#### Resolution
 
 <br>
-
-
-
-- dmg = Distributed MultiGrid Poisson solver
-- 2D image stitching histogram corrections
-- Smoothing/Sharpening/High-Low Composting
-- Web-service coming soon
-
-
 
 .center[
 <img src="images/A_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
 <img src="images/D_dmg_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
-]
-
-
-
----
-name: 3d
-
-### Process.3D Color Correction: .y[gdf]
-
-
-[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
-| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) 
-
 <br>
+<img src="images/GDF2.png" alt="Drawing" style="width: 100%;"/>
 
-- gdf = Gradient Domain Fusion
-- 3D image histogram corrections
-- Web-service coming soon
-
-
-
-.center[
-<img src="images/GDF2.png" alt="Drawing" style="width: 80%;"/>
 ]
+
+
 
 ---
 name: ndparse
 
-### Process.Object Detection: .y[ndparse]
+### Process.Object Detection
 
-[Code](https://github.com/neurodata/ndparse)
+<br>
+
+.pull-left[
+#### Goal
+- Automatically detect "semantic" objects
+- Easy manual label
+- Fast, inexpensive, simple training
+- Scalable deploy
+
+#### Challenge
+- Algs tend to work "in memory"
+- Tools are disparate
+- Parallel computing  not "turn-key"
 
 
+]
 
-<br />
-
-
+.pull-right[
+#### Action
+- .y[ndparse]: [Code](https://github.com/neurodata/ndparse)
 - Protocol for manually labeling semantic objects
 - Training ML using RF/CNN
 - Deployable on cluster using [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
 - Integrations planned for qsub, slurm and aws submission
+]
 
+
+
+---
+
+### Process.Object Detection
+
+#### Results
+
+<br>
 
 
 .center[
-<img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 300px;"/>
-<img src="images/ndp_bock_detect_crop.png"    alt="Drawing" style="width: 300px;"/>
+<img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 350px;"/>
+<img src="images/ndp_bock_detect_crop_circles.png"    alt="Drawing" style="width: 350px;"/>
+
 ]
 
 
 
 ---
 layout: true
-.bbar[ [Intro](#intro) | [Tools](#store) | _[Applications](#applications)_  | [Discussion](#disc)]
+.bbar[ [Intro](#intro) | [Methods](#methods) | _[Results](#applications)_  | [Discussion](#disc)]
 
 
 
 ---
 name: applications
 
+# Applications
 
+<br>
+
+- [Image Datasets](#r_im)
+- [Annotation Datasets](#r_anno)
+- [Case Study 1](#r_cs1)
+- [Case Study 2](#r_cs2)
+
+
+---
+name: r_im
 
 ## Image Datasets
 
@@ -641,21 +729,33 @@ name: applications
 <img src="images/image_datasets.png" alt="Drawing" style="width: 700px;"/>
 ]
 
+- 10+ public datasets
+- EM, AT, Ophys, XCT
+- 100+ teravoxels
+- All "reference" datasets
+
 
 ---
+name: r_anno
 
 ## Annotation Datasets
 
 
-<br>
 
 .center[
 <img src="images/annotation_datasets.png" alt="Drawing" style="width: 700px;"/>
 ]
 
----
+- 5 different publications with volumetric annotations
+- No skeleton annotations yet
+- Volumetric required for training machine vision
+- Annotations cross spatiotemporal scale: nano, micro, time-series
 
-### Case Study #1: Reproducable and Extensible Big Data Neuroscience
+
+---
+name: r_cs1
+
+### Case Study #1: Reproducible and Extensible Big Data Neuroscience
 
 #### Results from Kasthuri et al. (Cell) 2015
 
@@ -693,7 +793,7 @@ Statistical claims
 
 
 ---
-name: r_syn
+name: r_cs2
 
 ### Case Study #2: Is synapse distribution uniform in space?
 
@@ -714,6 +814,8 @@ timings
 name: r_anal
 
 ### Case Study #2: Is synapse distribution uniform in space?
+
+#### Data from Bock et al. (Nature) 2011
 
 
 .pull-left[
@@ -742,7 +844,7 @@ name: r_anal
 
 ---
 layout: true
-.bbar[ [Intro](#intro) | [Tools](#store) | [Applications](#applications)  | _[Discussion](#disc)_]
+.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | _[Discussion](#disc)_]
 
 ---
 name: disc
@@ -777,12 +879,22 @@ name: disc
 
 <br />
 
-- [Ophys Spike detection](https://github.com/jovo/oopsi)
-- Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
-- [m2g](http://m2g.io/): MRI to Graphs
-- IF Synapse Detection
-- Ophys Cell Detection
-- Cell detection for micron resolution data
+
+- [ndio](http://docs.neurodata.io/nddocs/ndio/) python API 
+- More public datasets: CLARITY, ExM, XRM, MRI, Ophys, etc. 
+- Web-services for all process steps, including 
+  - [Volume reconstruction](http://abria.github.io/TeraStitcher/) 
+  - Color correction ([dmg](https://github.com/mkazhdan/DMG)) 
+ & [gdf](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
+  - [Atlas registration](https://github.com/neurodata/ndreg) (ndreg)
+  - [Ontological object detection](https://github.com/neurodata/ndparse) (ndparse)
+  - [Ophys Spike detection](https://github.com/jovo/oopsi) (oopsi)
+  - Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
+  - [MRI to Graphs](http://m2g.io/) (m2g)
+- Web-services for all model steps, including:
+  - Shapes
+  - Graphs
+  - Matrices 
 
 
 
@@ -796,7 +908,6 @@ name: disc
 - [CATMAID](http://catmaid.readthedocs.org/en/stable/)
 - [Neurodata Without Borders](http://nwb.org/)
 - [Keller Lab Block File Format](http://www.nature.com/nprot/journal/v10/n11/abs/nprot.2015.111.html)
-- [Thunder](http://thunder-project.org/)
 
 
 ---
