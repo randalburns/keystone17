@@ -397,7 +397,7 @@ name: intro
 .left-pull[
 - An cloud deployed ecosystem for big data neuroscience
 - Currently hosts 10+ public datasets, another 20+ private datasets
-- Total storage ~250 TB
+- Total # of terabytes used: ~250 
 - Enables universal accessibility, reproducibility, and extensibility
 - Revealed novel spatial synapse patterns
 - Free and open source software (FOSS), and free and open access data (FOAD)
@@ -420,7 +420,7 @@ name:methods
 
 - Store
   - [Images](#store)
-  - Annotations(#ramondb)
+  - [Annotations](#ramondb)
 - Explore
   - [Images](#ndviz)
 - Process
@@ -472,6 +472,19 @@ name: store
 ]
 
 
+---
+
+### Store.Images
+
+#### Results
+
+<br>
+
+.center[
+<img src="images/ndpaper-fig1ab.png" style="width: 700px;"/>
+]
+
+
 
 
 ---
@@ -490,6 +503,9 @@ name: ramondb
 
 - Annotations are big
 - No standard ontology
+
+<img src="images/fig5_mitochondria.png" style="width: 300px;"/>
+
 
 ]
 
@@ -519,14 +535,14 @@ name: ramondb
 
 ---
 
-### Store
+### Store.Shapes
 
 #### Results
 
 <br>
 
 .center[
-<img src="https://raw.githubusercontent.com/neurodata/ndpaper/master/analysis/figs/ndpaper-fig1.png" style="width: 700px;"/>
+<img src="images/ndpaper-fig1d.png" style="width: 700px;"/>
 ]
 
 
@@ -880,9 +896,9 @@ name: disc
 <br />
 
 
-- [ndio](http://docs.neurodata.io/nddocs/ndio/) python .y[API] 
+- [ndio](http://docs.neurodata.io/nddocs/ndio/) python API 
 - More .y[public] datasets: CLARITY, ExM, XCM, MRI, Ophys, etc. 
-- .y[Web-services] for all process steps, including 
+- Web-services for all process steps, including 
   - [Volume reconstruction](http://abria.github.io/TeraStitcher/) 
   - Color correction ([dmg](https://github.com/mkazhdan/DMG)) 
  & [gdf](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
@@ -901,9 +917,8 @@ name: disc
 ---
 
 
-# Related Work
+### Related Work
 
-<br />
 
 - [CATMAID](http://catmaid.readthedocs.org/en/stable/)
 - [Neurodata Without Borders](http://nwb.org/)
@@ -913,23 +928,17 @@ name: disc
 --
 
 
-## Further Lowering the Barrier to Entry
+### Further Lowering the Barrier to Entry
 
-<br />
 
 - Put it all together
 - Apply to other domains & questions
 - We work together!
 
+--
 
+### References
 
-
-
----
-
-# References
-
-<br />
 
 
 1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
