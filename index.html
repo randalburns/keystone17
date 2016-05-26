@@ -243,11 +243,8 @@ class: center, middle
 
 
 ---
-
 layout: true
-
-.bbar[ _[Intro](#intro): Opportunity_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
-
+.bbar[ _[Intro](#intro)_| [Tools](#store) | [Applications](#applications)  | [Discussion](#disc)]
 
 ---
 name: intro
@@ -334,12 +331,6 @@ name: intro
 
 ---
 
-layout: true
-
-.bbar[ _[Intro](#intro): Challenge_ | [Tools](#tools) | [Applications](#applications) | [Discussion](#disc)]
-
-
----
 
 ## Challenge #1: Reproducible and Extensible Science
 
@@ -380,26 +371,38 @@ layout: true
 
 
 ---
-layout: true
-.bbar[ _[Intro](#intro)_  | [Store](#store) | [Explore](#explore) | [Parse](#parse) | [Analyze](#anal)]
----
 
 
 
-
-## [NeuroData](http://neurodata.io): 4 steps to discovery
+## [NeuroData](http://neurodata.io): 5 steps to discovery
 
 <br/>
+<br>
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/9cc4763f-5a2a-44df-bc0c-540316d6d62d/image.png" alt="Drawing" style="width: 800px;"/>
+<img src="images/figure0.png" alt="Drawing" style="width: 800px;"/>
 ]
 
 <br />
 
-.center[Existing solutions are unable to elegantly handle 3D+ petascale data]
+--
+
+.left-pull[
+- An cloud deployed ecosystem for big data neuroscience
+- Currently hosts 10+ modern  datasets
+- Enables universal accessibility, reproducibility, and extensibility
+- Revealed novel spatial synapse patterns
+- Free and open source software (FOSS), and free and open access data (FOAD)
+]
 
 
+
+
+
+
+---
+layout: true
+.bbar[ [Intro](#intro) | _[Tools](#store)_ | [Applications](#applications)  | [Discussion](#disc)]
 
 
 ---
@@ -407,18 +410,16 @@ name: store
 
 ### Store.Images: .y[spdb]
 
-[Code](https://github.com/neurodata/ndstore) 
+  [Code](https://github.com/neurodata/ndstore) 
 | [Tutorials](http://docs.neurodata.io/ndstore/sphinx/console.html) 
-| [Data Model](http://docs.neurodata.io/ndstore/sphinx/datamodel.html) 
 | [API](http://docs.neurodata.io/ndstore/) 
 | [Manuscript](http://arxiv.org/abs/1306.3543) 
 | [Docker](https://github.com/neurodata/ndstore/blob/master/setup/Dockerfile) 
 | [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
-| [Benchmarks](http://docs.neurodata.io/nddocs/more.html#r_store)
 | [Examples](http://neurodata.io/projects)
 
 .pull-left[
-####  Storage Model
+####  Storage Design
 - Image Data Model to store images & associated metadata
 - Space filling curve minimizes the number of accesses
 - Dense multi-dimensional spatial array partitioned into cuboids
@@ -441,7 +442,7 @@ name: ramondb
 
 
 [Code](https://github.com/neurodata/ndstore) 
-| [Data Model](http://docs.neurodata.io/nddocs/ndparse/ramon.html) 
+| [Data Model](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
 | [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
 | [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
 
@@ -474,9 +475,31 @@ name: ramondb
 
 
 ---
-layout: true
-.bbar[ [Intro](#intro)  | [Store](#store) | _[Explore](#explore)_ | [Parse](#parse) | [Analyze](#anal)]
 
+### Python Wrapper: .y[ndio]
+
+[Code](https://github.com/neurodata/ndio)
+| [Docs](http://docs.neurodata.io/nddocs/ndio/)
+| [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
+
+<br>
+
+.pull-left[
+- Package to easily interface with neurodata
+- Open source toolbox provides image and metadata capabilities
+- Easy to use interface for standalone or distributed computing across languages
+]
+
+.pull-right[
+<img src="images/ndio.jpg" alt="Drawing" style="width: 300px;"/>
+]
+
+
+
+
+---
+layout: true
+.bbar[ [Intro](#intro) | [Tools](#store) | [Applications](#applications)  | [Discussion](#disc)]
 
 ---
 name: explore
@@ -521,15 +544,13 @@ name: explore
 
 ---
 layout: true
-.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | _[Parse](#parse)_ | [Analyze](#anal)]
-
-
+.bbar[ [Intro](#intro) | [Tools](#store) | [Applications](#applications)  | [Discussion](#disc)]
 
 
 ---
 name: 2d
 
-### Parse.2D Stitching Artifact: .y[dmg]
+### Process.2D Stitching Artifact: .y[dmg]
 
 [Web](https://github.com/mkazhdan/DMG) 
 | [Code](https://github.com/mkazhdan/DMG) 
@@ -542,6 +563,7 @@ name: 2d
 - dmg = Distributed MultiGrid Poisson solver
 - 2D image stitching histogram corrections
 - Smoothing/Sharpening/High-Low Composting
+- Web-service coming soon
 
 
 
@@ -555,7 +577,7 @@ name: 2d
 ---
 name: 3d
 
-### Parse.3D Color Correction: .y[gdf]
+### Process.3D Color Correction: .y[gdf]
 
 
 [Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
@@ -576,7 +598,7 @@ name: 3d
 ---
 name: ndparse
 
-### Parse.Object Detection: .y[ndparse]
+### Process.Object Detection: .y[ndparse]
 
 [Code](https://github.com/neurodata/ndparse)
 
@@ -585,63 +607,72 @@ name: ndparse
 <br />
 
 
-- Can make usse of [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
-- .y[Vesicle] Detect all synapses in electron microscopy data: [Code](https://github.com/neurodata/vesicle)  | [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html) | [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html) | [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf)
-- .y[mbcd] Detect all cell's in histology data using RF: [Code](https://github.com/neurodata/ndod/tree/master/maca/packages/mbcd) | [Tutorial](http://docs.neurodata.io/nddocs/ndparse/mbcd.html)
-- .y[nddl] Detect all cells in histology data using Deep Learning: [Tutorial](http://docs.neurodata.io/nddocs/ndparse/nddl.html)
+- Protocol for manually labeling semantic objects
+- Training ML using RF/CNN
+- Deployable on cluster using [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
 - Integrations planned for qsub, slurm and aws submission
 
 
 
 .center[
-<img src="http://www.frontiersin.org/files/Articles/609/fninf-03-022/image_m/fninf-03-022-g002.jpg"    alt="Drawing" style="width: 300px;"/>
-<img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/Y_manual1.png?raw=true"    alt="Drawing" style="width: 300px;"/>
+<img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 300px;"/>
+<img src="images/ndp_bock_detect_crop.png"    alt="Drawing" style="width: 300px;"/>
 ]
 
 
 
 ---
 layout: true
-.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | [Parse](#parse) | _[Analyze](#anal)_]
+.bbar[ [Intro](#intro) | [Tools](#store) | _[Applications](#applications)_  | [Discussion](#disc)]
 
----
-name: ndio
-
-### Python Wrapper: .y[ndio]
-
-[Code](https://github.com/neurodata/ndio)
-| [Docs](http://docs.neurodata.io/nddocs/ndio/)
-| [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
-
-<br>
-
-.pull-left[
-- Package to easily interface with neurodata
-- Open source toolbox provides image and metadata capabilities
-- Easy to use interface for standalone or distributed computing across languages
-]
-
-.pull-right[
-<img src="images/ndio.jpg" alt="Drawing" style="width: 300px;"/>
-]
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro)  | [Tools](#tools) | _[Applications](#applications)_ | [Discussion](#disc)]
 
 
 ---
 name: applications
 
 
+
+## Image Datasets
+
+<br>
+
+.center[
+<img src="images/image_datasets.png" alt="Drawing" style="width: 700px;"/>
+]
+
+
+---
+
+## Annotation Datasets
+
+
+<br>
+
+.center[
+<img src="images/annotation_datasets.png" alt="Drawing" style="width: 700px;"/>
+]
+
+---
+
 ### Case Study #1: Reproducable and Extensible Big Data Neuroscience
 
 #### Results from Kasthuri et al. (Cell) 2015
 
+<br>
+
 .pull-left[
-[Claim 2](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim2_axons_and_dendrites.ipynb)
+Statistical claims
+1. [axons & dendrites](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim02_axons_and_dendrites.ipynb)
+1. [synapses](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim3_synapses.ipynb)
+1. [mitochondria](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim4_mitochondria.ipynb)
+1. [spines](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim5_spines.ipynb)
+1. [vesicles](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim6_vesicles.ipynb)
+1. [connectivity](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim9_make_graph.ipynb)
+]
+
+
+.pull-right[
+[axons and dendrites](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim2_axons_and_dendrites.ipynb)
 1. How many different neurons?
 1. How many dendrites?
 1. What fraction are spiny?
@@ -652,15 +683,10 @@ name: applications
 1. What fraction of cellular volume is neuron?
 1. What faction of volume is cells?
 1. Relative length of axon vs. dendrite?
+...
 ]
 
 
-.pull-right[
-1. Claim 4: [How many mitochondria?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim4_mitochondria.ipynb)
-1. Claim 5: [How many spines on red dendrite?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim5_spines.ipynb)
-1. Claim 9: [How many vesicles?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim6_vesicles.ipynb)
-1. [What is the graph?](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim9_make_graph.ipynb)
-]
 
 
 
@@ -692,13 +718,12 @@ name: r_anal
 .pull-left[
 <br />
 1. find all synapses
-2. plot 1% of them in 3D scatter plot
 1. Mask out regions that cannot have synapses
 1. Partition volume into cuboids
 2. Count # of elements / cuboid
 3. Normalize by volume of cuboid not masked
-4. Plot normalized volume in 3D scatter plot
-5. Plot marginals
+4. Plot normalized density in 3D scatter plot
+5. Plot marginal densities
 6. Report p-value
 ]
 
@@ -714,6 +739,9 @@ name: r_anal
 
 
 
+---
+layout: true
+.bbar[ [Intro](#intro) | [Tools](#store) | [Applications](#applications)  | _[Discussion](#disc)_]
 
 ---
 name: disc
@@ -737,7 +765,7 @@ name: disc
 
 <br />
 
-- Answer questions the require scale
+- Answer questions that require scale
 - Engage complementary expertise
 - Reproduce and extend results
 
@@ -812,12 +840,14 @@ class:  center
 |   |   | |
 | :--- | :--- | :--- |
 | Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
-| Explore | | .orange[Misha Kazhdan, Alex Baden, Jordan Matelsky]
-| Parse | | .y[Mike Miller, Nicholas Charon, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Analyze | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
+| Explore | | .orange[Alex Baden,  Ivan Kuznetsov, David Marchette, Leo Duan, Albert Lee]
+| Process | &nbsp;&nbsp;&nbsp;&nbsp; | .y[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| Model | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
 | Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 | Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
 ]
+
+
 
 
 ---
@@ -863,7 +893,7 @@ ____
 
 
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    <script src="remark-latest.min.js" type="text/javascript">
     </script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
     <script type="text/javascript">
@@ -904,7 +934,13 @@ ____
           // Enable or disable navigation using click
           // Default: false
           // Alternatives: true
-          click: false
+          click: false, 
+
+          // Enable or disable counting of incremental slides in the slide counting
+          countIncrementalSlides: false
+
+
+
   },
 
   // Customize slide number label, either using a format string..
