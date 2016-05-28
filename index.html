@@ -63,6 +63,14 @@
       .bbar a {
         color: #A7A7A7;
       }
+      .cbar {
+        position: absolute;
+        bottom: 13px;
+        left: 13px;
+        font-family: 'titling-gothic';  /* Yanone Kaffeesatz */
+        font-weight: 200;
+        color: #A7A7A7;
+      }
       .btn {
         background: #424242;
         height: 2em;
@@ -255,6 +263,7 @@ layout: true
 
 ---
 name: intro
+layout:false
 
 # Big Scientific Data
 
@@ -308,70 +317,46 @@ name: intro
 
 ### Opportunity: Big Neuro Data
 
-.pull-left[
 .center[
-<iframe width="380" height="300" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-- Modality: Transmission Electron Microscopy Camera Array
-- 4 x 4 x 40 nm^3
-- 450 x 350 x 50 micron^3
-- Size: ~10 TB
-- Cite: Bock et al. (Nature) 2011
+6 panel nd website figure
 ]
 
 
---
 
-.pull-right[
-.center[
-<iframe width="380" height="300" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
-]
-
-- Modality: Serial Electron Microscopy w/ATUM
-- Resolution: 3 x 3 x 30 nm<sup>3</sup>
-- Volume: 40 x 40 x 50 &mu;m<sup>3</sup>
-- Size: ~1 TB
-- Cite: Kasthuri et al. (Cell) 2015
-]
 
 
 
 ---
 
 
-## Challenge #1: Reproducible and Extensible Big NeuroScience
-
+## Challenge #1
 
 .center[
-<iframe width="372" height="272" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="600" height="420" src="https://www.youtube.com/embed/1aVNRZtxeIU?rel=0" frameborder="0" allowfullscreen></iframe>
 ]
 
 
-- 916 excitatory axons
-- 1,036 dendritic spines
-- 7,505 spine touches
-- 1,037 synapses
-- Goal: Enable generating and confirming anatomical hypothesis using simple tools, in a reproducible and extensible fashion.
+Goal: Enable generating and confirming anatomical hypothesis using simple tools, in a reproducible and extensible fashion.
 
 
 
 
 ---
 
-## Challenge #2: Synapse Spatial Point Process Pattern
+## Challenge #2
 
 
 
 
 .center[
-<iframe width="484" height="272" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="720" height="400" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+<br>
+Goal: What is the spatial distribution of synapses?
+
 ]
 
-- 8 million mm<sup>3</sup> &#10141; 8 million synapses
-- Manual labeling requires ~10 sec / synapse
-- 60 sec x 60 min x 8 hrs x 250 days / yr = 8 million seconds / yr
-- A person can find 8 million synapses working for 10 years
-- Goal: What is the spatial distribution of synapses? Is it uniform in 3D? If not, how are they not uniform? Are there clusters?
 
 
 
@@ -404,205 +389,160 @@ name: intro
 ]
 
 
-
-
-
-
 ---
-layout: true
-.bbar[ [Intro](#intro) | _[Methods](#methods)_ | [Results](#applications)  | [Discussion](#disc)]
+name: applications
+layout: false
+class: middle, center
 
-
----
-name:methods
-
+.center[
 # Methods
-
-- Store
-  - [Images](#store)
-  - [Annotations](#ramondb)
-- Explore
-  - [Images](#ndviz)
-- Process
-  - [Histogram correction](#2d)
-  - [Object detection](#ndparse)
-
-
----
-name: store
-
-### Store.Images 
-
-.pull-left[
-####  Goal
-- Viz 1k x 1k @ video rate  anywhere
-- Download cubes  @ "CV rate"
-- Upload  faster than acquisition
-- Only store data once
-- Support  different "front-ends"
-<br>
-
-
-
-#### Challenge
-- Images are big
-- Each data access takes time
-- 2 different use cases
-
-<img src="images/reshier.png" style="width: 250px;"/>
-]
-
-.pull-right[
-####  Actions
-- .y[spdb]: [Code](https://github.com/neurodata/ndstore) 
-| [Tutorials](http://docs.neurodata.io/ndstore/sphinx/console.html) 
-| [API](http://docs.neurodata.io/ndstore/) 
-| [Manuscript](http://arxiv.org/abs/1306.3543) 
-| [Docker](https://github.com/neurodata/ndstore/blob/master/setup/Dockerfile) 
-| [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
-- [ndstore](https://github.com/neurodata/ndstore) for fast volume reads
-  - Space filling curve
-  - Dense cuboids
-  - Multi-resolution pyramid
-  - 3rd party support
-- [ndtilecache](https://github.com/neurodata/ndtilecache) for fast viz
-- [ndblaze](https://github.com/neurodata/ndblaze) for fast writes
-<br>
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="width: 250px;"/>
 ]
 
 
 ---
+layout: false
+name:store
+<!-- .bbar[ [Intro](#intro) | _[Methods](#methods)_ | [Results](#applications)  | [Discussion](#disc)] -->
+<!-- --- -->
+
 
 ### Store.Images
+<br>
 
-#### Results
+- Goal: eliminate read/write bottlenecks
+- Challenge: accessing a file takes time
+- Action: .y[ndstore] spatial database
 
 <br>
 
 .center[
-<img src="images/ndpaper-fig1ab.png" style="width: 700px;"/>
+<img src="images/reshier.png" style="width: 250px;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="width: 250px;"/>
 ]
 
+.cbar[
+<!-- Store.images..y[ndstore]  -->
+[Code] 
+| [Docs]
+| [Manuscript]
+| [API]
+| [Issues]]
 
+---
+class: middle, center
+
+<!-- ### Store.Images -->
+
+<!-- #### Results -->
+
+
+<img src="images/ndpaper-fig1ab.png" style="width: 800px;"/>
+
+.cbar[
+<!-- Store.images..y[ndstore]  -->
+ Benchmarks
+ ]
+
+---
+
+<!-- ### Store.Images -->
+<br>
+
+- Goal: visualize @ video rates for mobile
+- Challenge: data stored in cubes
+- Action: .y[ndtilecache] content distribution network
+
+<br>
+
+.center[
+<img src="images/ndpaper-fig1c.png" style="width: 700px;"/>
+]
+
+.cbar[
+<!-- Store.Images..y[ndtilecache] -->
+[Code] 
+| [Docs]
+| [Manuscript]
+| [API]
+| [Issues]
+]
 
 
 ---
 name: ramondb
 
 ### Store.Shapes 
+<br>
 
+- Goal: enable easy semantic queries
+- Challenge: no standard "structured vocabulary"
+- Action: .y[ramondb] stores object metadata
 
-.pull-left[
-#### Goal
-- Spatial-semantic queries are fast & easy
-- Rich enough ontology to facilitate questions at any scale
-- Simple enough that is easy to use, reproduce
-
-#### Challenge
-
-- Annotations are big
-- No standard ontology
-
-<img src="images/fig5_mitochondria.png" style="width: 300px;"/>
-
-
-]
-
-
-
-.pull-right[
-####  Action
-  - .y[ramondb]:
-[Code](https://github.com/neurodata/ndstore) 
-| [Tutorial](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
-| [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
-| [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
-  - Designed [RAMON](http://docs.neurodata.io/nddocs/ndparse/ramon.html) ontology standard
-  - Deployed [ramondb](http://docs.neurodata.io/ndstore/api/ramon_api.html)
-  - Each voxel gets a label in hierachical ontology
-  - Types include: ROI, Segment, Skeleton, Node, Synapse
-
-
-<img src="images/fig5_vesicles.png" style="width: 300px;"/>
-]
-
-<!-- .pull-right[
-<img src="http://cs.brown.edu/people/tld/note/blog/13/07/26/figures/sejnowski_neural_activity_scales.jpg" style="width: 300px;"/>
-]
- -->
-
-
----
-
-### Store.Shapes
-
-#### Results
 
 <br>
 
 .center[
-<img src="images/ndpaper-fig1d.png" style="width: 700px;"/>
+<img src="images/fig5_mitochondria.png" style="height: 250px;"/>
+<img src="images/fig5_vesicles.png" style="height: 250px;"/>
 ]
 
-
-
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
-
----
-name: explore
-
-## Explore.Images  
-
-
-
-.pull-left[
-#### Goals
-- Enables pan & zoom in 3D
-- Multispectral data (4D)
-- Time-series data (5D)
-- Mobile & Web
-- Image & Anno. Metadata
-- Collaboration tools
-
-
-#### Challenge
-- Maps are usually 2D
-- Maps infrequently require volumetric overlays
-- Incorporating volumetric metadata
+<br>
+.cbar[
+[Code](https://github.com/neurodata/ndstore) 
+| [Tutorial](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
+| [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
+| [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
 ]
-
-.pull-right[
-#### Action
-- .y[ndviz]: [Web App](http://ix.neurodata.io) 
-| [Code](https://github.com/neurodata/NeuroDataViz) 
-| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
-- [Leaflet.js](http://leafletjs.com/) for navigating & overlaying
-- [WebGL](https://www.khronos.org/webgl/) for dynamic color rendering
-- Interfaces with ndstore, ndtilecache, ramonbd, and ndblaze to go fast
-
-### Results
-- [Volumetric annotation overlays](http://viz.neurodata.io/project/kharris15apical_subcell/xy/1/2064/2088/112/)
-- [Multispectral blending](http://viz.neurodata.io/project/Ex10R55_glutamatergic_prepost/2/378/421/0/#)
-- [Time-series](http://viz.neurodata.io/project/freeman14/xy/1/509/339/10/)
-]
-
 
 ---
 
+### Store.Shapes
+<br>
 
-## Explore.Images
-
-#### Results
+- Goal: write annotations with object-level metadata fast
+- Challenge: many small files
+- Action: .y[ndblaze] assembles transparently in RAM
 
 
 .center[
-<img src="images/nd_fig2_explore_gk.png" style="width: 600px;"/>
+<img src="images/ndpaper-fig1d.png" style="width: 600px;"/>
+]
+
+.cbar[
+[Code] 
+| [Docs]
+| [Manuscript]
+| [API]
+| [Issues]
+]
+
+
+<!-- ---
+layout: true
+.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
+ -->
+---
+name: explore
+layout: false
+
+### Explore.Images  
+
+<br>
+
+- Goal: google maps like interface to explore images and annotations
+- Challenge: 3D + semantic overlays
+- Action: .y[ndviz]
+
+<br>
+
+.center[
+<img src="images/ndpaper-fig2c.png" style="width: 700px;"/>
+]
+
+.cbar[
+[Web App](http://ix.neurodata.io) 
+| [Code](https://github.com/neurodata/NeuroDataViz) 
+| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
 ]
 
 
@@ -614,103 +554,75 @@ layout: true
 
 ---
 name: 2d
-
-### Process.Histogram Correction
-
+layout: false
 
 
-.pull-left[
-#### Goal
-- Remove sharp boundary exposure artifacts
-- Keep all other boundaries
-- Run on 100 TB dataset
-- Be "fast"
-- Be automatic
 
-#### Challenge
-- Frequencies of signal and noise are overlapping
-- Boundaries can span very large regions
-- Each dataset has different histogram statistics
-]
+### Process.2D_Correction
 
-.pull-right[
-#### Action
-- 2D .y[dmg]: [Web](https://github.com/mkazhdan/DMG) 
-| [Code](https://github.com/mkazhdan/DMG) 
-| [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) 
-- 3D .y[gdf]:  [Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
-| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) 
-- Distributed implementations
-- Web-service coming soon
-]
+<br>
 
-
----
-
-
-### Process.Histogram Correction
-
-
-#### Resolution
+- Goal: auto remove 2D histogram artifacts 
+- Challenge: signal & noise overlap, data are big
+- Action: .y[distributed multi-grid] (dmg)
 
 <br>
 
 .center[
-<img src="images/A_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
-<img src="images/D_dmg_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
+<img src="images/A_full_section_2402.jpg" alt="Drawing" style="height: 200px;"/>
+<img src="images/D_dmg_full_section_2402.jpg" alt="Drawing" style="height: 200px;"/>
+]
 <br>
+
+.cbar[
+[Web](https://github.com/mkazhdan/DMG) 
+| [Code](https://github.com/mkazhdan/DMG) 
+| [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) 
+]
+
+---
+name: 3d
+
+### Process.3D_Correction
+
+<br>
+
+- Goal: auto remove 3D histogram artifacts 
+- Challenge: data are bigger
+- Action: .y[gradient domain fusion] (gdf)
+
+<br>
+
+.center[
 <img src="images/GDF2.png" alt="Drawing" style="width: 100%;"/>
-
 ]
+<br>
 
-
+.cbar[
+[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
+| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) ]
 
 ---
-name: ndparse
-
-### Process.Object Detection
+name:ndparse
+### Process.Object_Detection
 
 <br>
 
-.pull-left[
-#### Goal
-- Automatically detect "semantic" objects
-- Easy manual label
-- Fast, inexpensive, simple training
-- Scalable deploy
-
-#### Challenge
-- Algs tend to work "in memory"
-- Tools are disparate
-- Parallel computing  not "turn-key"
-
-
-]
-
-.pull-right[
-#### Action
-- .y[ndparse]: [Code](https://github.com/neurodata/ndparse)
-- Protocol for manually labeling semantic objects
-- Training ML using RF/CNN
-- Deployable on cluster using [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
-- Integrations planned for qsub, slurm and aws submission
-]
-
-
-
----
-
-### Process.Object Detection
-
-#### Results
+- Goal: scalable object detection 
+- Challenge: requires manual labeling, training, and distributed computing
+- Action: .y[ndparse] 
 
 <br>
-
 
 .center[
 <img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 350px;"/>
 <img src="images/ndp_bock_detect_crop_circles.png"    alt="Drawing" style="width: 350px;"/>
+]
+<br>
 
+
+.cbar[
+[Code](https://github.com/neurodata/ndparse)
 ]
 
 
@@ -720,11 +632,35 @@ layout: true
 .bbar[ [Intro](#intro) | [Methods](#methods) | _[Results](#applications)_  | [Discussion](#disc)]
 
 
-
 ---
 name: applications
+layout: false
+class: middle, center
 
-# Applications
+.center[
+# Results
+]
+
+
+<!-- <br> -->
+
+<!-- .center[
+<img src="images/image_datasets.png" alt="Drawing" style="height: 150px;"/>
+<img src="images/annotation_datasets.png" alt="Drawing" style="height: 150px;"/>
+
+<br>
+
+<img src="images/rob2.png"    alt="Drawing" style="height: 250px; "/>
+<img src="images/3D.png"    alt="Drawing" style="height: 250px; "/>
+]
+
+add links
+ -->
+
+<!-- ---
+name: applications
+
+# Results
 
 <br>
 
@@ -732,14 +668,13 @@ name: applications
 - [Annotation Datasets](#r_anno)
 - [Case Study 1](#r_cs1)
 - [Case Study 2](#r_cs2)
-
+ -->
 
 ---
 name: r_im
 
 ## Image Datasets
 
-<br>
 
 .center[
 <img src="images/image_datasets.png" alt="Drawing" style="width: 700px;"/>
@@ -771,9 +706,9 @@ name: r_anno
 ---
 name: r_cs1
 
-### Case Study #1: Reproducible and Extensible Big Data Neuroscience
+### Case Study #1 
+#### Reproducible and Extensible Big Data Neuroscience
 
-#### Results from Kasthuri et al. (Cell) 2015
 
 <br>
 
@@ -804,6 +739,7 @@ Statistical claims
 ]
 
 
+ .cbar[Results from Kasthuri et al. (Cell) 2015]
 
 
 
@@ -811,7 +747,8 @@ Statistical claims
 ---
 name: r_cs2
 
-### Case Study #2: Is synapse distribution uniform in space?
+### Case Study #2 
+#### Is synapse distribution uniform in space?
 
 
 <br />
@@ -828,12 +765,13 @@ timings
 
 ---
 name: r_anal
+class: center, middle
 
-### Case Study #2: Is synapse distribution uniform in space?
+<!-- ### Case Study #2
+#### Is synapse distribution uniform in space?
+ -->
 
-#### Data from Bock et al. (Nature) 2011
-
-
+<!-- 
 .pull-left[
 <br />
 1. find all synapses
@@ -844,16 +782,14 @@ name: r_anal
 4. Plot normalized density in 3D scatter plot
 5. Plot marginal densities
 6. Report p-value
-]
+] -->
 
 
-.pull-right[
-<br />
-.center[
-<img src="images/3D.png"    alt="Drawing" style="width: 350px; "/>
-<img src="images/2Dproj.png"    alt="Drawing" style="width: 350px; "/>
-]]
+<img src="images/3D.png"    alt="Drawing" style="width: 550px; "/>
+<img src="images/2Dproj.png"    alt="Drawing" style="width: 550px; "/>
 
+
+.cbar[Data from Bock et al. (Nature) 2011]
 
 
 
@@ -864,11 +800,17 @@ layout: true
 
 ---
 name: disc
+class: middle, center
+layout: false
+
+# Discussion
+
+---
+
 
 
 ## Open Science Contributions
 
-<br />
 
 - Reference EM and other datasets
 - Reference annotations (crucial for training machine learning)
@@ -882,23 +824,22 @@ name: disc
 
 #### Implications: it is now easier to
 
-<br />
 
 - Answer questions that require scale
 - Engage complementary expertise
 - Reproduce and extend results
 
 
----
+--
 
-## Coming soon...
+## Coming soon
 
-<br />
 
 
 - [ndio](http://docs.neurodata.io/nddocs/ndio/) python API 
 - More .y[public] datasets: CLARITY, ExM, XCM, MRI, Ophys, etc. 
-- Web-services for all process steps, including 
+- Web-services for all process steps
+<!-- , including 
   - [Volume reconstruction](http://abria.github.io/TeraStitcher/) 
   - Color correction ([dmg](https://github.com/mkazhdan/DMG)) 
  & [gdf](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
@@ -906,11 +847,12 @@ name: disc
   - [Ontological object detection](https://github.com/neurodata/ndparse) (ndparse)
   - [Ophys Spike detection](https://github.com/jovo/oopsi) (oopsi)
   - Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
-  - [MRI to Graphs](http://m2g.io/) (m2g)
-- Web-services for all model steps, including:
+  - [MRI to Graphs](http://m2g.io/) (m2g) -->
+- Web-services for all model steps
+<!-- , including:
   - Shapes
   - Graphs
-  - Matrices 
+  - Matrices  -->
 
 
 
@@ -960,27 +902,27 @@ class:  center
 .center[
 |   |   | |
 | :--- | :--- | :--- |
-| Collect | | .purple[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ailey Crow, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla, Nelson Spruston, Erik Bloss]
-| Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
-| Explore | | .orange[Alex Baden,  Ivan Kuznetsov, David Marchette, Leo Duan, Albert Lee]
-| Process | &nbsp;&nbsp;&nbsp;&nbsp; | .y[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Dean Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Model | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
-| Graphs | | .black[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
-| Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
+| .r[Collect] | | .r[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ailey Crow, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla, Nelson Spruston, Erik Bloss]
+| .orange[Store] | | .orange[Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman]
+| .y[Explore] | | .y[Alex Baden,  Ivan Kuznetsov, David Marchette, Leo Duan, Albert Lee]
+| .g[Process] | &nbsp;&nbsp;&nbsp;&nbsp; | .g[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Dean Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| .blue[Model] | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
+| .purple[Graphs] | | .purple[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
+| .pink[Love] | | .pink[yummy, family, friends, earth, universe, multiverse?]
 ]
 
 
 
 
 ---
-class:   center
+class:   middle, center
 
 
 # Questions?
 
 <!-- ### Funding &nbsp;&nbsp;&nbsp;&nbsp;   -->
 
-<br />
+<!-- <br /> -->
 
 _____
 
@@ -1005,10 +947,10 @@ d: [docs.neurodata.io](http://docs.neurodata.io)
 e: [support@neurodata.io](mailto:support@neurodata.io)
 
 
-____
+<!-- ____ -->
 
 
-[more slides](http://docs.neurodata.io/ndintro/more.html)
+<!-- [more slides](http://docs.neurodata.io/ndintro/more.html) -->
 
 
 
@@ -1060,20 +1002,16 @@ ____
 
           // Enable or disable counting of incremental slides in the slide counting
           countIncrementalSlides: false
-
-
-
   },
 
   // Customize slide number label, either using a format string..
   // slideNumberFormat: 'Slide %current% of %total%',
   // .. or by using a format function
   slideNumberFormat: function (current, total) {
-    return  current + ' / ' + total;
+    return   current + ' of ' + total;
   },
 
-  // Enable or disable counting of incremental slides in the slide counting
-  countIncrementalSlides: false
+
 });
     </script>
 
