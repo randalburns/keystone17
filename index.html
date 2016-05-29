@@ -2,7 +2,16 @@
 <html>
   <head>
     <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+
+    <!-- bootstrap icons -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+    
+    <!-- google web fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- bower:css -->
     <!-- <link rel="stylesheet" href="/content/themes/jhu_id/bower_components/normalize-css/normalize.css"> -->
@@ -94,6 +103,7 @@
         color: rgb(249, 38, 114);
         text-decoration: none;
       }
+
       code {
         background: #424242;
         border-radius: 5px;
@@ -311,15 +321,20 @@ layout:false
 
 
 ---
-
+class: center, middle
 <!-- https://openwiki.janelia.org/wiki/download/attachments/34505478/Image%201%20-%20Medulla%20EM%20Stack%20-%20Final.jpg?version=1&modificationDate=1375908720000&api=v2 -->
 
 
-### Opportunity: Big Neuro Data
+<!-- ### Opportunity: Big Neuro Data -->
 
-.center[
-6 panel nd website figure
-]
+<!-- .center[6 panel nd website figure] -->
+
+<img src="images/oppo/em.jpg"/>
+<img src="images/oppo/at.png"/>
+<img src="images/oppo/clarity.jpg"/>
+<img src="images/oppo/xbrain.png"/>
+<img src="images/oppo/fibers.jpg"/>
+<img src="images/oppo/mri.png"/>
 
 
 
@@ -370,9 +385,10 @@ Goal: What is the spatial distribution of synapses?
 
 <br/>
 <br>
+<br>
 
 .center[
-<img src="https://github.com/neurodata/ndpaper/raw/master/figure0.png" alt="Drawing" style="width: 800px;"/>
+<img src="https://github.com/neurodata/ndpaper/raw/master/figure0.png" alt="Drawing" style="width: 700px;"/>
 ]
 
 <br />
@@ -416,17 +432,29 @@ name:store
 <br>
 
 .center[
-<img src="images/reshier.png" style="width: 250px;"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="width: 250px;"/>
+<img src="images/reshier.png" style="height: 250px;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="height: 250px;"/>
 ]
 
+
 .cbar[
-<!-- Store.images..y[ndstore]  -->
-[Code] 
-| [Docs]
-| [Manuscript]
-| [API]
-| [Issues]]
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
+]
+
+<!-- [Code](https://github.com/neurodata/ndstore) 
+| [Docs](http://docs.neurodata.io/ndstore/sphinx/console.html) 
+| [API](http://docs.neurodata.io/ndstore/) 
+| [Manuscript](http://arxiv.org/abs/1306.3543) 
+| [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
+| [<span class="images/issue.png"></span>](https://github.com/neurodata/ndstore/tree/master/setup)
+<a href="#"><span class="glyphicon glyphicon-file"></span></a>
+<a href="#"><span class="glyphicon glyphicon-book"></span></a>
+<a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a>
+[<span class="glyphicon glyphicon-exclamation-sign"></span>](https://github.com/neurodata/ndstore/tree/master/setup) -->
+
 
 ---
 class: middle, center
@@ -452,24 +480,26 @@ class: middle, center
 - Challenge: data stored in cubes
 - Action: .y[ndtilecache] content distribution network
 
-<br>
+
+
 
 .center[
 <img src="images/ndpaper-fig1c.png" style="width: 700px;"/>
 ]
 
+
+
 .cbar[
-<!-- Store.Images..y[ndtilecache] -->
-[Code] 
-| [Docs]
-| [Manuscript]
-| [API]
-| [Issues]
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndtilecache)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/api/tile_api.html)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndtilecache/issues/new)
 ]
 
 
 ---
 name: ramondb
+layout: false
 
 ### Store.Shapes 
 <br>
@@ -488,11 +518,13 @@ name: ramondb
 
 <br>
 .cbar[
-[Code](https://github.com/neurodata/ndstore) 
-| [Tutorial](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
-| [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
-| [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/tree/microns/ramon) 
+| [<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndio/issues/new)
 ]
+
+
 
 ---
 
@@ -508,12 +540,12 @@ name: ramondb
 <img src="images/ndpaper-fig1d.png" style="width: 600px;"/>
 ]
 
+
+
 .cbar[
-[Code] 
-| [Docs]
-| [Manuscript]
-| [API]
-| [Issues]
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndblaze)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndblaze/issues/new)
 ]
 
 
@@ -540,9 +572,10 @@ layout: false
 ]
 
 .cbar[
-[Web App](http://ix.neurodata.io) 
-| [Code](https://github.com/neurodata/NeuroDataViz) 
-| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
+[@alexbaden](https://github.com/alexbaden):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://ix.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz/issues)
 ]
 
 
@@ -574,11 +607,14 @@ layout: false
 ]
 <br>
 
+
 .cbar[
-[Web](https://github.com/mkazhdan/DMG) 
-| [Code](https://github.com/mkazhdan/DMG) 
-| [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) 
+[@misha](https://github.com/mkazhdan/): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/mkazhdan/DMG)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/mkazhdan/DMG/issues/new)
 ]
+
 
 ---
 name: 3d
@@ -598,9 +634,14 @@ name: 3d
 ]
 <br>
 
+
 .cbar[
-[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
-| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) ]
+[@misha](https://github.com/mkazhdan/): 
+[<i class="fa fa-code" aria-hidden="true"></i>](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://arxiv.org/pdf/1506.02079v1.pdf)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/mkazhdan/DMG/issues/new)
+]
+
 
 ---
 name:ndparse
@@ -622,8 +663,13 @@ name:ndparse
 
 
 .cbar[
-[Code](https://github.com/neurodata/ndparse)
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndparse) 
+| [<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndparse/mbcd.html) 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndparse/issues/new)
 ]
+
+
 
 
 
@@ -686,6 +732,10 @@ name: r_im
 - All "reference" datasets
 
 
+.cbar[
+[<i class="fa fa-external-link" aria-hidden="true"></i> Projects](http://neurodata.io/projects)
+]
+
 ---
 name: r_anno
 
@@ -739,7 +789,10 @@ Statistical claims
 ]
 
 
- .cbar[Results from Kasthuri et al. (Cell) 2015]
+ .cbar[
+[<i class="fa fa-external-link" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndpaper2016/case_study1.html)
+Data: Kasthuri et al. (Cell) 2015
+]
 
 
 
@@ -789,7 +842,11 @@ class: center, middle
 <img src="images/2Dproj.png"    alt="Drawing" style="width: 550px; "/>
 
 
-.cbar[Data from Bock et al. (Nature) 2011]
+ .cbar[
+[<i class="fa fa-external-link" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndpaper2016/case_study2.html)
+Data: Bock et al. (Nature) 2011
+]
+
 
 
 
@@ -837,8 +894,8 @@ layout: false
 
 
 - [ndio](http://docs.neurodata.io/nddocs/ndio/) python API 
-- More .y[public] datasets: CLARITY, ExM, XCM, MRI, Ophys, etc. 
-- Web-services for all process steps
+- More public datasets: CLARITY, ExM, XCM, MRI, Ophys, etc. 
+- More Web-services: processing each data modality
 <!-- , including 
   - [Volume reconstruction](http://abria.github.io/TeraStitcher/) 
   - Color correction ([dmg](https://github.com/mkazhdan/DMG)) 
@@ -848,7 +905,7 @@ layout: false
   - [Ophys Spike detection](https://github.com/jovo/oopsi) (oopsi)
   - Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
   - [MRI to Graphs](http://m2g.io/) (m2g) -->
-- Web-services for all model steps
+<!-- - Web-services for all model steps -->
 <!-- , including:
   - Shapes
   - Graphs
@@ -908,7 +965,7 @@ class:  center
 | .g[Process] | &nbsp;&nbsp;&nbsp;&nbsp; | .g[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Dean Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | .blue[Model] | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
 | .purple[Graphs] | | .purple[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
-| .pink[Love] | | .pink[yummy, family, friends, earth, universe, multiverse?]
+| .pink[Love] | | .pink[Yummy, Family, Friends, Earth, Universe, Multiverse?]
 ]
 
 
@@ -977,42 +1034,41 @@ e: [support@neurodata.io](mailto:support@neurodata.io)
 
       MathJax.Hub.Configured();
 
-      var slideshow = remark.create({
-        // Set the slideshow display ratio
-        // Default: '4:3'
-        // Alternatives: '16:9', ...
-        ratio: '4:3',
+var slideshow = remark.create({
+  // Set the slideshow display ratio
+  // Default: '4:3'
+  // Alternatives: '16:9', ...
+  ratio: '4:3',
 
-        // Navigation options
-        navigation: {
-          // Enable or disable navigating using scroll
-          // Default: true
-          // Alternatives: false
-          scroll: true,
+  // Navigation options
+  navigation: {
+    // Enable or disable navigating using scroll
+    // Default: true
+    // Alternatives: false
+    scroll: true,
 
-          // Enable or disable navigation using touch
-          // Default: true
-          // Alternatives: false
-          touch: true,
+    // Enable or disable navigation using touch
+    // Default: true
+    // Alternatives: false
+    touch: true,
 
-          // Enable or disable navigation using click
-          // Default: false
-          // Alternatives: true
-          click: false, 
-
-          // Enable or disable counting of incremental slides in the slide counting
-          countIncrementalSlides: false
+    // Enable or disable navigation using click
+    // Default: false
+    // Alternatives: true
+    click: false
   },
 
   // Customize slide number label, either using a format string..
-  // slideNumberFormat: 'Slide %current% of %total%',
+  slideNumberFormat: 'Slide %current% of %total%',
   // .. or by using a format function
   slideNumberFormat: function (current, total) {
-    return   current + ' of ' + total;
+    return  current + ' / ' + total;
   },
 
+  // Enable or disable counting of incremental slides in the slide counting
+  countIncrementalSlides: false
+}); 
 
-});
     </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
