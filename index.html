@@ -1059,10 +1059,10 @@ var slideshow = remark.create({
   },
 
   // Customize slide number label, either using a format string..
-  slideNumberFormat: 'Slide %current% of %total%',
+  // slideNumberFormat: 'Slide %current% of %total%',
   // .. or by using a format function
   slideNumberFormat: function (current, total) {
-    return  current + ' / ' + total;
+    return  current + ' of ' + total;
   },
 
   // Enable or disable counting of incremental slides in the slide counting
