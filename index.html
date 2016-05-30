@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+    <!-- <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet"> -->
 
     <!-- bootstrap icons -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -32,6 +32,7 @@
 
       body {
         font-family: 'gentona'; /* Varela Round */
+        font-size: 1.6em;
       }
       /*      h1, h2, h3, h4, h5, h6 {
         font-family: 'quadon';
@@ -40,6 +41,27 @@
         font-family: 'quadon';
         font-weight: 400;
         margin-bottom: 0;
+        color: #d5ad6d;
+/*        color:  #D5AD6D; /*if no support for background-clip*/
+  
+        /*background: -webkit-linear-gradient(transparent, transparent),*/
+             /*-webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);*/
+        /*background: -o-linear-gradient(transparent, transparent);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+
+      }
+      .remark-slide-content {
+        font-size: 1.5em;
+        background: #272822;
+        color: #ebd8b9; /*#f4e9d8;*/ /*#debe8b;*/ /*#6dd5ad;*/ /*rgba(213,173,109,1);*/ /*rgba(163,126,67,1);*/ /*rgba(226,186,120,1);*/ /*rgba(213,173,109,1);*/ /*#6dd5ad;*/
+        /*background: #3B263C;*/
+  /*        color:  #FFFF00; /*#DDA0DD;*/  /*#A565D6;*/ /* #DF9BFF;*/ /*#FFFF00;*/*/
+      }
+
+      h1, h2, h3, h4 {
+        text-align: center;
+        /*text-shadow: 2px 2px gray; /*#ff0000;*/*/
       }
 
       .remark-slide-content h1 { font-size: 3em; }
@@ -78,22 +100,22 @@
         left: 13px;
         font-family: 'titling-gothic';  /* Yanone Kaffeesatz */
         font-weight: 200;
-        color: #A7A7A7;
+        /*color: #A7A7A7;*/
+        color: #bdbcbc;
       }
+      .cbar a{
+       color: #bdbcbc; 
+      }
+
       .btn {
         background: #424242;
         height: 2em;
       }
-      .remark-slide-content {
-        font-size: 1.5em;
-        background: #272822;
-        color: white;
-/*        background: #270a27;
-        color: #ffff00;*/
-      }
       li p { line-height: 1.25em; }
       .r { color: #fa0000; }
-      .y { color: #FFFF00; }
+      .w {color: white;}
+      .ye { color: #FFFF00; }
+      .y { color: #fcfaf6; }
       .pink { color: #FF87F3;}
       .orange { color: #FFA500;}
       .g { color: #00CC00; }
@@ -102,7 +124,10 @@
       .large { font-size: 2em; }
       .black { color: black; background-color: white;}
       a, a > code {
-        color:  rgb(249, 38, 114);  /*#bdbcbc; */
+        color:  rgb(249, 38, 114); 
+        color: white; 
+        color: #bdbcbc; 
+        /*color: #b1b1b1;*/
         text-decoration: none; /*underline*/
       }
 
@@ -272,7 +297,6 @@ these slides: <http://docs.neurodata.io/ndintro>
 
 
 ---
-class: bg-purple
 
 # Big Scientific Data
 
@@ -377,22 +401,16 @@ Goal: What is the spatial distribution of synapses?
 
 
 ---
-
-
+class: center
 
 ## [NeuroData](http://neurodata.io) 5 steps to discovery
 
-<br/>
-<br>
-<br>
-
-.center[
-<img src="https://github.com/neurodata/ndpaper/raw/master/figure0.png" alt="Drawing" style="width: 700px;"/>
-]
+<img src="https://www.lucidchart.com/publicSegments/view/e4ca33f3-f1a7-4438-814a-df3fe071b1bf/image.png" alt="Drawing" style="width: 600px;"/>
+<!-- <img src="https://github.com/neurodata/ndpaper/raw/master/figure0.png" alt="Drawing" style="width: 700px;"/> -->
 
 <br />
 
---
+<!-- --
 
 .left-pull[
 - An cloud deployed ecosystem for big data neuroscience
@@ -402,7 +420,7 @@ Goal: What is the spatial distribution of synapses?
 - Revealed novel spatial synapse patterns
 - Free and open source software (FOSS), and free and open access data (FOAD)
 ]
-
+ -->
 
 ---
 name: applications
@@ -425,8 +443,8 @@ name:store
 <br>
 
 - Goal: eliminate read/write bottlenecks
-- Challenge: accessing a file takes time
-- Action: .y[ndstore] spatial database
+- Challenge: accessing a file takes time, data are big
+- Action: .y[ndbackend] infrastructure
 
 <br>
 
@@ -437,10 +455,7 @@ name:store
 
 
 .cbar[
-[@kunal](https://github.com/kunallillaney): 
-[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
-[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
-[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
+[@kunal](https://github.com/kunallillaney)
 ]
 
 <!-- [Code](https://github.com/neurodata/ndstore) 
@@ -456,23 +471,36 @@ name:store
 
 
 ---
-class: middle, center
+layout: false
+class: left
 
-<!-- ### Store.Images -->
+<br>
+<br>
+<br>
 
-<!-- #### Results -->
+- Goal: fast read/write volumes for machine vision
+- Challenge: data stored as images
+- Action: .y[ndstore] spatial database
 
+<br>
 
-<img src="images/ndpaper-fig1ab.png" style="height: 660px;"/>
+.center[
+<img src="images/ndpaper-fig1a.png" style="height: 200px;"/>
+<img src="images/ndpaper-fig1b.png" style="height: 200px;"/>
+]
 
 .cbar[
-<!-- Store.images..y[ndstore]  -->
- Benchmarks
- ]
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
+]
+
 
 ---
 
-<!-- ### Store.Images -->
+<br>
+<br>
 <br>
 
 - Goal: visualize @ video rates for mobile
@@ -483,7 +511,7 @@ class: middle, center
 
 
 .center[
-<img src="images/ndpaper-fig1c.png" style="width: 700px;"/>
+<img src="images/ndpaper-fig1c.png" style="width: 600px;"/>
 ]
 
 
@@ -527,7 +555,8 @@ layout: false
 
 ---
 
-### Store.Shapes
+<br>
+<br>
 <br>
 
 - Goal: write annotations with object-level metadata fast
@@ -560,8 +589,33 @@ layout: false
 
 <br>
 
-- Goal: google maps like interface to explore images and annotations
-- Challenge: 3D + semantic overlays
+- Goal: google maps like interface to explore images
+- Challenge: mobile speed
+- Action: .y[ndviz]
+
+
+
+.center[
+<img src="images/ndpaper-fig2a.png" style="width: 550px;"/>
+]
+
+.cbar[
+[@alexbaden](https://github.com/alexbaden):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://ix.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz/issues)
+]
+
+---
+name: explore
+layout: false
+
+### Explore.Annotations  
+
+<br>
+
+- Goal: dynamically overlay annotations
+- Challenge: interactivity
 - Action: .y[ndviz]
 
 <br>
@@ -590,7 +644,7 @@ layout: false
 
 
 
-### Process.2D_Correction
+### Infer.2D_Correction
 
 <br>
 
@@ -618,7 +672,7 @@ layout: false
 ---
 name: 3d
 
-### Process.3D_Correction
+### Infer.3D_Correction
 
 <br>
 
@@ -644,19 +698,18 @@ name: 3d
 
 ---
 name:ndparse
-### Process.Object_Detection
+### Infer.Object_Detection
 
 <br>
 
 - Goal: scalable object detection 
-- Challenge: requires manual labeling, training, and distributed computing
+- Challenge: requires  labeling, training, & distributed computing
 - Action: .y[ndparse] 
 
-<br>
 
 .center[
-<img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 350px;"/>
-<img src="images/ndp_bock_detect_crop_circles.png"    alt="Drawing" style="width: 350px;"/>
+<img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 340px;"/>
+<img src="images/ndp_bock_detect_crop_circles.png"    alt="Drawing" style="width: 340px;"/>
 ]
 <br>
 
@@ -755,13 +808,12 @@ name: r_anno
 ---
 name: r_cs1
 
-### Case Study #1 
+## Case Study #1 
 #### Reproducible and Extensible Big Data Neuroscience
 
 
 <br>
 
-.pull-left[
 Statistical claims
 1. [axons & dendrites](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim02_axons_and_dendrites.ipynb)
 1. [synapses](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim3_synapses.ipynb)
@@ -769,10 +821,15 @@ Statistical claims
 1. [spines](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim5_spines.ipynb)
 1. [vesicles](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim6_vesicles.ipynb)
 1. [connectivity](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim9_make_graph.ipynb)
-]
 
 
-.pull-right[
+---
+
+## Case Study #1 
+#### Reproducible and Extensible Big Data Neuroscience
+
+<br>
+
 [axons and dendrites](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim2_axons_and_dendrites.ipynb)
 1. How many different neurons?
 1. How many dendrites?
@@ -785,7 +842,6 @@ Statistical claims
 1. What fraction of volume is cells?
 1. Relative volume of axon vs. dendrite?
 ...
-]
 
 
  .cbar[
@@ -799,7 +855,7 @@ Data: Kasthuri et al. (Cell) 2015
 ---
 name: r_cs2
 
-### Case Study #2 
+## Case Study #2 
 #### Is synapse distribution uniform in space?
 
 
@@ -865,7 +921,7 @@ layout: false
 
 
 
-## Open Science Contributions
+### Open Science Contributions
 
 
 - Reference EM and other datasets
@@ -878,7 +934,7 @@ layout: false
 
 <br />
 
-#### Implications: it is now easier to
+### Implications: it is now easier to
 
 
 - Answer questions that require scale
@@ -888,7 +944,7 @@ layout: false
 
 --
 
-## Coming soon
+### Coming soon
 
 
 
@@ -951,7 +1007,6 @@ class:  center
 
 # NeuroData Family
 
-<br />
 
 
 
@@ -960,8 +1015,8 @@ class:  center
 | :--- | :--- | :--- |
 | .r[Collect] | | .r[Clay Reid, Davi Bock, Jeff Licthman, Bobb Kasthuri, Karl Deisseroth, Raju Tomer, Li Ye, Ailey Crow, Ed Boyden, Mike Milham, Cameron Craddock, Stephen Smith, Forrest Collman, Kristen Harris, Scott Emmons, Dan Bumbarger, Mitya Chklovskii, Nikhil Bhatla, Nelson Spruston, Erik Bloss]
 | .orange[Store] | | .orange[Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman]
-| .y[Explore] | | .y[Alex Baden,  Ivan Kuznetsov, David Marchette, Leo Duan, Albert Lee]
-| .g[Process] | &nbsp;&nbsp;&nbsp;&nbsp; | .g[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Dean Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| .ye[Explore] | | .ye[Alex Baden,  Ivan Kuznetsov, David Marchette, Leo Duan, Albert Lee]
+| .g[Infer] | &nbsp;&nbsp;&nbsp;&nbsp; | .g[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Dean Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | .blue[Model] | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Cencheng Shen, Ivan Kuznetsov]
 | .purple[Graphs] | | .purple[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
 | .pink[Love] | | .pink[Yummy, Family, Friends, Earth, Universe, Multiverse?]
