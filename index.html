@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
     
     <!-- google web fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
     <!-- bower:css -->
     <!-- <link rel="stylesheet" href="/content/themes/jhu_id/bower_components/normalize-css/normalize.css"> -->
@@ -24,11 +23,11 @@
     <title>NeuroData Intro</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-      @import url(http://fonts.googleapis.com/css?family=Varela+Round:regular,italic,bold,bolditalic);
-      @import url(http://fonts.googleapis.com/css?family=Raleway:regular,italic,bold,bolditalic);
+      /*@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);*/
+      /*@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);*/
+      /*@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);*/
+      /*@import url(http://fonts.googleapis.com/css?family=Varela+Round:regular,italic,bold,bolditalic);*/
+      /*@import url(http://fonts.googleapis.com/css?family=Raleway:regular,italic,bold,bolditalic);*/
 
       body {
         font-family: 'gentona'; /* Varela Round */
@@ -450,7 +449,7 @@ name:store
 <!-- --- -->
 
 
-### Store.Images
+### Store
 <br>
 
 - Goal: eliminate read/write bottlenecks
@@ -487,18 +486,40 @@ name:store
 layout: false
 class: left
 
-### Store.Image:Volumes
+
+### Store: Image Data Model
 <br>
 
-- Goal: fast read/write volumes for machine vision
-- Challenge: data stored as images
+- Goal: general enough for many data types 
+- Challenge: simple enough to understand
+- Action: .y[nddatamodel]
+
+<br>
+
+.center[
+<img src="images/datamodel_simple.png" style="height: 300px;"/>
+]
+
+
+.cbar[
+[@kunal](https://github.com/kunallillaney) 
+]
+
+
+---
+
+### Store: Write Volumes
+<br>
+
+- Goal: write faster than acquire
+- Challenge: data stored as images, streamed quickly
 - Action: .y[ndstore] spatial database
 
 <br>
 
 .center[
-<img src="images/ndpaper-fig1a.png" style="height: 200px;"/>
-<img src="images/ndpaper-fig1b.png" style="height: 200px;"/>
+<!-- <img src="images/ndpaper-fig1a.png" style="height: 200px;"/> -->
+<img src="images/ndpaper-fig1b.png" style="height: 300px;"/>
 ]
 
 .cbar[
@@ -511,7 +532,32 @@ class: left
 
 ---
 
-### Store.Image:Tiles
+### Store: Read Volumes
+<br>
+
+- Goal: read volumes for machine vision
+- Challenge: data stored as images
+- Action: .y[ndstore] spatial database
+
+<br>
+
+.center[
+<img src="images/ndpaper-fig1a.png" style="height: 300px;"/>
+<!-- <img src="images/ndpaper-fig1b.png" style="height: 200px;"/> -->
+]
+
+.cbar[
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
+]
+
+
+
+---
+
+### Store: Read Tiles
 <br>
 
 - Goal: visualize @ video rates for mobile
@@ -519,10 +565,10 @@ class: left
 - Action: .y[ndtilecache] content distribution network
 
 
-
+<br>
 
 .center[
-<img src="images/ndpaper-fig1c.png" style="width: 600px;"/>
+<img src="images/ndpaper-fig1c.png" style="height: 300px;"/>
 ]
 
 
@@ -539,7 +585,29 @@ class: left
 name: ramondb
 layout: false
 
-### Store.Shapes 
+### Store: Shape Data Model
+<br>
+
+- Goal: general enough for many data types 
+- Challenge: simple enough to understand
+- Action: .y[ndramon]
+
+
+.center[
+<img src="images/ramon.png" style="height: 350px;"/>
+]
+
+
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/tree/microns/ramon) 
+| [<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndio/issues/new)
+]
+
+---
+
+### Store: Read Shapes 
 <br>
 
 - Goal: enable easy semantic queries
@@ -566,7 +634,7 @@ layout: false
 
 ---
 
-### Store.Shapes 
+### Store: Write Shapes 
 <br>
 
 - Goal: write annotations with object-level metadata fast
@@ -595,7 +663,7 @@ layout: true
 name: explore
 layout: false
 
-### Explore.Images  
+### Explore: Images  
 
 <br>
 
@@ -617,10 +685,34 @@ layout: false
 ]
 
 ---
-name: explore
-layout: false
 
-### Explore.Shapes  
+### Explore: Histograms
+
+
+<br>
+
+- Goal: explore histograms of very large volumes
+- Challenge: cannot compute histograms in memory
+- Action: .y[ndhist] 
+
+
+
+.center[
+<img src="images/explore-hist.png" style="width: 450px;"/>
+]
+
+
+.cbar[
+[@alexbaden](https://github.com/alexbaden):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://hx.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/histogram-explorer) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/histogram-explorer/issues)
+]
+
+
+---
+
+### Explore: Shapes  
 
 <br>
 
@@ -654,7 +746,7 @@ layout: false
 
 
 
-### Infer.2D_Correction
+### Infer: 2D Correction
 
 <br>
 
@@ -682,7 +774,7 @@ layout: false
 ---
 name: 3d
 
-### Infer.3D_Correction
+### Infer: 3D Correction
 
 <br>
 
@@ -708,7 +800,7 @@ name: 3d
 
 ---
 name:ndparse
-### Infer.Object_Detection
+### Infer: Object Detection
 
 <br>
 
