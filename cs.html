@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+    <!-- <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet"> -->
+
+    <!-- bootstrap icons -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
+    
+    <!-- google web fonts -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
     <!-- bower:css -->
     <!-- <link rel="stylesheet" href="/content/themes/jhu_id/bower_components/normalize-css/normalize.css"> -->
@@ -12,17 +20,18 @@
     <link rel="stylesheet" href="fonts/arnhem/arnhem.css">
     <!-- endbower -->
 
-    <title>NeuroData Intro</title>
+    <title>NeuroData CS</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-      @import url(http://fonts.googleapis.com/css?family=Varela+Round:regular,italic,bold,bolditalic);
-      @import url(http://fonts.googleapis.com/css?family=Raleway:regular,italic,bold,bolditalic);
+      /*@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);*/
+      /*@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);*/
+      /*@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);*/
+      /*@import url(http://fonts.googleapis.com/css?family=Varela+Round:regular,italic,bold,bolditalic);*/
+      /*@import url(http://fonts.googleapis.com/css?family=Raleway:regular,italic,bold,bolditalic);*/
 
       body {
         font-family: 'gentona'; /* Varela Round */
+        font-size: 1.6em;
       }
       /*      h1, h2, h3, h4, h5, h6 {
         font-family: 'quadon';
@@ -31,6 +40,33 @@
         font-family: 'quadon';
         font-weight: 400;
         margin-bottom: 0;
+        color: #d5ad6d;
+/*        color:  #D5AD6D; /*if no support for background-clip*/
+  
+        /*background: -webkit-linear-gradient(transparent, transparent),*/
+             /*-webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);*/
+        /*background: -o-linear-gradient(transparent, transparent);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+
+      }
+      .remark-slide-content {
+        font-size: 1.5em;
+        background: #272822;
+        background: radial-gradient(circle, #272822, #15120e, black); /* Standard syntax */
+        background: -webkit-radial-gradient(circle, #272822, #15120e, black); /* Safari */
+        background: -o-radial-gradient(circle, #272822, #15120e, black); /* Opera 11.6 to 12.0 */
+        background: -moz-radial-gradient(circle, #272822, #15120e, black); /* Firefox 3.6 to 15 */
+        background: radial-gradient(circle, #272822, #15120e, black); /* Standard syntax */
+
+        color: #ebd8b9; /*#f4e9d8;*/ /*#debe8b;*/ /*#6dd5ad;*/ /*rgba(213,173,109,1);*/ /*rgba(163,126,67,1);*/ /*rgba(226,186,120,1);*/ /*rgba(213,173,109,1);*/ /*#6dd5ad;*/
+        /*background: #3B263C;*/
+  /*        color:  #FFFF00; /*#DDA0DD;*/  /*#A565D6;*/ /* #DF9BFF;*/ /*#FFFF00;*/*/
+      }
+
+      h1, h2, h3, h4 {
+        text-align: center;
+        /*text-shadow: 2px 2px gray; /*#ff0000;*/*/
       }
 
       .remark-slide-content h1 { font-size: 3em; }
@@ -63,18 +99,28 @@
       .bbar a {
         color: #A7A7A7;
       }
+      .cbar {
+        position: absolute;
+        bottom: 13px;
+        left: 13px;
+        font-family: 'titling-gothic';  /* Yanone Kaffeesatz */
+        font-weight: 200;
+        /*color: #A7A7A7;*/
+        color: #bdbcbc;
+      }
+      .cbar a{
+       color: #bdbcbc; 
+      }
+
       .btn {
         background: #424242;
         height: 2em;
       }
-      .remark-slide-content {
-        font-size: 1.5em;
-        background: #272822;
-        color: white;
-      }
       li p { line-height: 1.25em; }
       .r { color: #fa0000; }
-      .y { color: #FFFF00; }
+      .w {color: white;}
+      .ye { color: #FFFF00; }
+      .y { color: #fcfaf6; }
       .pink { color: #FF87F3;}
       .orange { color: #FFA500;}
       .g { color: #00CC00; }
@@ -83,9 +129,18 @@
       .large { font-size: 2em; }
       .black { color: black; background-color: white;}
       a, a > code {
-        color: rgb(249, 38, 114);
-        text-decoration: none;
+        color:  rgb(249, 38, 114); 
+        color: white; 
+        color: #bdbcbc; 
+        /*color: #b1b1b1;*/
+        text-decoration: none; /*underline*/
       }
+
+      a:hover {
+        color: white;
+      }
+
+
       code {
         background: #424242;
         border-radius: 5px;
@@ -209,19 +264,17 @@
         padding-top: 0.6em;
       }
 
+  }
     </style>
   </head>
   <body onload="var slideshow = remark.create();">
     <textarea id="source">
 
 
-
 class: center, middle
 
 # [NeuroData](http://neurodata.io):
-## Enabling Petascale Neuroscience
-
-### Computer Science 
+### Enabling Terascale Neuroscience for Everyone
 
 <!-- ### Joshua T. Vogelstein -->
 <!-- ### {[BME](http://bme.jhu.edu),[ICM](http://icm.jhu.edu),[CIS](http://cis.jhu.edu),[Kavli](http://kndi.jhu.edu)}@[jhu](http://jhu.edu) -->
@@ -229,160 +282,286 @@ class: center, middle
 <!-- #### e: [jovo@jhu.edu](mailto:jovo@jhu.edu) | w:  -->
 <!-- ### [NeuroData.io](http://neurodata.io) -->
 
-
-
-#### these slides: <http://docs.neurodata.io/cs.html>
+<br>
+<!-- [prof joshua t. vogelstein](http://jovo.me) -->
 
 <br>
 
+.center[
+presented by, Joshua T. Vogelstein
+<br>
 {[bme](http://www.bme.jhu.edu/),[icm](http://icm.jhu.edu/),[cis](http://cis.jhu.edu/),[idies](http://idies.jhu.edu/),kavli,[cs](http://engineering.jhu.edu/computer-science/), [ams](http://engineering.jhu.edu/ams/), [neuro](http://neuroscience.jhu.edu/)}@[jhu](https://www.jhu.edu/)
-
 <br>
+please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!
+<br>
+these slides: <http://docs.neurodata.io/ndintro/cs.html>
 
-.center[please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!
-
-[source code](https://github.com/neurodata/ndintro/blob/gh-pages/cs.html)
-| [contributors](https://github.com/neurodata/ndintro/graphs/contributors)
 ]
 
-
-
 ---
-layout: true
-.bbar[ _[Intro](#intro)_  | [Store](#store) | [Explore](#explore) | [Wrangle](#wrangle) | [Analyze](#anal)]
----
+class: center
 
+## [NeuroData](http://neurodata.io) 6 steps to discovery
 
-
-
-## 4 steps to discovery
-
-<br/>
-
-.center[
-<img src="https://www.lucidchart.com/publicSegments/view/9cc4763f-5a2a-44df-bc0c-540316d6d62d/image.png" alt="Drawing" style="width: 800px;"/>
-]
+<img src="images/circle6.png" alt="Drawing" style="width: 600px;"/>
+<!-- <img src="https://github.com/neurodata/ndpaper/raw/master/figure0.png" alt="Drawing" style="width: 700px;"/> -->
 
 <br />
 
-.center[Existing solutions are unable to elegantly handle 3D+ petascale data]
+<!--
 
-
+.left-pull[
+- An cloud deployed ecosystem for big data neuroscience
+- Currently hosts 10+ public datasets, another 20+ private datasets
+- Total # of terabytes used: ~250 
+- Enables universal accessibility, reproducibility, and extensibility
+- Revealed novel spatial synapse patterns
+- Free and open source software (FOSS), and free and open access data (FOAD)
+]
+ -->
 
 
 ---
+layout: false
+class: middle, center
+<!-- .bbar[ [Intro](#intro) | _[Methods](#methods)_ | [Results](#applications)  | [Discussion](#disc)] -->
+<!--  -->
 
-## [NeuroData](http://neurodata.io) meets needs to achieve
+<img src="images/fig0.png" alt="Drawing" style="width: 800px;"/>
 
-<br/>
+
+---
+layout: false
+class: middle, center
 
 .center[
-<img src="https://www.lucidchart.com/publicSegments/view/4992c41b-3c24-48f1-8c7b-cd67641a2cdf/image.png" alt="Drawing" style="width: 800px;"/>
-]
-
-
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro)  | _[Store](#store)_ | [Explore](#explore) | [Wrangle](#wrangle) | [Analyze](#anal)]
-
-
----
-name: store
-
-
 # Store
-
-<br />
-
-- [Databases](#db)
-  - [spdb](#spdb) 3D+ images and volumetric annotations  
-  - [ramondb](#ramondb) annotation metadata
-  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
-- [Utilities](#util)
-  - [ndtilecache](#cdn) enables content distribution network 
-  - [ndlims](#ndlims) for managing additional metadata:
-  - [ndio](#ndio) Python library for I/O
-  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
-- [Hardware](#hardware)
+]
 
 ---
-name: db
+name:store
 
-
-## Databases
-
+### Store
 <br>
 
-- .y[Databases]
-  - [spdb](#spdb) 3D+ images and volumetric annotations  
-  - [ramondb](#ramondb) annotation metadata
-  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
-- [Utilies](#util)
-  - [ndtilecache](#cdn) enables content distribution network 
-  - [ndlims](#ndlims) for managing additional metadata:
-  - [ndio](#ndio) Python library for I/O
-  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
-- [Hardware](#hardware)
+- Goal: eliminate read/write bottlenecks
+- Challenge: accessing a file takes time, data are big
+- Action: .y[ndbackend] infrastructure
 
 
 
+.center[
+<img src="images/ndcomplete.png" style="height: 400px;"/>
+<!-- <img src="images/reshier.png" style="height: 250px;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="height: 250px;"/>
+ -->
+ ]
 
----
-name: spdb
 
-### Images: .y[spdb]
+.cbar[
+[@kunal](https://github.com/kunallillaney)
+]
 
-[Code](https://github.com/neurodata/ndstore) 
-| [Tutorials](http://docs.neurodata.io/ndstore/sphinx/console.html) 
-| [Data Model](http://docs.neurodata.io/ndstore/sphinx/datamodel.html) 
+<!-- [Code](https://github.com/neurodata/ndstore) 
+| [Docs](http://docs.neurodata.io/ndstore/sphinx/console.html) 
 | [API](http://docs.neurodata.io/ndstore/) 
 | [Manuscript](http://arxiv.org/abs/1306.3543) 
-| [Docker](https://github.com/neurodata/ndstore/blob/master/setup/Dockerfile) 
 | [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
-| [Benchmarks](http://docs.neurodata.io/nddocs/more.html#r_store)
-| [Examples](http://neurodata.io/projects)
+| [<span class="images/issue.png"></span>](https://github.com/neurodata/ndstore/tree/master/setup)
+<a href="#"><span class="glyphicon glyphicon-file"></span></a>
+<a href="#"><span class="glyphicon glyphicon-book"></span></a>
+<a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a>
+[<span class="glyphicon glyphicon-exclamation-sign"></span>](https://github.com/neurodata/ndstore/tree/master/setup) -->
 
-.pull-left[
-####  Storage Model
-- Image Data Model to store images & associated metadata
-- Space filling curve minimizes the number of accesses
-- Dense multi-dimensional spatial array partitioned into cuboids
-- Multi-resolution zoom pyramid
-- 3rd party support: CATMAID, Viking, KNOSSOS, VAST, BigDataViewer
+
+---
+layout: false
+class: left
+
+
+### Store: .y[Image Data Model]
+<br>
+
+- Goal: general enough for many data types 
+- Challenge: simple enough to understand
+- Action: .y[nddatamodel]
+
+<br>
+
+.center[
+<img src="images/datamodel_simple.png" style="height: 300px;"/>
 ]
 
-.pull-right[
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="width: 250px;"/>
-<img src="images/reshier.png" style="width: 250px;"/>
+
+.cbar[
+[@kunal](https://github.com/kunallillaney) 
 ]
 
 
 ---
 
-#### Image Benchmarks
+### Store: .y[Write Volumes]
+<br>
+
+- Goal: write faster than acquire
+- Challenge: data stored as images, streamed quickly
+- Action: .y[ndstore] spatial database
 
 <br>
 
 .center[
-<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/store/ReadThroughputPlot.png" style="width: 500px;"/>
+<!-- <img src="images/ndpaper-fig1a.png" style="height: 200px;"/> -->
+<img src="images/ndpaper-fig1b.png" style="height: 300px;"/>
+]
 
-<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/store/WriteThroughputPlot.png" style="width: 500px;"/>
+.cbar[
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
+]
+
+
+---
+
+### Store: .y[Read Volumes]
+<br>
+
+- Goal: read volumes for machine vision
+- Challenge: data stored as images
+- Action: .y[ndstore] spatial database
+
+<br>
+
+.center[
+<img src="images/ndpaper-fig1a.png" style="height: 300px;"/>
+<!-- <img src="images/ndpaper-fig1b.png" style="height: 200px;"/> -->
+]
+
+.cbar[
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
+]
+
+
+
+---
+
+### Store: .y[Read Tiles]
+<br>
+
+- Goal: visualize @ video rates for mobile
+- Challenge: data stored in cubes
+- Action: .y[ndtilecache] content distribution network
+
+
+<br>
+
+.center[
+<img src="images/ndpaper-fig1c.png" style="height: 300px;"/>
+]
+
+
+
+.cbar[
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndtilecache)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/api/tile_api.html)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndtilecache/issues/new)
 ]
 
 
 ---
 name: ramondb
+layout: false
 
-### Annotations: .y[ramondb]
+### Store: .y[Shape Data Model]
+<br>
+
+- Goal: general enough for many data types 
+- Challenge: simple enough to understand
+- Action: .y[ndramon]
 
 
+.center[
+<img src="images/ramon.png" style="height: 350px;"/>
+]
+
+
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/tree/microns/ramon) 
+| [<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndio/issues/new)
+]
+
+---
+
+### Store: .y[Read Shapes]
+<br>
+
+- Goal: enable easy semantic queries
+- Challenge: no standard "structured vocabulary"
+- Action: .y[ramondb] stores object metadata
+
+
+<br>
+
+.center[
+<img src="images/fig5_mitochondria.png" style="height: 250px;"/>
+<img src="images/fig5_vesicles.png" style="height: 250px;"/>
+]
+
+<br>
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/tree/microns/ramon) 
+| [<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndprocess/ramon.html) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndio/issues/new)
+]
+
+
+
+---
+
+### Store: .y[Write Shapes] 
+<br>
+
+- Goal: write annotations with object-level metadata fast
+- Challenge: many small files
+- Action: .y[ndblaze] assembles transparently in RAM
+
+
+.center[
+<img src="images/ndpaper-fig1d.png" style="width: 600px;"/>
+]
+
+
+
+.cbar[
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndblaze)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndblaze/issues/new)
+]
+
+---
+
+name: ramondb
+
+### Store: .y[Annotations]
+
+<br>
+<br>
+
+<!---
 [Code](https://github.com/neurodata/ndstore) 
 | [Data Model](http://docs.neurodata.io/nddocs/ndparse/ramon.html) 
 | [API](http://docs.neurodata.io/ndstore/api/ramon_api.html) 
 | [Manuscript](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full)
+-->
+
 
 .pull-left[
 ####  Data Model
@@ -396,27 +575,33 @@ name: ramondb
 ]
 
 .pull-right[
+<br>
 <img src="http://cs.brown.edu/people/tld/note/blog/13/07/26/figures/sejnowski_neural_activity_scales.jpg" style="width: 300px;"/>
 ]
 
-
-
-
+.cbar[
+[@kunal](https://github.com/kunallillaney): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
+]
 
 ---
+
 name: grutedb
 
-### Graphs: .y[grutedb]
+### Store: .y[Graphs]
 
+<br>
+
+<!--
 [Web](http://openconnecto.me/graphs) 
 | [Code](https://github.com/neurodata/m2g/tree/master/MR-OCP)
 | [Manuscript](http://arxiv.org/abs/1312.4318)
-
+-->
 
 .pull-left[
 ####  Data Model
-  - Store graphs as edgelist
-  - Metadata in csv
+  - Store graphs as graphml
   - Supports the following types
    - Directed, undirected
    - Hypergraphs
@@ -431,223 +616,116 @@ name: grutedb
 ]
 
 .pull-right[
+<br><br><br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" style="width: 350px;"/>
 ]
 
----
-name: util
-
-## Utilities
-
-<br>
-
-- [Databases](#db)
-  - [spdb](#spdb) 3D+ images and volumetric annotations  
-  - [ramondb](#ramondb) annotation metadata
-  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
-- .y[Utilies]
-  - [ndtilecache](#cdn) enables content distribution network 
-  - [ndlims](#ndlims) for managing additional metadata:
-  - [ndio](#ndio) Python library for I/O
-  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
-- [Hardware](#hardware)
 
 
-
-
-
----
-name: cdn
-
-### CDN: .y[ndtilecache]
-
-[Docs](http://docs.neurodata.io/ndtilecache/) |
-[Code](https://github.com/neurodata/ndtilecache) |
-[API](http://docs.neurodata.io/ndtilecache/api/tilecache_api.html)
-
-
-<br>
-
-.pull-left[
-- Cache's image tiles for fast visualization
-- Can deploy in AWS or locally
+.cbar[
+[@disa](https://github.com/disa-mhembere): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndgrutedb)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndgrutedb/issues/new)
 ]
-
-
-
-.pull-right[
-<img src="https://raw.githubusercontent.com/neurodata/ndtilecache/master/docs/images/ndtilecache_cluster.png" style="width: 350px;"/>
-]
-
-<br>
-
-.center[
-<img src="https://raw.githubusercontent.com/neurodata/ocp-journal-paper/gh-pages/Results/Figures/store/tile_read_speed.png" style="width: 500px;"/>
-]
-
-
----
-name: ndlims
-
-### LIMS: .y[ndlims]
-[Code](https://github.com/neurodata/ndlims)
-| [Issues](https://github.com/neurodata/ndlims/issues)
-
-<br>
-
-
-
-
----
-name: ndio
-
-### Python Wrapper: .y[ndio]
-
-[Code](https://github.com/neurodata/ndio)
-| [Docs](http://docs.neurodata.io/nddocs/ndio/)
-| [Tutorials](http://docs.neurodata.io/nddocs/ndio/tutorials.html)
-
-<br>
-
-.pull-left[
-- Package to easily interface with neurodata
-- Open source toolbox provides image and metadata capabilities
-- Easy to use interface for standalone or distributed computing across languages
-]
-
-.pull-right[
-<img src="images/ndio.jpg" alt="Drawing" style="width: 300px;"/>
-]
-
----
-name: CAJAL
-
-
-### MATLAB SDK: .y[CAJAL]
-[Code](https://github.com/neurodata/CAJAL)
-| [Docs](http://docs.neurodata.io/CAJAL/)
-
-<br>
-
-- Server setup
-- Upload Image Data (if not using an existing data set)
-- Create and Upload Annotation Data
-- Update Annotations (if needed)
-- Delete Annotations (if needed)
-- Query (Read) Annotations
-
-.center[
-<img src="http://docs.neurodata.io/CAJAL/_images/cajal_pipeline.jpg" alt="Drawing" style="width: 700px;"/>
-]
-
-
----
-
-
-
-## Hardware
-
-<br />
-
-- [Databases](#db)
-  - [spdb](#spdb) 3D+ images and volumetric annotations  
-  - [ramondb](#ramondb) annotation metadata
-  - [grutedb](#grutedb) Graphs with Rich attriBUTEs
-- [Utilies](#util)
-  - [ndtilecache](#cdn) enables content distribution network 
-  - [ndlims](#ndlims) for managing additional metadata:
-  - [ndio](#ndio) Python library for I/O
-  - [CAJAL](#cajal) MATLAB Toolbox for I/O & more
-- .y[Hardware]
-
-
----
-name: hardware
-
-### Data Cluster
-
-.center[
-<img src="http://docs.neurodata.io/ndstore/_images/nd_cluster.png" style="width: 700px;"/>
-]
-
-.pull-left[
-- .y[Datascope] manages and stores spatial databases
-- .y[CDN] provides "local" copies to individual regions
-- .y[Local] user machines/clusters for  visualization & analysis
-]
-
-.pull-right[
-- .y[AMI] Amazon Machine Instance to run terascale scale analyses
-- .y[AWS Cluster] to build high-performance cluster to run petascale analyses (coming soon)
-]
-
-<!-- Head node serves as Web proxy and load balance
-- Application Server nodes can perform cutout, propagate, and other Web-services
-- Databases store Image DB and Tile Cache on SSD array
-- Brainapps,  Brain Cloud, Awesome, Awesomer, Intel Phi, BrainViz (K80)
+<!---
+layout: true
+.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
  -->
 
-
-
 ---
-layout: true
-.bbar[ [Intro](#intro)  | [Store](#store) | _[Explore](#explore)_ | [Wrangle](#wrangle) | [Analyze](#anal)]
+name: applications
+layout: false
+class: middle, center
 
+.center[
+# Explore
+]
 
 ---
 name: explore
+layout: false
 
-
-# Explore
+### Explore: .y[Images]
 
 <br>
 
-- [Images](#ix)
-- [Graphs](#gx)
-- [Vectors](#vx)
+- Goal: google maps like interface to explore images
+- Challenge: mobile speed
+- Action: .y[ndviz] navigation
+
+
+
+.center[
+<img src="images/ndpaper-fig2a.png" style="width: 550px;"/>
+]
+
+.cbar[
+[@alexbaden](https://github.com/alexbaden):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://ix.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz/issues)
+]
+
+---
+
+### Explore: .y[Histograms]
+
+
+<br>
+
+- Goal: explore histograms of very large volumes
+- Challenge: cannot compute histograms in memory
+- Action: .y[ndhist] 
+
+
+
+.center[
+<img src="images/explore-hist.png" style="width: 450px;"/>
+]
+
+
+.cbar[
+[@alexbaden](https://github.com/alexbaden):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://hx.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/histogram-explorer) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/histogram-explorer/issues)
+]
 
 
 ---
-name: ix
 
-## Images: .y[Image Explorer (ix)]
+### Explore: .y[Shapes]
 
-[Web App](http://ix.neurodata.io) 
-| [Code](https://github.com/neurodata/NeuroDataViz) 
-| [Issues](https://github.com/neurodata/NeuroDataViz/issues)
+<br>
 
-.pull-left[
-#### Highlights
-- Uses [Leaflet.js](http://leafletjs.com/)
-- Enables pan & zoom in 3D
-- Supports multispectral data (4D)
-- Supports time-series data (4D)
-- Works on mobile & Web
-- Image & Anno. Metadata
-- Collaboration tools
-### Examples
-- [Volumetric annotation overlays](http://viz.neurodata.io/project/kharris15apical_subcell/xy/1/2064/2088/112/)
-- [Multispectral blending](http://viz.neurodata.io/project/Ex10R55_glutamatergic_prepost/2/378/421/0/#)
-- [Time-series](http://viz.neurodata.io/project/freeman14/xy/1/509/339/10/)
+- Goal: dynamically overlay annotations
+- Challenge: interactivity
+- Action: .y[ndviz] add channel + query
+
+<br>
+
+.center[
+<img src="images/ndpaper-fig2c.png" style="width: 700px;"/>
 ]
 
-.pull-right[
-
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://brainviz1.cs.jhu.edu/ndv/kharris15apical/em,annos/2/1126/998/88/" frameborder="0" height="500" width="100%">
-</iframe>
+.cbar[
+[@alexbaden](https://github.com/alexbaden):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://ix.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz/issues)
 ]
-
-
-
 
 ---
 name: gx
 
-## Graphs: .y[Graph Explorer (gx)]
+### Explore: .y[Graphs]
 
+<!--
 [Web App](http://gx.neurodata.io) 
 | [Code](https://github.com/neurodata/Graph-Explorer) 
 | [Issues](https://github.com/neurodata/Graph-Explorer/issues)
+-->
+<br>
 
 .pull-left[
 #### Highlights
@@ -658,8 +736,7 @@ name: gx
 
 #### Functions
 
-- Load or randomly sample graph
-- Sample graph from many different random graph models
+- Load or sample graph from variety of graph models
 - Compute & plot graph statistics
 - Plot graph layout & adjacency
 - Find communities
@@ -672,218 +749,189 @@ name: gx
 </iframe>
 ]
 
-
-
----
-
-## Matrices: .y[Matrix Explorer (vx)]
-
-[Web App](http://vx.neurodata.io) 
-| [Code](https://github.com/neurodata/Vector-Explorer) 
-| [Issues](https://github.com/neurodata/Vector-Explorer/issues)
-
-.pull-left[
-#### Highlights
-
-- Shiny app
-- Load csv file
-- Interactive analysis with no coding req.
-
-#### Functions
-
-- Raw, z-scores, percentiles, etc.
-- Heatmap of bi-clustered data
-- Distributions of each feature
-- Multivariate outlier detection
-- Correlation & distance matrices
-- Population statistics
-- Dimensionality reduction
-- Clustering
-
-]
-.pull-right[
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://shiny.neurodata.io/Vector-Explorer/" frameborder="0" height="500" width="100%">
-</iframe>
+.cbar[
+[@leoduan](https://github.com/laplacianduan):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://gx.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ExploratoryGraph) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ExploratoryGraph/issues)
 ]
 
-
-
-
-
 ---
-
 layout: true
-.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | _[Wrangle](#wrangle)_ | [Analyze](#anal)]
+.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
 
 
 ---
-name: wrangle
+name: applications
+layout: false
+class: middle, center
 
-# Wrangle
-
-<br />
-
-- [streaming image processing](#cv)
-  - [2D stitching artifact](#2d) (dmg)
-  - [3D histogram normalization](#3d) (gdf)
-  - [volume registration](#ndreg) (lddmm)
-- [object detection](#parse)
-  - [label](#mana) (mana)
-  - [learn](#maca) (maca)
-  - [deploy](#maxa) (maxa)
-- [graph inference](#x2g)
-  - [serial electron microscopy](#i2g) (i2g)
-  - [diffusion mri](#d2g) (d2g)
-  - [functional mri](#f2g) (f2g)
-
-
-
----
-name: cv
-
-## Streaming Image Processing
-
-<br />
-
-- .y[streaming image processing]
-  - [2D stitching artifact](#2d) (dmg)
-  - [3D histogram normalization](#3d) (gdf)
-  - [volume registration](#ndreg) (lddmm)
-- [object detection](#parse)
-  - [label](#mana) (mana)
-  - [learn](#maca) (maca)
-  - [deploy](#maxa) (maxa)
-- [graph inference](#x2g)
-  - [serial electron microscopy](#i2g) (i2g)
-  - [diffusion mri](#d2g) (d2g)
-  - [functional mri](#f2g) (f2g)
+.center[
+# Parse
+]
 
 ---
 name: 2d
+layout: false
 
-### 2D Stitching Artifact: .y[dmg]
 
-[Web](https://github.com/mkazhdan/DMG) 
-| [Code](https://github.com/mkazhdan/DMG) 
-| [Manuscript](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf) 
+
+### Parse: .y[2D Correction]
 
 <br>
 
+- Goal: auto remove 2D histogram artifacts 
+- Challenge: signal & noise overlap, data are big
+- Action: .y[distributed multi-grid] (dmg)
 
-
-- dmg = Distributed MultiGrid Poisson solver
-- 2D image stitching histogram corrections
-- Smoothing/Sharpening/High-Low Composting
-
-
+<br>
 
 .center[
-<img src="images/A_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
-<img src="images/D_dmg_full_section_2402.jpg" alt="Drawing" style="width: 300px;"/>
+<img src="images/A_full_section_2402.jpg" alt="Drawing" style="height: 200px;"/>
+<img src="images/D_dmg_full_section_2402.jpg" alt="Drawing" style="height: 200px;"/>
 ]
+<br>
 
+
+.cbar[
+[@misha](https://github.com/mkazhdan/): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/mkazhdan/DMG)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://www.cs.jhu.edu/~misha/MyPapers/ToG10.pdf)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/mkazhdan/DMG/issues/new)
+]
 
 
 ---
 name: 3d
 
-### 3D Color Correction: .y[gdf]
-
-
-[Web](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
-| [Manuscript](http://arxiv.org/pdf/1506.02079v1.pdf) 
+### Parse: .y[3D Correction]
 
 <br>
 
-- gdf = Gradient Domain Fusion
-- 3D image histogram corrections
-- Web-service coming soon
+- Goal: auto remove 3D histogram artifacts 
+- Challenge: data are bigger
+- Action: .y[gradient domain fusion] (gdf)
 
-
+<br>
 
 .center[
-<img src="images/GDF2.png" alt="Drawing" style="width: 80%;"/>
+<img src="images/GDF2.png" alt="Drawing" style="width: 100%;"/>
+]
+<br>
+
+
+.cbar[
+[@misha](https://github.com/mkazhdan/): 
+[<i class="fa fa-code" aria-hidden="true"></i>](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/)  | 
+[<i class="fa fa-book" aria-hidden="true"></i>](http://arxiv.org/pdf/1506.02079v1.pdf)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/mkazhdan/DMG/issues/new)
 ]
 
 
 ---
 name: ndreg
 
-### Register Volume: .y[ndreg]
+### Parse: .y[Volume Registration]
 
-
+<!--
 [Code](https://github.com/neurodata/ndreg) 
 | [Demo](https://github.com/neurodata/ndreg/blob/master/maskPipelineExample.ipynb) 
 | [Setup](https://github.com/neurodata/ndreg/blob/master/README.md) 
 | [Manuscript](https://github.com/neurodata/spiePhotonics/raw/master/spiePhotonics.pdf)
+-->
 
-.pull-left[
-#### Highlights
+#### Features
 
 - Python wrapper for SimpleITK
 - Open source [LDDMM](http://www.cis.jhu.edu/software/lddmm-volume/) nonlinear C implementation with Python bindings
 - Integrated with .y[ndio]
-
-<br />
-]
-.pull-right[
-#### Functions
-
-- Rigid, Affine, and Nonlinear
+- Rigid, affine, and nonlinear registration
 - Can apply to landmarks, masks, or images
 - Includes automatic masking
 - Quality control metrics
+
+.center[
+<img src="images/ndreg2.png"  alt="Drawing" style="height: 220px;"/>
+<img src="images/ndreg.png"   alt="Drawing" style="height: 220px;"/>
+]
+
+.cbar[
+[@kwame](https://github.com/kkutten1/): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndreg)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndreg/issues/new)
+]
+---
+name: shapes
+
+### Parse: .y[Shapes]
+<!--
+[LDDMM](http://www.cis.jhu.edu/software/) | [LDDMM Python](https://github.com/neurodata/ndreg) |
+[SPH Code](https://github.com/mkazhdan/ShapeSPH) 
+-->
+
+- Large Deformation Diffeomorphic Metric Mapping ([LDDMM](http://www.cis.jhu.edu/software/),  [LDDMM Python](https://github.com/neurodata/ndreg))
+  - Learns pairwise invertable correspondence between volumes, surfaces, masks
+  - Has been applied to MRI, histology, and CLARITY brains successfully
+- Shape Spherical Harmonics ([SPH Code](https://github.com/mkazhdan/ShapeSPH))
+  - [Shape Descriptions](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/descriptors.html)
+  - [Shape Alignment](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/alignment.html)
+  - [Shape Symmetry](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/symmetry.html)
+
+
+
+.center[
+<img src="images/shape_descriptor.png"  alt="Drawing" style="height: 220px;"/>
 ]
 
 
-
-
-<img src="images/ndreg2.png" alt="Drawing" style="height: 225;"/>
-<img src="images/ndreg.png"   alt="Drawing" style="height: 225px;"/>
-
-
-
-
+.cbar[
+[@kwame](https://github.com/kkutten1/): 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndreg)  | 
+[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndreg/issues/new)
+]
 
 ---
-name: parse
+name:ndparse
+### Parse: .y[Object Detection]
 
-## object detection
+<br>
 
-<br />
-
-- [streaming image processing](#cv)
-  - [2D stitching artifact](#2d) (dmg)
-  - [3D histogram normalization](#3d) (gdf)
-  - [volume registration](#ndreg) (lddmm)
-- .y[object detection]
-  - [label](#mana) (mana)
-  - [learn](#maca) (maca)
-  - [deploy](#maxa) (maxa)
-- [graph inference](#x2g)
-  - [serial electron microscopy](#i2g) (i2g)
-  - [diffusion mri](#d2g) (d2g)
-  - [functional mri](#f2g) (f2g)
+- Goal: scalable object detection 
+- Challenge: requires  labeling, training, & distributed computing
+- Action: .y[ndparse] 
 
 
+.center[
+<img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 340px;"/>
+<img src="images/ndp_bock_detect_crop_circles.png"    alt="Drawing" style="width: 340px;"/>
+]
+<br>
+
+
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndparse) 
+| [<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndparse/mbcd.html) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndparse/issues/new)
+]
 
 
 ---
 name: mana
 
-### Label: .y[mana]
-
+### Parse: .y[Manual Labelling]
+<!--
 [Docs](http://docs.neurodata.io/nddocs/ndparse/mana.html) 
 | [Code](https://github.com/neurodata/ndod/tree/master/mana/code)
-
+-->
 
 .pull-left[
 <!-- ## Wrangle: [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php) -->
-1. Identify ROI
-2. run `mana_getImage` to get image using [ndio](#ndio) or [CAJAL](#cajal)
-3. Annotate using [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
-4. Save annotations
-5. run `mana_putAnno` to put annotation and metadata in neurodata database
+- Identify ROI
+- run .y[mana_getImage] to get image using [ndio](#ndio) or [CAJAL](#cajal)
+- Annotate using [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
+- Save annotations
+- run .y[mana_putAnno] to put annotation and metadata in neurodata database
 ]
 
 .pull-right[
@@ -894,15 +942,21 @@ name: mana
 ]]
 
 
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndparse) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndparse/issues/new)
+]
 
 ---
 name: maca
 
-### Learn: .y[maca]
+### Parse: .y[Learning Labels]
 
+<!--
 [Docs](http://docs.neurodata.io/nddocs/ndparse/maca.html) 
 | [Code](https://github.com/neurodata/ndod/tree/master/maca)
-
+-->
 
 .pull-left[
 <!-- ## Wrangle: [ilastik](http://ilastik.org/) -->
@@ -920,21 +974,23 @@ name: maca
 .center[
 <img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/maca_example.png"   alt="Drawing" style="width: 300px;"/>
 <img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/maca_ilastik_intro.png"   alt="Drawing" style="width: 300px;"/>
-
-
 ]]
+
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndparse) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndparse/issues/new)
+]
 
 ---
 name: maxa
 
-### Deploy: .y[maxa]
-
+### Parse: .y[Large Scale Labelling]
+<!--
 [Code](https://github.com/neurodata/ndod/tree/master/docs/maxa)
-
-
+-->
 
 <br />
-
 
 - Can make usse of [LONI Pipeline](http://pipeline.bmap.ucla.edu/)
 - .y[Vesicle] Detect all synapses in electron microscopy data: [Code](https://github.com/neurodata/vesicle)  | [Random Forest](http://docs.neurodata.io/vesicle/tutorials/vesiclerf.html) | [Deep Network](http://docs.neurodata.io/vesicle/tutorials/vesiclecnn.html) | [Manuscript](http://www.bmva.org/bmvc/2015/papers/paper081/paper081.pdf)
@@ -943,211 +999,145 @@ name: maxa
 - Integrations planned for qsub, slurm and aws submission
 
 
-
 .center[
 <img src="http://www.frontiersin.org/files/Articles/609/fninf-03-022/image_m/fninf-03-022-g002.jpg"    alt="Drawing" style="width: 300px;"/>
 <img src="http://docs.neurodata.io/nddocs/ndparse/images/ndod/Y_manual1.png?raw=true"    alt="Drawing" style="width: 300px;"/>
 ]
 
-
----
-name: x2g
-
-## x-to-graphs
-
-<br />
-
-- [streaming image processing](#cv)
-  - [2D stitching artifact](#2d) (dmg)
-  - [3D histogram normalization](#3d) (gdf)
-  - [volume registration](#ndreg) (lddmm)
-- [object detection](#parse)
-  - [label](#mana) (mana)
-  - [learn](#maca) (maca)
-  - [deploy](#maxa) (maxa)
-- .y[graph inference]
-  - [serial electron microscopy](#i2g) (i2g)
-  - [diffusion mri](#d2g) (d2g)
-  - [functional mri](#f2g) (f2g)
-
-
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndparse) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndparse/issues/new)
+]
 
 ---
 name: i2g
 
-### EM Graph Inference: .y[i2g]
+### Parse: .y[EM Graph Inference]
 
+<!--
 [Web](http://docs.neurodata.io/i2g/)
 | [Manuscript](http://arxiv.org/abs/1411.6880)
 | [MATLAB Code](https://github.com/neurodata/i2g)
 | [Python Code](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim9_make_graph.ipynb)
 | [Graph](http://openconnecto.me/mrdata/static/graphs/mouse/kasthuri_graph_v4.graphml)
-
-<br>
+-->
+<br><br>
 
 .pull-left[
+<br>
 - Provides automated end-to-end pipeline to reconstruct graphs from EM data
 - Leverages open source tools like .y[Gala] and .y[vesicle]
 - System-level graph quality assessment
 ]
 
 .pull-right[
+<br><br>
 <img src="images/i2g.jpg" alt="Drawing" style="width: 300px;"/>
 ]
 
+.cbar[
+[@willgray](https://github.com/willgray):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/i2g) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/i2g/issues/new)
+]
 ---
 name: d2g
 
-### DTI Graph Inference: .y[ndmg]
-
+### Parse: .y[DTI Graph Inference]
+<!--
 [Web](http://docs.neurodata.io/nddocs/mrgraphs/)
 | [Code](https://github.com/neurodata/ndmg/)
 | Manuscripts: [mrcap](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6173097), [MIGRAINE](http://arxiv.org/abs/1312.4875)
 | [Graphs](http://docs.neurodata.io/nddocs/mrgraphs/processed_data.html)
+-->
 <br>
 
-.pull-left[
 - one-click python package to generate graphs from structural MRI data
 - web-service to process individual brains
-- approximately .y[100,000] graphs processed and available to date from 2000 scans
+- Over .y[100,000] graphs generated and available to date from 5000 scans
 - computes graphs with various attributes across many scales
-- available on pip .y[pip install ndmg] 
-]
-
-.pull-right[
-<img src="images/m2g.jpg" alt="Drawing" style="width: 300px;"/>
-]
-
----
-name: f2g
-
-### fMRI Graph Inference: .y[cpac]
-
-
-
----
-
-layout: true
-.bbar[ [Intro](#intro)  | [Store](#store) | [Explore](#explore) | [Wrangle](#wrangle) | _[Analyze](#anal)_]
-
-
----
-name: anal
-
-
-# Analyze
-
-<br>
-
-- [Images](#images)
-- [Shapes](#shapes)
-- [Graphs](#graphs)
-- [Matrices](#matrices)
-
-
----
-name: images
-
-## Image Analysis
-[Code](https://github.com/neurodata/ndstore/tree/master/stats) | [API](http://docs.neurodata.io/ndstore/api/stats_api.html)
-
-
-
-.pull-left[
-
-- Histogram
-- Percentiles
-- Mean
-- Standard Deviation
-]
-
-
-<iframe allowtransparency="true" style="background: #FFFFFF;" src="http://brainviz1.cs.jhu.edu/tra/graphs/histogram.html" frameborder="0" height="350" width="100%">
-</iframe>
-
-
-
-
-
-
-
----
-name: shapes
-
-### Shape Analysis: .y[LDDMM & ShapeSPH]
-[LDDMM](http://www.cis.jhu.edu/software/) | [LDDMM Python](https://github.com/neurodata/ndreg) |
-[SPH Code](https://github.com/mkazhdan/ShapeSPH) 
-
-
-
-- Large Deformation Diffeomorphic Metric Mapping
-  - Learns pairwise invertable correspondence between volumes, surfaces, masks
-  - Has been applied to MRI, histology, and CLARITY brains successfully
-- Shape Spherical Harmonics
-  - [Shape Descriptions](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/descriptors.html)
-  - [Shape Alignment](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/alignment.html)
-  - [Shape Symmetry](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/symmetry.html)
-
-
+- available on pip > .y[pip install ndmg] 
 
 .center[
-<img src="images/shape_descriptor.png"    alt="Drawing" style="height: 250px;"/>
+<img src="images/3dfibers.png" alt="Drawing" style="width: 300px;"/>
+<img src="images/website.png" alt="Drawing" style="width: 300px;"/>
 ]
 
 
+.cbar[
+[@gregkiar](https://github.com/gkiar):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndmg) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndmg/issues/new)
+]
 
+
+---
+name: applications
+layout: false
+class: middle, center
+
+.center[
+# Analyze
+]
 
 ---
 name: graphs
 
-## Graph Analysis: .y[FlashGraph]
+### Analyze: .y[Graphs]
 
-
+<!--
 [Webpage](http://flashx.io) | [Code](https://github.com/icoming/FlashX)   | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box](http://openconnecto.me/data/public/FlashGraph-VMs/) | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf)
+-->
 
-.pull-left[
-#### Highlights
 - Store vertex state in memory, edge list on array of SSDs
 - 1B vertex & 100B edge graphs
 - R bindings for all functions
-<br><br>
-]
 
-.pull-right[
 #### Algorithms
+.pull-left[
 - Breadth-First Search
 - Triangle Counting
 - Connected Components
+]
+.pull-right[
 - Scan Statistic
 - Page Rank
 - Community detection
 ]
 
+.center[
 <img src="images/fg.png"    alt="Drawing" style="height: 275px;"/>
 <img src="images/fg-benchmarks.png"    alt="Drawing" style="height: 275px;"/>
+]
 
+.cbar[
+[@da](https://github.com/icoming):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/icoming/FlashX) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/icoming/FlashX/issues/new)
+]
 
 
 
 ---
 name: matrices
-## Matrix Analysis: .y[FlashMatrix]
+### Analyze: .y[Matrices]
 
-
+<!--
 [Webpage](http://flashx.io) | [Code](https://github.com/icoming/FlashX)   | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box](http://openconnecto.me/data/public/FlashGraph-VMs/) | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf)
+-->
 
-.pull-left[
-#### Highlights
 - Store vertex state in memory, edge list on array of SSDs
 - 1B vertex & 100B edge graphs
 - R bindings for all functions
-]
 
-.pull-right[
 #### Matrix Functions
+.pull-left[
   - PageRank
   - Eigendecomposition
   - Singular Value Decomposition
+]
+.pull-right[
   - K-means
   - Non-negative Matrix Factorization 
   - Gaussian Mixture Modeling
@@ -1157,50 +1147,17 @@ name: matrices
 <img src="images/NMF.png"    title="ass" style="width: 350px;"/>
 <img src="images/SpMM.png"    title="SpMM" style="width: 350px;"/>
 
-
----
-layout: false
-
-# Coming Soon
-
-
-<br />
-- Spike Detection
-  - Ophys Spike detection: [non-negative](https://github.com/jovo/oopsi) | [smc-oopsi](https://github.com/jovo/smc-oopsi)
-  - Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting) | [online](https://github.com/decarlson/opass)
-- IF Synapse Detection
-- Ophys Cell Detection
-
----
-
-
-
-## Trade-offs at Each Step
-
-<br />
-
-| _Property_    | _Classical_ &nbsp;| _NeuroData_ &nbsp; | _Both_ |
-| :---          | :----:      | :---:       | :---: |
-| Quality     | .g[&check;]   | .r[&cross;] | .g[&check;] |
-| Scalability | .r[&cross;]   | .g[&check;] | .g[&check;] |
-| Capabilities| .g[&check;]   | .r[&cross;] | .g[&check;] |
-| 1-clickiness| .r[&cross;]   | .g[&check;] | .g[&check;] |
-
-
---
-
-<br />
-
-.white[The ideal system will include both classical and novel NeuroData methods, as they complement one another.]
-
-
-
+.cbar[
+[@da](https://github.com/icoming):
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/icoming/FlashX) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/icoming/FlashX/issues/new)
+]
 
 
 ---
 name: ref
 
-# References
+### References
 
 
 .small[
@@ -1231,7 +1188,7 @@ ACM Transactions on Graphic, 28(4) 2009.
 ---
 name: ref2
 
-# References Continued
+### References Continued
 
 .small[
 1. Kazhdan, Misha, et al. [Rotation Invariant Spherical Harmonic Representation
@@ -1261,7 +1218,7 @@ on Billion-node Graphs in a Multicore Architecture](http://arxiv.org/abs/1602.02
 
 ---
 
-# NeuroData.CS Family
+## NeuroData.CS Family
 
 <br>
 
@@ -1276,29 +1233,28 @@ on Billion-node Graphs in a Multicore Architecture](http://arxiv.org/abs/1602.02
 ]
 
 
-
-
 ---
-class:   center
+class:   middle, center
 
 
 # Questions?
 
 <!-- ### Funding &nbsp;&nbsp;&nbsp;&nbsp;   -->
 
-<br />
+<!-- <br /> -->
 
 _____
 
 Funding
 
 
-NIH: TRA
+NIH: {CRCNS, BRAINI, TRA}
 
-NIH/NSF:  {BIGDATA, CRCNS}
+NSF:  BIGDATA
 
 DARPA: {XDATA,GRAPHS,SIMPLEX}
 
+IARPA: MICrONS
 
 ____
 
@@ -1310,17 +1266,17 @@ d: [docs.neurodata.io](http://docs.neurodata.io)
 e: [support@neurodata.io](mailto:support@neurodata.io)
 
 
-____
+<!-- ____ -->
 
 
-[more slides](http://docs.neurodata.io/ndintro/more.html)
+<!-- [more slides](http://docs.neurodata.io/ndintro/more.html) -->
 
 
 
 
 
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    <script src="remark-latest.min.js" type="text/javascript">
     </script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
     <script type="text/javascript">
@@ -1340,44 +1296,45 @@ ____
 
       MathJax.Hub.Configured();
 
-      var slideshow = remark.create({
-        // Set the slideshow display ratio
-        // Default: '4:3'
-        // Alternatives: '16:9', ...
-        ratio: '4:3',
+var slideshow = remark.create({
+  // Set the slideshow display ratio
+  // Default: '4:3'
+  // Alternatives: '16:9', ...
+  ratio: '4:3',
 
-        // Navigation options
-        navigation: {
-          // Enable or disable navigating using scroll
-          // Default: true
-          // Alternatives: false
-          scroll: true,
+  // Navigation options
+  navigation: {
+    // Enable or disable navigating using scroll
+    // Default: true
+    // Alternatives: false
+    scroll: true,
 
-          // Enable or disable navigation using touch
-          // Default: true
-          // Alternatives: false
-          touch: true,
+    // Enable or disable navigation using touch
+    // Default: true
+    // Alternatives: false
+    touch: true,
 
-          // Enable or disable navigation using click
-          // Default: false
-          // Alternatives: true
-          click: false
+    // Enable or disable navigation using click
+    // Default: false
+    // Alternatives: true
+    click: false
   },
 
   // Customize slide number label, either using a format string..
   // slideNumberFormat: 'Slide %current% of %total%',
   // .. or by using a format function
   slideNumberFormat: function (current, total) {
-    return  current + ' / ' + total;
+    return  current + ' of ' + total;
   },
 
   // Enable or disable counting of incremental slides in the slide counting
   countIncrementalSlides: false
-});
+}); 
+
     </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>
