@@ -767,7 +767,7 @@ layout: false
 class: middle, center
 
 .center[
-# Parse
+# Analyze
 ]
 
 ---
@@ -776,7 +776,7 @@ layout: false
 
 
 
-### Parse: .y[2D Correction]
+### Analyze: .y[2D Correction]
 
 <br>
 
@@ -804,7 +804,7 @@ layout: false
 ---
 name: 3d
 
-### Parse: .y[3D Correction]
+### Analyze: .y[3D Correction]
 
 <br>
 
@@ -831,7 +831,7 @@ name: 3d
 ---
 name: ndreg
 
-### Parse: .y[Volume Registration]
+### Analyze: .y[Volume Registration]
 
 <!--
 [Code](https://github.com/neurodata/ndreg) 
@@ -863,7 +863,7 @@ name: ndreg
 ---
 name: shapes
 
-### Parse: .y[Shapes]
+### Analyze: .y[Shapes]
 <!--
 [LDDMM](http://www.cis.jhu.edu/software/) | [LDDMM Python](https://github.com/neurodata/ndreg) |
 [SPH Code](https://github.com/mkazhdan/ShapeSPH) 
@@ -892,7 +892,7 @@ name: shapes
 
 ---
 name:ndparse
-### Parse: .y[Object Detection]
+### Analyze: .y[Object Detection]
 
 <br>
 
@@ -919,7 +919,7 @@ name:ndparse
 ---
 name: mana
 
-### Parse: .y[Manual Labelling]
+### Analyze: .y[Manual Labelling]
 <!--
 [Docs](http://docs.neurodata.io/nddocs/ndparse/mana.html) 
 | [Code](https://github.com/neurodata/ndod/tree/master/mana/code)
@@ -951,7 +951,7 @@ name: mana
 ---
 name: maca
 
-### Parse: .y[Learning Labels]
+### Analyze: .y[Learning Labels]
 
 <!--
 [Docs](http://docs.neurodata.io/nddocs/ndparse/maca.html) 
@@ -985,7 +985,7 @@ name: maca
 ---
 name: maxa
 
-### Parse: .y[Large Scale Labelling]
+### Analyze: .y[Large Scale Labelling]
 <!--
 [Code](https://github.com/neurodata/ndod/tree/master/docs/maxa)
 -->
@@ -1013,7 +1013,7 @@ name: maxa
 ---
 name: i2g
 
-### Parse: .y[EM Graph Inference]
+### Analyze: .y[EM Graph Inference]
 
 <!--
 [Web](http://docs.neurodata.io/i2g/)
@@ -1044,7 +1044,7 @@ name: i2g
 ---
 name: d2g
 
-### Parse: .y[DTI Graph Inference]
+### Analyze: .y[DTI Graph Inference]
 <!--
 [Web](http://docs.neurodata.io/nddocs/mrgraphs/)
 | [Code](https://github.com/neurodata/ndmg/)
@@ -1078,13 +1078,13 @@ layout: false
 class: middle, center
 
 .center[
-# Analyze
+# Model
 ]
 
 ---
 name: graphs
 
-### Analyze: .y[Graphs]
+### Model: .y[Graphs]
 
 <!--
 [Webpage](http://flashx.io) | [Code](https://github.com/icoming/FlashX)   | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box](http://openconnecto.me/data/public/FlashGraph-VMs/) | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf)
@@ -1121,7 +1121,7 @@ name: graphs
 
 ---
 name: matrices
-### Analyze: .y[Matrices]
+### Model: .y[Matrices]
 
 <!--
 [Webpage](http://flashx.io) | [Code](https://github.com/icoming/FlashX)   | [AMI](http://www.flashgraph.net/documents/get_started2) | [Virtual Box](http://openconnecto.me/data/public/FlashGraph-VMs/) | [Setup](http://www.flashgraph.net/documents/get_started2) | [Manuscript](https://www.usenix.org/system/files/conference/fast15/fast15-paper-zheng.pdf)
@@ -1165,7 +1165,6 @@ name: ref
 
 1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
 
-
 1. Mhembere D, et al. [Computing Scalable Multivariate Glocal Invariants of Large (Brain-) Graphs](http://arxiv.org/abs/1312.4318). IEEE GlobalSIP, 2013.
 
 1. Kazhdan M, et al. [Distributed Gradient-Domain Processing
@@ -1181,8 +1180,6 @@ ACM Transactions on Graphic, 28(4) 2009.
 1. Gray Roncal, WR, et al. [An automated images-to-graphs framework for high resolution connectomics](http://journal.frontiersin.org/article/10.3389/fninf.2015.00020/full). Frontiers in Neuroinformatics, 13 August 2015.
 
 1. Gray Roncal, WR, et al. [Magnetic Resonance Connectome Automated Pipeline: An Overview](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6173097). IEEE Pulse 3(2) 42-48, 2012.
-
-1. Gray Roncal WR, et al. [MIGRAINE: MRI Graph Reliability Analysis and Inference for Connectomics](http://arxiv.org/abs/1312.4875). IEEE GlobalSIP, 2013.
 ]
 
 ---
@@ -1191,6 +1188,8 @@ name: ref2
 ### References Continued
 
 .small[
+1. Gray Roncal WR, et al. [MIGRAINE: MRI Graph Reliability Analysis and Inference for Connectomics](http://arxiv.org/abs/1312.4875). IEEE GlobalSIP, 2013.
+
 1. Kazhdan, Misha, et al. [Rotation Invariant Spherical Harmonic Representation
 of 3D Shape Descriptors](http://htmlpreview.github.io/?https://github.com/mkazhdan/ShapeSPH/blob/master/descriptors.html), Eurographics Symposium on Geometry Processing, 2003.
 
@@ -1227,8 +1226,8 @@ on Billion-node Graphs in a Multicore Architecture](http://arxiv.org/abs/1602.02
 | :--- | :--- | :--- |
 | Store | | Randal Burns, Eric Perlman, Kunal Lillaney, Priya Manavalan, Alex Eusman
 | Explore | | .orange[Alex Baden,  Ivan Kuznetsov, David Marchette, Leo Duan, Albert Lee]
-| Parse | | .y[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
-| Analyze | &nbsp;&nbsp;&nbsp;&nbsp; | .blue[Joshua T. Vogelstein, Da Zheng, Disa Mhembere]
+| Analyze | | .y[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Deank Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
+| Model | &nbsp;&nbsp;&nbsp;&nbsp; | .blue[Joshua T. Vogelstein, Da Zheng, Disa Mhembere]
 | Love | | .pink[yummy, family, friends, earth, universe, multiverse?]
 ]
 
