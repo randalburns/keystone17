@@ -271,32 +271,23 @@ class: center, middle
 
 name:opening
 
-# [NeuroData](http://neurodata.io):
-### Enabling Terascale Neuroscience for Everyone
-
-<!-- ### Joshua T. Vogelstein -->
-<!-- ### {[BME](http://bme.jhu.edu),[ICM](http://icm.jhu.edu),[CIS](http://cis.jhu.edu),[Kavli](http://kndi.jhu.edu)}@[jhu](http://jhu.edu) -->
-
-<!-- #### e: [jovo@jhu.edu](mailto:jovo@jhu.edu) | w:  -->
-<!-- ### [NeuroData.io](http://neurodata.io) -->
-
-
+## Data-Intensive Applications:
+## [The OpenConnectome Project](http://openconnecto.me)
+### A [NeuroData](http://neurodata.io) Project
 
 
 <br>
-<!-- [prof joshua t. vogelstein](http://jovo.me) -->
-
 
 <br>
 
 .center[
-presented by, Joshua T. Vogelstein
+Randal Burns
 <br>
-{[bme](http://www.bme.jhu.edu/),[icm](http://icm.jhu.edu/),[cis](http://cis.jhu.edu/),[idies](http://idies.jhu.edu/),kavli,[cs](http://engineering.jhu.edu/computer-science/), [ams](http://engineering.jhu.edu/ams/), [neuro](http://neuroscience.jhu.edu/)}@[jhu](https://www.jhu.edu/)
+{[CS](http://www.cs.jhu.edu/),[KNDI](http://idies.jhu.edu/),[IDIES](http://idies.jhu.edu/)}@[JHU](https://www.jhu.edu/)
 <br>
 please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!
 <br>
-these slides: <http://docs.neurodata.io/ndintro>
+these slides: <http://docs.neurodata.io/keystone.ocp17>
 
 ]
 
@@ -304,49 +295,14 @@ these slides: <http://docs.neurodata.io/ndintro>
 
 ---
 
-# Big Scientific Data
+
+## NeuroScience is Big Data
 
 <br>
 
-.pull-left[
-- molecular genomics (1D)
-]
-.pull-right[
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_genome_alignment_of_eight_Yersinia_isolates.png/380px-A_genome_alignment_of_eight_Yersinia_isolates.png" alt="Drawing" style="width: 400px;"/>]
-
-
----
-
-
-# Big Scientific Data
-
-<br>
-
-.pull-left[
-- molecular genomics (1D)
-- cosmology (2D)
-]
-
-.pull-right[
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Ilc_9yr_moll4096.png" alt="Drawing" style="width: 400px;"/>]
-
-
----
-
-
-# Big Scientific Data
-
-<br>
-
-.pull-left[
-- molecular genomics (1D)
-- cosmology (2D)
-- Neuroscience! (3D+)
-]
-
-.pull-right[
+.center[
 <img src="http://www.nature.com/neuro/journal/v17/n11/images/nn.3839-F1.jpg
-" alt="Drawing" style="width: 400px;"/>]
+" alt="Drawing" style="width: 600px;"/>]
 
 
 ---
@@ -380,7 +336,7 @@ class: center, middle
 ]
 
 
-Goal: Enable generating and confirming anatomical hypothesis using simple tools, in a reproducible and extensible fashion.
+Goal: Enable generating and confirming anatomical hypotheses on a 20 Teravoxel volume in a reproducible and extensible fashion.
 
 
 
@@ -390,61 +346,38 @@ Goal: Enable generating and confirming anatomical hypothesis using simple tools,
 ## Challenge #2
 
 
-
-
 .center[
-<iframe width="720" height="400" src="https://www.youtube.com/embed/dS_ONoUrptg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="720" height="400" src="https://www.youtube.com/embed/jziqfFp9Rq0" frameborder="0" allowfullscreen></iframe>
 
 
 <br>
-Goal: What is the spatial distribution of synapses?
+Goal: Build a taxomony of synapses through the analysis of conjugate EM and protein expression in array tomography.
 
 ]
 
 
-
-
-
-
 ---
-class: center
 
-## Data Science Discovery
-
-<img src="images/circle6.png" alt="Drawing" style="width: 600px;"/>
-<!-- <img src="https://github.com/neurodata/ndpaper/raw/master/figure0.png" alt="Drawing" style="width: 700px;"/> -->
-
-<br />
-
-<!-- --
-
-.left-pull[
-- An cloud deployed ecosystem for big data neuroscience
-- Currently hosts 10+ public datasets, another 20+ private datasets
-- Total # of terabytes used: ~250 
-- Enables universal accessibility, reproducibility, and extensibility
-- Revealed novel spatial synapse patterns
-- Free and open source software (FOSS), and free and open access data (FOAD)
+.pull-left[
+<img src="images/ocp.png" alt="Drawing" style="width: 700px;"/>
 ]
- -->
 
----
-name: applications
-layout: false
-class: middle, center
+.pull-left[
+Founded to create an infrastructure for the __open-science, data-intensive analysis of electron microscopy brain data__
+- peta-scale storage linked to HPC
+- computational vision workflows to extract brain structure
+- spatial queries (clusters, volumes, distributions) for analysis
 
-.center[
-# Methods
+Has evolved into an end-to-end (from microscope output to publication) platform for data management and reproducible storage
+- visualiztion in 2-d and 3-d with mobile support and browser-based image processing
+- image processing: stitching, alignment, registration, color correction 
+- cloud-based storage, processing, and content distribution (caching)
+- Web-services back end for many neuroscience tools ([BigDataViewer](,[CATMAID],[NeuroGlancer])
 ]
 
 
 ---
-layout: false
-class: middle, center
-<!-- .bbar[ [Intro](#intro) | _[Methods](#methods)_ | [Results](#applications)  | [Discussion](#disc)] -->
-<!-- --- -->
 
-## .y[NeuroData] 
 
 <br>
 
@@ -1126,7 +1059,6 @@ class:  center
 | .g[Analyze] | &nbsp;&nbsp;&nbsp;&nbsp; | .g[Mike Miller, Nicholas Charon, Misha Kazhdan, Jordan Matelsky, Kwame Kutten, Greg Kiar, Eric Bridgeford, Greg Hager, Will Gray Roncal, Mark Chevillet,  Dean Kleissas, R. Jacob Vogelstein, Guillermo Sapiro, Anish Simhal, Konrad Kording, Eva Dyer]
 | .blue[Model] | | .blue[Joshua T. Vogelstein, Carey Priebe, Dan Naiman,  Tyler Tomita, Youngser Park, Jesse L. Patsolic, Leo Duan, Cencheng Shen, Ivan Kuznetsov]
 | .purple[Graphs] | | .purple[Da Zheng, Disa Mhembere, Vince Lyzinski, Avanti Athreya, Daniel Sussman, Shangsi Wang, Runze Tang, Minh Tang]
-| .pink[Love] | | .pink[Yummy, Family, Friends, Earth, Universe, Multiverse?]
 ]
 
 
@@ -1147,7 +1079,7 @@ _____
 Funding
 
 
-NIH: {CRCNS, BRAINI, TRA}
+NIH: {CRCNS, BRAIN, TRA}
 
 NSF:  BIGDATA
 
