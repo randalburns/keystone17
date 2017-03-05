@@ -235,6 +235,24 @@
         z-index: 0;
       }
 
+.column:first-of-type {float:left}
+.column:last-of-type {float:right}
+
+.split-20 .column:first-of-type {width: 20%}
+.split-20 .column:last-of-type {width: 80%}
+.split-30 .column:first-of-type {width: 30%}
+.split-30 .column:last-of-type {width: 70%}
+.split-40 .column:first-of-type {width: 40%}
+.split-40 .column:last-of-type {width: 60%}
+.split-50 .column:first-of-type {width: 50%}
+.split-50 .column:last-of-type {width: 50%}
+.split-60 .column:first-of-type {width: 60%}
+.split-60 .column:last-of-type {width: 40%}
+.split-70 .column:first-of-type {width: 70%}
+.split-70 .column:last-of-type {width: 30%}
+.split-80 .column:first-of-type {width: 80%}
+.split-80 .column:last-of-type {width: 20%}
+
       /* Two-column layout */
       .left-column {
         color: #777;
@@ -278,35 +296,24 @@ name:opening
 
 <br>
 
-<br>
-
 .center[
 Randal Burns
 <br>
 {[CS](http://www.cs.jhu.edu/),[KNDI](http://idies.jhu.edu/),[IDIES](http://idies.jhu.edu/)}@[JHU](https://www.jhu.edu/)
 <br>
-please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)!
+please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)
 <br>
 these slides: <http://docs.neurodata.io/keystone.ocp17>
 
 ]
 
 
-
----
-
-
-## NeuroScience is Big Data
-
-<br>
-
-.center[
-<img src="http://www.nature.com/neuro/journal/v17/n11/images/nn.3839-F1.jpg
-" alt="Drawing" style="width: 600px;"/>]
-
-
 ---
 class: center, middle
+
+### NeuroData Data
+
+
 <!-- https://openwiki.janelia.org/wiki/download/attachments/34505478/Image%201%20-%20Medulla%20EM%20Stack%20-%20Final.jpg?version=1&modificationDate=1375908720000&api=v2 -->
 
 
@@ -314,16 +321,13 @@ class: center, middle
 
 <!-- .center[6 panel nd website figure] -->
 
+
 <img src="images/oppo/em.jpg"/>
 <img src="images/oppo/at.png"/>
 <img src="images/oppo/clarity.jpg"/>
 <img src="images/oppo/xbrain.png"/>
 <img src="images/oppo/fibers.jpg"/>
 <img src="images/oppo/mri.png"/>
-
-
-
-
 
 
 ---
@@ -339,8 +343,6 @@ class: center, middle
 Goal: Enable generating and confirming anatomical hypotheses on a 20 Teravoxel volume in a reproducible and extensible fashion.
 
 
-
-
 ---
 
 ## Challenge #2
@@ -348,53 +350,102 @@ Goal: Enable generating and confirming anatomical hypotheses on a 20 Teravoxel v
 
 .center[
 <iframe width="720" height="400" src="https://www.youtube.com/embed/jziqfFp9Rq0" frameborder="0" allowfullscreen></iframe>
-
-
-<br>
-Goal: Build a taxomony of synapses through the analysis of conjugate EM and protein expression in array tomography.
-
 ]
 
+Goal: Build a taxomony of synapses through the analysis and clustering of conjugate EM and protein expression in array tomography.
 
 ---
 
-.pull-left[
 <img src="images/ocp.png" alt="Drawing" style="width: 700px;"/>
-]
 
-.pull-left[
+<br> 
+
 Founded to create an infrastructure for the __open-science, data-intensive analysis of electron microscopy brain data__
 - peta-scale storage linked to HPC
 - computational vision workflows to extract brain structure
 - spatial queries (clusters, volumes, distributions) for analysis
 
-Has evolved into an end-to-end (from microscope output to publication) platform for data management and reproducible storage
-- visualiztion in 2-d and 3-d with mobile support and browser-based image processing
+Evolved into an end-to-end (from microscope output to publication) platform for data management and reproducible science
+- visualiztion in 2-d and 3-d with mobile support
 - image processing: stitching, alignment, registration, color correction 
-- cloud-based storage, processing, and content distribution (caching)
-- Web-services back end for many neuroscience tools ([BigDataViewer](,[CATMAID],[NeuroGlancer])
+- cloud-based storage, processing, and caching
+- Web-services back end for many visualization tools ([BigDataViewer](https://imagej.net/BigDataViewer), [CATMAID](http://catmaid.readthedocs.io/), [NeuroGlancer](https://neuroglancer-demo.appspot.com/))
+
+---
+
+### OCP Architecture (ca. 2013)
+
+<br> 
+
+Scale-out storage clusters that provide data through Web services
+- cutout: read a spatial volume of data
+- annotate: label regions of space (store superpixelations)
+- query: shapes, objects metadata
+
+<br>
+
+.left[
+<img src="images/ocp2013.png" alt="Drawing" style="width: 700px;"/>
+]
+
+<br> 
+
+Had to move lots of data across networks to make workflows runs.
+
+---
+
+### To The Cloud: NeuroData 2016
+
+Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.theboss.io/)
+- Post images from microscope to S3
+- Process and share with AWS services
+- Cloud-based interactive data analysis (Jupyter)
+
+
+
+---
+
+### Transformations in the Cloud
+
+<br>
+
+Adopt the [Render Service](https://github.com/saalfeldlab/render) from [Janelia](http://www.janelia.org)
+- apply a lineage of image transformations on demand
+- materialize any stage of image processing
+
+.cbar[
+[@troutmane](https://github.com/troutmane)
 ]
 
 
 ---
-
-
-<br>
-
-<img src="images/fig0.png" alt="Drawing" style="width: 800px;"/>
-
+.left-column[
+<img src="images/fullpm.png" style="height: 600px;"/>
+]
+.right-column[
+NeuroDataViz can examine any stage of transformations
+- ability to look at point match functions prior to elastic correction
+<img src="images/zoompm.png" style="height: 300px;"/>
+]
 
 ---
-name:store
+class: split-80
 
-### Store
+.column[
+<img src="images/zoompm.png" style="height: 300px;"/>
+]
+.column[
+### Visualizing Transformations
+<img src="images/fullpm.png" style="height: 600px;"/>
+]
+
+---
+
+
+### The NeuroData Storage Hierarchy
 <br>
 
-- Goal: eliminate read/write bottlenecks
-- Challenge: accessing a file takes time, data are big
-- Action: .y[ndbackend] infrastructure
-
-
+- 
 
 .center[
 <img src="images/ndcomplete.png" style="height: 400px;"/>
@@ -408,118 +459,8 @@ name:store
 [@kunal](https://github.com/kunallillaney)
 ]
 
-<!-- [Code](https://github.com/neurodata/ndstore) 
-| [Docs](http://docs.neurodata.io/ndstore/sphinx/console.html) 
-| [API](http://docs.neurodata.io/ndstore/) 
-| [Manuscript](http://arxiv.org/abs/1306.3543) 
-| [Setup](https://github.com/neurodata/ndstore/tree/master/setup) 
-| [<span class="images/issue.png"></span>](https://github.com/neurodata/ndstore/tree/master/setup)
-<a href="#"><span class="glyphicon glyphicon-file"></span></a>
-<a href="#"><span class="glyphicon glyphicon-book"></span></a>
-<a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a>
-[<span class="glyphicon glyphicon-exclamation-sign"></span>](https://github.com/neurodata/ndstore/tree/master/setup) -->
-
-
----
-layout: false
-class: left
-
-
-### Store: Image Data Model
-<br>
-
-- Goal: general enough for many data types 
-- Challenge: simple enough to understand
-- Action: .y[nddatamodel]
-
-<br>
-
-.center[
-<img src="images/datamodel_simple.png" style="height: 300px;"/>
-]
-
-
-.cbar[
-[@kunal](https://github.com/kunallillaney) 
-]
-
-
 ---
 
-### Store: Write Volumes
-<br>
-
-- Goal: write faster than acquire
-- Challenge: data stored as images, streamed quickly
-- Action: .y[ndstore] spatial database
-
-<br>
-
-.center[
-<!-- <img src="images/ndpaper-fig1a.png" style="height: 200px;"/> -->
-<img src="images/ndpaper-fig1b.png" style="height: 300px;"/>
-]
-
-.cbar[
-[@kunal](https://github.com/kunallillaney): 
-[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
-[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
-[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
-]
-
-
----
-
-### Store: Read Volumes
-<br>
-
-- Goal: read volumes for machine vision
-- Challenge: data stored as images
-- Action: .y[ndstore] spatial database
-
-<br>
-
-.center[
-<img src="images/ndpaper-fig1a.png" style="height: 300px;"/>
-<!-- <img src="images/ndpaper-fig1b.png" style="height: 200px;"/> -->
-]
-
-.cbar[
-[@kunal](https://github.com/kunallillaney): 
-[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndstore)  | 
-[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/sphinx/console.html)  | 
-[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndstore/issues/new)
-]
-
-
-
----
-
-### Store: Read Tiles
-<br>
-
-- Goal: visualize @ video rates for mobile
-- Challenge: data stored in cubes
-- Action: .y[ndtilecache] content distribution network
-
-
-<br>
-
-.center[
-<img src="images/ndpaper-fig1c.png" style="height: 300px;"/>
-]
-
-
-
-.cbar[
-[@kunal](https://github.com/kunallillaney): 
-[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndtilecache)  | 
-[<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/ndstore/api/tile_api.html)  | 
-[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndtilecache/issues/new)
-]
-
-
----
 name: ramondb
 layout: false
 
@@ -571,26 +512,6 @@ layout: false
 
 
 ---
-
-### Store: Write Shapes 
-<br>
-
-- Goal: write annotations with object-level metadata fast
-- Challenge: many small files
-- Action: .y[ndblaze] assembles transparently in RAM
-
-
-.center[
-<img src="images/ndpaper-fig1d.png" style="width: 600px;"/>
-]
-
-
-
-.cbar[
-[@kunal](https://github.com/kunallillaney): 
-[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndblaze)  | 
-[<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndblaze/issues/new)
-]
 
 
 <!-- ---
@@ -684,13 +605,12 @@ layout: false
 
 
 
-### Analyze: 2D Correction
+### 2D Color/Intensity Correction
 
 <br>
 
-- Goal: auto remove 2D histogram artifacts 
-- Challenge: signal & noise overlap, data are big
-- Action: .y[distributed multi-grid] (dmg)
+Automatically remove artifacts from imaging tiles seperately
+- Distributed multi-grid Poisson solver
 
 <br>
 
@@ -712,20 +632,37 @@ layout: false
 ---
 name: 3d
 
-### Analyze: 3D Correction
+### 3D Color/Intensity Correction
 
 <br>
 
-- Goal: auto remove 3D histogram artifacts 
-- Challenge: data are bigger
-- Action: .y[gradient domain fusion] (gdf)
+Automatically remove 3D artifacts in serial sections
+- Smooth system in gradient domain to normalize
+- Add high-frequencies back in to preseve edges 
+
+
 
 <br>
 
 .center[
 <img src="images/GDF2.png" alt="Drawing" style="width: 100%;"/>
 ]
+
+---
+name: 3d2
+
+### 3D Color/Intensity Correction
+
 <br>
+
+Automatically remove 3D artifacts in serial sections
+- Solve global Poisson system in gradient domain to normalize
+- Add high-frequencies back in to preseve edges 
+
+<br>
+.center[
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TfUNmb5GwGw&showinfo=0" frameborder="0" allowfullscreen></iframe>
+]
 
 
 .cbar[
