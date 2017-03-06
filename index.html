@@ -269,7 +269,7 @@
         padding-top: 1em;
       }
       br {
-        line-height: 50%;
+        line-height: 30%;
       }
       .task {
         float: right;
@@ -277,7 +277,7 @@
         padding-top: 0.6em;
       }
 
-  }
+
     </style>
   </head>
   <body onload="var slideshow = remark.create();">
@@ -340,7 +340,7 @@ class: center, middle
 ]
 
 
-Goal: Enable generating and confirming anatomical hypotheses on a 20 Teravoxel volume in a reproducible and extensible fashion.
+Goal: Confirming anatomical hypotheses on a Teravoxel volume in a reproducible and extensible fashion.
 
 
 ---
@@ -352,7 +352,7 @@ Goal: Enable generating and confirming anatomical hypotheses on a 20 Teravoxel v
 <iframe width="720" height="400" src="https://www.youtube.com/embed/jziqfFp9Rq0" frameborder="0" allowfullscreen></iframe>
 ]
 
-Goal: Build a taxomony of synapses through the analysis and clustering of conjugate EM and protein expression in array tomography.
+Goal: Build a taxomony of synapses through the analysis and clustering of conjugate EM and array tomography.
 
 ---
 
@@ -396,12 +396,61 @@ Had to move lots of data across networks to make workflows runs.
 
 ### To The Cloud: NeuroData 2016
 
+<br> 
+
 Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.theboss.io/)
 - Post images from microscope to S3
 - Process and share with AWS services
 - Cloud-based interactive data analysis (Jupyter)
 
+<br>
 
+.left[
+<img src="images/ocp2013.png" alt="Drawing" style="width: 700px;"/>
+]
+
+---
+
+### NeuroDataViz
+
+<br> 
+
+Web-enabled maps style viewer with support for:
+- browser driven image processing
+- layered datasets (EM+annotations and multi-channel)
+- 2-d tiles and 3-d volumes data engines 
+- object metadata and searching, in neural ontology
+
+.center[
+<img src="images/ndpaper-fig2c.png" alt="Drawing" style="width: 600px;"/>
+]
+
+.cbar[
+[@alexbaden](https://github.com/alexbaden):
+[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://ix.neurodata.io) 
+| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz) 
+| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz/issues)
+]
+
+---
+### NeuroDataViz with Google's NeuroGlancer
+
+<br>
+
+.center[
+<iframe width="672" height="378" src="https://www.youtube.com/embed/WGY2-RE_bYI" frameborder="0" allowfullscreen></iframe>
+]
+3-d data are loaded as subvolume (cuboids) from NeuroData store.
+
+---
+
+### NDViz Metadata and Image Processing
+
+.center[
+<iframe width="672" height="378" src="https://www.youtube.com/embed/OhN4Flemg-o" frameborder="0" allowfullscreen></iframe>
+]
+
+Conjugate EM, array tomography, and annotated synapse labels.  Good visual products require image processing in browser.
 
 ---
 
@@ -413,69 +462,86 @@ Adopt the [Render Service](https://github.com/saalfeldlab/render) from [Janelia]
 - apply a lineage of image transformations on demand
 - materialize any stage of image processing
 
+.center[
+<img src="images/render-components.png" alt="Drawing" style="width: 500px;"/>
+]
+
 .cbar[
 [@troutmane](https://github.com/troutmane)
 ]
 
-
 ---
-.left-column[
-<img src="images/fullpm.png" style="height: 600px;"/>
-]
-.right-column[
-NeuroDataViz can examine any stage of transformations
-- ability to look at point match functions prior to elastic correction
-<img src="images/zoompm.png" style="height: 300px;"/>
+### The Render Workflow
+
+<br> 
+
+Metadata describing relationships between source images and aligned and corrected stacks.
+
+.center[
+<img src="images/renderalign.png" alt="Drawing" style="width: 600px;"/>
 ]
 
----
-class: split-80
-
-.column[
-<img src="images/zoompm.png" style="height: 300px;"/>
-]
-.column[
-### Visualizing Transformations
-<img src="images/fullpm.png" style="height: 600px;"/>
+.cbar[
+[@perlman](https://github.com/perlman)
 ]
 
 ---
 
+### Vizualization of Transformations
+<br>
+NeuroDataViz can examine any stage of transformations, e.g.
+ point match functions prior to elastic correction.  
+<img src="images/rotatefull.png" style="width: 750px;"/>
+.center[
+<img src="images/zoompm.png" style="height: 200px;"/>
+]
+
+.cbar[
+[@fcollman](https://github.com/fcollman)
+]
+
+---
+
+### To The Cloud: NeuroData 2016
+
+<br> 
+
+Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.theboss.io/)
+- Post images from microscope to S3
+- Process and share with AWS services
+- Cloud-based interactive data analysis (Jupyter)
+
+<br>
+
+.left[
+<img src="images/ocp2013.png" alt="Drawing" style="width: 700px;"/>
+]
+
+---
 
 ### The NeuroData Storage Hierarchy
 <br>
 
-- 
-
 .center[
-<img src="images/ndcomplete.png" style="height: 400px;"/>
-<!-- <img src="images/reshier.png" style="height: 250px;"/>
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Moore3d-step3.png" style="height: 250px;"/>
- -->
- ]
-
-
-.cbar[
-[@kunal](https://github.com/kunallillaney)
+<img src="images/cloud.storage.png" style="height: 450px;"/>
 ]
+Balance cost/performance/capacity and adapt data placement based on workload.
 
 ---
 
 name: ramondb
 layout: false
 
-### Store: Shape Data Model
+### Neurodata Ontology (RAMON) 
 <br>
 
-- Goal: general enough for many data types 
-- Challenge: simple enough to understand
-- Action: .y[ndramon]
-
+Links metadata to annotations (supervoxels) in spatial databases.
+- Searchable: find objects by property
+- Extensible: general key/value metadata  
 
 .center[
 <img src="images/ramon.png" style="height: 350px;"/>
 ]
-
 
 .cbar[
 [@willgray](https://github.com/willgray):
@@ -486,16 +552,13 @@ layout: false
 
 ---
 
-### Store: Read Shapes 
+### Examples of Semantic Queries
 <br>
-
-- Goal: enable easy semantic queries
-- Challenge: no standard "structured vocabulary"
-- Action: .y[ramondb] stores object metadata
-
+Filter all annotations based on object type
+- mitochondria (left)
+- vessicles (right)
 
 <br>
-
 .center[
 <img src="images/fig5_mitochondria.png" style="height: 250px;"/>
 <img src="images/fig5_vesicles.png" style="height: 250px;"/>
@@ -510,99 +573,9 @@ layout: false
 ]
 
 
-
----
-
-
-<!-- ---
-layout: true
-.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
- -->
----
-name: explore
-layout: false
-
-### Explore: Images  
-
-<br>
-
-- Goal: google maps like interface to explore images
-- Challenge: mobile speed
-- Action: .y[ndviz] navigation
-
-
-
-.center[
-<img src="images/ndpaper-fig2a.png" style="width: 550px;"/>
-]
-
-.cbar[
-[@alexbaden](https://github.com/alexbaden):
-[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://ix.neurodata.io) 
-| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz) 
-| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz/issues)
-]
-
----
-
-### Explore: Histograms
-
-
-<br>
-
-- Goal: explore histograms of very large volumes
-- Challenge: cannot compute histograms in memory
-- Action: .y[ndhist] 
-
-
-
-.center[
-<img src="images/explore-hist.png" style="width: 450px;"/>
-]
-
-
-.cbar[
-[@alexbaden](https://github.com/alexbaden):
-[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://hx.neurodata.io) 
-| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/histogram-explorer) 
-| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/histogram-explorer/issues)
-]
-
-
----
-
-### Explore: Shapes  
-
-<br>
-
-- Goal: dynamically overlay annotations
-- Challenge: interactivity
-- Action: .y[ndviz] add channel + query
-
-<br>
-
-.center[
-<img src="images/ndpaper-fig2c.png" style="width: 700px;"/>
-]
-
-.cbar[
-[@alexbaden](https://github.com/alexbaden):
-[<i class="fa fa-gamepad" aria-hidden="true"></i>](http://ix.neurodata.io) 
-| [<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz) 
-| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/NeuroDataViz/issues)
-]
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | [Discussion](#disc)]
-
-
 ---
 name: 2d
 layout: false
-
 
 
 ### 2D Color/Intensity Correction
@@ -674,78 +647,6 @@ Automatically remove 3D artifacts in serial sections
 
 
 ---
-name:ndparse
-### Analyze: Object Detection
-
-<br>
-
-- Goal: scalable object detection 
-- Challenge: requires  labeling, training, & distributed computing
-- Action: .y[ndparse] 
-
-
-.center[
-<img src="images/ndp_bock_truth_crop.png"    alt="Drawing" style="width: 340px;"/>
-<img src="images/ndp_bock_detect_crop_circles.png"    alt="Drawing" style="width: 340px;"/>
-]
-<br>
-
-
-.cbar[
-[@willgray](https://github.com/willgray):
-[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/neurodata/ndparse) 
-| [<i class="fa fa-book" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndparse/mbcd.html) 
-| [<i class="fa fa-exclamation-circle" aria-hidden="true"></i>](https://github.com/neurodata/ndparse/issues/new)
-]
-
-
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro) | [Methods](#methods) | _[Results](#applications)_  | [Discussion](#disc)]
-
-
----
-name: applications
-layout: false
-class: middle, center
-
-.center[
-# Results
-]
-
-
-<!-- <br> -->
-
-<!-- .center[
-<img src="images/image_datasets.png" alt="Drawing" style="height: 150px;"/>
-<img src="images/annotation_datasets.png" alt="Drawing" style="height: 150px;"/>
-
-<br>
-
-<img src="images/rob2.png"    alt="Drawing" style="height: 250px; "/>
-<img src="images/3D.png"    alt="Drawing" style="height: 250px; "/>
-]
-
-add links
- -->
-
-<!-- ---
-name: applications
-
-# Results
-
-<br>
-
-- [Image Datasets](#r_im)
-- [Annotation Datasets](#r_anno)
-- [Case Study 1](#r_cs1)
-- [Case Study 2](#r_cs2)
- -->
-
----
 name: r_im
 
 ## Image Datasets
@@ -770,8 +671,6 @@ name: r_anno
 
 ## Annotation Datasets
 
-
-
 .center[
 <img src="images/annotation_datasets.png" alt="Drawing" style="width: 700px;"/>
 ]
@@ -783,120 +682,6 @@ name: r_anno
 
 
 ---
-name: r_cs1
-
-## Case Study #1 
-#### Reproducible and Extensible Big Data Neuroscience
-
-
-<br>
-
-Statistical claims
-1. [axons & dendrites](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim02_axons_and_dendrites.ipynb)
-1. [synapses](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim3_synapses.ipynb)
-1. [mitochondria](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim4_mitochondria.ipynb)
-1. [spines](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim5_spines.ipynb)
-1. [vesicles](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim6_vesicles.ipynb)
-1. [connectivity](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim9_make_graph.ipynb)
-
-
----
-
-## Case Study #1 
-#### Reproducible and Extensible Big Data Neuroscience
-
-<br>
-
-[axons and dendrites](https://github.com/neurodata/kasthuri2015/blob/master/claims/claim2_axons_and_dendrites.ipynb)
-1. How many different neurons?
-1. How many dendrites?
-1. What fraction are spiny?
-1. How many unmyelinated axons?
-1. What fraction are excitatory?
-1. How many spines?
-1. How many axon branches?
-1. What fraction of cellular volume is neuron?
-1. What fraction of volume is cells?
-1. Relative volume of axon vs. dendrite?
-...
-
-
- .cbar[
-[<i class="fa fa-external-link" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndpaper2016/case_study1.html)
-Data: Kasthuri et al. (Cell) 2015
-]
-
-
-
-
----
-name: r_cs2
-
-## Case Study #2 
-#### Is synapse distribution uniform in space?
-
-
-<br />
-
-.center[
-<img src="images/rob2.png"    alt="Drawing" style="width: 75%; "/>
-]
-
-Detecting ~11.6 million synapses from the [bock11](http://openconnecto.me/bock11) dataset
-
-???
-
-timings
-
----
-name: r_anal
-class: center, middle
-
-<!-- ### Case Study #2
-#### Is synapse distribution uniform in space?
- -->
-
-<!-- 
-.pull-left[
-<br />
-1. find all synapses
-1. Mask out regions that cannot have synapses
-1. Partition volume into cuboids
-2. Count # of elements / cuboid
-3. Normalize by volume of cuboid not masked
-4. Plot normalized density in 3D scatter plot
-5. Plot marginal densities
-6. Report p-value
-] -->
-
-
-<img src="images/3D.png"    alt="Drawing" style="width: 550px; "/>
-<img src="images/2Dproj.png"    alt="Drawing" style="width: 550px; "/>
-
-
- .cbar[
-[<i class="fa fa-external-link" aria-hidden="true"></i>](http://docs.neurodata.io/nddocs/ndpaper2016/case_study2.html)
-Data: Bock et al. (Nature) 2011
-]
-
-
-
-
-
----
-layout: true
-.bbar[ [Intro](#intro) | [Methods](#methods) | [Results](#applications)  | _[Discussion](#disc)_]
-
----
-name: disc
-class: middle, center
-layout: false
-
-# Discussion
-
----
-
-
 
 ### Open Science Contributions
 
@@ -918,73 +703,12 @@ layout: false
 - Engage complementary expertise
 - Reproduce and extend results
 
-
---
-
-### Coming soon
-
-
-
-- [ndio](http://docs.neurodata.io/nddocs/ndio/) python API 
-- More public datasets: CLARITY, ExM, XCM, MRI, Ophys, etc. 
-- More Web-services: processing each data modality
-<!-- , including 
-  - [Volume reconstruction](http://abria.github.io/TeraStitcher/) 
-  - Color correction ([dmg](https://github.com/mkazhdan/DMG)) 
- & [gdf](http://www.cs.jhu.edu/~misha/Code/GradientDomainFusion/) 
-  - [Atlas registration](https://github.com/neurodata/ndreg) (ndreg)
-  - [Ontological object detection](https://github.com/neurodata/ndparse) (ndparse)
-  - [Ophys Spike detection](https://github.com/jovo/oopsi) (oopsi)
-  - Ephys Spike Detection: [batch](https://github.com/jovo/spike-sorting), [online](https://github.com/decarlson/opass)
-  - [MRI to Graphs](http://m2g.io/) (m2g) -->
-<!-- - Web-services for all model steps -->
-<!-- , including:
-  - Shapes
-  - Graphs
-  - Matrices  -->
-
-
-
----
-
-
-### Related Work
-
-
-- [CATMAID](http://catmaid.readthedocs.org/en/stable/)
-- [Neurodata Without Borders](http://nwb.org/)
-- [Keller Lab Block File Format](http://www.nature.com/nprot/journal/v10/n11/abs/nprot.2015.111.html)
-
-
---
-
-
-### Further Lowering the Barrier to Entry
-
-
-- Put it all together
-- Apply to other domains & questions
-- We work together!
-
---
-
-### References
-
-
-
-1. Burns B et al. [The Open Connectome Project Data Cluster: Scalaballe Analysis and Vision for High-Throughput Neuroscience](http://arxiv.org/abs/1306.3543).  Scientific and Statistical Database Management (SSDBM), 2013.
-
-1. Burns B, Vogelstein JT, Szalay AS. [From Cosmos to Connectomes: the Evolution of Data-Intensive Science](http://www.sciencedirect.com/science/article/pii/S0896627314007466). Neuron, 2015.
-
-
 ---
 name: fam
 layout: false
 class:  center
 
 # NeuroData Family
-
-
 
 
 .center[
@@ -1007,10 +731,6 @@ class:   middle, center
 
 # Questions?
 
-<!-- ### Funding &nbsp;&nbsp;&nbsp;&nbsp;   -->
-
-<!-- <br /> -->
-
 _____
 
 Funding
@@ -1032,15 +752,6 @@ w: [neurodata.io](http://neurodata.io)
 d: [docs.neurodata.io](http://docs.neurodata.io)
 
 e: [support@neurodata.io](mailto:support@neurodata.io)
-
-
-<!-- ____ -->
-
-
-<!-- [more slides](http://docs.neurodata.io/ndintro/more.html) -->
-
-
-
 
 
     </textarea>
