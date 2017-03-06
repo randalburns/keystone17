@@ -489,7 +489,7 @@ Metadata describing relationships between source images and aligned and correcte
 
 ### Vizualization of Transformations
 <br>
-NeuroDataViz can examine any stage of transformations, e.g.
+NeuroDataViz + Render can examine any stage of transformations, e.g.
  point match functions prior to elastic correction.  
 <img src="images/rotatefull.png" style="width: 750px;"/>
 .center[
@@ -526,6 +526,24 @@ Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.thebos
 <img src="images/cloud.storage.png" style="height: 450px;"/>
 ]
 Balance cost/performance/capacity and adapt data placement based on workload.
+
+---
+
+### Spatal Data Model
+
+<br>
+
+Tile data are converted to cuboids, indexed by a space filling curve, 
+to minimize disk and memory I/O for 3-d cutouts
+
+<img src="images/stack.png" style="height: 180px;"/>
+<img src="images/cuboids.png" style="height: 180px;"/>
+<img src="images/zcurve.png" style="height: 180px;"/>
+
+Objects are sparsely indexed so that they can be localized
+
+<img src="images/bb.png" style="height: 200px;"/>
+<img src="images/sfc.png" style="height: 200px;"/>
 
 ---
 
