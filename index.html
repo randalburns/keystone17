@@ -34,7 +34,7 @@
       h1, h2, h3, h4, h5, h6 {
         font-family: 'quadon';
         font-weight: 400;
-        margin-bottom: 0;
+        margin-bottom: 8;
         color: #d5ad6d;
 /*        color:  #D5AD6D; /*if no support for background-clip*/
   
@@ -303,7 +303,7 @@ Randal Burns
 <br>
 please ask questions: [support@neurodata.io](mailto:support at neurodata dot io)
 <br>
-these slides: <http://docs.neurodata.io/keystone.ocp17>
+these slides: <http://randalburns.github.io/keystone17>
 
 ]
 
@@ -375,8 +375,6 @@ Evolved into an end-to-end (from microscope output to publication) platform for 
 
 ### OCP Architecture (ca. 2013)
 
-<br> 
-
 Scale-out storage clusters that provide data through Web services
 - cutout: read a spatial volume of data
 - annotate: label regions of space (store superpixelations)
@@ -396,8 +394,6 @@ Had to move lots of data across networks to make workflows runs.
 
 ### To The Cloud: NeuroData 2016
 
-<br> 
-
 Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.theboss.io/)
 - Post images from microscope to S3
 - Process and share with AWS services
@@ -412,8 +408,6 @@ Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.thebos
 ---
 
 ### NeuroDataViz
-
-<br> 
 
 Web-enabled maps style viewer with support for:
 - browser driven image processing
@@ -435,8 +429,6 @@ Web-enabled maps style viewer with support for:
 ---
 ### NeuroDataViz with Google's NeuroGlancer
 
-<br>
-
 .center[
 <iframe width="672" height="378" src="https://www.youtube.com/embed/WGY2-RE_bYI" frameborder="0" allowfullscreen></iframe>
 ]
@@ -456,8 +448,6 @@ Conjugate EM, array tomography, and annotated synapse labels.  Good visual produ
 
 ### Transformations in the Cloud
 
-<br>
-
 Adopt the [Render Service](https://github.com/saalfeldlab/render) from [Janelia](http://www.janelia.org)
 - apply a lineage of image transformations on demand
 - materialize any stage of image processing
@@ -473,8 +463,6 @@ Adopt the [Render Service](https://github.com/saalfeldlab/render) from [Janelia]
 ---
 ### The Render Workflow
 
-<br> 
-
 Metadata describing relationships between source images and aligned and corrected stacks.
 
 .center[
@@ -488,7 +476,7 @@ Metadata describing relationships between source images and aligned and correcte
 ---
 
 ### Vizualization of Transformations
-<br>
+
 NeuroDataViz + Render can examine any stage of transformations, e.g.
  point match functions prior to elastic correction.  
 <img src="images/rotatefull.png" style="width: 750px;"/>
@@ -504,8 +492,6 @@ NeuroDataViz + Render can examine any stage of transformations, e.g.
 
 ### To The Cloud: NeuroData 2016
 
-<br> 
-
 Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.theboss.io/)
 - Post images from microscope to S3
 - Process and share with AWS services
@@ -520,7 +506,6 @@ Co-developed (shared code base) with the IARPA MICrONS [BOSS](https://api.thebos
 ---
 
 ### The NeuroData Storage Hierarchy
-<br>
 
 .center[
 <img src="images/cloud.storage.png" style="height: 450px;"/>
@@ -530,8 +515,6 @@ Balance cost/performance/capacity and adapt data placement based on workload.
 ---
 
 ### Spatal Data Model
-
-<br>
 
 Tile data are converted to cuboids, indexed by a space filling curve, 
 to minimize disk and memory I/O for 3-d cutouts
@@ -551,7 +534,6 @@ name: ramondb
 layout: false
 
 ### Neurodata Ontology (RAMON) 
-<br>
 
 Links metadata to annotations (supervoxels) in spatial databases.
 - Searchable: find objects by property
@@ -571,7 +553,7 @@ Links metadata to annotations (supervoxels) in spatial databases.
 ---
 
 ### Examples of Semantic Queries
-<br>
+
 Filter all annotations based on object type
 - mitochondria (left)
 - vessicles (right)
@@ -598,7 +580,6 @@ layout: false
 
 ### 2D Color/Intensity Correction
 
-<br>
 
 Automatically remove artifacts from imaging tiles seperately
 - Distributed multi-grid Poisson solver
@@ -625,8 +606,6 @@ name: 3d
 
 ### 3D Color/Intensity Correction
 
-<br>
-
 Automatically remove 3D artifacts in serial sections
 - Smooth system in gradient domain to normalize
 - Add high-frequencies back in to preseve edges 
@@ -643,8 +622,6 @@ Automatically remove 3D artifacts in serial sections
 name: 3d2
 
 ### 3D Color/Intensity Correction
-
-<br>
 
 Automatically remove 3D artifacts in serial sections
 - Solve global Poisson system in gradient domain to normalize
